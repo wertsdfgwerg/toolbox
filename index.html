@@ -1802,64 +1802,6 @@ function copyText(id){
 
 }
 
-
-/* =========================
-   分享网站
-========================= */
-
-function shareSite(){
-
-    const url =
-        window.location.href;
-
-
-    const title =
-        currentLanguage === "zh"
-        ? "AI小工具箱"
-        : "AI Toolbox";
-
-
-    const text =
-        currentLanguage === "zh"
-        ? "这个免费的AI工具箱挺方便，可以试试："
-        : "Check out this free AI toolbox:";
-
-
-    if(navigator.share){
-
-        navigator.share({
-
-            title:title,
-
-            text:text,
-
-            url:url
-
-        });
-
-    }
-
-    else{
-
-        navigator.clipboard
-            .writeText(url)
-            .then(()=>{
-
-                alert(
-                    currentLanguage === "zh"
-                    ? "✅ 网站地址已复制，可以发给朋友了！"
-                    : "✅ Website link copied!"
-                );
-
-            });
-
-    }
-
-}
-
-</script>
-
-
 <!-- 打赏按钮 -->
 <div style="text-align:center;margin:30px 0;">
 
@@ -1957,6 +1899,64 @@ function shareSite(){
     </div>
 
 </div>
+
+/* =========================
+   分享网站
+========================= */
+
+function shareSite(){
+
+    const url =
+        window.location.href;
+
+
+    const title =
+        currentLanguage === "zh"
+        ? "AI小工具箱"
+        : "AI Toolbox";
+
+
+    const text =
+        currentLanguage === "zh"
+        ? "这个免费的AI工具箱挺方便，可以试试："
+        : "Check out this free AI toolbox:";
+
+
+    if(navigator.share){
+
+        navigator.share({
+
+            title:title,
+
+            text:text,
+
+            url:url
+
+        });
+
+    }
+
+    else{
+
+        navigator.clipboard
+            .writeText(url)
+            .then(()=>{
+
+                alert(
+                    currentLanguage === "zh"
+                    ? "✅ 网站地址已复制，可以发给朋友了！"
+                    : "✅ Website link copied!"
+                );
+
+            });
+
+    }
+
+}
+
+</script>
+
+
 
 
 <script>
