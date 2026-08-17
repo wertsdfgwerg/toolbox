@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>在线工具箱</title>
+<style>
+body{
+    font-family:Arial;
+    max-width:800px;
+    margin:40px auto;
+    padding:20px;
+}
+.box{
+    border:1px solid #ddd;
+    padding:20px;
+    margin:20px 0;
+    border-radius:10px;
+}
+textarea{
+    width:100%;
+    height:120px;
+}
+button{
+    padding:10px 20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>在线工具箱</h1>
+
+<div class="box">
+<h2>字数统计</h2>
+
+<textarea id="text"></textarea>
+
+<p>
+字数：
+<span id="count">0</span>
+</p>
+
+</div>
+
+
+<div class="box">
+
+<h2>JSON格式化</h2>
+
+<textarea id="json"></textarea>
+
+<button onclick="formatJson()">
+格式化
+</button>
+
+<pre id="result"></pre>
+
+</div>
+
+
+<div class="box">
+
+<h2>当前时间</h2>
+
+<p id="time"></p>
+
+</div>
+
+
+<script>
+
+document.getElementById("text")
+.oninput=function(){
+
+document.getElementById("count")
+.innerHTML=this.value.length;
+
+}
+
+
+function formatJson(){
+
+try{
+
+let obj=
+JSON.parse(
+document.getElementById("json").value
+);
+
+document.getElementById("result")
+.innerHTML=
+JSON.stringify(obj,null,2);
+
+}catch(e){
+
+document.getElementById("result")
+.innerHTML="格式错误";
+
+}
+
+}
+
+
+setInterval(()=>{
+
+document.getElementById("time")
+.innerHTML=new Date();
+
+},1000);
+
+
+</script>
+
+
+</body>
+</html>
