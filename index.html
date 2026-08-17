@@ -679,6 +679,7 @@ onclick="generatePrompt()">
 
 
 <button
+id="copyResumeBtn"
 class="secondary"
 onclick="copyText('promptOutput')">
 
@@ -846,6 +847,7 @@ onclick="generateTitles()">
 
 
 <button
+id="copyTitlebtn"
 class="secondary"
 onclick="copyText('titleOutput')">
 
@@ -888,7 +890,7 @@ id="xiaohongshuTool">
 
 <h2 style="text-align:center;">
 
-🔥 AI小红书标题生成器
+<span data-i18n="xiaohongshuTitle">🔥 AI小红书标题生成器</span>
 
 </h2>
 
@@ -974,7 +976,7 @@ onclick="shareSite()">
 
 <h2 id="aboutTitle">
 
-🌍 关于 AI小工具箱
+<span data-i18n="aboutTitle">🌍 关于 AI小工具箱</span>
 
 </h2>
 
@@ -1166,7 +1168,14 @@ aboutTitle:
 aboutText:
 "我们正在制作一系列免费 AI 效率工具，帮助学生、创作者、开发者和普通用户提高效率。"
 
+    
+xhTitle:"🔥 AI小红书标题生成器",
+    
+    
+xhDesc:"输入你的主题，免费生成多个小红书标题",
 
+    
+xhButton:"✨ 免费生成标题",
 },
 
 
@@ -1197,7 +1206,16 @@ aboutTitle:
 
 aboutText:
 "We are building free AI productivity tools for students, creators and developers."
-
+    
+    
+xhTitle:"🔥 AI Xiaohongshu Title Generator",
+    
+    
+xhDesc:"Enter your topic and generate multiple Xiaohongshu titles for free",
+    
+    
+xhButton:"✨ Generate Titles",
+    
 
 }
 
