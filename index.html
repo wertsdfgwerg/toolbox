@@ -1899,6 +1899,31 @@ function copyText(id){
     </div>
 
 </div>
+<script>
+
+function showDonate(){
+
+    document.getElementById("donateModal").style.display="flex";
+
+}
+
+function hideDonate(){
+
+    document.getElementById("donateModal").style.display="none";
+
+}
+
+function closeDonate(event){
+
+    if(event.target.id === "donateModal"){
+
+        hideDonate();
+
+    }
+
+}
+
+</script>
 
 /* =========================
    分享网站
@@ -1959,31 +1984,6 @@ function shareSite(){
 
 
 
-<script>
-
-function showDonate(){
-
-    document.getElementById("donateModal").style.display="flex";
-
-}
-
-function hideDonate(){
-
-    document.getElementById("donateModal").style.display="none";
-
-}
-
-function closeDonate(event){
-
-    if(event.target.id === "donateModal"){
-
-        hideDonate();
-
-    }
-
-}
-
-</script>
 
 </body>
 
