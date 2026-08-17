@@ -1950,6 +1950,139 @@ function shareSite(){
 </script>
 
 
+<!-- AI小红书标题生成器 -->
+<section id="xiaohongshu-tool" style="
+    max-width:760px;
+    margin:50px auto;
+    padding:25px;
+    border-radius:18px;
+    background:#fff;
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
+">
+
+    <h2 style="text-align:center;">
+        🔥 AI小红书标题生成器
+    </h2>
+
+    <p style="text-align:center;color:#777;">
+        输入你的主题，免费生成多个小红书标题
+    </p>
+
+    <textarea
+        id="topicInput"
+        placeholder="例如：大学生省钱、减肥早餐、旅行攻略……"
+        style="
+            width:100%;
+            min-height:110px;
+            padding:15px;
+            border:1px solid #ddd;
+            border-radius:12px;
+            box-sizing:border-box;
+            resize:vertical;
+            font-size:15px;
+        "
+    ></textarea>
+
+    <button
+        onclick="generateXhsTitles()"
+        style="
+            width:100%;
+            margin-top:15px;
+            padding:14px;
+            border:0;
+            border-radius:12px;
+            background:#ff2442;
+            color:white;
+            font-size:16px;
+            cursor:pointer;
+        "
+    >
+        ✨ 免费生成标题
+    </button>
+
+    <div
+        id="titleResults"
+        style="
+            margin-top:20px;
+            line-height:1.7;
+        "
+    ></div>
+
+</section>
+
+
+<script>
+
+function generateXhsTitles() {
+
+    const topic = document.getElementById("topicInput").value.trim();
+    const result = document.getElementById("titleResults");
+
+    if (!topic) {
+        result.innerHTML =
+            '<p style="color:#e53935;text-align:center;">请输入一个主题再生成哦～</p>';
+        return;
+    }
+
+    const titles = [
+        `🔥 ${topic}｜看完真的后悔没早点知道`,
+        `${topic}攻略｜新手一定要收藏的实用方法`,
+        `关于${topic}，我终于把经验总结出来了`,
+        `${topic}别踩坑！这几个问题一定要注意`,
+        `如果你正在研究${topic}，建议先看完这篇`,
+        `普通人也能学会的${topic}方法`,
+        `💡 ${topic}的5个实用技巧，建议收藏`,
+        `${topic}到底怎么做？一篇给你讲明白`,
+        `亲测有效！我的${topic}经验分享`,
+        `2026年${topic}新手入门指南`
+    ];
+
+    result.innerHTML = `
+        <h3>生成结果</h3>
+
+        ${titles.map((title, index) => `
+            <div style="
+                padding:13px;
+                margin:8px 0;
+                background:#f7f7f7;
+                border-radius:10px;
+                cursor:pointer;
+            "
+            onclick="copyTitle('${title.replace(/'/g, "\\'")}')">
+                ${index + 1}. ${title}
+            </div>
+        `).join("")}
+
+        <p style="
+            text-align:center;
+            color:#999;
+            font-size:13px;
+            margin-top:15px;
+        ">
+            👆 点击任意标题即可复制
+        </p>
+    `;
+}
+
+
+function copyTitle(text) {
+
+    navigator.clipboard.writeText(text).then(() => {
+
+        alert("标题已复制！");
+
+    }).catch(() => {
+
+        alert("复制失败，请手动复制。");
+
+    });
+
+}
+
+</script>
+
+
+
 <!-- 打赏按钮 -->
 <div style="text-align:center;margin:30px 0;">
 
