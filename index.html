@@ -1802,180 +1802,173 @@ function copyText(id){
 
 }
 
+
+
 <!-- 打赏按钮 -->
 <div style="text-align:center;margin:30px 0;">
 
-    <button
-        onclick="showDonate()"
-        style="
-            background:#07c160;
-            color:white;
-            border:0;
-            padding:13px 25px;
-            border-radius:10px;
-            font-size:16px;
-            cursor:pointer;
-        "
-        id="donateButton">
-
-        💚 支持作者
-    </button>
+<button onclick="showDonate()"
+style="
+background:#07c160;
+color:white;
+border:0;
+padding:13px 25px;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+">
+💚 支持作者
+</button>
 
 </div>
 
 
 <!-- 打赏弹窗 -->
-<div
-    id="donateModal"
-    style="
-        display:none;
-        position:fixed;
-        inset:0;
-        background:rgba(0,0,0,.6);
-        z-index:9999;
-        align-items:center;
-        justify-content:center;
-        padding:20px;
-    "
-    onclick="closeDonate(event)"
->
+<div id="donateModal"
+style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+align-items:center;
+justify-content:center;
+z-index:999;
+">
 
-    <div
-        style="
-            background:white;
-            border-radius:18px;
-            padding:25px;
-            width:min(360px,100%);
-            text-align:center;
-            position:relative;
-        "
-        onclick="event.stopPropagation()"
-    >
+<div style="
+background:white;
+padding:30px;
+border-radius:15px;
+text-align:center;
+">
 
-        <button
-            onclick="hideDonate()"
-            style="
-                position:absolute;
-                right:12px;
-                top:10px;
-                border:0;
-                background:none;
-                font-size:24px;
-                cursor:pointer;
-            "
-        >
-            ×
-        </button>
+<h3>支持作者 ❤️</h3>
 
-        <h2 id="donateTitle">
-            💚 支持作者
-        </h2>
+<img src="wechat-pay.png"
+alt="微信收款二维码"
+style="
+width:240px;
+max-width:100%;
+border-radius:10px;
+">
 
-        <p id="donateText">
-            如果这个网站对你有帮助，
-            欢迎请作者喝杯咖啡 ☕
-        </p>
+<p style="color:#777;margin-top:15px;">
+感谢你的支持 💗
+</p>
 
-        <img
-            src="wechat-pay.png"
-            alt="微信收款二维码"
-            style="
-                width:240px;
-                max-width:100%;
-                border-radius:10px;
-            "
-        >
-
-        <p
-            id="donateThanks"
-            style="
-                color:#777;
-                margin-top:15px;
-            "
-        >
-            感谢你的支持 ❤️
-        </p>
-
-    </div>
+<button onclick="hideDonate()"
+style="
+padding:8px 20px;
+border:0;
+border-radius:8px;
+cursor:pointer;
+">
+关闭
+</button>
 
 </div>
+
+</div>
+
+
+
+<!-- 分享网站 -->
+
+<div style="margin:30px 0;">
+
+<p>
+如果这个网站对你有帮助，可以分享给朋友
+</p>
+
+
+<button onclick="shareSite()"
+style="
+padding:10px 20px;
+border:0;
+border-radius:8px;
+cursor:pointer;
+">
+📤 分享 AI小工具箱
+</button>
+
+</div>
+
+
+
+<!-- 关于 -->
+
+<div class="about-box">
+
+<h2>🌍 关于 AI小工具箱</h2>
+
+<p>
+我们正在制作一系列免费 AI 效率工具，帮助学生、创作者、开发者和普通用户提高效率。
+</p>
+
+<p>
+更多工具正在开发中。
+</p>
+
+</div>
+
+
+
+<footer>
+
+© 2026 AI小工具箱 · Free AI Tools
+
+<br>
+
+🔒 本网站不会保存你的输入内容
+
+</footer>
+
+
+
 <script>
 
 function showDonate(){
 
-    document.getElementById("donateModal").style.display="flex";
+document.getElementById("donateModal").style.display="flex";
 
 }
+
 
 function hideDonate(){
 
-    document.getElementById("donateModal").style.display="none";
+document.getElementById("donateModal").style.display="none";
 
 }
 
-function closeDonate(event){
-
-    if(event.target.id === "donateModal"){
-
-        hideDonate();
-
-    }
-
-}
-
-</script>
-
-/* =========================
-   分享网站
-========================= */
 
 function shareSite(){
 
-    const url =
-        window.location.href;
+const url = window.location.href;
 
+if(navigator.share){
 
-    const title =
-        currentLanguage === "zh"
-        ? "AI小工具箱"
-        : "AI Toolbox";
+navigator.share({
 
+title:"AI小工具箱",
 
-    const text =
-        currentLanguage === "zh"
-        ? "这个免费的AI工具箱挺方便，可以试试："
-        : "Check out this free AI toolbox:";
+text:"这个免费的AI工具箱挺方便，可以试试",
 
+url:url
 
-    if(navigator.share){
+});
 
-        navigator.share({
+}else{
 
-            title:title,
+navigator.clipboard.writeText(url).then(()=>{
 
-            text:text,
+alert("✅ 网站地址已复制，可以分享给朋友了");
 
-            url:url
+});
 
-        });
-
-    }
-
-    else{
-
-        navigator.clipboard
-            .writeText(url)
-            .then(()=>{
-
-                alert(
-                    currentLanguage === "zh"
-                    ? "✅ 网站地址已复制，可以发给朋友了！"
-                    : "✅ Website link copied!"
-                );
-
-            });
-
-    }
+}
 
 }
 
