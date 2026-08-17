@@ -1949,6 +1949,131 @@ function shareSite(){
 </script>
 
 
+<!-- 打赏按钮 -->
+<div style="text-align:center;margin:30px 0;">
+
+    <button
+        onclick="showDonate()"
+        style="
+            background:#07c160;
+            color:white;
+            border:0;
+            padding:13px 25px;
+            border-radius:10px;
+            font-size:16px;
+            cursor:pointer;
+        "
+        id="donateButton">
+
+        💚 支持作者
+    </button>
+
+</div>
+
+
+<!-- 打赏弹窗 -->
+<div
+    id="donateModal"
+    style="
+        display:none;
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,.6);
+        z-index:9999;
+        align-items:center;
+        justify-content:center;
+        padding:20px;
+    "
+    onclick="closeDonate(event)"
+>
+
+    <div
+        style="
+            background:white;
+            border-radius:18px;
+            padding:25px;
+            width:min(360px,100%);
+            text-align:center;
+            position:relative;
+        "
+        onclick="event.stopPropagation()"
+    >
+
+        <button
+            onclick="hideDonate()"
+            style="
+                position:absolute;
+                right:12px;
+                top:10px;
+                border:0;
+                background:none;
+                font-size:24px;
+                cursor:pointer;
+            "
+        >
+            ×
+        </button>
+
+        <h2 id="donateTitle">
+            💚 支持作者
+        </h2>
+
+        <p id="donateText">
+            如果这个网站对你有帮助，
+            欢迎请作者喝杯咖啡 ☕
+        </p>
+
+        <img
+            src="wechat-pay.png"
+            alt="微信收款二维码"
+            style="
+                width:240px;
+                max-width:100%;
+                border-radius:10px;
+            "
+        >
+
+        <p
+            id="donateThanks"
+            style="
+                color:#777;
+                margin-top:15px;
+            "
+        >
+            感谢你的支持 ❤️
+        </p>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function showDonate(){
+
+    document.getElementById("donateModal").style.display="flex";
+
+}
+
+function hideDonate(){
+
+    document.getElementById("donateModal").style.display="none";
+
+}
+
+function closeDonate(event){
+
+    if(event.target.id === "donateModal"){
+
+        hideDonate();
+
+    }
+
+}
+
+</script>
+
 </body>
 
 </html>
