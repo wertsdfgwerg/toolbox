@@ -1801,11 +1801,64 @@ function copyText(id){
         });
 
 }
+<!-- 分享网站 -->
+<div style="margin:40px 0;text-align:left;">
+
+<p>
+如果这个网站对你有帮助，可以分享给朋友
+</p>
+
+<button onclick="shareSite()"
+style="
+padding:12px 25px;
+border:0;
+border-radius:10px;
+background:#f5f5f5;
+font-size:16px;
+cursor:pointer;
+">
+📤 分享 AI小工具箱
+</button>
+
+</div>
+
+
+
+<!-- 关于AI小工具箱 -->
+
+<div style="
+background:white;
+padding:35px;
+border-radius:20px;
+margin-top:20px;
+">
+
+<h2>
+🌍 关于 AI小工具箱
+</h2>
+
+
+<p>
+我们正在制作一系列免费 AI 效率工具，帮助学生、创作者、开发者和普通用户提高效率。
+</p>
+
+
+<p>
+更多工具正在开发中。
+</p>
+
+
+</div>
 
 
 
 <!-- 打赏按钮 -->
-<div style="text-align:center;margin:30px 0;">
+
+<div style="
+text-align:center;
+margin:40px 0;
+">
+
 
 <button onclick="showDonate()"
 style="
@@ -1817,13 +1870,19 @@ border-radius:10px;
 font-size:16px;
 cursor:pointer;
 ">
+
 💚 支持作者
+
 </button>
+
 
 </div>
 
 
+
+
 <!-- 打赏弹窗 -->
+
 <div id="donateModal"
 style="
 display:none;
@@ -1833,31 +1892,37 @@ left:0;
 width:100%;
 height:100%;
 background:rgba(0,0,0,0.5);
-align-items:center;
 justify-content:center;
+align-items:center;
 z-index:999;
 ">
+
 
 <div style="
 background:white;
 padding:30px;
-border-radius:15px;
+border-radius:20px;
 text-align:center;
 ">
 
-<h3>支持作者 ❤️</h3>
+
+<h3>
+感谢支持 ❤️
+</h3>
+
 
 <img src="wechat-pay.png"
-alt="微信收款二维码"
 style="
 width:240px;
 max-width:100%;
 border-radius:10px;
 ">
 
-<p style="color:#777;margin-top:15px;">
+
+<p>
 感谢你的支持 💗
 </p>
+
 
 <button onclick="hideDonate()"
 style="
@@ -1866,57 +1931,26 @@ border:0;
 border-radius:8px;
 cursor:pointer;
 ">
+
 关闭
+
 </button>
 
-</div>
 
 </div>
 
 
-
-<!-- 分享网站 -->
-
-<div style="margin:30px 0;">
-
-<p>
-如果这个网站对你有帮助，可以分享给朋友
-</p>
+</div>
 
 
-<button onclick="shareSite()"
-style="
-padding:10px 20px;
-border:0;
-border-radius:8px;
-cursor:pointer;
+
+
+<!-- 页脚 -->
+
+<div style="
+margin-top:30px;
+font-size:14px;
 ">
-📤 分享 AI小工具箱
-</button>
-
-</div>
-
-
-
-<!-- 关于 -->
-
-<div class="about-box">
-
-<h2>🌍 关于 AI小工具箱</h2>
-
-<p>
-我们正在制作一系列免费 AI 效率工具，帮助学生、创作者、开发者和普通用户提高效率。
-</p>
-
-<p>
-更多工具正在开发中。
-</p>
-
-</div>
-
-
-
-<footer>
 
 © 2026 AI小工具箱 · Free AI Tools
 
@@ -1924,17 +1958,61 @@ cursor:pointer;
 
 🔒 本网站不会保存你的输入内容
 
-</footer>
+</div>
+
+
 
 
 
 <script>
+
+
+// 分享功能
+
+function shareSite(){
+
+const url=window.location.href;
+
+
+if(navigator.share){
+
+navigator.share({
+
+title:"AI小工具箱",
+
+text:"免费的AI效率工具",
+
+url:url
+
+});
+
+
+}else{
+
+
+navigator.clipboard.writeText(url).then(()=>{
+
+alert("✅ 网站地址已复制，可以分享给朋友");
+
+});
+
+
+}
+
+
+}
+
+
+
+
+// 打赏弹窗
 
 function showDonate(){
 
 document.getElementById("donateModal").style.display="flex";
 
 }
+
 
 
 function hideDonate(){
@@ -1944,38 +2022,8 @@ document.getElementById("donateModal").style.display="none";
 }
 
 
-function shareSite(){
-
-const url = window.location.href;
-
-if(navigator.share){
-
-navigator.share({
-
-title:"AI小工具箱",
-
-text:"这个免费的AI工具箱挺方便，可以试试",
-
-url:url
-
-});
-
-}else{
-
-navigator.clipboard.writeText(url).then(()=>{
-
-alert("✅ 网站地址已复制，可以分享给朋友了");
-
-});
-
-}
-
-}
 
 </script>
-
-
-
 
 
 </body>
