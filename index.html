@@ -1,322 +1,1045 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>AI小工具箱 | AI Toolbox</title>
 
+<meta name="description" content="免费AI提示词、简历、标题生成工具。Free AI productivity tools.">
+
 <style>
 
+*{
+    box-sizing:border-box;
+}
+
 body{
-font-family:Arial,"Microsoft YaHei";
-max-width:900px;
-margin:auto;
-padding:30px;
-background:#f5f7fa;
+    margin:0;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Microsoft YaHei",
+        Arial,
+        sans-serif;
+    background:#f5f7fb;
+    color:#171717;
 }
 
-h1{
-text-align:center;
+.container{
+    max-width:1050px;
+    margin:auto;
+    padding:30px 20px 60px;
 }
 
-.subtitle{
-text-align:center;
-color:#666;
+/* 顶部 */
+
+.header{
+    position:relative;
+    text-align:center;
+    padding:25px 0 35px;
 }
+
+.header h1{
+    font-size:42px;
+    margin:25px 0 12px;
+}
+
+.header p{
+    color:#666;
+    font-size:18px;
+    line-height:1.6;
+}
+
+/* 中英文切换 */
+
+.language-switch{
+    position:absolute;
+    right:0;
+    top:10px;
+    display:flex;
+    background:white;
+    border:1px solid #ddd;
+    border-radius:30px;
+    padding:4px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.language-switch button{
+    border:0;
+    background:transparent;
+    padding:10px 18px;
+    border-radius:22px;
+    cursor:pointer;
+    font-size:15px;
+    color:#555;
+}
+
+.language-switch button.active{
+    background:#171717;
+    color:white;
+}
+
+/* 工具卡片 */
 
 .card{
-
-background:white;
-padding:25px;
-margin:20px 0;
-border-radius:15px;
-box-shadow:0 5px 15px #ddd;
-
+    background:white;
+    border-radius:18px;
+    padding:30px;
+    margin-bottom:25px;
+    box-shadow:0 8px 30px rgba(0,0,0,.07);
 }
 
+.card h2{
+    margin-top:0;
+    font-size:25px;
+}
+
+.description{
+    color:#666;
+    margin-bottom:20px;
+}
+
+/* 输入框 */
 
 textarea{
-
-width:100%;
-height:120px;
-padding:10px;
-font-size:16px;
-
+    width:100%;
+    min-height:135px;
+    resize:vertical;
+    border:1px solid #ddd;
+    border-radius:12px;
+    padding:15px;
+    font-size:16px;
+    font-family:inherit;
+    outline:none;
 }
 
-
-button{
-
-background:#222;
-color:white;
-padding:12px 25px;
-border:none;
-border-radius:8px;
-cursor:pointer;
-
+textarea:focus{
+    border-color:#777;
 }
 
+/* 选择框 */
+
+select{
+    width:100%;
+    padding:13px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    margin-bottom:15px;
+    font-size:16px;
+    background:white;
+}
+
+/* 按钮 */
+
+.button-row{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:15px;
+}
+
+.primary{
+    background:#171717;
+    color:white;
+    border:0;
+    padding:12px 22px;
+    border-radius:9px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.secondary{
+    background:#eee;
+    color:#222;
+    border:0;
+    padding:12px 22px;
+    border-radius:9px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    opacity:.85;
+}
+
+/* 输出 */
 
 .result{
-
-margin-top:20px;
-background:#eee;
-padding:15px;
-white-space:pre-wrap;
-
+    margin-top:20px;
+    background:#f5f5f5;
+    border-radius:12px;
+    padding:20px;
+    min-height:100px;
+    white-space:pre-wrap;
+    line-height:1.7;
+    word-break:break-word;
 }
 
+/* 工具导航 */
+
+.tools{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-bottom:30px;
+}
 
 .tool{
-
-display:inline-block;
-background:#f0f0f0;
-padding:10px;
-margin:5px;
-border-radius:8px;
-
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
 }
 
+.tool-icon{
+    font-size:30px;
+}
+
+.tool-title{
+    font-weight:bold;
+    margin-top:8px;
+}
+
+/* 页脚 */
 
 footer{
+    text-align:center;
+    color:#888;
+    padding-top:20px;
+}
 
-text-align:center;
-color:#888;
-margin-top:40px;
+/* 手机 */
+
+@media(max-width:700px){
+
+    .container{
+        padding:20px 14px 40px;
+    }
+
+    .header h1{
+        font-size:31px;
+        margin-top:70px;
+    }
+
+    .header p{
+        font-size:16px;
+    }
+
+    .language-switch{
+        right:50%;
+        transform:translateX(50%);
+        top:10px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .tools{
+        grid-template-columns:1fr;
+    }
 
 }
 
 </style>
-
 </head>
 
 
 <body>
 
+<div class="container">
 
-<h1>
-🤖 AI小工具箱
-</h1>
+    <!-- 顶部 -->
 
+    <header class="header">
 
-<p class="subtitle">
+        <div class="language-switch">
 
-免费 AI 效率工具集合<br>
+            <button id="zhBtn"
+                    class="active"
+                    onclick="setLanguage('zh')">
+                中文
+            </button>
 
-Free AI Productivity Tools
+            <button id="enBtn"
+                    onclick="setLanguage('en')">
+                English
+            </button>
 
-</p>
+        </div>
 
+        <h1 id="siteTitle">
+            🤖 AI小工具箱
+        </h1>
 
+        <p id="siteDescription">
+            免费、简单、实用的 AI 效率工具<br>
+            无需安装 · 无需注册 · 免费使用
+        </p>
 
-<div class="card">
-
-
-<h2>
-🔥 AI提示词生成器
-</h2>
-
-
-<p>
-告诉我你想做什么，生成专业AI提示词
-</p>
-
-
-<textarea id="input"
-placeholder="例如：帮我写小红书减肥文案">
-</textarea>
-
-
-<br><br>
+    </header>
 
 
-<button onclick="generate()">
+    <!-- 工具导航 -->
 
-生成提示词
+    <div class="tools">
 
-</button>
+        <div class="tool">
+            <div class="tool-icon">🔥</div>
+            <div class="tool-title" id="navPrompt">
+                AI提示词
+            </div>
+        </div>
+
+        <div class="tool">
+            <div class="tool-icon">📝</div>
+            <div class="tool-title" id="navResume">
+                AI简历助手
+            </div>
+        </div>
+
+        <div class="tool">
+            <div class="tool-icon">💡</div>
+            <div class="tool-title" id="navTitle">
+                AI标题生成
+            </div>
+        </div>
+
+    </div>
 
 
-<div class="result" id="output">
+    <!-- AI提示词 -->
 
-等待生成...
+    <div class="card">
+
+        <h2 id="promptTitle">
+            🔥 AI提示词生成器
+        </h2>
+
+        <p class="description" id="promptDescription">
+            告诉我们你想做什么，生成一份可以直接复制给 ChatGPT、
+            Claude 或其他 AI 使用的专业提示词。
+        </p>
+
+        <select id="promptType">
+
+            <option value="general">
+                通用任务
+            </option>
+
+            <option value="writing">
+                📝 写作
+            </option>
+
+            <option value="xiaohongshu">
+                📱 小红书
+            </option>
+
+            <option value="study">
+                📚 学习
+            </option>
+
+            <option value="programming">
+                💻 编程
+            </option>
+
+            <option value="business">
+                💼 商业
+            </option>
+
+        </select>
+
+
+        <textarea
+            id="promptInput"
+            placeholder="例如：帮我写一篇关于减肥的文章">
+        </textarea>
+
+
+        <div class="button-row">
+
+            <button
+                class="primary"
+                onclick="generatePrompt()"
+                id="generatePromptBtn">
+                生成提示词
+            </button>
+
+            <button
+                class="secondary"
+                onclick="copyText('promptOutput')"
+                id="copyPromptBtn">
+                📋 一键复制
+            </button>
+
+        </div>
+
+
+        <div
+            class="result"
+            id="promptOutput">
+            等待生成……
+        </div>
+
+    </div>
+
+
+    <!-- 简历 -->
+
+    <div class="card">
+
+        <h2 id="resumeTitle">
+            📝 AI简历助手
+        </h2>
+
+        <p class="description" id="resumeDescription">
+            输入你的教育经历、技能和项目经验，生成专业的简历优化提示词。
+        </p>
+
+
+        <textarea
+            id="resumeInput"
+            placeholder="例如：大学毕业，会Python，做过一个网站项目……">
+        </textarea>
+
+
+        <div class="button-row">
+
+            <button
+                class="primary"
+                onclick="generateResume()"
+                id="generateResumeBtn">
+                生成简历提示词
+            </button>
+
+            <button
+                class="secondary"
+                onclick="copyText('resumeOutput')">
+                📋 一键复制
+            </button>
+
+        </div>
+
+
+        <div
+            class="result"
+            id="resumeOutput">
+            等待生成……
+        </div>
+
+    </div>
+
+
+    <!-- 标题 -->
+
+    <div class="card">
+
+        <h2 id="titleToolTitle">
+            💡 AI标题生成器
+        </h2>
+
+        <p class="description" id="titleToolDescription">
+            输入你的主题，生成多个吸引人的标题。
+        </p>
+
+
+        <textarea
+            id="titleInput"
+            placeholder="例如：大学生如何利用AI提高学习效率">
+        </textarea>
+
+
+        <div class="button-row">
+
+            <button
+                class="primary"
+                onclick="generateTitles()"
+                id="generateTitleBtn">
+                生成标题
+            </button>
+
+            <button
+                class="secondary"
+                onclick="copyText('titleOutput')">
+                📋 一键复制
+            </button>
+
+        </div>
+
+
+        <div
+            class="result"
+            id="titleOutput">
+            等待生成……
+        </div>
+
+    </div>
+
+
+    <!-- 关于 -->
+
+    <div class="card">
+
+        <h2 id="aboutTitle">
+            🌍 关于 AI小工具箱
+        </h2>
+
+        <p id="aboutText">
+            我们正在制作一系列免费 AI 效率工具，
+            帮助学生、创作者、开发者和普通用户提高效率。
+        </p>
+
+        <p id="aboutText2">
+            更多工具正在开发中。
+        </p>
+
+    </div>
+
+
+    <footer id="footerText">
+        © 2026 AI小工具箱 · Free AI Tools
+    </footer>
 
 </div>
-
-
-</div>
-
-
-
-<div class="card">
-
-
-<h2>
-📄 AI简历助手
-</h2>
-
-
-<p>
-
-输入你的经历，生成简历优化提示词
-
-</p>
-
-
-<textarea id="resume"
-
-placeholder="例如：大学毕业，会Python，有项目经验">
-
-</textarea>
-
-
-<br><br>
-
-
-<button onclick="resumeAI()">
-
-生成简历提示词
-
-</button>
-
-
-<div class="result" id="resumeout">
-
-等待生成...
-
-</div>
-
-
-</div>
-
-
-
-
-<div class="card">
-
-
-<h2>
-🌍 English AI Tools
-</h2>
-
-
-<div class="tool">
-AI Prompt Generator
-</div>
-
-
-<div class="tool">
-AI Resume Helper
-</div>
-
-
-<div class="tool">
-AI Writing Assistant
-</div>
-
-
-</div>
-
-
-
-
-<div class="card">
-
-
-<h2>
-未来计划
-
-</h2>
-
-<p>
-
-✅ AI聊天助手<br>
-✅ AI图片工具<br>
-✅ AI文案工具<br>
-✅ 更多自动化工具
-
-</p>
-
-
-</div>
-
-
-
-<footer>
-
-© 2026 AI Toolbox
-
-</footer>
-
 
 
 
 <script>
 
+/* =========================
+   当前语言
+========================= */
 
-function generate(){
+let currentLanguage = "zh";
 
 
-let text=document.getElementById("input").value;
+/* =========================
+   中文
+========================= */
+
+const zh = {
+
+    siteTitle:"🤖 AI小工具箱",
+
+    siteDescription:
+        "免费、简单、实用的 AI 效率工具<br>无需安装 · 无需注册 · 免费使用",
+
+    navPrompt:"AI提示词",
+    navResume:"AI简历助手",
+    navTitle:"AI标题生成",
+
+    promptTitle:"🔥 AI提示词生成器",
+
+    promptDescription:
+        "告诉我们你想做什么，生成一份可以直接复制给 ChatGPT、Claude 或其他 AI 使用的专业提示词。",
+
+    promptPlaceholder:
+        "例如：帮我写一篇关于减肥的文章",
+
+    generatePrompt:"生成提示词",
+
+    promptWaiting:"等待生成……",
+
+    resumeTitle:"📝 AI简历助手",
+
+    resumeDescription:
+        "输入你的教育经历、技能和项目经验，生成专业的简历优化提示词。",
+
+    resumePlaceholder:
+        "例如：大学毕业，会Python，做过一个网站项目……",
+
+    generateResume:"生成简历提示词",
+
+    titleToolTitle:"💡 AI标题生成器",
+
+    titleToolDescription:
+        "输入你的主题，生成多个吸引人的标题。",
+
+    titlePlaceholder:
+        "例如：大学生如何利用AI提高学习效率",
+
+    generateTitle:"生成标题",
+
+    aboutTitle:"🌍 关于 AI小工具箱",
+
+    aboutText:
+        "我们正在制作一系列免费 AI 效率工具，帮助学生、创作者、开发者和普通用户提高效率。",
+
+    aboutText2:
+        "更多工具正在开发中。",
+
+    footer:"© 2026 AI小工具箱 · Free AI Tools"
+
+};
 
 
-document.getElementById("output").innerHTML=
+/* =========================
+   English
+========================= */
 
-`
-你是一名专业AI助手。
+const en = {
 
-请完成以下任务：
+    siteTitle:"🤖 AI Toolbox",
 
-${text}
+    siteDescription:
+        "Free, simple and useful AI productivity tools<br>No installation · No registration · Free to use",
 
-要求：
+    navPrompt:"AI Prompts",
+    navResume:"AI Resume",
+    navTitle:"AI Titles",
 
-1. 给出详细步骤
-2. 输出高质量结果
-3. 优化表达方式
-4. 提供多个方案
+    promptTitle:"🔥 AI Prompt Generator",
 
-`;
+    promptDescription:
+        "Tell us what you want to do and generate a professional prompt that you can copy to ChatGPT, Claude or other AI tools.",
 
+    promptPlaceholder:
+        "Example: Write an article about losing weight",
+
+    generatePrompt:"Generate Prompt",
+
+    promptWaiting:"Waiting for generation...",
+
+    resumeTitle:"📝 AI Resume Assistant",
+
+    resumeDescription:
+        "Enter your education, skills and project experience to create a professional resume prompt.",
+
+    resumePlaceholder:
+        "Example: College graduate, knows Python, built a website project...",
+
+    generateResume:"Generate Resume Prompt",
+
+    titleToolTitle:"💡 AI Title Generator",
+
+    titleToolDescription:
+        "Enter your topic and generate multiple attractive titles.",
+
+    titlePlaceholder:
+        "Example: How college students can use AI to study more efficiently",
+
+    generateTitle:"Generate Titles",
+
+    aboutTitle:"🌍 About AI Toolbox",
+
+    aboutText:
+        "We are building a collection of free AI productivity tools for students, creators, developers and everyday users.",
+
+    aboutText2:
+        "More tools are coming soon.",
+
+    footer:"© 2026 AI Toolbox · Free AI Tools"
+
+};
+
+
+/* =========================
+   切换语言
+========================= */
+
+function setLanguage(language){
+
+    currentLanguage = language;
+
+    const t = language === "zh" ? zh : en;
+
+    document.documentElement.lang =
+        language === "zh" ? "zh-CN" : "en";
+
+    document.getElementById("siteTitle").innerHTML =
+        t.siteTitle;
+
+    document.getElementById("siteDescription").innerHTML =
+        t.siteDescription;
+
+    document.getElementById("navPrompt").innerText =
+        t.navPrompt;
+
+    document.getElementById("navResume").innerText =
+        t.navResume;
+
+    document.getElementById("navTitle").innerText =
+        t.navTitle;
+
+    document.getElementById("promptTitle").innerText =
+        t.promptTitle;
+
+    document.getElementById("promptDescription").innerText =
+        t.promptDescription;
+
+    document.getElementById("promptInput").placeholder =
+        t.promptPlaceholder;
+
+    document.getElementById("generatePromptBtn").innerText =
+        t.generatePrompt;
+
+    document.getElementById("resumeTitle").innerText =
+        t.resumeTitle;
+
+    document.getElementById("resumeDescription").innerText =
+        t.resumeDescription;
+
+    document.getElementById("resumeInput").placeholder =
+        t.resumePlaceholder;
+
+    document.getElementById("generateResumeBtn").innerText =
+        t.generateResume;
+
+    document.getElementById("titleToolTitle").innerText =
+        t.titleToolTitle;
+
+    document.getElementById("titleToolDescription").innerText =
+        t.titleToolDescription;
+
+    document.getElementById("titleInput").placeholder =
+        t.titlePlaceholder;
+
+    document.getElementById("generateTitleBtn").innerText =
+        t.generateTitle;
+
+    document.getElementById("aboutTitle").innerText =
+        t.aboutTitle;
+
+    document.getElementById("aboutText").innerText =
+        t.aboutText;
+
+    document.getElementById("aboutText2").innerText =
+        t.aboutText2;
+
+    document.getElementById("footerText").innerText =
+        t.footer;
+
+
+    document.getElementById("zhBtn")
+        .classList.toggle("active",language === "zh");
+
+    document.getElementById("enBtn")
+        .classList.toggle("active",language === "en");
 }
 
 
+/* =========================
+   AI提示词
+========================= */
 
-function resumeAI(){
+function generatePrompt(){
 
+    const input =
+        document.getElementById("promptInput").value.trim();
 
-let text=document.getElementById("resume").value;
+    const type =
+        document.getElementById("promptType").value;
 
+    if(!input){
 
-document.getElementById("resumeout").innerHTML=
+        alert(
+            currentLanguage === "zh"
+            ? "请先输入你想完成的任务。"
+            : "Please enter what you want to accomplish."
+        );
 
-`
-
-你是一名专业简历顾问。
-
-请根据以下经历：
-
-${text}
-
-
-生成：
-
-1. 简历项目描述
-2. 技能总结
-3. 自我介绍
-4. 面试回答建议
+        return;
+    }
 
 
-`;
+    let role = "";
 
+    if(type === "writing"){
+        role =
+            currentLanguage === "zh"
+            ? "你是一名专业内容创作者和写作专家。"
+            : "You are a professional content creator and writing expert.";
+    }
+
+    else if(type === "xiaohongshu"){
+        role =
+            currentLanguage === "zh"
+            ? "你是一名资深小红书内容运营专家。"
+            : "You are an experienced Xiaohongshu content strategist.";
+    }
+
+    else if(type === "study"){
+        role =
+            currentLanguage === "zh"
+            ? "你是一名专业学习顾问和教师。"
+            : "You are a professional learning coach and teacher.";
+    }
+
+    else if(type === "programming"){
+        role =
+            currentLanguage === "zh"
+            ? "你是一名资深软件工程师和编程导师。"
+            : "You are a senior software engineer and programming mentor.";
+    }
+
+    else if(type === "business"){
+        role =
+            currentLanguage === "zh"
+            ? "你是一名专业商业顾问。"
+            : "You are a professional business consultant.";
+    }
+
+    else{
+        role =
+            currentLanguage === "zh"
+            ? "你是一名专业AI助手。"
+            : "You are a professional AI assistant.";
+    }
+
+
+    let result;
+
+    if(currentLanguage === "zh"){
+
+        result =
+`${role}
+
+请帮助我完成以下任务：
+
+【任务】
+${input}
+
+请按照以下要求完成：
+
+1. 先分析任务目标
+2. 给出清晰、具体的解决方案
+3. 如果存在多个方案，请进行比较
+4. 输出可以直接使用的最终结果
+5. 使用清晰、专业、容易理解的语言
+6. 不要编造不存在的信息
+
+如果信息不足，请先告诉我需要补充哪些信息。`;
+
+    }else{
+
+        result =
+`${role}
+
+Please help me complete the following task:
+
+[TASK]
+${input}
+
+Requirements:
+
+1. Analyze the goal first.
+2. Provide a clear and practical solution.
+3. Compare multiple approaches when appropriate.
+4. Provide a ready-to-use final result.
+5. Use clear, professional and easy-to-understand language.
+6. Do not invent information.
+
+If important information is missing, tell me what additional information you need first.`;
+
+    }
+
+
+    document.getElementById("promptOutput").innerText =
+        result;
 }
 
 
+/* =========================
+   简历
+========================= */
+
+function generateResume(){
+
+    const input =
+        document.getElementById("resumeInput").value.trim();
+
+    if(!input){
+
+        alert(
+            currentLanguage === "zh"
+            ? "请先输入你的经历。"
+            : "Please enter your experience first."
+        );
+
+        return;
+    }
+
+
+    let result;
+
+    if(currentLanguage === "zh"){
+
+        result =
+`你是一名专业的简历顾问和招聘专家。
+
+以下是我的个人经历：
+
+${input}
+
+请帮我：
+
+1. 提炼核心技能
+2. 优化项目经历
+3. 使用专业的简历语言
+4. 突出可以量化的成果
+5. 生成适合求职的自我介绍
+6. 给出简历修改建议
+
+不要虚构我的经历，如果缺少信息，请明确指出。`;
+
+    }else{
+
+        result =
+`You are a professional resume consultant and recruitment expert.
+
+Here is my experience:
+
+${input}
+
+Please help me:
+
+1. Identify my core skills.
+2. Improve my project descriptions.
+3. Use professional resume language.
+4. Highlight measurable achievements.
+5. Create a professional self-introduction.
+6. Provide resume improvement suggestions.
+
+Do not invent any experience. Clearly identify missing information.`;
+
+    }
+
+
+    document.getElementById("resumeOutput").innerText =
+        result;
+}
+
+
+/* =========================
+   标题生成
+========================= */
+
+function generateTitles(){
+
+    const input =
+        document.getElementById("titleInput").value.trim();
+
+    if(!input){
+
+        alert(
+            currentLanguage === "zh"
+            ? "请先输入一个主题。"
+            : "Please enter a topic first."
+        );
+
+        return;
+    }
+
+
+    let result;
+
+    if(currentLanguage === "zh"){
+
+        result =
+`你是一名专业内容运营和标题策划专家。
+
+主题：
+
+${input}
+
+请生成20个不同风格的标题：
+
+1. 好奇型
+2. 实用型
+3. 数字型
+4. 提问型
+5. 对比型
+6. 痛点型
+7. 干货型
+8. 新闻型
+9. 情绪型
+10. 高点击率型
+
+要求标题自然，不要夸大，不要标题党。`;
+
+    }else{
+
+        result =
+`You are a professional content strategist and headline expert.
+
+Topic:
+
+${input}
+
+Generate 20 different headline ideas:
+
+1. Curiosity-driven
+2. Practical
+3. Number-based
+4. Question-based
+5. Comparison
+6. Pain-point focused
+7. Educational
+8. News-style
+9. Emotional
+10. High-engagement
+
+Keep the titles natural and avoid misleading clickbait.`;
+
+    }
+
+
+    document.getElementById("titleOutput").innerText =
+        result;
+}
+
+
+/* =========================
+   一键复制
+========================= */
+
+function copyText(id){
+
+    const text =
+        document.getElementById(id).innerText;
+
+    if(
+        !text ||
+        text.includes("等待生成") ||
+        text.includes("Waiting for generation")
+    ){
+
+        alert(
+            currentLanguage === "zh"
+            ? "请先生成内容。"
+            : "Please generate something first."
+        );
+
+        return;
+    }
+
+
+    navigator.clipboard.writeText(text)
+        .then(()=>{
+
+            alert(
+                currentLanguage === "zh"
+                ? "✅ 已复制到剪贴板！"
+                : "✅ Copied to clipboard!"
+            );
+
+        })
+        .catch(()=>{
+
+            alert(
+                currentLanguage === "zh"
+                ? "复制失败，请手动复制。"
+                : "Copy failed. Please copy manually."
+            );
+
+        });
+
+}
 
 </script>
 
-
 </body>
-
 </html>
