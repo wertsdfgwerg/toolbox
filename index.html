@@ -618,32 +618,32 @@ FREE
 <select id="promptType">
 
 
-<option value="general">
+<option id="optionGeneral" value="general">
 通用任务
 </option>
 
 
-<option value="writing">
+<option id="optionWriting" value="writing">
 📝 写作
 </option>
 
 
-<option value="xiaohongshu">
+<option id="optionXhs" value="xiaohongshu">
 📱 小红书
 </option>
 
 
-<option value="study">
+<option id="optionStudy" value="study">
 📚 学习
 </option>
 
 
-<option value="programming">
+<option id="optionProgramming" value="programming">
 💻 编程
 </option>
 
 
-<option value="business">
+<option id="optionBusiness" value="business">
 💼 商业
 </option>
 
@@ -1195,7 +1195,18 @@ titleToolTitle:"💡 AI标题生成器",
 
 titleToolDesc:"输入你的主题，生成多个吸引人的标题。",
 
-    
+optionGeneral:"通用任务",
+
+optionWriting:"📝 写作",
+
+optionXhs:"📱 小红书",
+
+optionStudy:"📚 学习",
+
+optionProgramming:"💻 编程",    
+
+optionBusiness:"💼 商业",
+
 },
 
 
@@ -1254,8 +1265,18 @@ titleToolTitle:"💡 AI Title Generator",
 
 titleToolDesc:"Enter your topic and generate multiple attractive titles.",
 
+optionGeneral:"General",
 
-    
+optionWriting:"📝 Writing",
+
+optionXhs:"📱 Xiaohongshu",
+
+optionStudy:"📚 Study",
+
+optionProgramming:"💻 Programming",
+
+optionBusiness:"💼 Business",
+
 }
 
 
@@ -1317,6 +1338,21 @@ document.getElementById("zhBtn")
 
 document.getElementById("enBtn")
 .classList.toggle("active",lang==="en");
+
+
+document.getElementById("optionGeneral").innerText=t.optionGeneral;
+
+
+document.getElementById("optionWriting").innerText=t.optionWriting;
+
+
+document.getElementById("optionXhs").innerText=t.optionXhs;
+
+
+document.getElementById("optionStudy").innerText=t.optionStudy;
+
+
+document.getElementById("optionProgramming").innerText=t.optionProgramming;
 
 
 // 工具区域翻译补充
