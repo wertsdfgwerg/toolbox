@@ -694,10 +694,9 @@ onclick="copyText('promptOutput')">
 
 <div class="result" id="promptOutput">
 
-等待生成……
+<span data-i18n="generateLoading">等待生成...</span>
 
 </div>
-
 
 
 </div>
@@ -775,10 +774,9 @@ onclick="copyText('resumeOutput')">
 
 <div class="result" id="resumeOutput">
 
-等待生成……
+<span data-i18n="generateLoading">等待生成...</span>
 
 </div>
-
 
 
 </div>
@@ -861,7 +859,7 @@ onclick="copyText('titleOutput')">
 
 <div class="result" id="titleOutput">
 
-等待生成……
+<span data-i18n="generateLoading">等待生成...</span>
 
 </div>
 
@@ -1182,7 +1180,7 @@ xhButton:"✨ 免费生成标题",
 
 copyButton:"📋 一键复制",
 
-generateWaiting:"等待生成……",
+generateLoading:"等待生成...",
 
 freeLabel:"FREE",
 
@@ -1210,6 +1208,10 @@ optionProgramming:"💻 编程",
 
 optionBusiness:"💼 商业",
 
+promptWaiting: "等待生成......",
+resumeWaiting: "等待生成......",
+titleWaiting: "等待生成......",
+    
 },
 
 
@@ -1259,7 +1261,7 @@ xhButton:"✨ Generate Titles",
 copyButton:"📋 Copy",
 
     
-generateWaiting:"Generating...",
+generateLoading:"Generating...",
 
     
 freeLabel:"FREE",
@@ -1289,6 +1291,10 @@ optionProgramming:"💻 Programming",
 
 optionBusiness:"💼 Business",
 
+promptWaiting: "Waiting for generation......",
+resumeWaiting: "Waiting for generation......",
+titleWaiting: "Waiting for generation......",
+    
 }
 
 
@@ -1327,6 +1333,16 @@ document.getElementById("navResume").innerText=t.navResume;
 
 document.getElementById("navTitle").innerText=t.navTitle;
 
+    
+document.querySelectorAll("[data-i18n]").forEach(el=>{
+    el.innerText=t[el.dataset.i18n];
+});
+
+
+document.getElementById("promptOutput").innerText = t.promptWaiting;
+document.getElementById("resumeOutput").innerText = t.resumeWaiting;
+document.getElementById("titleOutput").innerText = t.titleWaiting;
+    
 
 document.getElementById("promptInput").placeholder=t.promptPlaceholder;
     
