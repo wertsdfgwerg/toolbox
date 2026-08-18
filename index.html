@@ -657,10 +657,8 @@ FREE
 
 <textarea
 id="promptInput"
-placeholder="例如：帮我写一篇关于减肥的文章">
+placeholder="Example: Write an article about losing weight">
 </textarea>
-
-
 
 
 
@@ -1154,6 +1152,8 @@ siteDescription:
 
 navPrompt:"AI提示词",
 
+promptPlaceholder:"例如：帮我写一篇关于减肥的文章",
+    
 navResume:"AI简历助手",
 
 navTitle:"AI标题生成",
@@ -1225,6 +1225,8 @@ siteDescription:
 
 navPrompt:"AI Prompts",
 
+promptPlaceholder:"Example: Write an article about weight loss",
+    
 navResume:"AI Resume",
 
 navTitle:"AI Titles",
@@ -1309,6 +1311,9 @@ document.getElementById("titleToolTitle").innerText=t.titleToolTitle;
 
     
 document.getElementById("titleToolDesc").innerText=t.titleToolDesc;
+
+
+document.getElementById("promptInput").placeholder=t.promptPlaceholder;
 
     
 document.getElementById("siteTitle").innerHTML=t.siteTitle;
