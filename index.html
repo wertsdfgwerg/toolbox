@@ -469,8 +469,7 @@ English
 
 </h1>
 
-
-
+    
 <p id="siteDescription">
 
 免费、简单、实用的 AI 效率工具<br>
@@ -808,7 +807,7 @@ FREE
 
 
 
-<h2>
+<h2 id="titleToolTitle">
 
 💡 AI标题生成器
 
@@ -816,7 +815,7 @@ FREE
 
 
 
-<p>
+<p id="titleToolDesc">
 
 输入你的主题，生成多个吸引人的标题。
 
@@ -1191,6 +1190,11 @@ supportAuthor:"💚 支持作者",
 privacyText:"🔒 本网站不会保存你的输入内容",
 
 generatePromptBtn:"✨ 生成提示词",
+
+titleToolTitle:"💡 AI标题生成器",
+
+titleToolDesc:"输入你的主题，生成多个吸引人的标题。",
+
     
 },
 
@@ -1245,6 +1249,12 @@ supportAuthor:"💚 Support Author",
 privacyText:"🔒 This website does not save your input content",
 
 generatePromptBtn:"✨ Generate Prompt",
+
+titleToolTitle:"💡 AI Title Generator",
+
+titleToolDesc:"Enter your topic and generate multiple attractive titles.",
+
+
     
 }
 
@@ -1264,7 +1274,12 @@ currentLanguage=lang;
 let t=languageText[lang];
 
 
+document.getElementById("titleToolTitle").innerText=t.titleToolTitle;
 
+    
+document.getElementById("titleToolDesc").innerText=t.titleToolDesc;
+
+    
 document.getElementById("siteTitle").innerHTML=t.siteTitle;
 
 
