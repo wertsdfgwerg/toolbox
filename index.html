@@ -898,7 +898,9 @@ id="xiaohongshuTool">
 
 <p style="text-align:center;color:#777;">
 
+<p data-i18n="xiaohongshuDesc">
 输入你的主题，免费生成多个小红书标题
+</p>
 
 </p>
 
@@ -1169,8 +1171,9 @@ aboutText:
 "我们正在制作一系列免费 AI 效率工具，帮助学生、创作者、开发者和普通用户提高效率。",
 
     
-xhTitle:"🔥 AI小红书标题生成器",
+xiaohongshuTitle:"🔥 AI小红书标题生成器",
     
+xiaohongshuDesc:"输入你的主题，免费生成多个小红书标题",
     
 xhDesc:"输入你的主题，免费生成多个小红书标题",
 
@@ -1239,20 +1242,27 @@ aboutText:
 "We are building free AI productivity tools for students, creators and developers.",
     
     
-xhTitle:"🔥 AI Xiaohongshu Title Generator",
+xiaohongshuTitle:"🔥 AI Xiaohongshu Title Generator",
+
     
+xiaohongshuDesc:"Enter your topic and generate multiple Xiaohongshu titles for free",
+
     
 xhDesc:"Enter your topic and generate multiple Xiaohongshu titles for free",
     
     
 xhButton:"✨ Generate Titles",
+
     
 copyButton:"📋 Copy",
 
+    
 generateWaiting:"Generating...",
 
+    
 freeLabel:"FREE",
 
+    
 moreTools:"More tools are under development.",
 
 supportAuthor:"💚 Support Author",
@@ -1330,8 +1340,12 @@ document.getElementById("aboutTitle").innerText=t.aboutTitle;
 
 document.getElementById("aboutText").innerText=t.aboutText;
 
+document.querySelector('[data-i18n="xiaohongshuTitle"]').innerText=t.xiaohongshuTitle;
 
 
+document.querySelector('[data-i18n="xiaohongshuDesc"]').innerText=t.xiaohongshuDesc;
+
+    
 document.getElementById("zhBtn")
 .classList.toggle("active",lang==="zh");
 
