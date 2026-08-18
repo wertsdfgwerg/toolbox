@@ -944,7 +944,7 @@ margin:50px 0;
 
 <p id="shareText">
 
-如果这个网站对你有帮助，可以分享给朋友
+<span id="shareText"></span>
 
 </p>
 
@@ -973,7 +973,7 @@ onclick="shareSite()">
 
 <h2 id="aboutTitle">
 
-<span data-i18n="aboutTitle">🌍 关于 AI小工具箱</span>
+<span id="aboutTitle"></span>
 
 </h2>
 
@@ -988,7 +988,7 @@ onclick="shareSite()">
 
 <p>
 
-更多工具正在开发中。
+<span id="moreTools"></span>
 
 </p>
 
@@ -1014,7 +1014,7 @@ margin:40px 0;
 class="primary"
 onclick="showDonate()">
 
-💚 支持作者
+<span id="supportAuthor"></span>
 
 </button>
 
@@ -1112,7 +1112,7 @@ onclick="hideDonate()">
 
 <div>
 
-🔒 本网站不会保存你的输入内容
+<span id="privacyText"></span>
 
 </div>
 
@@ -1164,8 +1164,7 @@ aboutTitle:
 "🌍 关于 AI小工具箱",
 
 
-aboutText:
-"我们正在制作一系列免费 AI 效率工具，帮助学生、创作者、开发者和普通用户提高效率。",
+aboutDesc:"我们正在为学生、创作者和开发者打造免费的 AI 效率工具。",
 
     
 xiaohongshuTitle:"🔥 AI小红书标题生成器",
@@ -1207,6 +1206,8 @@ optionProgramming:"💻 编程",
 
 optionBusiness:"💼 商业",
 
+footerText:"© 2026 AI小工具箱 · Free AI Tools"
+    
 promptWaiting:"正在生成......",
 resumeWaiting:"正在生成......",
 titleWaiting:"正在生成......",
@@ -1233,16 +1234,12 @@ navResume:"AI Resume",
 navTitle:"AI Titles",
 
 
-shareText:
-"If this website helps you, share it with friends",
+shareText:"If this website helps you, share it with friends",
 
 
-aboutTitle:
-"🌍 About AI Toolbox",
+aboutTitle:"🌍 About AI Toolbox",
 
-
-aboutText:
-"We are building free AI productivity tools for students, creators and developers.",
+aboutDesc:"We are building free AI productivity tools for students, creators and developers.",
     
     
 xiaohongshuTitle:"🔥 AI Xiaohongshu Title Generator",
@@ -1290,6 +1287,8 @@ optionProgramming:"💻 Programming",
 
 optionBusiness:"💼 Business",
 
+footerText:"© 2026 AI Toolbox · Free AI Tools"
+    
 promptWaiting: "Waiting for generation......",
 resumeWaiting: "Waiting for generation......",
 titleWaiting: "Waiting for generation......",
@@ -1314,6 +1313,8 @@ let t=languageText[lang];
 
 document.getElementById("titleToolTitle").innerText=t.titleToolTitle;
 
+document.getElementById("moreTools").innerText = lang=="zh" ? "更多工具正在开发中。" : "More tools are under development.";
+    
     
 document.getElementById("titleToolDesc").innerText=t.titleToolDesc;
 
@@ -1349,13 +1350,13 @@ document.getElementById("promptInput").placeholder=t.promptPlaceholder;
 document.getElementById("generatePromptBtn").innerText=t.generatePromptBtn;
 
     
-document.getElementById("shareText").innerText=t.shareText;
+document.getElementById("shareText").innerText = lang=="zh" ? "如果这个网站帮助了你，可以分享给朋友" : "If this website helps you, share it with friends";
 
 
 document.getElementById("copyResumeBtn").innerText=t.copyResumeBtn;
 
     
-document.getElementById("aboutTitle").innerText=t.aboutTitle;
+document.getElementById("aboutTitle").innerText = lang=="zh" ? "🌍 关于 AI 工具箱" : "🌍 About AI Toolbox";
 
 
 document.getElementById("aboutText").innerText=t.aboutText;
@@ -1388,7 +1389,16 @@ document.getElementById("optionStudy").innerText=t.optionStudy;
 
 document.getElementById("optionProgramming").innerText=t.optionProgramming;
 
+    
+document.getElementById("supportAuthor").innerText = lang=="zh" ? "💚 支持作者" : "💚 Support Author";
 
+
+document.getElementById("privacyText").innerText = lang=="zh" ? "🔒 本网站不会保存你的输入内容" : "🔒 This website does not save your input content";
+
+
+document.getElementById("footerText").innerText = lang=="zh" ? "© 2026 AI小工具箱 · Free AI Tools" : "© 2026 AI Toolbox · Free AI Tools";
+    
+    
 document.getElementById("optionBusiness").innerText=t.optionBusiness;
     
 // 工具区域翻译补充
