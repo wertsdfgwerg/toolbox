@@ -669,6 +669,7 @@ placeholder="例如：帮我写一篇关于减肥的文章">
 
 
 <button
+id="generatePromptBtn"
 class="primary"
 onclick="generatePrompt()">
 
@@ -1176,6 +1177,21 @@ xhDesc:"输入你的主题，免费生成多个小红书标题",
 
     
 xhButton:"✨ 免费生成标题",
+
+copyButton:"📋 一键复制",
+
+generateWaiting:"等待生成……",
+
+freeLabel:"FREE",
+
+moreTools:"更多工具正在开发中。",
+
+supportAuthor:"💚 支持作者",
+
+privacyText:"🔒 本网站不会保存你的输入内容",
+
+generatePromptBtn:"✨ 生成提示词",
+    
 },
 
 
@@ -1216,7 +1232,20 @@ xhDesc:"Enter your topic and generate multiple Xiaohongshu titles for free",
     
 xhButton:"✨ Generate Titles",
     
+copyButton:"📋 Copy",
 
+generateWaiting:"Generating...",
+
+freeLabel:"FREE",
+
+moreTools:"More tools are under development.",
+
+supportAuthor:"💚 Support Author",
+
+privacyText:"🔒 This website does not save your input content",
+
+generatePromptBtn:"✨ Generate Prompt",
+    
 }
 
 
@@ -1251,9 +1280,15 @@ document.getElementById("navResume").innerText=t.navResume;
 document.getElementById("navTitle").innerText=t.navTitle;
 
 
+document.getElementById("generatePromptBtn").innerText=t.generatePromptBtn;
+
+    
 document.getElementById("shareText").innerText=t.shareText;
 
 
+document.getElementById("copyResumeBtn").innerText=t.copyResumeBtn;
+
+    
 document.getElementById("aboutTitle").innerText=t.aboutTitle;
 
 
