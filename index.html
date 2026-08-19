@@ -7,9 +7,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Bing站长验证 -->
 <meta name="msvalidate.01" content="86A4C150506B6295F74DD2E6DDC33252" />
 
+<!-- Cloudflare Web Analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"4eb5597f43294acfbf1573e4628dcf28"}'></script>
+
 
 <title>AI小工具箱 | 免费AI工具</title>
 
@@ -18,6 +21,7 @@
 <meta name="keywords" content="AI工具, AI提示词, AI简历, AI标题生成器, 免费AI工具">
 
 <meta name="robots" content="index,follow">
+
 
 </head>
 
@@ -28,12 +32,16 @@
 box-sizing:border-box;
 }
 
+
 html{
 scroll-behavior:smooth;
 }
 
+
 body{
+
 margin:0;
+
 font-family:
 -apple-system,
 BlinkMacSystemFont,
@@ -41,77 +49,121 @@ BlinkMacSystemFont,
 "Microsoft YaHei",
 Arial,
 sans-serif;
+
 background:#f7f9fc;
+
 color:#222;
+
 }
+
 
 
 .container{
+
 max-width:1100px;
+
 margin:auto;
+
 padding:30px 20px 60px;
+
 }
+
 
 
 .header{
+
 position:relative;
+
 text-align:center;
+
 padding:40px 0;
+
 }
+
 
 
 .header h1{
+
 font-size:44px;
+
 margin:40px 0 15px;
+
 font-weight:800;
+
 }
+
 
 
 .header p{
+
 color:#666;
+
 font-size:18px;
+
+line-height:1.8;
+
 }
+
+
 
 
 .language-switch{
 
 position:absolute;
+
 right:0;
+
 top:10px;
+
 display:flex;
+
 background:white;
+
 border:1px solid #eee;
+
 border-radius:30px;
+
 padding:4px;
 
 }
 
 
+
 .language-switch button{
 
 border:none;
+
 background:none;
+
 padding:10px 20px;
+
 border-radius:25px;
+
 cursor:pointer;
 
 }
 
 
+
 .language-switch button.active{
 
 background:#111;
+
 color:white;
 
 }
 
 
 
+
 .tools{
 
 display:grid;
+
 grid-template-columns:repeat(3,1fr);
+
 gap:20px;
+
 margin:30px 0;
 
 }
@@ -121,14 +173,23 @@ margin:30px 0;
 .tool{
 
 display:block;
+
 text-decoration:none;
+
 color:#222;
+
 background:white;
+
 border-radius:20px;
+
 padding:30px;
+
 text-align:center;
+
 border:1px solid #eee;
+
 box-shadow:0 10px 30px rgba(0,0,0,.05);
+
 transition:.2s;
 
 }
@@ -154,7 +215,9 @@ font-size:36px;
 .tool-title{
 
 font-size:20px;
+
 font-weight:700;
+
 margin-top:10px;
 
 }
@@ -164,6 +227,7 @@ margin-top:10px;
 .tool-subtitle{
 
 color:#777;
+
 margin-top:8px;
 
 }
@@ -173,10 +237,15 @@ margin-top:8px;
 .card{
 
 background:white;
+
 border-radius:25px;
+
 padding:35px;
+
 margin-bottom:35px;
+
 border:1px solid #eee;
+
 box-shadow:0 10px 30px rgba(0,0,0,.05);
 
 }
@@ -196,11 +265,26 @@ input,
 select{
 
 width:100%;
+
 padding:16px;
+
 border-radius:12px;
+
 border:1px solid #ddd;
+
 font-size:16px;
+
 margin-top:15px;
+
+}
+
+
+
+textarea{
+
+min-height:120px;
+
+resize:vertical;
 
 }
 
@@ -209,15 +293,19 @@ margin-top:15px;
 button{
 
 cursor:pointer;
+
 font-size:16px;
 
 }
 
 
+
 .button-row{
 
 display:flex;
+
 gap:15px;
+
 margin-top:20px;
 
 }
@@ -227,10 +315,15 @@ margin-top:20px;
 .primary{
 
 flex:1;
+
 background:#111;
+
 color:white;
+
 border:none;
+
 padding:15px;
+
 border-radius:12px;
 
 }
@@ -240,10 +333,15 @@ border-radius:12px;
 .secondary{
 
 flex:1;
+
 background:#f1f1f1;
+
 color:#222;
+
 border:none;
+
 padding:15px;
+
 border-radius:12px;
 
 }
@@ -253,10 +351,42 @@ border-radius:12px;
 .result{
 
 margin-top:25px;
+
 padding:20px;
+
 background:#f8f8f8;
+
 border-radius:15px;
+
 white-space:pre-wrap;
+
+line-height:1.8;
+
+}
+
+
+
+.result-item{
+
+background:white;
+
+padding:15px;
+
+border-radius:12px;
+
+margin-bottom:10px;
+
+cursor:pointer;
+
+border:1px solid #eee;
+
+}
+
+
+
+.result-item:hover{
+
+transform:translateY(-2px);
 
 }
 
@@ -265,11 +395,32 @@ white-space:pre-wrap;
 .badge{
 
 display:inline-block;
+
 background:#111;
+
 color:white;
+
 padding:5px 12px;
+
 border-radius:20px;
+
 font-size:12px;
+
+}
+
+
+
+.footer{
+
+text-align:center;
+
+color:#777;
+
+padding:40px 0;
+
+line-height:2;
+
+font-size:14px;
 
 }
 
@@ -277,11 +428,13 @@ font-size:12px;
 
 @media(max-width:768px){
 
+
 .tools{
 
 grid-template-columns:1fr;
 
 }
+
 
 
 .header h1{
@@ -291,14 +444,19 @@ font-size:32px;
 }
 
 
+
 .language-switch{
 
 position:relative;
+
 justify-content:center;
+
 right:auto;
+
 top:auto;
 
 }
+
 
 
 .button-row{
@@ -307,10 +465,11 @@ flex-direction:column;
 
 }
 
+
 }
 
-
 </style>
+
 
 
 <body>
@@ -347,6 +506,7 @@ English
 </div>
 
 
+
 <h1 id="siteTitle">
 
 🤖 AI小工具箱
@@ -366,15 +526,21 @@ English
 
 
 
+
+
 <!-- 工具导航 -->
 
 <div class="tools">
 
 
+
 <a class="tool" href="#promptTool">
 
+
 <div class="tool-icon">
+
 🔥
+
 </div>
 
 
@@ -391,6 +557,7 @@ Prompt Generator
 
 </div>
 
+
 </a>
 
 
@@ -398,6 +565,7 @@ Prompt Generator
 
 
 <a class="tool" href="#resumeTool">
+
 
 <div class="tool-icon">
 
@@ -419,13 +587,16 @@ Resume Assistant
 
 </div>
 
+
 </a>
 
 
 
 
 
+
 <a class="tool" href="#titleTool">
+
 
 <div class="tool-icon">
 
@@ -447,7 +618,9 @@ Title Generator
 
 </div>
 
+
 </a>
+
 
 
 </div>
@@ -460,9 +633,11 @@ Title Generator
 
 
 
-<!-- AI提示词 -->
+<!-- AI提示词生成器 -->
+
 
 <div class="card" id="promptTool">
+
 
 
 <span class="badge" data-i18n="freeLabel">
@@ -543,8 +718,8 @@ FREE
 </option>
 
 
-
 </select>
+
 
 
 
@@ -555,6 +730,8 @@ FREE
 id="promptInput"
 placeholder="例如：帮我写一篇关于减肥的文章">
 </textarea>
+
+
 
 
 
@@ -607,21 +784,11 @@ onclick="copyText('promptOutput')">
 </div>
 
 
+
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<!-- AI简历 -->
+<!-- AI简历助手 -->
 
 
 <div class="card" id="resumeTool">
@@ -651,6 +818,7 @@ FREE
 输入你的教育经历、技能和项目经验，生成专业的简历优化提示词。
 
 </p>
+
 
 
 
@@ -714,6 +882,7 @@ onclick="copyText('resumeOutput')">
 </div>
 
 
+
 </div>
 
 
@@ -724,14 +893,11 @@ onclick="copyText('resumeOutput')">
 
 
 
-
-
-
-
-<!-- AI标题 -->
+<!-- AI标题生成器 -->
 
 
 <div class="card" id="titleTool">
+
 
 
 <span class="badge" data-i18n="freeLabel">
@@ -832,8 +998,13 @@ onclick="copyText('titleOutput')">
 
 
 
-
 </div>
+
+
+
+
+
+
 
 
 
@@ -843,6 +1014,7 @@ onclick="copyText('titleOutput')">
 <section
 class="card"
 id="xiaohongshuTool">
+
 
 
 <h2 style="text-align:center;">
@@ -919,12 +1091,6 @@ id="titleResults">
 
 
 
-
-
-
-
-
-
 <!-- 分享区域 -->
 
 
@@ -965,7 +1131,7 @@ onclick="shareSite()">
 
 
 
-<!-- 关于 -->
+<!-- 关于 AI小工具箱 -->
 
 
 <div class="card">
@@ -1008,11 +1174,7 @@ onclick="shareSite()">
 
 
 
-
-
-
-
-<!-- 打赏 -->
+<!-- 支持作者 -->
 
 
 <div style="
@@ -1034,10 +1196,6 @@ onclick="showDonate()">
 
 
 </div>
-
-
-
-
 
 
 
@@ -1135,8 +1293,6 @@ onclick="hideDonate()">
 
 
 
-
-
 <footer class="footer">
 
 
@@ -1165,8 +1321,6 @@ onclick="hideDonate()">
 
 
 
-
-
 </div>
 
 
@@ -1175,8 +1329,6 @@ onclick="hideDonate()">
 
 
 let currentLanguage = "zh";
-
-
 
 
 
@@ -1199,7 +1351,9 @@ navResume:"AI简历助手",
 navTitle:"AI标题生成",
 
 
+
 promptTitle:"🔥 AI提示词生成器",
+
 
 promptDescription:
 "告诉我们你想做什么，生成一份可以直接复制给 ChatGPT、Claude 或其他 AI 使用的专业提示词。",
@@ -1207,6 +1361,21 @@ promptDescription:
 
 promptPlaceholder:
 "例如：帮我写一篇关于减肥的文章",
+
+
+
+resumePlaceholder:
+"例如：大学毕业，会Python，做过一个网站项目……",
+
+
+titlePlaceholder:
+"例如：大学生如何利用AI提高学习效率",
+
+
+xhPlaceholder:
+"例如：大学生省钱、减肥早餐、旅行攻略",
+
+
 
 
 generatePromptBtn:
@@ -1221,6 +1390,7 @@ generateTitleBtn:
 "生成标题",
 
 
+
 copyButton:
 "📋 一键复制",
 
@@ -1229,83 +1399,104 @@ generateLoading:
 "等待生成...",
 
 
+
 xiaohongshuTitle:
 "🔥 AI小红书标题生成器",
+
 
 
 xiaohongshuDesc:
 "输入你的主题，免费生成多个小红书标题",
 
 
+
 xhButton:
 "✨ 免费生成标题",
+
+
 
 
 shareText:
 "如果这个网站对你有帮助，可以分享给朋友",
 
 
+
 aboutTitle:
 "🌍 关于 AI小工具箱",
+
 
 
 aboutText:
 "我们正在制作一系列免费 AI 效率工具，帮助学生、创作者、开发者和普通用户提高效率。",
 
 
+
 moreTools:
 "更多工具正在开发中。",
+
 
 
 supportAuthor:
 "💚 支持作者",
 
 
+
 thanksText:
 "感谢支持 ❤️",
+
 
 
 donateText:
 "感谢你的支持 💗",
 
 
+
 closeDonate:
 "关闭",
+
 
 
 footerText:
 "© 2026 AI小工具箱 · Free AI Tools",
 
 
+
 privacyText:
 "🔒 本网站不会保存你的输入内容",
+
 
 
 freeLabel:
 "FREE",
 
 
+
 optionGeneral:
 "通用任务",
+
 
 optionWriting:
 "📝 写作",
 
+
 optionXhs:
 "📱 小红书",
+
 
 optionStudy:
 "📚 学习",
 
+
 optionProgramming:
 "💻 编程",
+
 
 optionBusiness:
 "💼 商业"
 
+
+
 },
-
-
 
 
 
@@ -1316,138 +1507,186 @@ optionBusiness:
 en:{
 
 
+
 siteTitle:"🤖 AI Toolbox",
 
 
+
 siteDescription:
-"Free, simple and useful AI productivity tools<br>No installation · No registration",
+"Free, simple and useful AI productivity tools<br>No installation · No registration · Free to use",
+
 
 
 navPrompt:
 "AI Prompts",
 
 
+
 navResume:
-"AI Resume",
+"AI Resume Assistant",
+
 
 
 navTitle:
-"AI Titles",
+"AI Title Generator",
+
+
 
 
 promptTitle:
 "🔥 AI Prompt Generator",
 
 
+
 promptDescription:
 "Tell us what you want to do and generate a professional prompt for ChatGPT, Claude or other AI tools.",
 
 
+
 promptPlaceholder:
-"Example: Write an article about losing weight",
+"Example: Write an article about weight loss",
+
+
+
+resumePlaceholder:
+"Example: College graduate, knows Python, built a website project...",
+
+
+
+titlePlaceholder:
+"Example: How students can use AI to improve learning efficiency",
+
+
+
+xhPlaceholder:
+"Example: Saving money, healthy breakfast, travel guide",
+
 
 
 generatePromptBtn:
 "✨ Generate Prompt",
 
 
+
 generateResumeBtn:
 "Generate Resume Prompt",
+
 
 
 generateTitleBtn:
 "Generate Titles",
 
 
+
 copyButton:
 "📋 Copy",
+
 
 
 generateLoading:
 "Waiting for generation...",
 
 
+
 xiaohongshuTitle:
 "🔥 AI Xiaohongshu Title Generator",
+
 
 
 xiaohongshuDesc:
 "Enter your topic and generate multiple Xiaohongshu titles for free",
 
 
+
 xhButton:
 "✨ Generate Titles",
+
 
 
 shareText:
 "If this website helps you, share it with friends",
 
 
+
 aboutTitle:
 "🌍 About AI Toolbox",
 
 
+
 aboutText:
-"We are building free AI productivity tools for students, creators and developers.",
+"We are building free AI productivity tools to help students, creators, developers and everyday users improve efficiency.",
+
 
 
 moreTools:
 "More tools are under development.",
 
 
+
 supportAuthor:
 "💚 Support Author",
+
 
 
 thanksText:
 "Thanks for your support ❤️",
 
 
+
 donateText:
 "Thank you for your support 💗",
+
 
 
 closeDonate:
 "Close",
 
 
+
 footerText:
 "© 2026 AI Toolbox · Free AI Tools",
+
 
 
 privacyText:
 "🔒 This website does not save your input content",
 
 
+
 freeLabel:
 "FREE",
+
 
 
 optionGeneral:
 "General",
 
+
 optionWriting:
 "📝 Writing",
+
 
 optionXhs:
 "📱 Xiaohongshu",
 
+
 optionStudy:
 "📚 Study",
+
 
 optionProgramming:
 "💻 Programming",
 
+
 optionBusiness:
 "💼 Business"
+
+
 
 }
 
 
-
 };
-
-
 
 
 
@@ -1491,7 +1730,6 @@ el.innerHTML=text;
 
 
 
-
 setText("siteTitle",t.siteTitle);
 
 setHTML("siteDescription",t.siteDescription);
@@ -1504,9 +1742,11 @@ setText("navResume",t.navResume);
 setText("navTitle",t.navTitle);
 
 
+
 setText("promptTitle",t.promptTitle);
 
 setText("promptDescription",t.promptDescription);
+
 
 
 setText("generatePromptBtn",t.generatePromptBtn);
@@ -1516,11 +1756,13 @@ setText("generateResumeBtn",t.generateResumeBtn);
 setText("generateTitleBtn",t.generateTitleBtn);
 
 
+
 setText("copyPromptBtn",t.copyButton);
 
 setText("copyResumeBtn",t.copyButton);
 
 setText("copyTitleBtn",t.copyButton);
+
 
 
 setText("shareText",t.shareText);
@@ -1555,10 +1797,21 @@ setText("privacyText",t.privacyText);
 setText("xhButton",t.xhButton);
 
 
-setHTML("promptInput","");
+
+document.getElementById("promptInput").placeholder =
+t.promptPlaceholder;
 
 
-document.getElementById("promptInput").placeholder=t.promptPlaceholder;
+document.getElementById("resumeInput").placeholder =
+t.resumePlaceholder;
+
+
+document.getElementById("titleInput").placeholder =
+t.titlePlaceholder;
+
+
+document.getElementById("topicInput").placeholder =
+t.xhPlaceholder;
 
 
 
@@ -1571,6 +1824,7 @@ el.innerText=t[el.dataset.i18n];
 }
 
 });
+
 
 
 document.getElementById("zhBtn")
@@ -1589,9 +1843,10 @@ document.getElementById("enBtn")
 
 
 
-/* =====================
-   AI提示词
-===================== */
+
+
+
+/* AI提示词 */
 
 
 function generatePrompt(){
@@ -1626,7 +1881,6 @@ let result =
 ${input}
 
 
-
 要求：
 
 1. 分析目标
@@ -1648,7 +1902,6 @@ Please help me complete:
 ${input}
 
 
-
 Requirements:
 
 1. Analyze the goal
@@ -1665,7 +1918,6 @@ document.getElementById("promptOutput")
 .innerText=result;
 
 
-
 }
 
 
@@ -1675,14 +1927,7 @@ document.getElementById("promptOutput")
 
 
 
-
-
-
-
-
-/* =====================
-   AI简历
-===================== */
+/* AI简历 */
 
 
 function generateResume(){
@@ -1717,7 +1962,6 @@ let result =
 ${input}
 
 
-
 请帮我：
 
 1. 优化简历内容
@@ -1738,7 +1982,6 @@ My experience:
 ${input}
 
 
-
 Please help me:
 
 1. Improve resume content
@@ -1754,24 +1997,11 @@ document.getElementById("resumeOutput")
 .innerText=result;
 
 
-
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-/* =====================
-   AI标题
-===================== */
+/* AI标题生成 */
 
 
 function generateTitles(){
@@ -1801,12 +2031,9 @@ let result =
 
 `你是一名内容运营专家。
 
-
-
 主题：
 
 ${input}
-
 
 
 请生成20个吸引人的标题：
@@ -1825,12 +2052,9 @@ result =
 
 `You are a content marketing expert.
 
-
-
 Topic:
 
 ${input}
-
 
 
 Please generate 20 attractive titles:
@@ -1849,7 +2073,6 @@ document.getElementById("titleOutput")
 .innerText=result;
 
 
-
 }
 
 
@@ -1860,13 +2083,7 @@ document.getElementById("titleOutput")
 
 
 
-
-
-
-
-/* =====================
-   小红书标题
-===================== */
+/* AI小红书标题 */
 
 
 function generateXhsTitles(){
@@ -1947,14 +2164,13 @@ box.innerHTML =
 titles.map((t,i)=>`
 
 <div class="result-item"
-onclick="copyTitle('${t}')">
+onclick="copyTitle('${t.replace(/'/g,"\\'")}')">
 
 ${i+1}. ${t}
 
 </div>
 
 `).join("");
-
 
 
 }
@@ -1965,6 +2181,10 @@ ${i+1}. ${t}
 
 
 
+
+
+
+/* 复制标题 */
 
 
 function copyTitle(text){
@@ -1980,7 +2200,6 @@ currentLanguage==="zh"
 );
 
 
-
 }
 
 
@@ -1991,14 +2210,7 @@ currentLanguage==="zh"
 
 
 
-
-
-
-
-
-/* =====================
-   复制
-===================== */
+/* 通用复制 */
 
 
 function copyText(id){
@@ -2028,7 +2240,6 @@ currentLanguage==="zh"
 );
 
 
-
 }
 
 
@@ -2039,13 +2250,7 @@ currentLanguage==="zh"
 
 
 
-
-
-
-
-/* =====================
-   分享
-===================== */
+/* 分享网站 */
 
 
 function shareSite(){
@@ -2066,15 +2271,17 @@ currentLanguage==="zh"
 ?"AI小工具箱"
 :"AI Toolbox",
 
+
 text:
 currentLanguage==="zh"
 ?"免费的AI工具"
 :"Free AI tools",
 
+
 url:url
 
-});
 
+});
 
 
 }else{
@@ -2091,28 +2298,20 @@ currentLanguage==="zh"
 );
 
 
+}
+
 
 }
 
 
 
-}
 
 
 
 
 
 
-
-
-
-
-
-
-
-/* =====================
-   打赏
-===================== */
+/* 支持作者 */
 
 
 function showDonate(){
@@ -2123,7 +2322,6 @@ document.getElementById("donateModal")
 
 
 }
-
 
 
 
@@ -2148,3 +2346,8 @@ setLanguage("zh");
 
 
 </script>
+
+
+</body>
+
+</html>
