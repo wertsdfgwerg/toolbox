@@ -1113,29 +1113,33 @@ id="titleResults">
 
 
 
-<!-- 第二批AI工具 -->
+
+<!-- 第二批 AI 工具 -->
 
 <section class="card">
 
 <h2 style="text-align:center;">
-🚀 AI效率工具
+🚀 <span data-i18n="newToolsTitle">AI效率工具</span>
 </h2>
 
 
 <div class="tool-box">
 
 <h3>
-📝 AI文章标题生成器
+📝 <span data-i18n="articleTitle">
+AI文章标题生成器
+</span>
 </h3>
 
-<p>
-输入文章主题，生成多个吸引人的标题
+<p data-i18n="articleDesc">
+输入主题，生成吸引人的文章标题
 </p>
 
-<input id="articleTopic" placeholder="例如：人工智能的发展趋势">
+<input id="articleTopic"
+placeholder="输入文章主题">
 
-<button onclick="generateArticleTitle()">
-生成标题
+<button onclick="generateArticleTitle()" data-i18n="generate">
+生成
 </button>
 
 <div id="articleResult" class="result"></div>
@@ -1147,17 +1151,20 @@ id="titleResults">
 <div class="tool-box">
 
 <h3>
-💬 AI朋友圈文案生成器
+💬 <span data-i18n="momentsTitle">
+AI朋友圈文案生成器
+</span>
 </h3>
 
-<p>
+<p data-i18n="momentsDesc">
 生成适合朋友圈发布的文案
 </p>
 
-<input id="momentsTopic" placeholder="例如：旅行">
+<input id="momentsTopic"
+placeholder="输入主题">
 
-<button onclick="generateMoments()">
-生成文案
+<button onclick="generateMoments()" data-i18n="generate">
+生成
 </button>
 
 <div id="momentsResult" class="result"></div>
@@ -1169,17 +1176,20 @@ id="titleResults">
 <div class="tool-box">
 
 <h3>
-📧 AI邮件助手
+📧 <span data-i18n="mailTitle">
+AI邮件助手
+</span>
 </h3>
 
-<p>
-快速生成各种邮件内容
+<p data-i18n="mailDesc">
+快速生成邮件内容
 </p>
 
-<input id="mailTopic" placeholder="例如：求职邮件">
+<input id="mailTopic"
+placeholder="输入邮件类型">
 
-<button onclick="generateMail()">
-生成邮件
+<button onclick="generateMail()" data-i18n="generate">
+生成
 </button>
 
 <div id="mailResult" class="result"></div>
@@ -1188,6 +1198,8 @@ id="titleResults">
 
 
 </section>
+
+
 
 
   
@@ -1612,6 +1624,23 @@ optionBusiness:
 "💼 商业"
 
 
+newToolsTitle:"AI效率工具",
+
+articleTitle:"AI文章标题生成器",
+articleDesc:"输入主题，生成吸引人的文章标题",
+
+momentsTitle:"AI朋友圈文案生成器",
+momentsDesc:"生成适合朋友圈发布的文案",
+
+mailTitle:"AI邮件助手",
+mailDesc:"快速生成邮件内容",
+
+generate:"生成"
+
+
+
+
+
 
 },
 
@@ -1812,6 +1841,21 @@ optionBusiness:
 "💼 Business"
 
 
+newToolsTitle:"AI Productivity Tools",
+
+articleTitle:"AI Article Title Generator",
+articleDesc:"Generate attractive article titles",
+
+momentsTitle:"AI Social Media Copy Generator",
+momentsDesc:"Create engaging social media posts",
+
+mailTitle:"AI Email Assistant",
+mailDesc:"Generate email content quickly",
+
+generate:"Generate"
+  
+
+  
 
 }
 
@@ -2494,15 +2538,45 @@ document.getElementById("donateModal")
 setLanguage("zh");
 
 
-
 function generateArticleTitle(){
 
 let t=document.getElementById("articleTopic").value;
 
 document.getElementById("articleResult").innerHTML=
-"① "+t+"：未来趋势全面解析<br>"+
-"② 深度揭秘："+t+"背后的机会<br>"+
-"③ 普通人如何利用"+t+"提升效率";
+"1. "+t+"：未来发展趋势分析<br>"+
+"2. 深入了解"+t+"的关键机会<br>"+
+"3. 关于"+t+"你需要知道的一切";
+
+}
+
+
+
+function generateMoments(){
+
+let t=document.getElementById("momentsTopic").value;
+
+document.getElementById("momentsResult").innerHTML=
+"✨ 分享今天关于"+t+"的小美好<br>"+
+"生活需要记录，也需要发现。";
+
+}
+
+
+
+function generateMail(){
+
+let t=document.getElementById("mailTopic").value;
+
+document.getElementById("mailResult").innerHTML=
+"Subject: "+t+
+"<br><br>Hello,<br><br>"+
+"感谢您的阅读，期待进一步交流。";
+
+}
+
+  
+
+
 
 }
 
