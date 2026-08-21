@@ -3,69 +3,67 @@
 
 <head>
 
-<link rel="icon" href="logo.png">
-  
 <meta charset="UTF-8">
 
 <link rel="icon" href="logo.png">
-  
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 <!-- Bing站长验证 -->
 <meta name="msvalidate.01" content="86A4C150506B6295F74DD2E6DDC33252" />
+
 
 <!-- Cloudflare Web Analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"4eb5597f43294acfbf1573e4628dcf28"}'></script>
 
 
+
 <title>
-AI工具箱 - 免费AI提示词生成器、简历助手、标题生成器
+AI工具箱 - 免费AI工具
 </title>
+
 
 <meta name="description"
 content="AI工具箱提供免费的AI提示词生成器、AI简历助手、AI标题生成器、小红书标题生成工具，帮助学生、创作者和普通用户提升效率。">
 
-<meta name="keywords"
-content="AI工具箱,AI工具,免费AI工具,AI提示词生成器,AI简历助手,AI标题生成器,小红书标题生成器">
 
-<meta name="author" content="AI工具箱">
+<meta name="keywords"
+content="AI工具箱,免费AI工具,AI提示词生成器,AI简历助手,AI标题生成器">
+
 
 <meta name="robots" content="index,follow">
 
-<!-- 分享优化 -->
-<meta property="og:title" content="AI小工具箱 | 免费AI工具">
 
-<meta property="og:description" content="免费在线AI工具箱，提供AI提示词生成、AI简历助手、AI标题生成等实用工具。">
-
-<meta property="og:type" content="website">
-
-<meta property="og:url" content="https://wertsdfgwerg.github.io/toolbox/">
+<meta property="og:title"
+content="AI小工具箱 | 免费AI工具">
 
 
-</head>
+<meta property="og:description"
+content="免费在线AI工具箱，提供实用AI效率工具。">
+
+
+<meta property="og:type"
+content="website">
+
+
+<meta property="og:url"
+content="https://wertsdfgwerg.github.io/toolbox/">
+
 
 
 <style>
 
-*{
 
 *{
 box-sizing:border-box;
 }
 
 
-.logo{
-width:60px;
-height:60px;
-object-fit:contain;
-vertical-align:middle;
-}
-
-
-  
 html{
 scroll-behavior:smooth;
 }
+
 
 
 body{
@@ -112,11 +110,25 @@ padding:40px 0;
 
 
 
+.logo{
+
+width:60px;
+
+height:60px;
+
+object-fit:contain;
+
+vertical-align:middle;
+
+}
+
+
+
 .header h1{
 
 font-size:44px;
 
-margin:40px 0 15px;
+margin:20px 0 15px;
 
 font-weight:800;
 
@@ -133,7 +145,6 @@ font-size:18px;
 line-height:1.8;
 
 }
-
 
 
 
@@ -185,7 +196,6 @@ color:white;
 
 
 
-
 .tools{
 
 display:grid;
@@ -201,8 +211,6 @@ margin:30px 0;
 
 
 .tool{
-
-display:block;
 
 text-decoration:none;
 
@@ -414,14 +422,6 @@ border:1px solid #eee;
 
 
 
-.result-item:hover{
-
-transform:translateY(-2px);
-
-}
-
-
-
 .badge{
 
 display:inline-block;
@@ -456,8 +456,8 @@ font-size:14px;
 
 
 
-@media(max-width:768px){
 
+@media(max-width:768px){
 
 .tools{
 
@@ -466,13 +466,11 @@ grid-template-columns:1fr;
 }
 
 
-
 .header h1{
 
 font-size:32px;
 
 }
-
 
 
 .language-switch{
@@ -488,24 +486,29 @@ top:auto;
 }
 
 
-
 .button-row{
 
 flex-direction:column;
 
 }
 
-
 }
+
+
 
 </style>
 
+
+</head>
 
 
 <body>
 
 
 <div class="container">
+
+
+
 
 
 <header class="header">
@@ -524,6 +527,7 @@ onclick="setLanguage('zh')">
 </button>
 
 
+
 <button
 id="enBtn"
 onclick="setLanguage('en')">
@@ -537,7 +541,16 @@ English
 
 
 
-<h1 id="siteTitle"></h1>
+<img src="logo.png" class="logo">
+
+
+<h1 id="siteTitle">
+
+🤖 AI小工具箱
+
+</h1>
+
+
 
 <p id="siteDescription">
 
@@ -553,7 +566,9 @@ English
 
 
 
+
 <!-- 工具导航 -->
+
 
 <div class="tools">
 
@@ -658,19 +673,18 @@ Title Generator
 
 
 
+
 <!-- AI提示词生成器 -->
 
 
 <div class="card" id="promptTool">
 
 
-
-<span class="badge" data-i18n="freeLabel">
+<span class="badge">
 
 FREE
 
 </span>
-
 
 
 
@@ -682,61 +696,53 @@ FREE
 
 
 
-
 <p id="promptDescription">
 
-告诉我们你想做什么，生成一份可以直接复制给 ChatGPT、Claude 或其他 AI 使用的专业提示词。
+告诉我们你想做什么，生成专业AI提示词。
 
 </p>
-
-
 
 
 
 <select id="promptType">
 
 
-<option id="optionGeneral" value="general">
+<option>
 
 通用任务
 
 </option>
 
 
-
-<option id="optionWriting" value="writing">
+<option>
 
 📝 写作
 
 </option>
 
 
-
-<option id="optionXhs" value="xiaohongshu">
+<option>
 
 📱 小红书
 
 </option>
 
 
-
-<option id="optionStudy" value="study">
+<option>
 
 📚 学习
 
 </option>
 
 
-
-<option id="optionProgramming" value="programming">
+<option>
 
 💻 编程
 
 </option>
 
 
-
-<option id="optionBusiness" value="business">
+<option>
 
 💼 商业
 
@@ -748,9 +754,6 @@ FREE
 
 
 
-
-
-
 <textarea
 id="promptInput"
 placeholder="例如：帮我写一篇关于减肥的文章">
@@ -758,29 +761,20 @@ placeholder="例如：帮我写一篇关于减肥的文章">
 
 
 
-
-
-
-
 <div class="button-row">
 
 
-
 <button
-id="generatePromptBtn"
 class="primary"
 onclick="generatePrompt()">
 
-生成提示词
+✨ 生成提示词
 
 </button>
 
 
 
-
-
 <button
-id="copyPromptBtn"
 class="secondary"
 onclick="copyText('promptOutput')">
 
@@ -789,28 +783,26 @@ onclick="copyText('promptOutput')">
 </button>
 
 
-
 </div>
-
-
-
-
 
 
 
 <div class="result" id="promptOutput">
 
-<span data-i18n="generateLoading">
-
 等待生成...
 
-</span>
-
 </div>
 
 
 
 </div>
+
+
+
+
+
+
+
 
 
 <!-- AI简历助手 -->
@@ -819,13 +811,11 @@ onclick="copyText('promptOutput')">
 <div class="card" id="resumeTool">
 
 
-<span class="badge" data-i18n="freeLabel">
+<span class="badge">
 
 FREE
 
 </span>
-
-
 
 
 <h2 id="resumeTitle">
@@ -836,26 +826,18 @@ FREE
 
 
 
-
-
 <p id="resumeDescription">
 
-输入你的教育经历、技能和项目经验，生成专业的简历优化提示词。
+输入经历，生成专业简历优化建议。
 
 </p>
 
 
 
-
-
-
 <textarea
 id="resumeInput"
-placeholder="例如：大学毕业，会Python，做过一个网站项目……">
+placeholder="例如：大学毕业，会Python，做过网站项目">
 </textarea>
-
-
-
 
 
 
@@ -863,9 +845,7 @@ placeholder="例如：大学毕业，会Python，做过一个网站项目……"
 <div class="button-row">
 
 
-
 <button
-id="generateResumeBtn"
 class="primary"
 onclick="generateResume()">
 
@@ -875,10 +855,7 @@ onclick="generateResume()">
 
 
 
-
-
 <button
-id="copyResumeBtn"
 class="secondary"
 onclick="copyText('resumeOutput')">
 
@@ -887,22 +864,13 @@ onclick="copyText('resumeOutput')">
 </button>
 
 
-
 </div>
-
-
-
-
 
 
 
 <div class="result" id="resumeOutput">
 
-<span data-i18n="generateLoading">
-
 等待生成...
-
-</span>
 
 </div>
 
@@ -924,17 +892,11 @@ onclick="copyText('resumeOutput')">
 <div class="card" id="titleTool">
 
 
-
-<span class="badge" data-i18n="freeLabel">
+<span class="badge">
 
 FREE
 
 </span>
-
-
-
-
-
 
 
 <h2 id="titleToolTitle">
@@ -945,16 +907,11 @@ FREE
 
 
 
-
-
 <p id="titleToolDesc">
 
-输入你的主题，生成多个吸引人的标题。
+输入主题，生成多个吸引人的标题。
 
 </p>
-
-
-
 
 
 
@@ -967,15 +924,10 @@ placeholder="例如：大学生如何利用AI提高学习效率">
 
 
 
-
-
-
 <div class="button-row">
 
 
-
 <button
-id="generateTitleBtn"
 class="primary"
 onclick="generateTitles()">
 
@@ -985,12 +937,7 @@ onclick="generateTitles()">
 
 
 
-
-
-
-
 <button
-id="copyTitleBtn"
 class="secondary"
 onclick="copyText('titleOutput')">
 
@@ -999,27 +946,15 @@ onclick="copyText('titleOutput')">
 </button>
 
 
-
 </div>
-
-
-
-
 
 
 
 <div class="result" id="titleOutput">
 
-<span data-i18n="generateLoading">
-
 等待生成...
 
-</span>
-
 </div>
-
-
-
 
 
 
@@ -1036,66 +971,40 @@ onclick="copyText('titleOutput')">
 <!-- AI小红书标题生成器 -->
 
 
-<section
-class="card"
-id="xiaohongshuTool">
-
+<section class="card">
 
 
 <h2 style="text-align:center;">
 
-<span data-i18n="xiaohongshuTitle">
-
 🔥 AI小红书标题生成器
-
-</span>
 
 </h2>
 
 
 
-
-
 <p style="text-align:center;color:#777;">
 
-<span data-i18n="xiaohongshuDesc">
-
-输入你的主题，免费生成多个小红书标题
-
-</span>
+输入主题，免费生成小红书标题
 
 </p>
 
 
 
-
-
-
-
 <textarea
 id="topicInput"
-placeholder="例如：大学生省钱、减肥早餐、旅行攻略">
+placeholder="例如：旅行攻略、减肥早餐">
 </textarea>
 
 
 
 
-
-
-
 <button
-id="xhButton"
 class="primary"
 onclick="generateXhsTitles()">
 
 ✨ 免费生成标题
 
 </button>
-
-
-
-
-
 
 
 
@@ -1108,96 +1017,193 @@ id="titleResults">
 
 
 
-
-
-
-
 </section>
+
 
 
 
 
 <!-- 第二批 AI 工具 -->
 
+
 <section class="card">
 
+
 <h2 style="text-align:center;">
-🚀 <span data-i18n="newToolsTitle">AI效率工具</span>
+
+🚀 <span id="newToolsTitle">
+
+AI效率工具
+
+</span>
+
 </h2>
 
 
-<div class="tool-box">
+
+
+
+<div>
+
 
 <h3>
-📝 <span data-i18n="articleTitle">
+
+📝 <span id="articleTitle">
+
 AI文章标题生成器
+
 </span>
+
 </h3>
 
-<p data-i18n="articleDesc">
-输入主题，生成吸引人的文章标题
+
+
+<p id="articleDesc">
+
+输入主题，生成吸引人的文章标题。
+
 </p>
 
-<input id="articleTopic"
+
+
+<input 
+id="articleTopic"
 placeholder="输入文章主题">
 
-<button onclick="generateArticleTitle()" data-i18n="generate">
+
+
+<button
+class="primary"
+onclick="generateArticleTitle()">
+
 生成
+
 </button>
 
-<div id="articleResult" class="result"></div>
+
+
+<div
+class="result"
+id="articleResult">
+
+</div>
+
 
 </div>
 
 
 
-<div class="tool-box">
+
+
+
+
+<div>
+
 
 <h3>
-💬 <span data-i18n="momentsTitle">
+
+💬 <span id="momentsTitle">
+
 AI朋友圈文案生成器
+
 </span>
+
 </h3>
 
-<p data-i18n="momentsDesc">
-生成适合朋友圈发布的文案
+
+
+<p id="momentsDesc">
+
+生成朋友圈文案。
+
 </p>
 
-<input id="momentsTopic"
+
+
+<input
+id="momentsTopic"
 placeholder="输入主题">
 
-<button onclick="generateMoments()" data-i18n="generate">
+
+
+<button
+class="primary"
+onclick="generateMoments()">
+
 生成
+
 </button>
 
-<div id="momentsResult" class="result"></div>
+
+
+<div
+class="result"
+id="momentsResult">
 
 </div>
 
 
 
-<div class="tool-box">
+</div>
+
+
+
+
+
+
+
+
+<div>
+
 
 <h3>
-📧 <span data-i18n="mailTitle">
+
+📧 <span id="mailTitle">
+
 AI邮件助手
+
 </span>
+
 </h3>
 
-<p data-i18n="mailDesc">
-快速生成邮件内容
+
+
+<p id="mailDesc">
+
+快速生成邮件内容。
+
 </p>
 
-<input id="mailTopic"
+
+
+
+<input
+id="mailTopic"
 placeholder="输入邮件类型">
 
-<button onclick="generateMail()" data-i18n="generate">
+
+
+<button
+class="primary"
+onclick="generateMail()">
+
 生成
+
 </button>
 
-<div id="mailResult" class="result"></div>
+
+
+
+<div
+class="result"
+id="mailResult">
 
 </div>
+
+
+
+</div>
+
 
 
 </section>
@@ -1205,14 +1211,16 @@ placeholder="输入邮件类型">
 
 
 
-  
 
-  
+
+
+
 
 <!-- 分享区域 -->
 
 
-<div style="
+<div
+style="
 text-align:center;
 margin:50px 0;
 ">
@@ -1226,10 +1234,7 @@ margin:50px 0;
 
 
 
-
-
 <button
-id="shareButton"
 class="secondary"
 onclick="shareSite()">
 
@@ -1249,11 +1254,10 @@ onclick="shareSite()">
 
 
 
-<!-- 关于 AI小工具箱 -->
+<!-- 关于 -->
 
 
 <div class="card">
-
 
 
 <h2 id="aboutTitle">
@@ -1265,12 +1269,12 @@ onclick="shareSite()">
 
 
 
-
 <p id="aboutText">
 
-我们正在制作一系列免费 AI 效率工具，帮助学生、创作者、开发者和普通用户提高效率。
+我们正在制作免费 AI 效率工具，帮助学生、创作者和普通用户提高效率。
 
 </p>
+
 
 
 
@@ -1295,22 +1299,20 @@ onclick="shareSite()">
 <!-- 支持作者 -->
 
 
-<div style="
+<div
+style="
 text-align:center;
 margin:40px 0;
 ">
 
 
-
 <button
-id="supportAuthor"
 class="primary"
 onclick="showDonate()">
 
 💚 支持作者
 
 </button>
-
 
 
 </div>
@@ -1322,11 +1324,11 @@ onclick="showDonate()">
 
 
 
-
 <!-- 打赏弹窗 -->
 
 
-<div id="donateModal"
+<div
+id="donateModal"
 style="
 display:none;
 position:fixed;
@@ -1342,7 +1344,8 @@ z-index:9999;
 
 
 
-<div style="
+<div
+style="
 background:white;
 padding:30px;
 border-radius:20px;
@@ -1350,8 +1353,7 @@ text-align:center;
 ">
 
 
-
-<h3 id="thanksText">
+<h3>
 
 感谢支持 ❤️
 
@@ -1359,9 +1361,8 @@ text-align:center;
 
 
 
-
-
-<img src="wechat-pay.png"
+<img
+src="wechat-pay.png"
 style="
 width:240px;
 max-width:100%;
@@ -1370,9 +1371,7 @@ border-radius:15px;
 
 
 
-
-
-<p id="donateText">
+<p>
 
 感谢你的支持 💗
 
@@ -1381,9 +1380,7 @@ border-radius:15px;
 
 
 
-
 <button
-id="closeDonate"
 class="secondary"
 onclick="hideDonate()">
 
@@ -1396,12 +1393,62 @@ onclick="hideDonate()">
 </div>
 
 
-
 </div>
 
 
 
 
+
+
+
+
+
+
+<!-- 广告位 -->
+
+
+<section
+class="card"
+style="
+text-align:center;
+margin-top:30px;
+">
+
+
+<h2>
+
+📢 广告合作
+
+</h2>
+
+
+
+<p style="color:#777;">
+
+网站正在成长中，未来这里将展示优质广告
+
+</p>
+
+
+
+
+<div
+style="
+height:90px;
+border:1px dashed #ccc;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:12px;
+">
+
+广告位预留
+
+</div>
+
+
+
+</section>
 
 
 
@@ -1414,8 +1461,7 @@ onclick="hideDonate()">
 <footer class="footer">
 
 
-
-<div id="footerText">
+<div>
 
 © 2026 AI小工具箱 · Free AI Tools
 
@@ -1423,15 +1469,11 @@ onclick="hideDonate()">
 
 
 
-
-
-<div id="privacyText">
+<div>
 
 🔒 本网站不会保存你的输入内容
 
 </div>
-
-
 
 
 
@@ -1443,14 +1485,16 @@ onclick="hideDonate()">
 
 
 
+
+
 <script>
 
 
-let currentLanguage = "zh";
+let currentLanguage="zh";
 
 
 
-const languageText = {
+const languageText={
 
 
 zh:{
@@ -1462,51 +1506,47 @@ siteDescription:
 "免费、简单、实用的 AI 效率工具<br>无需安装 · 无需注册 · 免费使用",
 
 
+
 navPrompt:"AI提示词",
 
 navResume:"AI简历助手",
 
 navTitle:"AI标题生成",
 
-resumeTitle:"📝 AI简历助手",
 
-resumeDescription:
-"输入你的教育经历、技能和项目经验，生成专业的简历优化提示词。",
-
-
-titleToolTitle:
-"💡 AI标题生成器",
-
-titleToolDesc:
-"输入你的主题，生成多个吸引人的标题。",
-
-
-shareButton:
-"📤 分享 AI小工具箱",
 
 promptTitle:"🔥 AI提示词生成器",
 
-
 promptDescription:
-"告诉我们你想做什么，生成一份可以直接复制给 ChatGPT、Claude 或其他 AI 使用的专业提示词。",
-
-
-promptPlaceholder:
-"例如：帮我写一篇关于减肥的文章",
+"告诉我们你想做什么，生成可以直接使用的专业AI提示词。",
 
 
 
-resumePlaceholder:
-"例如：大学毕业，会Python，做过一个网站项目……",
+resumeTitle:"📝 AI简历助手",
+
+resumeDescription:
+"输入你的经历，生成专业简历优化建议。",
 
 
-titlePlaceholder:
-"例如：大学生如何利用AI提高学习效率",
+
+titleToolTitle:"💡 AI标题生成器",
+
+titleToolDesc:
+"输入主题，生成多个吸引人的标题。",
 
 
-xhPlaceholder:
-"例如：大学生省钱、减肥早餐、旅行攻略",
 
+xiaohongshuTitle:
+"🔥 AI小红书标题生成器",
+
+
+xiaohongshuDesc:
+"输入主题，免费生成多个小红书标题",
+
+
+
+xhButton:
+"✨ 免费生成标题",
 
 
 
@@ -1527,24 +1567,9 @@ copyButton:
 "📋 一键复制",
 
 
-generateLoading:
-"等待生成...",
 
-
-
-xiaohongshuTitle:
-"🔥 AI小红书标题生成器",
-
-
-
-xiaohongshuDesc:
-"输入你的主题，免费生成多个小红书标题",
-
-
-
-xhButton:
-"✨ 免费生成标题",
-
+shareButton:
+"📤 分享 AI小工具箱",
 
 
 
@@ -1559,7 +1584,7 @@ aboutTitle:
 
 
 aboutText:
-"我们正在制作一系列免费 AI 效率工具，帮助学生、创作者、开发者和普通用户提高效率。",
+"我们正在制作免费 AI 效率工具，帮助学生、创作者和普通用户提高效率。",
 
 
 
@@ -1598,50 +1623,40 @@ privacyText:
 
 
 
-freeLabel:
-"FREE",
+newToolsTitle:
+"AI效率工具",
 
 
 
-optionGeneral:
-"通用任务",
+articleTitle:
+"AI文章标题生成器",
 
 
-optionWriting:
-"📝 写作",
-
-
-optionXhs:
-"📱 小红书",
-
-
-optionStudy:
-"📚 学习",
-
-
-optionProgramming:
-"💻 编程",
-
-
-optionBusiness:
-"💼 商业"
-
-
-newToolsTitle:"AI效率工具",
-
-articleTitle:"AI文章标题生成器",
-articleDesc:"输入主题，生成吸引人的文章标题",
-
-momentsTitle:"AI朋友圈文案生成器",
-momentsDesc:"生成适合朋友圈发布的文案",
-
-mailTitle:"AI邮件助手",
-mailDesc:"快速生成邮件内容",
-
-generate:"生成"
+articleDesc:
+"输入主题，生成吸引人的文章标题",
 
 
 
+momentsTitle:
+"AI朋友圈文案生成器",
+
+
+momentsDesc:
+"生成适合朋友圈发布的文案",
+
+
+
+mailTitle:
+"AI邮件助手",
+
+
+mailDesc:
+"快速生成邮件内容",
+
+
+
+generate:
+"生成"
 
 
 
@@ -1652,12 +1667,12 @@ generate:"生成"
 
 
 
-
 en:{
 
 
 
-siteTitle:"🤖 AI Toolbox",
+siteTitle:
+"🤖 AI Toolbox",
 
 
 
@@ -1667,32 +1682,16 @@ siteDescription:
 
 
 navPrompt:
-"AI Prompts",
-
+"AI Prompt Generator",
 
 
 navResume:
 "AI Resume Assistant",
 
 
-
 navTitle:
 "AI Title Generator",
 
-resumeTitle:"📝 AI Resume Assistant",
-
-resumeDescription:
-"Enter your education, skills and project experience to generate professional resume optimization prompts.",
-
-
-titleToolTitle:"💡 AI Title Generator",
-
-titleToolDesc:
-"Enter your topic and generate multiple attractive titles.",
-
-
-shareButton:
-"📤 Share AI Toolbox",
 
 
 promptTitle:
@@ -1701,27 +1700,42 @@ promptTitle:
 
 
 promptDescription:
-"Tell us what you want to do and generate a professional prompt for ChatGPT, Claude or other AI tools.",
+"Tell us what you want and generate a professional AI prompt.",
 
 
 
-promptPlaceholder:
-"Example: Write an article about weight loss",
+resumeTitle:
+"📝 AI Resume Assistant",
 
 
 
-resumePlaceholder:
-"Example: College graduate, knows Python, built a website project...",
+resumeDescription:
+"Enter your experience and generate resume suggestions.",
 
 
 
-titlePlaceholder:
-"Example: How students can use AI to improve learning efficiency",
+titleToolTitle:
+"💡 AI Title Generator",
 
 
 
-xhPlaceholder:
-"Example: Saving money, healthy breakfast, travel guide",
+titleToolDesc:
+"Enter your topic and generate attractive titles.",
+
+
+
+xiaohongshuTitle:
+"🔥 AI Xiaohongshu Title Generator",
+
+
+
+xiaohongshuDesc:
+"Enter your topic and generate titles for free",
+
+
+
+xhButton:
+"✨ Generate Titles",
 
 
 
@@ -1745,23 +1759,8 @@ copyButton:
 
 
 
-generateLoading:
-"Waiting for generation...",
-
-
-
-xiaohongshuTitle:
-"🔥 AI Xiaohongshu Title Generator",
-
-
-
-xiaohongshuDesc:
-"Enter your topic and generate multiple Xiaohongshu titles for free",
-
-
-
-xhButton:
-"✨ Generate Titles",
+shareButton:
+"📤 Share AI Toolbox",
 
 
 
@@ -1776,7 +1775,7 @@ aboutTitle:
 
 
 aboutText:
-"We are building free AI productivity tools to help students, creators, developers and everyday users improve efficiency.",
+"We are building free AI tools to help students, creators and everyday users improve efficiency.",
 
 
 
@@ -1815,52 +1814,47 @@ privacyText:
 
 
 
-freeLabel:
-"FREE",
+newToolsTitle:
+"AI Productivity Tools",
 
 
 
-optionGeneral:
-"General",
+articleTitle:
+"AI Article Title Generator",
 
 
-optionWriting:
-"📝 Writing",
+
+articleDesc:
+"Generate attractive article titles",
 
 
-optionXhs:
-"📱 Xiaohongshu",
+
+momentsTitle:
+"AI Social Media Copy Generator",
 
 
-optionStudy:
-"📚 Study",
+
+momentsDesc:
+"Create social media posts",
 
 
-optionProgramming:
-"💻 Programming",
+
+mailTitle:
+"AI Email Assistant",
 
 
-optionBusiness:
-"💼 Business"
+
+mailDesc:
+"Generate email content quickly",
 
 
-newToolsTitle:"AI Productivity Tools",
 
-articleTitle:"AI Article Title Generator",
-articleDesc:"Generate attractive article titles",
+generate:
+"Generate"
 
-momentsTitle:"AI Social Media Copy Generator",
-momentsDesc:"Create engaging social media posts",
-
-mailTitle:"AI Email Assistant",
-mailDesc:"Generate email content quickly",
-
-generate:"Generate"
-  
-
-  
 
 }
+
 
 
 };
@@ -1868,14 +1862,13 @@ generate:"Generate"
 
 
 
+
 function setLanguage(lang){
 
+currentLanguage=lang;
 
-currentLanguage = lang;
 
-
-let t = languageText[lang];
-
+let t=languageText[lang];
 
 
 function setText(id,text){
@@ -1918,6 +1911,12 @@ setText("navResume",t.navResume);
 
 setText("navTitle",t.navTitle);
 
+
+setText("promptTitle",t.promptTitle);
+
+setText("promptDescription",t.promptDescription);
+
+
 setText("resumeTitle",t.resumeTitle);
 
 setText("resumeDescription",t.resumeDescription);
@@ -1928,99 +1927,44 @@ setText("titleToolTitle",t.titleToolTitle);
 setText("titleToolDesc",t.titleToolDesc);
 
 
+
 setText("shareButton",t.shareButton);
 
-setText("promptTitle",t.promptTitle);
-
-setText("promptDescription",t.promptDescription);
-
-
-
-setText("generatePromptBtn",t.generatePromptBtn);
-
-setText("generateResumeBtn",t.generateResumeBtn);
-
-setText("generateTitleBtn",t.generateTitleBtn);
-
-
-
-setText("copyPromptBtn",t.copyButton);
-
-setText("copyResumeBtn",t.copyButton);
-
-setText("copyTitleBtn",t.copyButton);
-
-
-
 setText("shareText",t.shareText);
+
 
 
 setText("aboutTitle",t.aboutTitle);
 
 setText("aboutText",t.aboutText);
 
-
 setText("moreTools",t.moreTools);
+
 
 
 setText("supportAuthor",t.supportAuthor);
 
-
 setText("thanksText",t.thanksText);
 
-
 setText("donateText",t.donateText);
-
 
 setText("closeDonate",t.closeDonate);
 
 
-setText("footerText",t.footerText);
 
+setText("newToolsTitle",t.newToolsTitle);
 
-setText("privacyText",t.privacyText);
+setText("articleTitle",t.articleTitle);
 
+setText("articleDesc",t.articleDesc);
 
-setText("xhButton",t.xhButton);
+setText("momentsTitle",t.momentsTitle);
 
-setText("optionGeneral",t.optionGeneral);
+setText("momentsDesc",t.momentsDesc);
 
-setText("optionWriting",t.optionWriting);
+setText("mailTitle",t.mailTitle);
 
-setText("optionXhs",t.optionXhs);
-
-setText("optionStudy",t.optionStudy);
-
-setText("optionProgramming",t.optionProgramming);
-
-setText("optionBusiness",t.optionBusiness);
-
-document.getElementById("promptInput").placeholder =
-t.promptPlaceholder;
-
-
-document.getElementById("resumeInput").placeholder =
-t.resumePlaceholder;
-
-
-document.getElementById("titleInput").placeholder =
-t.titlePlaceholder;
-
-
-document.getElementById("topicInput").placeholder =
-t.xhPlaceholder;
-
-
-
-document.querySelectorAll("[data-i18n]").forEach(el=>{
-
-if(t[el.dataset.i18n]){
-
-el.innerText=t[el.dataset.i18n];
-
-}
-
-});
+setText("mailDesc",t.mailDesc);
 
 
 
@@ -2031,36 +1975,24 @@ document.getElementById("zhBtn")
 document.getElementById("enBtn")
 .classList.toggle("active",lang==="en");
 
-
-
 }
 
 
 
 
-
-
-
-
-
-/* AI提示词 */
-
+// AI提示词
 
 function generatePrompt(){
 
-
-let input =
-document.getElementById("promptInput")
-.value.trim();
-
+let input=document.getElementById("promptInput").value.trim();
 
 
 if(!input){
 
 alert(
 currentLanguage==="zh"
-?"请输入任务内容"
-:"Please enter your task"
+?"请输入内容"
+:"Please enter content"
 );
 
 return;
@@ -2068,9 +2000,12 @@ return;
 }
 
 
+let result;
 
-let result =
 
+if(currentLanguage==="zh"){
+
+result=
 `你是一名专业AI助手。
 
 请帮助我完成：
@@ -2081,20 +2016,17 @@ ${input}
 要求：
 
 1. 分析目标
-2. 给出解决方案
-3. 提供可执行步骤
-4. 输出专业结果
-5. 不编造信息`;
+2. 提供方案
+3. 给出步骤
+4. 输出结果`;
+
+}else{
 
 
-
-if(currentLanguage==="en"){
-
-result =
-
+result=
 `You are a professional AI assistant.
 
-Please help me complete:
+Please help me:
 
 ${input}
 
@@ -2103,37 +2035,26 @@ Requirements:
 
 1. Analyze the goal
 2. Provide solutions
-3. Give actionable steps
-4. Output professional results
-5. Do not make up information`;
+3. Give steps
+4. Output results`;
+
+}
+
+
+document.getElementById("promptOutput").innerText=result;
 
 }
 
 
 
-document.getElementById("promptOutput")
-.innerText=result;
-
-
-}
 
 
 
-
-
-
-
-
-/* AI简历 */
-
+// AI简历
 
 function generateResume(){
 
-
-let input =
-document.getElementById("resumeInput")
-.value.trim();
-
+let input=document.getElementById("resumeInput").value.trim();
 
 
 if(!input){
@@ -2141,7 +2062,7 @@ if(!input){
 alert(
 currentLanguage==="zh"
 ?"请输入经历"
-:"Please enter your experience"
+:"Please enter experience"
 );
 
 return;
@@ -2150,63 +2071,54 @@ return;
 
 
 
-let result =
-
-`你是一名专业简历顾问。
-
-我的经历：
-
-${input}
+let result;
 
 
-请帮我：
+if(currentLanguage==="zh"){
 
-1. 优化简历内容
-2. 提炼技能
-3. 突出项目成果
-4. 给出求职建议`;
-
-
-
-if(currentLanguage==="en"){
-
-result =
-
-`You are a professional resume consultant.
-
-My experience:
+result=
+`简历优化：
 
 ${input}
 
+请优化：
 
-Please help me:
+1. 技能描述
+2. 项目经历
+3. 求职优势`;
 
-1. Improve resume content
-2. Highlight skills
-3. Show project achievements
-4. Provide career advice`;
+}else{
+
+
+result=
+`Resume optimization:
+
+${input}
+
+Improve:
+
+1. Skills
+2. Projects
+3. Career advantages`;
 
 }
 
 
-
-document.getElementById("resumeOutput")
-.innerText=result;
+document.getElementById("resumeOutput").innerText=result;
 
 
 }
 
 
 
-/* AI标题生成 */
 
+
+
+// AI标题
 
 function generateTitles(){
 
-
-let input =
-document.getElementById("titleInput")
-.value.trim();
+let input=document.getElementById("titleInput").value.trim();
 
 
 
@@ -2215,7 +2127,7 @@ if(!input){
 alert(
 currentLanguage==="zh"
 ?"请输入主题"
-:"Please enter a topic"
+:"Please enter topic"
 );
 
 return;
@@ -2223,51 +2135,36 @@ return;
 }
 
 
-
-let result =
-
-`你是一名内容运营专家。
-
-主题：
-
-${input}
+let result;
 
 
-请生成20个吸引人的标题：
+if(currentLanguage==="zh"){
 
-1. 好奇型
-2. 实用型
-3. 数字型
-4. 情绪型
-5. 干货型`;
+result=
+`${input}：
 
+1. 深度解析${input}
+2. 新手必看的${input}指南
+3. 关于${input}你需要知道的事情
+4. ${input}完整攻略
+5. ${input}经验分享`;
 
-
-if(currentLanguage==="en"){
-
-result =
-
-`You are a content marketing expert.
-
-Topic:
-
-${input}
+}else{
 
 
-Please generate 20 attractive titles:
+result=
+`${input}:
 
-1. Curiosity type
-2. Practical type
-3. Number type
-4. Emotional type
-5. Useful type`;
+1. Complete guide about ${input}
+2. Beginner tips for ${input}
+3. Things you should know about ${input}
+4. ${input} experience sharing`;
 
 }
 
 
 
-document.getElementById("titleOutput")
-.innerText=result;
+document.getElementById("titleOutput").innerText=result;
 
 
 }
@@ -2275,34 +2172,24 @@ document.getElementById("titleOutput")
 
 
 
-
-
-
-
-
-/* AI小红书标题 */
-
+// 小红书标题
 
 function generateXhsTitles(){
 
 
-let topic =
-document.getElementById("topicInput")
-.value.trim();
+let topic=document.getElementById("topicInput").value.trim();
 
 
-
-let box =
-document.getElementById("titleResults");
+let box=document.getElementById("titleResults");
 
 
 
 if(!topic){
 
-box.innerHTML =
+box.innerHTML=
 currentLanguage==="zh"
 ?"请输入主题"
-:"Please enter a topic";
+:"Please enter topic";
 
 return;
 
@@ -2310,24 +2197,23 @@ return;
 
 
 
-let titles;
-
+let arr;
 
 
 if(currentLanguage==="zh"){
 
 
-titles=[
+arr=[
 
 `🔥 ${topic}经验分享`,
 
-`${topic}新手必看攻略`,
+`${topic}新手攻略`,
 
 `${topic}避坑指南`,
 
-`关于${topic}，我总结了5个技巧`,
+`${topic}收藏教程`,
 
-`${topic}收藏级教程`
+`关于${topic}的5个技巧`
 
 ];
 
@@ -2335,17 +2221,17 @@ titles=[
 }else{
 
 
-titles=[
+arr=[
 
-`🔥 ${topic} Experience Sharing`,
+`🔥 ${topic} Experience`,
 
 `${topic} Beginner Guide`,
 
-`${topic} Mistakes To Avoid`,
+`${topic} Tips`,
 
-`5 Tips About ${topic}`,
+`${topic} Complete Guide`,
 
-`${topic} Complete Guide`
+`5 Tips About ${topic}`
 
 ];
 
@@ -2354,20 +2240,21 @@ titles=[
 
 
 
+box.innerHTML=
 
+arr.map((x,i)=>
 
-box.innerHTML =
+`
+<div class="result-item">
 
-titles.map((t,i)=>`
-
-<div class="result-item"
-onclick="copyTitle('${t.replace(/'/g,"\\'")}')">
-
-${i+1}. ${t}
+${i+1}. ${x}
 
 </div>
 
-`).join("");
+`
+
+).join("");
+
 
 
 }
@@ -2376,25 +2263,81 @@ ${i+1}. ${t}
 
 
 
+// 第二批工具
 
 
+function generateArticleTitle(){
+
+let t=document.getElementById("articleTopic").value.trim();
 
 
-
-/* 复制标题 */
-
-
-function copyTitle(text){
-
-
-navigator.clipboard.writeText(text);
-
+if(!t){
 
 alert(
 currentLanguage==="zh"
-?"标题已复制"
-:"Title copied"
+?"请输入主题"
+:"Please enter topic"
 );
+
+return;
+
+}
+
+
+document.getElementById("articleResult").innerHTML=
+
+currentLanguage==="zh"
+
+?
+
+"1. "+t+"深度解析<br>"+
+"2. 关于"+t+"你必须知道的5件事<br>"+
+"3. "+t+"完整攻略"
+
+:
+
+"1. Deep analysis of "+t+"<br>"+
+"2. 5 things you should know about "+t+"<br>"+
+"3. Complete guide about "+t;
+
+
+}
+
+
+
+
+function generateMoments(){
+
+
+let t=document.getElementById("momentsTopic").value.trim();
+
+
+if(!t){
+
+alert(
+currentLanguage==="zh"
+?"请输入主题"
+:"Please enter topic"
+);
+
+return;
+
+}
+
+
+
+document.getElementById("momentsResult").innerHTML=
+
+
+currentLanguage==="zh"
+
+?
+
+"✨ 今天分享："+t+"<br>记录生活，发现美好。"
+
+:
+
+"✨ Today sharing: "+t+"<br>Record life and enjoy moments.";
 
 
 }
@@ -2404,10 +2347,51 @@ currentLanguage==="zh"
 
 
 
+function generateMail(){
+
+
+let t=document.getElementById("mailTopic").value.trim();
+
+
+if(!t){
+
+alert(
+currentLanguage==="zh"
+?"请输入邮件类型"
+:"Please enter email type"
+);
+
+return;
+
+}
 
 
 
-/* 通用复制 */
+document.getElementById("mailResult").innerHTML=
+
+
+currentLanguage==="zh"
+
+?
+
+"主题："+t+
+"<br><br>您好，感谢您的联系。<br>期待进一步沟通。"
+
+:
+
+"Subject: "+t+
+"<br><br>Hello, thank you for contacting us.<br>Looking forward to communication.";
+
+
+
+}
+
+
+
+
+
+
+// 复制
 
 
 function copyText(id){
@@ -2416,12 +2400,7 @@ function copyText(id){
 let el=document.getElementById(id);
 
 
-if(!el){
-
-return;
-
-}
-
+if(!el)return;
 
 
 navigator.clipboard.writeText(
@@ -2429,11 +2408,18 @@ el.innerText
 );
 
 
-
 alert(
+
 currentLanguage==="zh"
-?"已复制"
-:"Copied"
+
+?
+
+"已复制"
+
+:
+
+"Copied"
+
 );
 
 
@@ -2444,18 +2430,13 @@ currentLanguage==="zh"
 
 
 
-
-
-
-/* 分享网站 */
+// 分享
 
 
 function shareSite(){
 
 
-let url =
-window.location.href;
-
+let url=window.location.href;
 
 
 if(navigator.share){
@@ -2465,18 +2446,12 @@ navigator.share({
 
 title:
 currentLanguage==="zh"
-?"AI小工具箱"
-:"AI Toolbox",
-
-
-text:
-currentLanguage==="zh"
-?"免费的AI工具"
-:"Free AI tools",
-
+?
+"AI小工具箱"
+:
+"AI Toolbox",
 
 url:url
-
 
 });
 
@@ -2487,17 +2462,25 @@ url:url
 navigator.clipboard.writeText(url);
 
 
-
 alert(
+
 currentLanguage==="zh"
-?"网址已复制"
-:"Link copied"
+
+?
+
+"网址已复制"
+
+:
+
+"Link copied"
+
 );
 
 
 }
 
 
+
 }
 
 
@@ -2505,10 +2488,7 @@ currentLanguage==="zh"
 
 
 
-
-
-
-/* 支持作者 */
+// 打赏
 
 
 function showDonate(){
@@ -2536,108 +2516,33 @@ document.getElementById("donateModal")
 
 
 
-// 默认中文
+// 默认语言
+
 
 setLanguage("zh");
 
-
-function generateArticleTitle(){
-
-let t=document.getElementById("articleTopic").value;
-
-document.getElementById("articleResult").innerHTML=
-"1. "+t+"：未来发展趋势分析<br>"+
-"2. 深入了解"+t+"的关键机会<br>"+
-"3. 关于"+t+"你需要知道的一切";
-
-}
-
-
-
-function generateMoments(){
-
-let t=document.getElementById("momentsTopic").value;
-
-document.getElementById("momentsResult").innerHTML=
-"✨ 分享今天关于"+t+"的小美好<br>"+
-"生活需要记录，也需要发现。";
-
-}
-
-
-
-function generateMail(){
-
-let t=document.getElementById("mailTopic").value;
-
-document.getElementById("mailResult").innerHTML=
-"Subject: "+t+
-"<br><br>Hello,<br><br>"+
-"感谢您的阅读，期待进一步交流。";
-
-}
-
-  
-
-
-
-
-
-function generateMoments(){
-
-let t=document.getElementById("momentsTopic").value;
-
-document.getElementById("momentsResult").innerHTML=
-"✨ 今天分享："+t+"<br>"+
-"生活需要记录，也需要发现美好。";
-
-}
-
-
-
-function generateMail(){
-
-let t=document.getElementById("mailTopic").value;
-
-document.getElementById("mailResult").innerHTML=
-"主题："+t+"<br><br>"+
-"您好，感谢您的阅读。<br>"+
-"希望我们可以进一步沟通合作。";
-
-}
-
-  
-
-
-
-
-  
 
 
 </script>
 
 
-<!-- 广告预留区域 -->
-<section class="card" style="text-align:center;margin-top:30px;">
-<h2>📢 广告合作</h2>
-
-<p style="color:#777;">
-网站正在成长中，未来这里将展示优质广告
-</p>
-
-<div style="
-height:90px;
-border:1px dashed #ccc;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:12px;
-">
-广告位预留
-</div>
-
-</section>
-  
 </body>
 
+
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
