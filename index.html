@@ -1113,6 +1113,87 @@ id="titleResults">
 
 
 
+<!-- 第二批AI工具 -->
+
+<section class="card">
+
+<h2 style="text-align:center;">
+🚀 AI效率工具
+</h2>
+
+
+<div class="tool-box">
+
+<h3>
+📝 AI文章标题生成器
+</h3>
+
+<p>
+输入文章主题，生成多个吸引人的标题
+</p>
+
+<input id="articleTopic" placeholder="例如：人工智能的发展趋势">
+
+<button onclick="generateArticleTitle()">
+生成标题
+</button>
+
+<div id="articleResult" class="result"></div>
+
+</div>
+
+
+
+<div class="tool-box">
+
+<h3>
+💬 AI朋友圈文案生成器
+</h3>
+
+<p>
+生成适合朋友圈发布的文案
+</p>
+
+<input id="momentsTopic" placeholder="例如：旅行">
+
+<button onclick="generateMoments()">
+生成文案
+</button>
+
+<div id="momentsResult" class="result"></div>
+
+</div>
+
+
+
+<div class="tool-box">
+
+<h3>
+📧 AI邮件助手
+</h3>
+
+<p>
+快速生成各种邮件内容
+</p>
+
+<input id="mailTopic" placeholder="例如：求职邮件">
+
+<button onclick="generateMail()">
+生成邮件
+</button>
+
+<div id="mailResult" class="result"></div>
+
+</div>
+
+
+</section>
+
+
+  
+
+  
+
 <!-- 分享区域 -->
 
 
@@ -2412,6 +2493,50 @@ document.getElementById("donateModal")
 
 setLanguage("zh");
 
+
+
+function generateArticleTitle(){
+
+let t=document.getElementById("articleTopic").value;
+
+document.getElementById("articleResult").innerHTML=
+"① "+t+"：未来趋势全面解析<br>"+
+"② 深度揭秘："+t+"背后的机会<br>"+
+"③ 普通人如何利用"+t+"提升效率";
+
+}
+
+
+
+function generateMoments(){
+
+let t=document.getElementById("momentsTopic").value;
+
+document.getElementById("momentsResult").innerHTML=
+"✨ 今天分享："+t+"<br>"+
+"生活需要记录，也需要发现美好。";
+
+}
+
+
+
+function generateMail(){
+
+let t=document.getElementById("mailTopic").value;
+
+document.getElementById("mailResult").innerHTML=
+"主题："+t+"<br><br>"+
+"您好，感谢您的阅读。<br>"+
+"希望我们可以进一步沟通合作。";
+
+}
+
+  
+
+
+
+
+  
 
 
 </script>
