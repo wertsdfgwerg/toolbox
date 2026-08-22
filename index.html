@@ -787,7 +787,7 @@ onclick="copyText('promptOutput')">
 
 <div class="result" id="promptOutput">
 
-Waiting for generation...
+等待生成...
 
 </div>
 
@@ -1690,7 +1690,7 @@ optionProgramming:
 optionBusiness:
 "💼 商业"
 
-
+waiting:"等待生成...",
 
 },
 
@@ -1904,7 +1904,7 @@ optionProgramming:
 optionBusiness:
 "💼 Business"
 
-
+waiting:"Waiting for generation...",
 
 }
 
@@ -2032,7 +2032,9 @@ setText("footerText",t.footerText);
 
 setText("privacyText",t.privacyText);
 
-
+setText("promptOutput",t.waiting);
+setText("resumeOutput",t.waiting);
+setText("titleOutput",t.waiting);
 
 setText("generatePromptBtn",t.generatePromptBtn);
 
