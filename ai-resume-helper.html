@@ -1,49 +1,442 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 <title>AI简历助手 - 免费简历优化工具</title>
-<meta name="description" content="AI简历助手 - 免费简历优化工具，AI小工具箱提供免费的在线AI工具，提高学习、工作和创作效率。">
+
+
+<meta name="description" content="AI简历助手，免费优化简历内容，帮助用户完善项目经历、技能描述和求职优势，提高求职竞争力。">
+
+
+<link rel="icon" href="logo.png">
+
+
 <style>
-body{font-family:Arial,"Microsoft YaHei",sans-serif;background:#f7f9fc;color:#222;margin:0;padding:30px;line-height:1.8}
-.box{max-width:900px;margin:auto;background:white;padding:35px;border-radius:20px}
-a{color:#2563eb}
+
+*{
+box-sizing:border-box;
+}
+
+
+body{
+
+margin:0;
+
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+"Microsoft YaHei",
+Arial,
+sans-serif;
+
+background:#f7f9fc;
+
+color:#222;
+
+line-height:1.8;
+
+}
+
+
+
+.container{
+
+max-width:900px;
+
+margin:auto;
+
+padding:30px 20px 60px;
+
+}
+
+
+
+.language-switch{
+
+text-align:right;
+
+margin-bottom:20px;
+
+}
+
+
+
+.language-switch button{
+
+padding:8px 18px;
+
+border-radius:20px;
+
+border:1px solid #ddd;
+
+background:white;
+
+cursor:pointer;
+
+margin-left:8px;
+
+}
+
+
+
+.box{
+
+background:white;
+
+padding:35px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+}
+
+
+
+h1{
+
+color:#2563eb;
+
+font-size:38px;
+
+}
+
+
+h2{
+
+margin-top:30px;
+
+}
+
+
+
+.card{
+
+background:#f8fafc;
+
+padding:20px;
+
+border-radius:15px;
+
+margin:20px 0;
+
+}
+
+
+
+a{
+
+color:#2563eb;
+
+text-decoration:none;
+
+}
+
+
+
+@media(max-width:700px){
+
+h1{
+
+font-size:30px;
+
+}
+
+.box{
+
+padding:20px;
+
+}
+
+}
+
+
 </style>
+
 </head>
+
+
+
 <body>
-<div class="box">
-<h1>AI简历助手</h1>
-<p>使用AI帮助优化简历内容，让项目经历和技能描述更加专业。</p>
-<h2>支持优化</h2><p>项目经验、技能描述、自我介绍、求职优势。</p>
-<a href="index.html#resumeTool">立即使用AI简历助手</a>
-<hr>
-<a href="index.html">返回 AI小工具箱首页</a>
+
+
+<div class="container">
+
+
+<div class="language-switch">
+
+
+<button onclick="setLanguage('zh')">
+中文
+</button>
+
+
+<button onclick="setLanguage('en')">
+English
+</button>
+
+
 </div>
+
+
+
+<div class="box">
+
+
+
+<h1 id="title">
+
+AI简历助手
+
+</h1>
+
+
+
+<p id="intro">
+
+使用AI帮助优化简历内容，让项目经历和技能描述更加专业。
+
+</p>
+
+
+
+<div class="card">
+
+
+<h2 id="supportTitle">
+
+支持优化
+
+</h2>
+
+
+<p id="supportText">
+
+项目经验、技能描述、自我介绍、求职优势。
+
+</p>
+
+
+</div>
+
+
+
+<p>
+
+<a href="index.html#resumeTool" id="useLink">
+
+立即使用AI简历助手
+
+</a>
+
+</p>
+
+
+
 <hr>
 
-<h3>🚀 更多 AI 工具</h3>
 
-<p>
-<a href="index.html">AI工具箱首页</a>
-</p>
 
-<p>
-<a href="ai-tools.html">免费AI工具大全</a>
-</p>
+<h3 id="moreTitle">
 
-<p>
-<a href="ai-prompt-generator.html">AI提示词生成器</a>
-</p>
+🚀 更多 AI 工具
+
+</h3>
 
 
 
 <p>
-<a href="xiaohongshu-title-generator.html">AI小红书标题生成器</a>
+
+<a href="index.html" id="homeLink">
+
+AI工具箱首页
+
+</a>
+
 </p>
 
+
 <p>
-<a href="about-ai-tools.html">关于AI工具箱</a>
+
+<a href="ai-tools.html" id="allToolsLink">
+
+免费AI工具大全
+
+</a>
+
 </p>
+
+
+
+<p>
+
+<a href="ai-prompt-generator.html" id="promptLink">
+
+AI提示词生成器
+
+</a>
+
+</p>
+
+
+
+<p>
+
+<a href="xiaohongshu-title-generator.html" id="xhsLink">
+
+AI小红书标题生成器
+
+</a>
+
+</p>
+
+
+
+<p>
+
+<a href="about-ai-tools.html" id="aboutLink">
+
+关于AI工具箱
+
+</a>
+
+</p>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+<script>
+
+
+const lang={
+
+
+zh:{
+
+
+title:"AI简历助手",
+
+intro:"使用AI帮助优化简历内容，让项目经历和技能描述更加专业。",
+
+supportTitle:"支持优化",
+
+supportText:"项目经验、技能描述、自我介绍、求职优势。",
+
+useLink:"立即使用AI简历助手",
+
+moreTitle:"🚀 更多 AI 工具",
+
+homeLink:"AI工具箱首页",
+
+allToolsLink:"免费AI工具大全",
+
+promptLink:"AI提示词生成器",
+
+xhsLink:"AI小红书标题生成器",
+
+aboutLink:"关于AI工具箱"
+
+
+},
+
+
+
+en:{
+
+
+title:"AI Resume Assistant",
+
+intro:"Use AI to optimize your resume and make project experience and skills more professional.",
+
+supportTitle:"Optimization Features",
+
+supportText:"Project experience, skill descriptions, self introduction and career advantages.",
+
+useLink:"Use AI Resume Assistant Now",
+
+moreTitle:"🚀 More AI Tools",
+
+homeLink:"AI Toolbox Home",
+
+allToolsLink:"Free AI Tools Collection",
+
+promptLink:"AI Prompt Generator",
+
+xhsLink:"Xiaohongshu Title Generator",
+
+aboutLink:"About AI Toolbox"
+
+
+}
+
+
+};
+
+
+
+
+
+function setLanguage(type){
+
+
+let t=lang[type];
+
+
+document.getElementById("title").innerText=t.title;
+
+
+document.getElementById("intro").innerText=t.intro;
+
+
+document.getElementById("supportTitle").innerText=t.supportTitle;
+
+
+document.getElementById("supportText").innerText=t.supportText;
+
+
+document.getElementById("useLink").innerText=t.useLink;
+
+
+document.getElementById("moreTitle").innerText=t.moreTitle;
+
+
+document.getElementById("homeLink").innerText=t.homeLink;
+
+
+document.getElementById("allToolsLink").innerText=t.allToolsLink;
+
+
+document.getElementById("promptLink").innerText=t.promptLink;
+
+
+document.getElementById("xhsLink").innerText=t.xhsLink;
+
+
+document.getElementById("aboutLink").innerText=t.aboutLink;
+
+
+}
+
+
+
+</script>
+
+
+
 </body>
+
 </html>
