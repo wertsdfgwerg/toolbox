@@ -1,49 +1,247 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>AI工具是什么？免费AI工具使用指南</title>
-<meta name="description" content="AI工具是什么？免费AI工具使用指南，AI小工具箱提供免费的在线AI工具，提高学习、工作和创作效率。">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>关于AI工具箱 - 免费AI效率工具</title>
+
+
+<meta name="description" content="了解AI工具箱，提供免费的AI提示词生成器、AI简历助手、AI标题生成器等在线AI工具，提高学习和工作效率。">
+
+
+<link rel="icon" href="logo.png">
+
+
 <style>
-body{font-family:Arial,"Microsoft YaHei",sans-serif;background:#f7f9fc;color:#222;margin:0;padding:30px;line-height:1.8}
-.box{max-width:900px;margin:auto;background:white;padding:35px;border-radius:20px}
-a{color:#2563eb}
+
+*{
+box-sizing:border-box;
+}
+
+
+body{
+
+margin:0;
+
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+"Microsoft YaHei",
+Arial,
+sans-serif;
+
+background:#f7f9fc;
+
+color:#222;
+
+}
+
+
+.container{
+
+max-width:900px;
+
+margin:auto;
+
+padding:30px 20px 60px;
+
+}
+
+
+.language-switch{
+
+text-align:right;
+
+margin-bottom:20px;
+
+}
+
+
+.language-switch button{
+
+padding:8px 18px;
+
+border-radius:20px;
+
+border:1px solid #ddd;
+
+background:white;
+
+cursor:pointer;
+
+margin-left:8px;
+
+}
+
+
+
+.box{
+
+background:white;
+
+padding:35px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+}
+
+
+h1{
+
+font-size:38px;
+
+color:#2563eb;
+
+}
+
+
+h2{
+
+margin-top:30px;
+
+}
+
+
+.card{
+
+background:#f8fafc;
+
+padding:20px;
+
+border-radius:15px;
+
+margin:20px 0;
+
+}
+
+
+a{
+
+color:#2563eb;
+
+text-decoration:none;
+
+}
+
+
+
+@media(max-width:700px){
+
+h1{
+
+font-size:30px;
+
+}
+
+.box{
+
+padding:20px;
+
+}
+
+}
+
+
 </style>
+
+
 </head>
+
+
+
 <body>
-<div class="box">
-<h1>AI工具是什么？</h1>
-<p>人工智能工具可以帮助用户提高学习、工作和创作效率。</p>
-<h2>AI工具应用</h2>
-<p>学生可以使用AI辅助学习，创作者可以使用AI生成内容，职场用户可以使用AI处理重复工作。</p>
-<p>AI小工具箱致力于提供简单免费的AI效率工具。</p>
-<hr>
-<a href="index.html">返回 AI小工具箱首页</a>
+
+
+<div class="container">
+
+
+<div class="language-switch">
+
+
+<button onclick="setLanguage('zh')">
+中文
+</button>
+
+
+<button onclick="setLanguage('en')">
+English
+</button>
+
+
 </div>
-<hr>
 
-<h3>🚀 更多 AI 工具</h3>
 
-<p>
-<a href="index.html">AI工具箱首页</a>
+
+<div class="box">
+
+
+
+<h1 id="title">
+
+🌍 关于 AI小工具箱
+
+</h1>
+
+
+
+<p id="intro">
+
+AI小工具箱致力于提供简单、免费、实用的AI效率工具。
+
 </p>
 
-<p>
-<a href="ai-tools.html">免费AI工具大全</a>
+
+
+<div class="card">
+
+
+<h2 id="aboutTitle">
+
+AI工具是什么？
+
+</h2>
+
+
+<p id="aboutText">
+
+AI工具可以帮助用户提高学习、工作和创作效率。
+
 </p>
 
-<p>
-<a href="ai-prompt-generator.html">AI提示词生成器</a>
+
+</div>
+
+
+
+<div class="card">
+
+
+<h2 id="goalTitle">
+
+AI工具应用
+
+</h2>
+
+
+<p id="goalText">
+
+学生可以使用AI辅助学习，创作者可以使用AI生成内容，职场用户可以使用AI处理重复工作。
+
 </p>
 
-<p>
-<a href="ai-resume-helper.html">AI简历助手</a>
-</p>
 
-<p>
-<a href="xiaohongshu-title-generator.html">AI小红书标题生成器</a>
-</p>
+</div>
+
+
+
 
 <div class="card">
 
@@ -55,17 +253,12 @@ AI工具
 </h2>
 
 
-<p id="toolsText">
-
-目前提供以下免费AI工具：
-
-</p>
-
 
 <p>
 
-🔥 
-<a href="ai-prompt-generator.html" id="promptLink">
+🔥
+
+<a href="ai-prompt-generator.html" id="prompt">
 
 AI提示词生成器
 
@@ -74,10 +267,12 @@ AI提示词生成器
 </p>
 
 
+
 <p>
 
-📝 
-<a href="ai-resume-helper.html" id="resumeLink">
+📝
+
+<a href="ai-resume-helper.html" id="resume">
 
 AI简历助手
 
@@ -86,12 +281,14 @@ AI简历助手
 </p>
 
 
+
 <p>
 
-💡 
-<a href="xiaohongshu-title-generator.html" id="titleLink">
+💡
 
-AI标题生成器
+<a href="xiaohongshu-title-generator.html" id="xiaohongshu">
+
+AI小红书标题生成器
 
 </a>
 
@@ -102,7 +299,8 @@ AI标题生成器
 <p>
 
 🚀
-<a href="ai-tools.html" id="allToolsLink">
+
+<a href="ai-tools.html" id="allTools">
 
 免费AI工具大全
 
@@ -111,37 +309,17 @@ AI标题生成器
 </p>
 
 
-
 </div>
 
 
 
-
-<div class="card">
-
-
-<h2 id="futureTitle">
-
-未来计划
-
-</h2>
-
-
-<p id="futureText">
-
-更多AI工具和功能正在开发中，我们会持续优化体验。
-
-</p>
-
-
-</div>
-
+<hr>
 
 
 
 <p>
 
-<a href="index.html" id="homeLink">
+<a href="index.html" id="home">
 
 返回 AI工具箱首页
 
@@ -151,21 +329,10 @@ AI标题生成器
 
 
 
-
 </div>
 
 
-
-<div class="footer">
-
-© 2026 AI工具箱 · Free AI Tools
-
 </div>
-
-
-
-</div>
-
 
 
 
@@ -173,42 +340,35 @@ AI标题生成器
 <script>
 
 
-const langText={
+const lang={
 
 
 zh:{
 
 
-pageTitle:"🌍 关于 AI小工具箱",
+title:"🌍 关于 AI小工具箱",
 
 intro:"AI小工具箱致力于提供简单、免费、实用的AI效率工具。",
 
+aboutTitle:"AI工具是什么？",
 
-missionTitle:"我们的目标",
+aboutText:"AI工具可以帮助用户提高学习、工作和创作效率。",
 
-missionText:"帮助学生、创作者、自媒体运营人员和普通用户提高工作和学习效率。",
+goalTitle:"AI工具应用",
 
+goalText:"学生可以使用AI辅助学习，创作者可以使用AI生成内容，职场用户可以使用AI处理重复工作。",
 
 toolsTitle:"AI工具",
 
-toolsText:"目前提供以下免费AI工具：",
+prompt:"AI提示词生成器",
 
+resume:"AI简历助手",
 
-promptLink:"AI提示词生成器",
+xiaohongshu:"AI小红书标题生成器",
 
-resumeLink:"AI简历助手",
+allTools:"免费AI工具大全",
 
-titleLink:"AI标题生成器",
-
-allToolsLink:"免费AI工具大全",
-
-
-futureTitle:"未来计划",
-
-futureText:"更多AI工具和功能正在开发中，我们会持续优化体验。",
-
-
-homeLink:"返回 AI工具箱首页"
+home:"返回 AI工具箱首页"
 
 
 },
@@ -218,100 +378,70 @@ homeLink:"返回 AI工具箱首页"
 en:{
 
 
-pageTitle:"🌍 About AI Toolbox",
-
+title:"🌍 About AI Toolbox",
 
 intro:"AI Toolbox provides simple, free and practical AI productivity tools.",
 
+aboutTitle:"What are AI Tools?",
 
-missionTitle:"Our Mission",
+aboutText:"AI tools can help users improve learning, work and creative efficiency.",
 
+goalTitle:"AI Tool Applications",
 
-missionText:"Help students, creators, content creators and everyday users improve work and learning efficiency.",
-
+goalText:"Students can use AI for learning, creators can generate content with AI, and professionals can automate repetitive tasks.",
 
 toolsTitle:"AI Tools",
 
+prompt:"AI Prompt Generator",
 
-toolsText:"Currently available free AI tools:",
+resume:"AI Resume Assistant",
 
+xiaohongshu:"Xiaohongshu Title Generator",
 
-promptLink:"AI Prompt Generator",
+allTools:"Free AI Tools Collection",
 
-resumeLink:"AI Resume Assistant",
-
-titleLink:"AI Title Generator",
-
-allToolsLink:"Free AI Tools Collection",
-
-
-futureTitle:"Future Plans",
-
-
-futureText:"More AI tools and features are under development. We will continue improving the experience.",
-
-
-homeLink:"Back to AI Toolbox Home"
+home:"Back to AI Toolbox Home"
 
 
 }
-
 
 
 };
 
 
 
+function setLanguage(type){
 
 
-function setLanguage(lang){
+let t=lang[type];
 
 
-let t=langText[lang];
-
-
-
-document.getElementById("pageTitle").innerText=t.pageTitle;
-
+document.getElementById("title").innerText=t.title;
 
 document.getElementById("intro").innerText=t.intro;
 
+document.getElementById("aboutTitle").innerText=t.aboutTitle;
 
-document.getElementById("missionTitle").innerText=t.missionTitle;
+document.getElementById("aboutText").innerText=t.aboutText;
 
+document.getElementById("goalTitle").innerText=t.goalTitle;
 
-document.getElementById("missionText").innerText=t.missionText;
-
+document.getElementById("goalText").innerText=t.goalText;
 
 document.getElementById("toolsTitle").innerText=t.toolsTitle;
 
+document.getElementById("prompt").innerText=t.prompt;
 
-document.getElementById("toolsText").innerText=t.toolsText;
+document.getElementById("resume").innerText=t.resume;
 
+document.getElementById("xiaohongshu").innerText=t.xiaohongshu;
 
-document.getElementById("promptLink").innerText=t.promptLink;
+document.getElementById("allTools").innerText=t.allTools;
 
-
-document.getElementById("resumeLink").innerText=t.resumeLink;
-
-
-document.getElementById("titleLink").innerText=t.titleLink;
-
-
-document.getElementById("allToolsLink").innerText=t.allToolsLink;
-
-
-document.getElementById("futureTitle").innerText=t.futureTitle;
-
-
-document.getElementById("futureText").innerText=t.futureText;
-
-
-document.getElementById("homeLink").innerText=t.homeLink;
+document.getElementById("home").innerText=t.home;
 
 
 }
-
 
 
 </script>
@@ -319,5 +449,6 @@ document.getElementById("homeLink").innerText=t.homeLink;
 
 
 </body>
+
 
 </html>
