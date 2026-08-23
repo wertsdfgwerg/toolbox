@@ -1,49 +1,447 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 <title>AI小红书标题生成器 - 免费生成爆款标题</title>
-<meta name="description" content="AI小红书标题生成器 - 免费生成爆款标题，AI小工具箱提供免费的在线AI工具，提高学习、工作和创作效率。">
+
+
+<meta name="description" content="AI小红书标题生成器，免费生成适合小红书发布的标题，提高内容创作效率。">
+
+
+<link rel="icon" href="logo.png">
+
+
 <style>
-body{font-family:Arial,"Microsoft YaHei",sans-serif;background:#f7f9fc;color:#222;margin:0;padding:30px;line-height:1.8}
-.box{max-width:900px;margin:auto;background:white;padding:35px;border-radius:20px}
-a{color:#2563eb}
+
+*{
+box-sizing:border-box;
+}
+
+
+body{
+
+margin:0;
+
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+"Microsoft YaHei",
+Arial,
+sans-serif;
+
+background:#f7f9fc;
+
+color:#222;
+
+line-height:1.8;
+
+}
+
+
+
+.container{
+
+max-width:900px;
+
+margin:auto;
+
+padding:30px 20px 60px;
+
+}
+
+
+
+.language-switch{
+
+text-align:right;
+
+margin-bottom:20px;
+
+}
+
+
+
+.language-switch button{
+
+padding:8px 18px;
+
+border-radius:20px;
+
+border:1px solid #ddd;
+
+background:white;
+
+cursor:pointer;
+
+margin-left:8px;
+
+}
+
+
+
+.box{
+
+background:white;
+
+padding:35px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+}
+
+
+
+h1{
+
+font-size:38px;
+
+color:#2563eb;
+
+}
+
+
+
+h2{
+
+margin-top:30px;
+
+}
+
+
+
+.card{
+
+background:#f8fafc;
+
+padding:20px;
+
+border-radius:15px;
+
+margin:20px 0;
+
+}
+
+
+
+a{
+
+color:#2563eb;
+
+text-decoration:none;
+
+}
+
+
+
+@media(max-width:700px){
+
+h1{
+
+font-size:30px;
+
+}
+
+.box{
+
+padding:20px;
+
+}
+
+}
+
+
 </style>
+
+
 </head>
+
+
+
 <body>
-<div class="box">
-<h1>AI小红书标题生成器</h1>
-<p>输入主题，免费生成多个适合小红书发布的标题。</p>
-<h2>适合用户</h2><p>自媒体作者、内容创作者、小红书运营人员。</p>
-<a href="index.html#xiaohongshuTool">立即生成标题</a>
-<hr>
-<a href="index.html">返回 AI小工具箱首页</a>
-<hr>
-
-<h3>🚀 更多 AI 工具</h3>
-
-<p>
-<a href="index.html">AI工具箱首页</a>
-</p>
-
-<p>
-<a href="ai-tools.html">免费AI工具大全</a>
-</p>
-
-<p>
-<a href="ai-prompt-generator.html">AI提示词生成器</a>
-</p>
-
-<p>
-<a href="ai-resume-helper.html">AI简历助手</a>
-</p>
 
 
+<div class="container">
 
-<p>
-<a href="about-ai-tools.html">关于AI工具箱</a>
-</p>
+
+<div class="language-switch">
+
+
+<button onclick="setLanguage('zh')">
+中文
+</button>
+
+
+<button onclick="setLanguage('en')">
+English
+</button>
+
+
 </div>
+
+
+
+
+<div class="box">
+
+
+<h1 id="title">
+
+AI小红书标题生成器
+
+</h1>
+
+
+
+<p id="intro">
+
+输入主题，免费生成多个适合小红书发布的标题。
+
+</p>
+
+
+
+
+<div class="card">
+
+
+<h2 id="userTitle">
+
+适合用户
+
+</h2>
+
+
+<p id="userText">
+
+自媒体作者、内容创作者、小红书运营人员。
+
+</p>
+
+
+</div>
+
+
+
+
+<p>
+
+<a href="index.html#xiaohongshuTool" id="useLink">
+
+立即生成标题
+
+</a>
+
+</p>
+
+
+
+<hr>
+
+
+<h3 id="moreTitle">
+
+🚀 更多 AI 工具
+
+</h3>
+
+
+
+<p>
+
+<a href="index.html" id="homeLink">
+
+AI工具箱首页
+
+</a>
+
+</p>
+
+
+
+<p>
+
+<a href="ai-tools.html" id="allToolsLink">
+
+免费AI工具大全
+
+</a>
+
+</p>
+
+
+
+<p>
+
+<a href="ai-prompt-generator.html" id="promptLink">
+
+AI提示词生成器
+
+</a>
+
+</p>
+
+
+
+<p>
+
+<a href="ai-resume-helper.html" id="resumeLink">
+
+AI简历助手
+
+</a>
+
+</p>
+
+
+
+
+<p>
+
+<a href="about-ai-tools.html" id="aboutLink">
+
+关于AI工具箱
+
+</a>
+
+</p>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+const lang={
+
+
+zh:{
+
+
+title:"AI小红书标题生成器",
+
+intro:"输入主题，免费生成多个适合小红书发布的标题。",
+
+userTitle:"适合用户",
+
+userText:"自媒体作者、内容创作者、小红书运营人员。",
+
+useLink:"立即生成标题",
+
+moreTitle:"🚀 更多 AI 工具",
+
+homeLink:"AI工具箱首页",
+
+allToolsLink:"免费AI工具大全",
+
+promptLink:"AI提示词生成器",
+
+resumeLink:"AI简历助手",
+
+aboutLink:"关于AI工具箱"
+
+
+},
+
+
+
+en:{
+
+
+title:"Xiaohongshu Title Generator",
+
+intro:"Enter a topic and generate multiple titles suitable for Xiaohongshu posts.",
+
+userTitle:"Suitable Users",
+
+userText:"Content creators, social media creators and Xiaohongshu operators.",
+
+useLink:"Generate Titles Now",
+
+moreTitle:"🚀 More AI Tools",
+
+homeLink:"AI Toolbox Home",
+
+allToolsLink:"Free AI Tools Collection",
+
+promptLink:"AI Prompt Generator",
+
+resumeLink:"AI Resume Assistant",
+
+aboutLink:"About AI Toolbox"
+
+
+}
+
+
+};
+
+
+
+
+
+function setLanguage(type){
+
+
+let t=lang[type];
+
+
+document.getElementById("title").innerText=t.title;
+
+
+document.getElementById("intro").innerText=t.intro;
+
+
+document.getElementById("userTitle").innerText=t.userTitle;
+
+
+document.getElementById("userText").innerText=t.userText;
+
+
+document.getElementById("useLink").innerText=t.useLink;
+
+
+document.getElementById("moreTitle").innerText=t.moreTitle;
+
+
+document.getElementById("homeLink").innerText=t.homeLink;
+
+
+document.getElementById("allToolsLink").innerText=t.allToolsLink;
+
+
+document.getElementById("promptLink").innerText=t.promptLink;
+
+
+document.getElementById("resumeLink").innerText=t.resumeLink;
+
+
+document.getElementById("aboutLink").innerText=t.aboutLink;
+
+
+}
+
+
+
+</script>
+
+
 </body>
+
 </html>
