@@ -1,53 +1,521 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>免费AI工具大全 - AI提示词、简历、标题生成器</title>
-<meta name="description" content="免费AI工具大全 - AI提示词、简历、标题生成器，AI小工具箱提供免费的在线AI工具，提高学习、工作和创作效率。">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>免费AI工具大全 - AI工具箱</title>
+
+<meta name="description" content="免费AI工具大全，提供AI提示词生成器、AI简历助手、AI标题生成器、小红书标题生成工具等在线AI工具。">
+
+
+<meta name="keywords" content="免费AI工具,AI工具箱,AI提示词生成器,AI简历助手,AI标题生成器">
+
+
+<link rel="icon" href="logo.png">
+
+
 <style>
-body{font-family:Arial,"Microsoft YaHei",sans-serif;background:#f7f9fc;color:#222;margin:0;padding:30px;line-height:1.8}
-.box{max-width:900px;margin:auto;background:white;padding:35px;border-radius:20px}
-a{color:#2563eb}
+
+*{
+box-sizing:border-box;
+}
+
+
+body{
+
+margin:0;
+
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+"Microsoft YaHei",
+Arial,
+sans-serif;
+
+background:#f7f9fc;
+
+color:#222;
+
+}
+
+
+.container{
+
+max-width:900px;
+
+margin:auto;
+
+padding:30px 20px 60px;
+
+}
+
+
+
+.language-switch{
+
+text-align:right;
+
+margin-bottom:20px;
+
+}
+
+
+.language-switch button{
+
+padding:8px 18px;
+
+border-radius:20px;
+
+border:1px solid #ddd;
+
+background:white;
+
+cursor:pointer;
+
+margin-left:8px;
+
+}
+
+
+
+.box{
+
+background:white;
+
+padding:35px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+}
+
+
+
+h1{
+
+font-size:38px;
+
+color:#2563eb;
+
+}
+
+
+
+h2{
+
+margin-top:35px;
+
+}
+
+
+.tool{
+
+background:#f8fafc;
+
+padding:20px;
+
+border-radius:15px;
+
+margin:20px 0;
+
+}
+
+
+
+a{
+
+color:#2563eb;
+
+text-decoration:none;
+
+}
+
+
+.footer{
+
+text-align:center;
+
+margin-top:40px;
+
+color:#777;
+
+font-size:14px;
+
+}
+
+
+
+@media(max-width:700px){
+
+h1{
+
+font-size:30px;
+
+}
+
+.box{
+
+padding:20px;
+
+}
+
+}
+
 </style>
+
+
 </head>
+
+
 <body>
+
+
+<div class="container">
+
+
+<div class="language-switch">
+
+<button onclick="setLanguage('zh')">
+中文
+</button>
+
+
+<button onclick="setLanguage('en')">
+English
+</button>
+
+</div>
+
+
+
 <div class="box">
-<h1 data-cn="免费AI工具大全" data-en="Free AI Tools Collection">
+
+
+<h1 id="pageTitle">
 免费AI工具大全
 </h1>
-<p>AI小工具箱提供免费的在线AI工具，包括AI提示词生成器、AI简历助手、AI标题生成器、小红书标题生成器。</p>
-<h2>AI提示词生成器</h2><p>快速生成适合写作、学习、编程和商业场景的AI Prompt。</p>
-<h2>AI简历助手</h2><p>帮助优化技能描述、项目经历和求职优势。</p>
-<h2>AI标题生成器</h2><p>生成文章标题、自媒体标题和小红书标题。</p>
-<hr>
-<a href="index.html">返回 AI小工具箱首页</a>
+
+
+<p id="pageDesc">
+
+AI小工具箱提供免费的在线AI工具，包括AI提示词生成器、AI简历助手、AI标题生成器和小红书标题生成器。
+
+</p>
+
+
+
+<div class="tool">
+
+
+<h2 id="promptTitle">
+
+AI提示词生成器
+
+</h2>
+
+
+<p id="promptDesc">
+
+快速生成适合写作、学习、编程和商业场景的AI Prompt。
+
+</p>
+
+
+<a href="ai-prompt-generator.html" id="promptLink">
+
+立即使用
+
+</a>
+
+
 </div>
+
+
+
+
+
+<div class="tool">
+
+
+<h2 id="resumeTitle">
+
+AI简历助手
+
+</h2>
+
+
+<p id="resumeDesc">
+
+帮助优化个人简历内容，提高求职竞争力。
+
+</p>
+
+
+<a href="ai-resume-helper.html" id="resumeLink">
+
+立即使用
+
+</a>
+
+
+</div>
+
+
+
+
+
+<div class="tool">
+
+
+<h2 id="titleTitle">
+
+AI标题生成器
+
+</h2>
+
+
+<p id="titleDesc">
+
+生成文章标题、自媒体标题和内容创作灵感。
+
+</p>
+
+
+<a href="xiaohongshu-title-generator.html" id="titleLink">
+
+立即使用
+
+</a>
+
+
+</div>
+
+
 <hr>
 
-<h3>🚀 更多 AI 工具</h3>
+
+<h3 id="moreTitle">
+
+🚀 更多 AI 工具
+
+</h3>
+
 
 <p>
-<a href="index.html">AI工具箱首页</a>
+
+<a href="index.html" id="homeLink">
+
+返回 AI工具箱首页
+
+</a>
+
 </p>
 
 
-
 <p>
-<a href="ai-prompt-generator.html">AI提示词生成器</a>
+
+<a href="ai-prompt-generator.html">
+
+🔥 AI提示词生成器
+
+</a>
+
 </p>
 
-<p>
-<a href="ai-resume-helper.html">AI简历助手</a>
-</p>
 
 <p>
-<a href="xiaohongshu-title-generator.html">AI小红书标题生成器</a>
+
+<a href="ai-resume-helper.html">
+
+📝 AI简历助手
+
+</a>
+
 </p>
 
+
 <p>
-<a href="about-ai-tools.html">关于AI工具箱</a>
+
+<a href="xiaohongshu-title-generator.html">
+
+📱 小红书标题生成器
+
+</a>
+
 </p>
+
+
+<p>
+
+<a href="about-ai-tools.html">
+
+🌍 关于AI工具箱
+
+</a>
+
+</p>
+
+
+<script>
+
+
+const langText = {
+
+
+zh:{
+
+
+pageTitle:"免费AI工具大全",
+
+pageDesc:"AI小工具箱提供免费的在线AI工具，包括AI提示词生成器、AI简历助手、AI标题生成器和小红书标题生成器。",
+
+
+promptTitle:"AI提示词生成器",
+
+promptDesc:"快速生成适合写作、学习、编程和商业场景的AI Prompt。",
+
+promptLink:"立即使用",
+
+
+resumeTitle:"AI简历助手",
+
+resumeDesc:"帮助优化个人简历内容，提高求职竞争力。",
+
+resumeLink:"立即使用",
+
+
+titleTitle:"AI标题生成器",
+
+titleDesc:"生成文章标题、自媒体标题和内容创作灵感。",
+
+titleLink:"立即使用",
+
+
+moreTitle:"🚀 更多 AI 工具",
+
+homeLink:"返回 AI工具箱首页"
+
+},
+
+
+
+en:{
+
+
+pageTitle:"Free AI Tools Collection",
+
+
+pageDesc:"AI Toolbox provides free online AI tools, including AI Prompt Generator, AI Resume Assistant, AI Title Generator and Xiaohongshu Title Generator.",
+
+
+
+promptTitle:"AI Prompt Generator",
+
+promptDesc:"Generate useful AI prompts for writing, learning, programming and business scenarios.",
+
+promptLink:"Use Now",
+
+
+
+resumeTitle:"AI Resume Assistant",
+
+resumeDesc:"Optimize your resume content and improve your career opportunities.",
+
+resumeLink:"Use Now",
+
+
+
+titleTitle:"AI Title Generator",
+
+titleDesc:"Generate article titles, social media titles and content ideas.",
+
+titleLink:"Use Now",
+
+
+
+moreTitle:"🚀 More AI Tools",
+
+homeLink:"Back to AI Toolbox Home"
+
+
+}
+
+
+
+};
+
+
+
+
+
+function setLanguage(lang){
+
+
+let t=langText[lang];
+
+
+
+document.getElementById("pageTitle").innerText=t.pageTitle;
+
+
+document.getElementById("pageDesc").innerText=t.pageDesc;
+
+
+
+document.getElementById("promptTitle").innerText=t.promptTitle;
+
+
+document.getElementById("promptDesc").innerText=t.promptDesc;
+
+
+document.getElementById("promptLink").innerText=t.promptLink;
+
+
+
+
+document.getElementById("resumeTitle").innerText=t.resumeTitle;
+
+
+document.getElementById("resumeDesc").innerText=t.resumeDesc;
+
+
+document.getElementById("resumeLink").innerText=t.resumeLink;
+
+
+
+
+document.getElementById("titleTitle").innerText=t.titleTitle;
+
+
+document.getElementById("titleDesc").innerText=t.titleDesc;
+
+
+document.getElementById("titleLink").innerText=t.titleLink;
+
+
+
+document.getElementById("moreTitle").innerText=t.moreTitle;
+
+
+document.getElementById("homeLink").innerText=t.homeLink;
+
+
+}
+
+
+
+</script>
+
+
 
 </body>
+
 </html>
+
+</div>
