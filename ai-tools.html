@@ -317,10 +317,9 @@ AI标题生成器
 
 </p>
 
-
 <p>
 
-<a href="ai-prompt-generator.html">
+<a href="ai-prompt-generator.html" id="promptNav">
 
 🔥 AI提示词生成器
 
@@ -331,7 +330,7 @@ AI标题生成器
 
 <p>
 
-<a href="ai-resume-helper.html">
+<a href="ai-resume-helper.html" id="resumeNav">
 
 📝 AI简历助手
 
@@ -342,7 +341,7 @@ AI标题生成器
 
 <p>
 
-<a href="xiaohongshu-title-generator.html">
+<a href="xiaohongshu-title-generator.html" id="xhsNav">
 
 📱 小红书标题生成器
 
@@ -353,7 +352,7 @@ AI标题生成器
 
 <p>
 
-<a href="about-ai-tools.html">
+<a href="about-ai-tools.html" id="aboutNav">
 
 🌍 关于AI工具箱
 
@@ -401,6 +400,10 @@ moreTitle:"🚀 更多 AI 工具",
 
 homeLink:"返回 AI工具箱首页"
 
+promptNav:"🔥 AI提示词生成器",
+resumeNav:"📝 AI简历助手",
+xhsNav:"📱 小红书标题生成器",
+aboutNav:"🌍 关于AI工具箱"
 },
 
 
@@ -443,6 +446,10 @@ moreTitle:"🚀 More AI Tools",
 
 homeLink:"Back to AI Toolbox Home"
 
+promptNav:"🔥 AI Prompt Generator",
+resumeNav:"📝 AI Resume Assistant",
+xhsNav:"📱 Xiaohongshu Title Generator",
+aboutNav:"🌍 About AI Toolbox"
 
 }
 
@@ -505,7 +512,13 @@ document.getElementById("moreTitle").innerText=t.moreTitle;
 
 document.getElementById("homeLink").innerText=t.homeLink;
 
+document.getElementById("promptNav").innerText=t.promptNav;
 
+document.getElementById("resumeNav").innerText=t.resumeNav;
+
+document.getElementById("xhsNav").innerText=t.xhsNav;
+
+document.getElementById("aboutNav").innerText=t.aboutNav;
 }
 
 
