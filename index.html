@@ -2744,16 +2744,16 @@ async function generateArticleTitle(){
             .filter(x=>x.length>0);
 
 
-        box.innerHTML =
-            titles.map((title,i)=>{
+       box.innerHTML =
+    titles.map((title)=>{
 
-                return `
-                <div class="result-item">
-                    ${i+1}. ${title}
-                </div>
-                `;
+        return `
+        <div class="result-item">
+            ${title.replace(/^\d+[\.\、\s]*/, "")}
+        </div>
+        `;
 
-            }).join("");
+    }).join("");
 
 
     }catch(error){
@@ -2859,12 +2859,15 @@ async function generateMoments(){
         }
 
 
-        box.innerHTML =
-            result
-            .split("\n")
-            .map((x,i)=>`${i+1}. ${x}`)
-            .join("<br>");
-
+box.innerHTML =
+    result
+    .split("\n")
+    .map(x=>`
+        <div class="result-item">
+        ${x.replace(/^\d+[\.\、\s]*/, "")}
+        </div>
+    `)
+    .join("");
 
     }catch(error){
 
