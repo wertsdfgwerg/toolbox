@@ -2561,9 +2561,8 @@ async function generateXhsTitles(){
         }
 
         // 获取 AI 返回的文字
-        const result =
-            data?.choices?.[0]?.message?.content;
-
+       const result =
+data?.content;
         if(!result){
 
             box.innerHTML =
