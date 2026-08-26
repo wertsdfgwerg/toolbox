@@ -2646,32 +2646,128 @@ currentLanguage==="zh"
 
 
 
-// 第二批工具
+// 第二批工具 ai 调用
 
 
-function generateArticleTitle(){
+async function generateArticleTitle(){
+
+    let topic = document.getElementById("articleTopic").value.trim();
+    let box = document.getElementById("articleResult");
 
 
-let t=document.getElementById("articleTopic").value.trim();
+    if(!topic){
+        box.innerHTML =
+            currentLanguage === "zh"
+            ? "请输入主题"
+            : "Please enter topic";
+        return;
+    }
 
 
-if(!t)return;
+    box.innerHTML =
+        currentLanguage === "zh"
+        ? "🤖 AI正在生成，请稍等..."
+        : "🤖 AI is generating, please wait...";
 
 
+    try{
 
-document.getElementById("articleResult").innerHTML=
+        const response = await fetch(
+            "https://ai-toolbox-api.2243178691.workers.dev",
+            {
+                method:"POST",
+
+                headers:{
+                    "Content-Type":"application/json"
+                },
+
+                body:JSON.stringify({
+
+                    messages:[
+
+                        {
+                            role:"system",
+                            content:
+                            currentLanguage === "zh"
+                            ?
+                            "你是一名专业内容创作者。请根据用户提供的主题，生成10个吸引人的文章标题。要求标题有点击欲望、自然、有传播性，只输出标题，每行一个，不要解释。"
+                            :
+                            "You are a professional content creator. Generate 10 attractive article titles based on the topic. Make them engaging and clickable. Output only titles, one per line."
+                        },
 
 
-currentLanguage==="zh"
+                        {
+                            role:"user",
+                            content:topic
+                        }
 
-?
+                    ]
 
-"1. "+t+"深度解析<br>2. 关于"+t+"你必须知道的5件事<br>3. "+t+"完整攻略"
+                })
+            }
+        );
 
-:
 
-"1. Deep analysis of "+t+"<br>2. 5 things you should know about "+t+"<br>3. Complete guide about "+t;
+        const data = await response.json();
 
+
+        if(!response.ok){
+
+            console.error("Worker/API Error:",data);
+
+            box.innerHTML =
+                currentLanguage === "zh"
+                ? "❌ AI生成失败，请稍后再试。"
+                : "❌ AI generation failed.";
+
+            return;
+        }
+
+
+        const result = data?.content;
+
+
+        if(!result){
+
+            box.innerHTML =
+                currentLanguage === "zh"
+                ? "❌ AI没有返回内容。"
+                : "❌ AI returned no content.";
+
+            return;
+        }
+
+
+        const titles = result
+            .split("\n")
+            .map(x=>x.trim())
+            .filter(x=>x.length>0);
+
+
+        box.innerHTML =
+            titles.map((title,i)=>{
+
+                return `
+                <div class="result-item">
+                    ${i+1}. ${title}
+                </div>
+                `;
+
+            }).join("");
+
+
+    }catch(error){
+
+        console.error("AI request error:",error);
+
+        box.innerHTML =
+            currentLanguage==="zh"
+            ?
+            "❌ 网络连接失败，请稍后再试。"
+            :
+            "❌ Network error.";
+
+    }
 
 }
 
