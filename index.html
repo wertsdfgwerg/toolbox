@@ -2495,103 +2495,125 @@ document.getElementById("titleOutput").innerText=result;
 
 
 
+// AI小红书标题生成
+async function generateXhsTitles(){
 
+    let topic = document.getElementById("topicInput").value.trim();
+    let box = document.getElementById("titleResults");
 
+    if(!topic){
+        box.innerHTML =
+            currentLanguage === "zh"
+            ? "请输入主题"
+            : "Please enter topic";
+        return;
+    }
 
+    // 显示等待状态
+    box.innerHTML =
+        currentLanguage === "zh"
+        ? "🤖 AI正在生成，请稍等..."
+        : "🤖 AI is generating, please wait...";
 
-// 小红书标题
+    try{
 
-function generateXhsTitles(){
+        const response = await fetch(
+            "https://ai-toolbox-api.2243178691.workers.dev",
+            {
+                method: "POST",
 
+                headers: {
+                    "Content-Type": "application/json"
+                },
 
-let topic=document.getElementById("topicInput").value.trim();
+                body: JSON.stringify({
+                    messages: [
+                        {
+                            role: "system",
+                            content:
+                                currentLanguage === "zh"
+                                ?
+                                "你是一名专业的小红书内容创作者。请根据用户提供的主题，生成10个有吸引力的小红书标题。要求简洁、有点击欲望、自然，不要解释，只输出标题，每行一个。"
+                                :
+                                "You are a professional Xiaohongshu content creator. Generate 10 attractive Xiaohongshu titles based on the user's topic. Keep them concise and engaging. Output only the titles, one per line."
+                        },
+                        {
+                            role: "user",
+                            content: topic
+                        }
+                    ]
+                })
+            }
+        );
 
+        const data = await response.json();
 
-let box=document.getElementById("titleResults");
+        // 检查 API 是否返回错误
+        if(!response.ok){
+            console.error("Worker/API Error:", data);
 
+            box.innerHTML =
+                currentLanguage === "zh"
+                ? "❌ AI生成失败，请稍后再试。"
+                : "❌ AI generation failed. Please try again later.";
 
+            return;
+        }
 
-if(!topic){
+        // 获取 AI 返回的文字
+        const result =
+            data?.choices?.[0]?.message?.content;
 
-box.innerHTML=
+        if(!result){
 
-currentLanguage==="zh"
-?
-"请输入主题"
-:
-"Please enter topic";
+            box.innerHTML =
+                currentLanguage === "zh"
+                ? "❌ AI没有返回内容。"
+                : "❌ AI returned no content.";
 
-return;
+            return;
+        }
 
+        // 按行分割标题
+        const titles = result
+            .split("\n")
+            .map(x => x.trim())
+            .filter(x => x.length > 0);
+
+        // 显示标题
+        box.innerHTML =
+            titles.map((title, i) => {
+
+                const safeTitle =
+                    title
+                        .replace(/&/g, "&amp;")
+                        .replace(/</g, "&lt;")
+                        .replace(/>/g, "&gt;")
+                        .replace(/"/g, "&quot;")
+                        .replace(/'/g, "&#039;");
+
+                return `
+                    <div class="result-item"
+                         onclick="copySingle('${safeTitle.replace(/'/g, "\\'")}')">
+                        ${i + 1}. ${safeTitle}
+                    </div>
+                `;
+
+            }).join("");
+
+    }catch(error){
+
+        console.error("AI request error:", error);
+
+        box.innerHTML =
+            currentLanguage === "zh"
+            ? "❌ 网络连接失败，请稍后再试。"
+            : "❌ Network error. Please try again later.";
+    }
 }
 
 
 
-let titles;
-
-
-
-if(currentLanguage==="zh"){
-
-
-titles=[
-
-`🔥 ${topic}经验分享`,
-
-`${topic}新手必看攻略`,
-
-`${topic}避坑指南`,
-
-`${topic}收藏教程`,
-
-`关于${topic}的5个技巧`
-
-];
-
-
-
-}else{
-
-
-titles=[
-
-`🔥 ${topic} Experience Sharing`,
-
-`${topic} Beginner Guide`,
-
-`${topic} Mistakes To Avoid`,
-
-`${topic} Complete Guide`,
-
-`5 Tips About ${topic}`
-
-];
-
-
-}
-
-
-
-box.innerHTML=
-
-titles.map((x,i)=>
-
-`
-
-<div class="result-item"
-onclick="copySingle('${x}')">
-
-${i+1}. ${x}
-
-</div>
-
-`
-
-).join("");
-
-
-
-}
 
 
 
