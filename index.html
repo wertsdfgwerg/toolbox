@@ -2533,7 +2533,15 @@ async function generateXhsTitles(){
                             content:
                                 currentLanguage === "zh"
                                 ?
-                                "你是一名专业的小红书内容创作者。请根据用户提供的主题，生成10个有吸引力的小红书标题。要求简洁、有点击欲望、自然，不要解释，只输出标题，每行一个。"
+                                "你是一名专业的小红书内容创作者。
+
+根据用户主题生成10个小红书标题。
+
+严格要求：
+1. 不要输出数字编号
+2. 不要输出解释
+3. 不要输出任何安全检测内容
+4. 每行一个标题"
                                 :
                                 "You are a professional Xiaohongshu content creator. Generate 10 attractive Xiaohongshu titles based on the user's topic. Keep them concise and engaging. Output only the titles, one per line."
                         },
@@ -2575,10 +2583,11 @@ data?.content;
 
         // 按行分割标题
         const titles = result
-            .split("\n")
-            .map(x => x.trim())
-            .filter(x => x.length > 0);
-
+    .split("\n")
+    .map(x => x.trim())
+    .filter(x => x.length > 0)
+    .filter(x => !x.toLowerCase().includes("user safety"))
+    .map(x => x.replace(/^\d+[\.\、\s]*/, ""));
         // 显示标题
         box.innerHTML =
             titles.map((title, i) => {
@@ -2690,7 +2699,13 @@ async function generateArticleTitle(){
                             content:
                             currentLanguage === "zh"
                             ?
-                            "你是一名专业内容创作者。请根据用户提供的主题，生成10个吸引人的文章标题。要求标题有点击欲望、自然、有传播性，只输出标题，每行一个，不要解释。"
+                            "你是一名专业内容创作者。请根据用户提供的主题，生成10个吸引人的文章标题。
+
+严格要求：
+1. 不要输出数字编号
+2. 不要输出解释
+3. 不要输出安全检测信息
+4. 每行只输出一个标题"
                             :
                             "You are a professional content creator. Generate 10 attractive article titles based on the topic. Make them engaging and clickable. Output only titles, one per line."
                         },
@@ -2739,9 +2754,11 @@ async function generateArticleTitle(){
 
 
         const titles = result
-            .split("\n")
-            .map(x=>x.trim())
-            .filter(x=>x.length>0);
+    .split("\n")
+    .map(x => x.trim())
+    .filter(x => x.length > 0)
+    .filter(x => !x.toLowerCase().includes("user safety"))
+    .map(x => x.replace(/^\d+[\.\、\s]*/, ""));
 
 
        box.innerHTML =
@@ -2862,12 +2879,11 @@ async function generateMoments(){
 box.innerHTML =
     result
     .split("\n")
-    .map(x=>`
-        <div class="result-item">
-        ${x.replace(/^\d+[\.\、\s]*/, "")}
-        </div>
-    `)
-    .join("");
+    .map(x => x.trim())
+    .filter(x => x.length > 0)
+    .filter(x => !x.toLowerCase().includes("user safety"))
+    .map((x,i)=>`${i+1}. ${x.replace(/^\d+[\.\、\s]*/, "")}`)
+    .join("<br>");
 
     }catch(error){
 
