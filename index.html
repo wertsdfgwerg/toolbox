@@ -2772,33 +2772,115 @@ async function generateArticleTitle(){
 }
 
 
+async function generateMoments(){
+
+    let topic = document.getElementById("momentsTopic").value.trim();
+    let box = document.getElementById("momentsResult");
 
 
-function generateMoments(){
+    if(!topic){
+        box.innerHTML =
+            currentLanguage === "zh"
+            ? "请输入主题"
+            : "Please enter topic";
+        return;
+    }
 
 
-let t=document.getElementById("momentsTopic").value.trim();
+    box.innerHTML =
+        currentLanguage === "zh"
+        ? "🤖 AI正在生成，请稍等..."
+        : "🤖 AI is generating, please wait...";
 
 
-if(!t)return;
+    try{
+
+        const response = await fetch(
+            "https://ai-toolbox-api.2243178691.workers.dev",
+            {
+                method:"POST",
+
+                headers:{
+                    "Content-Type":"application/json"
+                },
+
+                body:JSON.stringify({
+
+                    messages:[
+
+                        {
+                            role:"system",
+                            content:
+                            currentLanguage === "zh"
+                            ?
+                            "你是一名专业朋友圈文案创作者。请根据用户提供的主题，生成5条适合朋友圈发布的文案。要求自然、有感染力、有生活感，只输出文案，不要解释。"
+                            :
+                            "You are a professional social media copywriter. Generate 5 natural and engaging posts based on the topic. Output only the posts."
+                        },
 
 
+                        {
+                            role:"user",
+                            content:topic
+                        }
 
-document.getElementById("momentsResult").innerHTML=
+                    ]
+
+                })
+            }
+        );
 
 
-currentLanguage==="zh"
+        const data = await response.json();
 
-?
 
-"✨ 今天分享："+t+"<br>记录生活，发现美好。"
+        if(!response.ok){
 
-:
+            box.innerHTML =
+                currentLanguage === "zh"
+                ? "❌ AI生成失败，请稍后再试。"
+                : "❌ AI generation failed.";
 
-"✨ Today sharing: "+t+"<br>Record life and enjoy moments.";
+            return;
+        }
 
+
+        const result = data?.content;
+
+
+        if(!result){
+
+            box.innerHTML =
+                currentLanguage === "zh"
+                ? "❌ AI没有返回内容。"
+                : "❌ AI returned no content.";
+
+            return;
+        }
+
+
+        box.innerHTML =
+            result
+            .split("\n")
+            .map((x,i)=>`${i+1}. ${x}`)
+            .join("<br>");
+
+
+    }catch(error){
+
+        console.error(error);
+
+        box.innerHTML =
+            currentLanguage === "zh"
+            ? "❌ 网络连接失败，请稍后再试。"
+            : "❌ Network error.";
+
+    }
 
 }
+
+
+  
 
 
 
