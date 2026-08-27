@@ -291,12 +291,11 @@ AI Prompt（提示词）是用户输入给人工智能模型的指令，用于�
 普通：
 </p>
 
-<div class="code">
+<div class="code" id="simpleCode">
 
 帮我写一篇文章
 
 </div>
-
 
 
 <p id="betterPrompt">
@@ -304,7 +303,7 @@ AI Prompt（提示词）是用户输入给人工智能模型的指令，用于�
 </p>
 
 
-<div class="code">
+<div class="code"  id="betterCode">
 
 你是一名专业内容编辑。
 
@@ -349,19 +348,19 @@ AI Prompt（提示词）是用户输入给人工智能模型的指令，用于�
 
 <ul>
 
-<li>
+<li id="important1">
 提高AI回答准确性
 </li>
 
-<li>
+<li id="important2">
 节省工作和学习时间
 </li>
 
-<li>
+<li id="important3">
 获得更专业的结果
 </li>
 
-<li>
+<li id="important4">
 让AI成为个人助手
 </li>
 
@@ -387,44 +386,35 @@ AI Prompt（提示词）是用户输入给人工智能模型的指令，用于�
 
 
 
-<p>
+<p id="formulaText">
 
 一个好的Prompt通常包含：
 
 </p>
 
-
-
 <ul>
 
-<li>
+<li id="roleText">
 角色（Role）：告诉AI扮演什么身份
 </li>
 
-
-<li>
+<li id="taskText">
 任务（Task）：明确需要完成什么
 </li>
 
-
-<li>
+<li id="contextText">
 背景（Context）：提供相关信息
 </li>
 
-
-<li>
+<li id="requirementText">
 要求（Requirement）：说明限制条件
 </li>
 
-
-<li>
+<li id="outputText">
 格式（Output）：指定输出方式
 </li>
 
-
 </ul>
-
-
 
 </div>
 
@@ -452,7 +442,7 @@ AI Prompt（提示词）是用户输入给人工智能模型的指令，用于�
 
 
 
-<div class="code">
+<div class="code" id="writingCode">
 
 你是一名专业作家。
 
@@ -470,7 +460,7 @@ AI Prompt（提示词）是用户输入给人工智能模型的指令，用于�
 
 
 
-<h3>
+<h3 id="learningTemplate">
 
 📚 学习模板
 
@@ -478,7 +468,7 @@ AI Prompt（提示词）是用户输入给人工智能模型的指令，用于�
 
 
 
-<div class="code">
+<div class="code" id="learningCode">
 
 你是一名老师。
 
@@ -497,15 +487,14 @@ AI Prompt（提示词）是用户输入给人工智能模型的指令，用于�
 
 
 
-<h3>
+<h3 id="workTemplate">
 
 💼 工作模板
 
 </h3>
 
 
-
-<div class="code">
+<div class="code" id="workCode">
 
 你是一名办公助手。
 
@@ -555,12 +544,11 @@ AI Prompt（提示词）是用户输入给人工智能模型的指令，用于�
 
 🔥
 
-<a href="ai-prompt-generator.html">
+<a href="ai-prompt-generator.html" id="toolLink">
 
 AI提示词生成器
 
 </a>
-
 
 </p>
 
@@ -606,7 +594,7 @@ AI提示词生成器
 <div class="back">
 
 
-<a href="index.html">
+<a href="index.html" id="homeLink">
 
 ← 返回 AI工具箱首页
 
@@ -636,6 +624,38 @@ const text={
 
 zh:{
 
+writingCode:"你是一名专业作家。\n\n请帮我写一篇关于【主题】的文章。\n\n要求：\n1.结构清晰\n2.内容丰富\n3.适合普通用户阅读",
+
+learningCode:"你是一名老师。\n\n请用简单方式解释【知识点】。\n\n要求：\n1.包含概念\n2.提供例子\n3.给出练习",
+
+workCode:"你是一名办公助手。\n\n请帮我整理以下内容：\n\n【输入内容】\n\n输出要求：\n简洁、有条理。",
+  
+roleText:"角色（Role）：告诉AI扮演什么身份",
+taskText:"任务（Task）：明确需要完成什么",
+contextText:"背景（Context）：提供相关信息",
+requirementText:"要求（Requirement）：说明限制条件",
+outputText:"格式（Output）：指定输出方式",
+  
+important1:"提高AI回答准确性",
+important2:"节省工作和学习时间",
+important3:"获得更专业的结果",
+important4:"让AI成为个人助手",
+  
+  
+simpleCode:"帮我写一篇文章",
+
+betterCode:"你是一名专业内容编辑。\n\n请帮我写一篇关于AI学习的文章。\n\n目标读者：\n大学生\n\n要求：\n语言简单\n结构清晰\n包含标题和小标题",
+
+homeLink:"← 返回 AI工具箱首页",
+  
+toolLink:"AI提示词生成器",
+  
+learningTemplate:"📚 学习模板",
+
+workTemplate:"💼 工作模板",
+  
+formulaText:"一个好的Prompt通常包含：",
+  
 writingTemplate:"📝 写作模板",
 
 normalPrompt:"普通：",
@@ -675,6 +695,38 @@ summaryText:"掌握Prompt技巧，可以让AI工具更加准确地完成任务�
 
 en:{
 
+writingCode:"You are a professional writer.\n\nPlease write an article about [Topic].\n\nRequirements:\n1. Clear structure\n2. Rich content\n3. Easy for general users to read",
+
+learningCode:"You are a teacher.\n\nPlease explain [Knowledge Point] in a simple way.\n\nRequirements:\n1. Include concepts\n2. Provide examples\n3. Give exercises",
+
+workCode:"You are an office assistant.\n\nPlease organize the following content:\n\n[Input Content]\n\nOutput:\nClear and concise.",
+  
+roleText:"Role: Tell AI what identity to act as",
+taskText:"Task: Clearly define what needs to be done",
+contextText:"Context: Provide related information",
+requirementText:"Requirement: Explain limitations and conditions",
+outputText:"Output: Specify the output format",
+  
+important1:"Improve AI answer accuracy",
+important2:"Save learning and working time",
+important3:"Get more professional results",
+important4:"Make AI your personal assistant",
+
+
+simpleCode:"Write an article for me",
+
+betterCode:"You are a professional content editor.\n\nPlease write an article about AI learning.\n\nTarget readers:\nCollege students\n\nRequirements:\nSimple language\nClear structure\nInclude title and subtitles",
+  
+homeLink:"← Back to AI Toolbox Home",
+
+toolLink:"AI Prompt Generator",
+
+learningTemplate:"📚 Learning Template",
+
+workTemplate:"💼 Work Template",
+  
+formulaText:"A good prompt usually includes:",  
+  
 writingTemplate:"📝 Writing Template",
 
 normalPrompt:"Simple:",
