@@ -2353,54 +2353,52 @@ function setHTML(id,text){
 }
 
 
-
-
-
-
-
-
 function setLanguage(lang){
-
 
     currentLanguage = lang;
 
-
-
-    const t =
-    languageText[lang];
-
+    const t = languageText[lang];
 
 
     Object.keys(t).forEach(key=>{
 
-
-        let el =
-        document.getElementById(key);
+        let el = document.getElementById(key);
 
 
+        if(!el){
+            return;
+        }
 
-        if(el){
 
-            if(key==="siteDescription"){
+        if(key==="pageTitle"){
 
-                el.innerHTML=t[key];
-
-            }else{
-
-                el.setAttribute("content", t[key]);
-
-            }
+            document.title = t[key];
 
         }
 
-        if(key==="pageTitle"){
-document.title=t[key];
-}
+        else if(key==="metaDescription"){
 
-      
+            el.setAttribute(
+                "content",
+                t[key]
+            );
+
+        }
+
+        else if(key==="siteDescription"){
+
+            el.innerHTML = t[key];
+
+        }
+
+        else{
+
+            el.innerText = t[key];
+
+        }
+
+
     });
-
-
 
 
 
@@ -2412,19 +2410,12 @@ document.title=t[key];
     document.getElementById("enBtn");
 
 
-   
 
-
-
-  
     if(zhBtn){
 
         zhBtn.classList.toggle(
-
             "active",
-
             lang==="zh"
-
         );
 
     }
@@ -2434,11 +2425,8 @@ document.title=t[key];
     if(enBtn){
 
         enBtn.classList.toggle(
-
             "active",
-
             lang==="en"
-
         );
 
     }
@@ -2449,6 +2437,11 @@ document.title=t[key];
 
 
 }
+
+
+
+
+
 
 
 function updatePlaceholder(){
