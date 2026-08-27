@@ -1344,45 +1344,45 @@ onclick="shareSite()">
 
 <div class="card">
 
-<h2 style="text-align:center;">
+<h2 id="guideTitle" style="text-align:center;">
 📚 AI工具指南与教程
 </h2>
 
-<p style="text-align:center;color:#777;">
+<p id="guideDesc" style="text-align:center;color:#777;">
 探索AI提示词、简历优化、小红书标题生成等实用工具。
 </p>
 
 
 <p>
-<a href="ai-tools.html">
+<a id="seoNav1" href="ai-tools.html">
 🚀 免费AI工具大全
 </a>
 </p>
 
 
 <p>
-<a href="ai-prompt-generator.html">
+<a id="seoNav2" href="ai-prompt-generator.html">
 🔥 AI提示词生成指南
 </a>
 </p>
 
 
 <p>
-<a href="ai-resume-helper.html">
+<a id="seoNav3" href="ai-resume-helper.html">
 📝 AI简历优化助手
 </a>
 </p>
 
 
 <p>
-<a href="xiaohongshu-title-generator.html">
+<a id="seoNav4" href="xiaohongshu-title-generator.html">
 📱 小红书标题生成技巧
 </a>
 </p>
 
 
 <p>
-<a href="about-ai-tools.html">
+<a id="seoNav5" href="about-ai-tools.html">
 🌍 关于AI工具箱
 </a>
 </p>
@@ -1583,51 +1583,304 @@ border-radius:12px;
 </div>
 
 
-
-
-
 <script>
 
+// ===============================
+// AI工具箱新版 JS
+// JS-1 基础配置 + AI核心
+// ===============================
 
-let currentLanguage="zh";
+
+let currentLanguage = "zh";
+
+
+// Worker API 地址
+const AI_API_URL =
+"https://ai-toolbox-api.2243178691.workers.dev";
 
 
 
-const languageText={
+// ===============================
+// AI结果清洗
+// ===============================
+
+function cleanAIResult(text){
+
+
+    if(!text){
+        return [];
+    }
+
+
+    const blockWords = [
+
+        "user safety",
+        "safety check",
+        "safety verification",
+        "safe completion",
+        "安全验证",
+        "安全检测",
+        "请完成人机验证",
+        "无法提供帮助",
+        "我不能帮助"
+
+    ];
+
+
+
+    return text
+
+    .split("\n")
+
+
+    .map(line=>line.trim())
+
+
+    .filter(line=>line.length>0)
+
+
+    .filter(line=>{
+
+        let lower =
+        line.toLowerCase();
+
+
+        return !blockWords.some(word=>
+
+            lower.includes(word.toLowerCase())
+
+        );
+
+    })
+
+
+    .map(line=>{
+
+
+        // 删除AI自己生成的编号
+
+        return line.replace(
+
+            /^\s*(\d+|[一二三四五六七八九十]+)[\.\、\:\-\s]*/,
+
+            ""
+
+        );
+
+
+    })
+
+
+    .filter(line=>line.length>0);
+
+
+}
+
+
+
+
+
+
+// ===============================
+// 统一AI请求
+// ===============================
+
+
+async function callAI(systemPrompt,userInput){
+
+
+    const response = await fetch(
+
+        AI_API_URL,
+
+        {
+
+            method:"POST",
+
+
+            headers:{
+
+                "Content-Type":"application/json"
+
+            },
+
+
+            body:JSON.stringify({
+
+                messages:[
+
+                    {
+
+                        role:"system",
+
+                        content:systemPrompt
+
+                    },
+
+
+                    {
+
+                        role:"user",
+
+                        content:userInput
+
+                    }
+
+                ]
+
+            })
+
+
+        }
+
+    );
+
+
+
+    const data =
+    await response.json();
+
+
+
+    if(!response.ok){
+
+        throw new Error(
+            "AI request failed"
+        );
+
+    }
+
+
+
+    return data.content || "";
+
+}
+
+
+
+
+
+
+// ===============================
+// 显示AI列表结果
+// ===============================
+
+
+function showResultList(id,items){
+
+
+    const box =
+    document.getElementById(id);
+
+
+    if(!box){
+        return;
+    }
+
+
+
+    box.innerHTML =
+
+    items.map((item,index)=>{
+
+
+        return `
+
+<div class="result-item">
+
+    ${escapeHTML(item)}
+
+</div>
+
+`;
+
+    }).join("");
+
+
+
+}
+
+
+
+
+
+
+// 防止AI输出HTML
+
+function escapeHTML(text){
+
+
+    return text
+
+    .replace(/&/g,"&amp;")
+
+    .replace(/</g,"&lt;")
+
+    .replace(/>/g,"&gt;")
+
+    .replace(/"/g,"&quot;")
+
+    .replace(/'/g,"&#039;");
+
+
+}
+
+
+
+// ===============================
+// JS-2 语言系统
+// ===============================
+
+
+const languageText = {
 
 
 zh:{
 
 
-siteTitle:"🤖 AI小工具箱",
+siteTitle:
+"🤖 AI小工具箱",
+
 
 siteDescription:
 "免费、简单、实用的 AI 效率工具<br>无需安装 · 无需注册 · 免费使用",
 
 
-navPrompt:"AI提示词",
 
-navResume:"AI简历助手",
-
-navTitle:"AI标题生成",
+navPrompt:
+"AI提示词",
 
 
+navResume:
+"AI简历助手",
 
-promptTitle:"🔥 AI提示词生成器",
+
+navTitle:
+"AI标题生成",
+
+
+
+promptTitle:
+"🔥 AI提示词生成器",
+
 
 promptDescription:
 "告诉我们你想做什么，生成可以直接使用的专业AI提示词。",
 
 
 
-resumeTitle:"📝 AI简历助手",
+resumeTitle:
+"📝 AI简历助手",
+
 
 resumeDescription:
 "输入你的教育经历、技能和项目经验，生成专业简历优化建议。",
 
 
 
-titleToolTitle:"💡 AI标题生成器",
+titleToolTitle:
+"💡 AI标题生成器",
+
 
 titleToolDesc:
 "输入你的主题，生成多个吸引人的标题。",
@@ -1637,8 +1890,10 @@ titleToolDesc:
 xiaohongshuTitle:
 "🔥 AI小红书标题生成器",
 
+
 xiaohongshuDesc:
 "输入你的主题，免费生成多个小红书标题",
+
 
 
 xhButton:
@@ -1646,64 +1901,13 @@ xhButton:
 
 
 
-generatePromptBtn:
-"✨ 生成提示词",
-
-
-generateResumeBtn:
-"生成简历提示词",
-
-
-generateTitleBtn:
-"生成标题",
-
-
-
-copyButton:
-"📋 一键复制",
-
-
-
-shareButton:
-"📤 分享 AI小工具箱",
-
-
-
-shareText:
-"如果这个网站对你有帮助，可以分享给朋友",
-
-
-
-aboutTitle:
-"🌍 关于 AI小工具箱",
-
-
-
-aboutText:
-"我们正在制作免费 AI 效率工具，帮助学生、创作者和普通用户提高效率。",
-
-
-
-moreTools:
-"更多工具正在开发中。",
+waiting:
+"等待生成...",
 
 
 
 supportAuthor:
 "💚 支持作者",
-
-
-
-thanksText:
-"感谢支持 ❤️",
-
-
-donateText:
-"感谢你的支持 💗",
-
-
-closeDonate:
-"关闭",
 
 
 
@@ -1715,80 +1919,56 @@ footerText:
 privacyText:
 "🔒 本网站不会保存你的输入内容",
 
+guideTitle:
+"📚 AI工具指南与教程",
 
+guideDesc:
+"探索AI提示词、简历优化、小红书标题生成等实用工具。",
 
-newToolsTitle:
-"AI效率工具",
+generatePromptBtn:
+"✨ 生成提示词",
 
+copyPromptBtn:
+"📋 一键复制",
 
+generateResumeBtn:
+"生成简历提示词",
 
-articleTitle:
-"AI文章标题生成器",
+copyResumeBtn:
+"📋 一键复制",
 
+generateTitleBtn:
+"生成标题",
 
-articleDesc:
-"输入主题，生成吸引人的文章标题",
+copyTitleBtn:
+"📋 一键复制",
+  
+seoNav1:
+"🚀 免费AI工具大全",
 
+seoNav2:
+"🔥 AI提示词生成指南",
 
+seoNav3:
+"📝 AI简历优化助手",
 
-momentsTitle:
-"AI朋友圈文案生成器",
+seoNav4:
+"📱 小红书标题生成技巧",
 
+seoNav5:
+"🌍 关于AI工具箱",
+  
+newToolsTitle:"AI效率工具",
 
-momentsDesc:
-"生成适合朋友圈发布的文案",
+articleTitle:"AI文章标题生成器",
 
+momentsTitle:"AI朋友圈文案生成器",
 
+mailTitle:"AI邮件助手",
 
-mailTitle:
-"AI邮件助手",
-
-
-mailDesc:
-"快速生成邮件内容",
-
-
-
-generate:
-"生成",
-
-
-
-optionGeneral:
-"通用任务",
-
-optionWriting:
-"📝 写作",
-
-optionXhs:
-"📱 小红书",
-
-optionStudy:
-"📚 学习",
-
-optionProgramming:
-"💻 编程",
-
-optionBusiness:
-"💼 商业",
-
-waiting:"等待生成...",
-
-seoTitle1:
-"免费 AI 工具箱介绍",
-
-seoText1:
-"AI工具箱提供免费的在线AI效率工具，包括AI提示词生成器、AI简历助手、AI标题生成器等。",
-
-seoText2:
-"无需安装软件，打开网页即可使用，适合学生、创作者、自媒体运营人员和办公用户。",
-
-
+generate:"生成",
 
 },
-
-
-
 
 
 
@@ -1796,9 +1976,8 @@ seoText2:
 en:{
 
 
-
-siteTitle:"🤖 AI Toolbox",
-
+siteTitle:
+"🤖 AI Toolbox",
 
 
 siteDescription:
@@ -1823,9 +2002,8 @@ promptTitle:
 "🔥 AI Prompt Generator",
 
 
-
 promptDescription:
-"Tell us what you want and generate a professional AI prompt.",
+"Tell us what you want and generate professional AI prompts.",
 
 
 
@@ -1833,15 +2011,13 @@ resumeTitle:
 "📝 AI Resume Assistant",
 
 
-
 resumeDescription:
-"Enter your education, skills and experience to generate resume suggestions.",
+"Enter your education, skills and experience to improve your resume.",
 
 
 
 titleToolTitle:
 "💡 AI Title Generator",
-
 
 
 titleToolDesc:
@@ -1850,8 +2026,7 @@ titleToolDesc:
 
 
 xiaohongshuTitle:
-"🔥 AI Xiaohongshu Title Generator",
-
+"🔥 AI Social Media Title Generator",
 
 
 xiaohongshuDesc:
@@ -1864,68 +2039,13 @@ xhButton:
 
 
 
-generatePromptBtn:
-"✨ Generate Prompt",
-
-
-
-generateResumeBtn:
-"Generate Resume Prompt",
-
-
-
-generateTitleBtn:
-"Generate Titles",
-
-
-
-copyButton:
-"📋 Copy",
-
-
-
-shareButton:
-"📤 Share AI Toolbox",
-
-
-
-shareText:
-"If this website helps you, share it with friends",
-
-
-
-aboutTitle:
-"🌍 About AI Toolbox",
-
-
-
-aboutText:
-"We are building free AI tools to help students, creators and everyday users improve efficiency.",
-
-
-
-moreTools:
-"More tools are under development.",
+waiting:
+"Waiting for generation...",
 
 
 
 supportAuthor:
 "💚 Support Author",
-
-
-
-thanksText:
-"Thanks for your support ❤️",
-
-
-
-donateText:
-"Thank you for your support 💗",
-
-
-
-closeDonate:
-"Close",
 
 
 
@@ -1937,80 +2057,58 @@ footerText:
 privacyText:
 "🔒 This website does not save your input content",
 
+guideDesc:
+"Explore AI prompts, resume optimization and title generation tools.",
 
+guideTitle:
+"📚 AI Tools Guide & Tutorials",
+  
+generatePromptBtn:
+"✨ Generate Prompt",
 
+copyPromptBtn:
+"📋 Copy",
+
+generateResumeBtn:
+"Generate Resume Suggestions",
+
+copyResumeBtn:
+"📋 Copy",
+
+generateTitleBtn:
+"Generate Titles",
+
+copyTitleBtn:
+"📋 Copy",
+  
+seoNav1:
+"🚀 Free AI Tools",
+
+seoNav2:
+"🔥 AI Prompt Guide",
+
+seoNav3:
+"📝 AI Resume Assistant",
+
+seoNav4:
+"📱 Social Media Title Guide",
+
+seoNav5:
+"🌍 About AI Toolbox",
+  
 newToolsTitle:
 "AI Productivity Tools",
+  
+articleTitle:"AI Article Title Generator",
 
+momentsTitle:"AI Social Media Copy Generator",
 
+mailTitle:"AI Email Assistant",
 
-articleTitle:
-"AI Article Title Generator",
-
-
-
-articleDesc:
-"Generate attractive article titles",
-
-
-
-momentsTitle:
-"AI Social Media Copy Generator",
-
-
-
-momentsDesc:
-"Create social media posts",
-
-
-
-mailTitle:
-"AI Email Assistant",
-
-
-
-mailDesc:
-"Generate email content quickly",
-
-
-
-generate:
-"Generate",
-
-
-
-optionGeneral:
-"General Task",
-
-optionWriting:
-"📝 Writing",
-
-optionXhs:
-"📱 Xiaohongshu",
-
-optionStudy:
-"📚 Study",
-
-optionProgramming:
-"💻 Programming",
-
-optionBusiness:
-"💼 Business",
-
-waiting:"Waiting for generation...",
-
-seoTitle1:
-"About AI Toolbox",
-
-seoText1:
-"AI Toolbox provides free online AI productivity tools, including AI Prompt Generator, AI Resume Assistant and AI Title Generator.",
-
-seoText2:
-"No installation required. Use AI tools online for students, creators, content creators and office users.",
-
-
+generate:"Generate",
 
 }
+
 
 
 };
@@ -2018,171 +2116,43 @@ seoText2:
 
 
 
-function setLanguage(lang){
-
-
-currentLanguage=lang;
-
-
-let t=languageText[lang];
 
 
 
 function setText(id,text){
 
-let el=document.getElementById(id);
 
-if(el){
+    const el =
+    document.getElementById(id);
 
-el.innerText=text;
+
+    if(el){
+
+        el.innerText=text;
+
+    }
+
 
 }
 
-}
+
+
+
 
 
 
 function setHTML(id,text){
 
-let el=document.getElementById(id);
 
-if(el){
+    const el =
+    document.getElementById(id);
 
-el.innerHTML=text;
 
-}
+    if(el){
 
-}
+        el.innerHTML=text;
 
-
-
-
-setText("siteTitle",t.siteTitle);
-
-setHTML("siteDescription",t.siteDescription);
-
-
-setText("navPrompt",t.navPrompt);
-
-setText("navResume",t.navResume);
-
-setText("navTitle",t.navTitle);
-
-
-
-setText("promptTitle",t.promptTitle);
-
-setText("promptDescription",t.promptDescription);
-
-setText("resumeTitle",t.resumeTitle);
-
-setText("resumeDescription",t.resumeDescription);
-
-setText("titleToolTitle",t.titleToolTitle);
-
-setText("titleToolDesc",t.titleToolDesc);
-
-
-
-setText("xiaohongshuTitle",t.xiaohongshuTitle);
-
-setText("xiaohongshuDesc",t.xiaohongshuDesc);
-
-setText("xhButton",t.xhButton);
-
-
-
-setText("newToolsTitle",t.newToolsTitle);
-
-setText("articleTitle",t.articleTitle);
-
-setText("articleDesc",t.articleDesc);
-
-setText("momentsTitle",t.momentsTitle);
-
-setText("momentsDesc",t.momentsDesc);
-
-setText("mailTitle",t.mailTitle);
-
-setText("mailDesc",t.mailDesc);
-
-setText("articleGenerate",t.generate);
-
-setText("momentsGenerate",t.generate);
-
-setText("mailGenerate",t.generate);
-
-setText("shareButton",t.shareButton);
-
-setText("shareText",t.shareText);
-
-
-
-setText("aboutTitle",t.aboutTitle);
-
-setText("aboutText",t.aboutText);
-
-setText("moreTools",t.moreTools);
-
-
-
-setText("supportAuthor",t.supportAuthor);
-
-setText("thanksText",t.thanksText);
-
-setText("donateText",t.donateText);
-
-setText("closeDonate",t.closeDonate);
-
-
-
-setText("footerText",t.footerText);
-
-setText("privacyText",t.privacyText);
-
-setText("promptOutput",t.waiting);
-setText("resumeOutput",t.waiting);
-setText("titleOutput",t.waiting);
-
-setText("generatePromptBtn",t.generatePromptBtn);
-
-setText("generateResumeBtn",t.generateResumeBtn);
-
-setText("generateTitleBtn",t.generateTitleBtn);
-
-
-
-setText("copyPromptBtn",t.copyButton);
-
-setText("copyResumeBtn",t.copyButton);
-
-setText("copyTitleBtn",t.copyButton);
-
-
-
-setText("optionGeneral",t.optionGeneral);
-
-setText("optionWriting",t.optionWriting);
-
-setText("optionXhs",t.optionXhs);
-
-setText("optionStudy",t.optionStudy);
-
-setText("optionProgramming",t.optionProgramming);
-
-setText("optionBusiness",t.optionBusiness);
-
-setText("seoTitle1",t.seoTitle1);
-setText("seoText1",t.seoText1);
-setText("seoText2",t.seoText2);
-
-document.getElementById("zhBtn")
-.classList.toggle("active",lang==="zh");
-
-
-document.getElementById("enBtn")
-.classList.toggle("active",lang==="en");
-
+    }
 
 
 }
@@ -2191,71 +2161,225 @@ document.getElementById("enBtn")
 
 
 
-// placeholder切换
+
+
+
+function setLanguage(lang){
+
+
+    currentLanguage = lang;
+
+
+
+    const t =
+    languageText[lang];
+
+
+
+    Object.keys(t).forEach(key=>{
+
+
+        let el =
+        document.getElementById(key);
+
+
+
+        if(el){
+
+            if(key==="siteDescription"){
+
+                el.innerHTML=t[key];
+
+            }else{
+
+                el.innerText=t[key];
+
+            }
+
+        }
+
+
+    });
+
+
+
+
+
+    const zhBtn =
+    document.getElementById("zhBtn");
+
+
+    const enBtn =
+    document.getElementById("enBtn");
+
+
+
+    if(zhBtn){
+
+        zhBtn.classList.toggle(
+
+            "active",
+
+            lang==="zh"
+
+        );
+
+    }
+
+
+
+    if(enBtn){
+
+        enBtn.classList.toggle(
+
+            "active",
+
+            lang==="en"
+
+        );
+
+    }
+
+
+
+    updatePlaceholder();
+
+
+}
+
+
+
+
+
+
+
+
 
 function updatePlaceholder(){
 
-let zh=currentLanguage==="zh";
 
-
-document.getElementById("promptInput").placeholder =
-zh
-?
-"例如：帮我写一篇关于减肥的文章"
-:
-"Example: Write an article about weight loss";
+    const zh =
+    currentLanguage==="zh";
 
 
 
-document.getElementById("resumeInput").placeholder =
-zh
-?
-"例如：大学毕业，会Python，做过网站项目"
-:
-"Example: College graduate, knows Python, built a website project";
+    const list = {
+
+
+        promptInput:
+        zh
+        ?
+        "例如：帮我写一篇关于减肥的文章"
+        :
+        "Example: Write an article about weight loss",
 
 
 
-document.getElementById("titleInput").placeholder =
-zh
-?
-"例如：大学生如何利用AI提高学习效率"
-:
-"Example: How students use AI to improve learning";
+        resumeInput:
+        zh
+        ?
+        "例如：大学毕业，会Python，做过网站项目"
+        :
+        "Example: College graduate, knows Python, built a website project",
 
 
 
-document.getElementById("topicInput").placeholder =
-zh
-?
-"例如：旅行攻略、减肥早餐"
-:
-"Example: Travel guide, healthy breakfast";
+        titleInput:
+        zh
+        ?
+        "例如：大学生如何利用AI提高学习效率"
+        :
+        "Example: How students use AI to improve learning",
 
 
-document.getElementById("articleTopic").placeholder =
-zh
-?
-"输入文章主题"
-:
-"Enter article topic";
+
+        topicInput:
+        zh
+        ?
+        "例如：旅行攻略、减肥早餐"
+        :
+        "Example: Travel guide, healthy breakfast",
 
 
-document.getElementById("momentsTopic").placeholder =
-zh
-?
-"输入朋友圈主题"
-:
-"Enter social media topic";
+
+        articleTopic:
+        zh
+        ?
+        "输入文章主题"
+        :
+        "Enter article topic",
 
 
-document.getElementById("mailTopic").placeholder =
-zh
-?
-"输入邮件类型"
-:
-"Enter email type";
 
+        momentsTopic:
+        zh
+        ?
+        "输入朋友圈主题"
+        :
+        "Enter social media topic",
+
+
+
+        mailTopic:
+        zh
+        ?
+        "输入邮件类型"
+        :
+        "Enter email type"
+
+    };
+
+
+
+    Object.keys(list).forEach(id=>{
+
+
+        const el =
+        document.getElementById(id);
+
+
+        if(el){
+
+            el.placeholder=list[id];
+
+        }
+
+
+    });
+
+
+}
+
+
+
+
+// ===============================
+// JS-3 AI生成函数
+// ===============================
+
+
+
+function getGeneratingText(){
+
+    return currentLanguage==="zh"
+    ?
+    "🤖 AI正在生成，请稍等..."
+    :
+    "🤖 AI is generating, please wait...";
+
+}
+
+
+
+
+
+function getErrorText(){
+
+    return currentLanguage==="zh"
+    ?
+    "❌ AI生成失败，请稍后再试"
+    :
+    "❌ AI generation failed, please try again";
 
 }
 
@@ -2265,384 +2389,276 @@ zh
 
 
 
-// AI提示词
+// ===============================
+// AI提示词生成器
+// ===============================
 
-function generatePrompt(){
 
+async function generatePrompt(){
 
-let input=document.getElementById("promptInput").value.trim();
 
+    let input =
+    document.getElementById("promptInput")
+    .value.trim();
 
-if(!input){
 
-alert(
-currentLanguage==="zh"
-?
-"请输入内容"
-:
-"Please enter content"
-);
 
-return;
+    let box =
+    document.getElementById("promptOutput");
 
-}
 
 
+    if(!input){
 
-let result;
+        box.innerText =
+        currentLanguage==="zh"
+        ?
+        "请输入内容"
+        :
+        "Please enter content";
 
-
-
-if(currentLanguage==="zh"){
-
-
-result=
-
-`你是一名专业AI助手。
-
-请帮助我完成：
-
-${input}
-
-
-要求：
-
-1. 分析目标
-2. 提供解决方案
-3. 给出执行步骤
-4. 输出专业结果`;
-
-
-
-}else{
-
-
-result=
-
-`You are a professional AI assistant.
-
-Please help me:
-
-${input}
-
-
-Requirements:
-
-1. Analyze the goal
-2. Provide solutions
-3. Give actionable steps
-4. Output professional results`;
-
-}
-
-
-
-document.getElementById("promptOutput").innerText=result;
-
-
-}
-
-
-
-
-
-
-
-
-// AI简历
-
-function generateResume(){
-
-
-let input=document.getElementById("resumeInput").value.trim();
-
-
-if(!input){
-
-alert(
-currentLanguage==="zh"
-?
-"请输入经历"
-:
-"Please enter experience"
-);
-
-return;
-
-}
-
-
-
-let result;
-
-
-
-if(currentLanguage==="zh"){
-
-
-result=
-
-`简历优化：
-
-${input}
-
-
-请优化：
-
-1. 技能描述
-2. 项目经验
-3. 求职优势`;
-
-
-
-}else{
-
-
-result=
-
-`Resume Optimization:
-
-${input}
-
-
-Improve:
-
-1. Skills description
-2. Project experience
-3. Career advantages`;
-
-}
-
-
-
-document.getElementById("resumeOutput").innerText=result;
-
-
-}
-
-
-
-
-
-
-
-
-
-// AI标题生成
-
-function generateTitles(){
-
-
-let input=document.getElementById("titleInput").value.trim();
-
-
-if(!input){
-
-alert(
-currentLanguage==="zh"
-?
-"请输入主题"
-:
-"Please enter topic"
-);
-
-return;
-
-}
-
-
-
-let result;
-
-
-
-if(currentLanguage==="zh"){
-
-
-result=
-
-`${input}
-
-1. 深度解析${input}
-2. 新手必看的${input}指南
-3. 关于${input}你需要知道的事情
-4. ${input}完整攻略
-5. ${input}经验分享`;
-
-
-
-}else{
-
-
-result=
-
-`${input}
-
-1. Complete guide about ${input}
-2. Beginner guide for ${input}
-3. Things you should know about ${input}
-4. Experience sharing about ${input}`;
-
-}
-
-
-
-document.getElementById("titleOutput").innerText=result;
-
-
-}
-
-
-
-
-// AI小红书标题生成
-async function generateXhsTitles(){
-
-    let topic = document.getElementById("topicInput").value.trim();
-    let box = document.getElementById("titleResults");
-
-    if(!topic){
-        box.innerHTML =
-            currentLanguage === "zh"
-            ? "请输入主题"
-            : "Please enter topic";
         return;
+
     }
 
-    // 显示等待状态
-    box.innerHTML =
-        currentLanguage === "zh"
-        ? "🤖 AI正在生成，请稍等..."
-        : "🤖 AI is generating, please wait...";
+
+
+    box.innerText=getGeneratingText();
+
+
 
     try{
 
-        const response = await fetch(
-            "https://ai-toolbox-api.2243178691.workers.dev",
-            {
-                method: "POST",
 
-                headers: {
-                    "Content-Type": "application/json"
-                },
+        let prompt =
+        currentLanguage==="zh"
 
-                body: JSON.stringify({
-                    messages: [
-                        {
-                            role: "system",
-                            content:
-                                currentLanguage === "zh"
-                                ?
-                                "你是一名专业的小红书内容创作者。
+        ?
 
-根据用户主题生成10个小红书标题。
+        `你是一名专业AI提示词专家。
+根据用户需求生成一个高质量AI提示词。
 
-严格要求：
-1. 不要输出数字编号
-2. 不要输出解释
-3. 不要输出任何安全检测内容
-4. 每行一个标题"
-                                :
-                                "You are a professional Xiaohongshu content creator. Generate 10 attractive Xiaohongshu titles based on the user's topic. Keep them concise and engaging. Output only the titles, one per line."
-                        },
-                        {
-                            role: "user",
-                            content: topic
-                        }
-                    ]
-                })
-            }
+要求：
+1. 使用中文
+2. 直接输出提示词
+3. 不要解释`
+
+        :
+
+        `You are a professional AI prompt expert.
+Create a high quality AI prompt.
+
+Requirements:
+1. Use English only.
+2. Output only the prompt.
+3. Do not explain.`;
+
+
+
+        let result =
+        await callAI(prompt,input);
+
+
+
+        box.innerText=result;
+
+
+
+    }catch(e){
+
+        box.innerText=getErrorText();
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+// ===============================
+// AI简历助手
+// ===============================
+
+
+async function generateResume(){
+
+
+    let input =
+    document.getElementById("resumeInput")
+    .value.trim();
+
+
+
+    let box =
+    document.getElementById("resumeOutput");
+
+
+
+    if(!input){
+
+        box.innerText =
+        currentLanguage==="zh"
+        ?
+        "请输入经历"
+        :
+        "Please enter experience";
+
+        return;
+
+    }
+
+
+
+    box.innerText=getGeneratingText();
+
+
+
+    try{
+
+
+        let prompt =
+        currentLanguage==="zh"
+
+        ?
+
+        `你是一名专业简历优化专家。
+
+根据用户经历生成简历优化建议。
+
+要求：
+1. 中文输出
+2. 突出技能和项目
+3. 不要解释过程`
+
+        :
+
+        `You are a professional resume expert.
+
+Improve the user's resume information.
+
+Requirements:
+1. English only.
+2. Highlight skills and projects.
+3. Output suggestions only.`;
+
+
+
+        let result =
+        await callAI(prompt,input);
+
+
+
+        box.innerText=result;
+
+
+
+    }catch(e){
+
+        box.innerText=getErrorText();
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+// ===============================
+// AI标题生成器
+// ===============================
+
+
+async function generateTitles(){
+
+
+    let input =
+    document.getElementById("titleInput")
+    .value.trim();
+
+
+
+    let box =
+    document.getElementById("titleOutput");
+
+
+
+    if(!input){
+
+        box.innerText =
+        currentLanguage==="zh"
+        ?
+        "请输入主题"
+        :
+        "Please enter topic";
+
+        return;
+
+    }
+
+
+
+    box.innerText=getGeneratingText();
+
+
+
+    try{
+
+
+        let prompt =
+        currentLanguage==="zh"
+
+        ?
+
+        `根据主题生成10个吸引人的标题。
+
+要求：
+1. 中文标题
+2. 每行一个
+3. 不要编号
+4. 不要解释`
+
+        :
+
+        `Generate 10 attractive titles.
+
+Requirements:
+1. English titles only.
+2. One title per line.
+3. No numbers.
+4. No explanation.`;
+
+
+
+        let result =
+        await callAI(prompt,input);
+
+
+
+        showResultList(
+
+            "titleOutput",
+
+            cleanAIResult(result)
+
         );
 
-        const data = await response.json();
 
-        // 检查 API 是否返回错误
-        if(!response.ok){
-            console.error("Worker/API Error:", data);
 
-            box.innerHTML =
-                currentLanguage === "zh"
-                ? "❌ AI生成失败，请稍后再试。"
-                : "❌ AI generation failed. Please try again later.";
+    }catch(e){
 
-            return;
-        }
+        box.innerText=getErrorText();
 
-        // 获取 AI 返回的文字
-       const result =
-data?.content;
-        if(!result){
-
-            box.innerHTML =
-                currentLanguage === "zh"
-                ? "❌ AI没有返回内容。"
-                : "❌ AI returned no content.";
-
-            return;
-        }
-
-        // 按行分割标题
-        const titles = result
-    .split("\n")
-    .map(x => x.trim())
-    .filter(x => x.length > 0)
-    .filter(x => !x.toLowerCase().includes("user safety"))
-    .map(x => x.replace(/^\d+[\.\、\s]*/, ""));
-        // 显示标题
-        box.innerHTML =
-            titles.map((title, i) => {
-
-                const safeTitle =
-                    title
-                        .replace(/&/g, "&amp;")
-                        .replace(/</g, "&lt;")
-                        .replace(/>/g, "&gt;")
-                        .replace(/"/g, "&quot;")
-                        .replace(/'/g, "&#039;");
-
-                return `
-                    <div class="result-item"
-                         onclick="copySingle('${safeTitle.replace(/'/g, "\\'")}')">
-                        ${i + 1}. ${safeTitle}
-                    </div>
-                `;
-
-            }).join("");
-
-    }catch(error){
-
-        console.error("AI request error:", error);
-
-        box.innerHTML =
-            currentLanguage === "zh"
-            ? "❌ 网络连接失败，请稍后再试。"
-            : "❌ Network error. Please try again later.";
     }
-}
-
-
-
-
-
-
-
-
-
-
-function copySingle(text){
-
-navigator.clipboard.writeText(text);
-
-
-alert(
-
-currentLanguage==="zh"
-?
-"标题已复制"
-:
-"Title copied"
-
-);
 
 
 }
@@ -2654,280 +2670,296 @@ currentLanguage==="zh"
 
 
 
+// ===============================
+// 小红书标题生成
+// ===============================
 
-// 第二批工具 ai 调用
+
+async function generateXhsTitles(){
+
+
+    let input =
+    document.getElementById("topicInput")
+    .value.trim();
+
+
+
+    let box =
+    document.getElementById("titleResults");
+
+
+
+    if(!input){
+
+        box.innerText =
+        currentLanguage==="zh"
+        ?
+        "请输入主题"
+        :
+        "Please enter topic";
+
+        return;
+
+    }
+
+
+
+    box.innerText=getGeneratingText();
+
+
+
+    try{
+
+
+        let prompt =
+        currentLanguage==="zh"
+
+        ?
+
+        `你是一名小红书内容创作者。
+
+根据主题生成10个小红书标题。
+
+要求：
+1. 只输出中文标题
+2. 每行一个
+3. 不要数字编号
+4. 不要解释`
+
+        :
+
+        `You are a social media content creator.
+
+Generate 10 attractive social media titles.
+
+Requirements:
+1. English only, do not use Chinese.
+2. One title per line.
+3. No numbering.
+4. No explanation.`;
+
+
+
+        let result =
+        await callAI(prompt,input);
+
+
+
+        showResultList(
+
+            "titleResults",
+
+            cleanAIResult(result)
+
+        );
+
+
+
+    }catch(e){
+
+        box.innerText=getErrorText();
+
+    }
+
+
+}
+
+
+
+
+// ===============================
+// AI文章标题生成器
+// ===============================
 
 
 async function generateArticleTitle(){
 
-    let topic = document.getElementById("articleTopic").value.trim();
-    let box = document.getElementById("articleResult");
+
+    let input =
+    document.getElementById("articleTopic")
+    .value.trim();
 
 
-    if(!topic){
-        box.innerHTML =
-            currentLanguage === "zh"
-            ? "请输入主题"
-            : "Please enter topic";
+
+    let box =
+    document.getElementById("articleResult");
+
+
+
+    if(!input){
+
+        box.innerText =
+        currentLanguage==="zh"
+        ?
+        "请输入主题"
+        :
+        "Please enter topic";
+
         return;
+
     }
 
 
-    box.innerHTML =
-        currentLanguage === "zh"
-        ? "🤖 AI正在生成，请稍等..."
-        : "🤖 AI is generating, please wait...";
+
+    box.innerText=getGeneratingText();
+
 
 
     try{
 
-        const response = await fetch(
-            "https://ai-toolbox-api.2243178691.workers.dev",
-            {
-                method:"POST",
 
-                headers:{
-                    "Content-Type":"application/json"
-                },
+        let prompt =
+        currentLanguage==="zh"
 
-                body:JSON.stringify({
+        ?
 
-                    messages:[
+        `你是一名专业内容创作者。
 
-                        {
-                            role:"system",
-                            content:
-                            currentLanguage === "zh"
-                            ?
-                            "你是一名专业内容创作者。请根据用户提供的主题，生成10个吸引人的文章标题。
+根据主题生成10个文章标题。
 
-严格要求：
-1. 不要输出数字编号
-2. 不要输出解释
-3. 不要输出安全检测信息
-4. 每行只输出一个标题"
-                            :
-                            "You are a professional content creator. Generate 10 attractive article titles based on the topic. Make them engaging and clickable. Output only titles, one per line."
-                        },
+要求：
+1. 中文输出
+2. 每行一个标题
+3. 不要编号
+4. 不要解释`
+
+        :
+
+        `You are a professional content creator.
+
+Generate 10 article titles.
+
+Requirements:
+1. English only.
+2. One title per line.
+3. No numbering.
+4. No explanation.`;
 
 
-                        {
-                            role:"user",
-                            content:topic
-                        }
 
-                    ]
+        let result =
+        await callAI(prompt,input);
 
-                })
-            }
+
+
+        showResultList(
+
+            "articleResult",
+
+            cleanAIResult(result)
+
         );
 
 
-        const data = await response.json();
 
+    }catch(e){
 
-        if(!response.ok){
-
-            console.error("Worker/API Error:",data);
-
-            box.innerHTML =
-                currentLanguage === "zh"
-                ? "❌ AI生成失败，请稍后再试。"
-                : "❌ AI generation failed.";
-
-            return;
-        }
-
-
-        const result = data?.content;
-
-
-        if(!result){
-
-            box.innerHTML =
-                currentLanguage === "zh"
-                ? "❌ AI没有返回内容。"
-                : "❌ AI returned no content.";
-
-            return;
-        }
-
-
-        const titles = result
-    .split("\n")
-    .map(x => x.trim())
-    .filter(x => x.length > 0)
-    .filter(x => !x.toLowerCase().includes("user safety"))
-    .map(x => x.replace(/^\d+[\.\、\s]*/, ""));
-
-
-       box.innerHTML =
-    titles.map((title)=>{
-
-        return `
-        <div class="result-item">
-            ${title.replace(/^\d+[\.\、\s]*/, "")}
-        </div>
-        `;
-
-    }).join("");
-
-
-    }catch(error){
-
-        console.error("AI request error:",error);
-
-        box.innerHTML =
-            currentLanguage==="zh"
-            ?
-            "❌ 网络连接失败，请稍后再试。"
-            :
-            "❌ Network error.";
+        box.innerText=getErrorText();
 
     }
 
+
 }
+
+
+
+
+
+
+
+// ===============================
+// AI朋友圈文案生成器
+// ===============================
 
 
 async function generateMoments(){
 
-    let topic = document.getElementById("momentsTopic").value.trim();
-    let box = document.getElementById("momentsResult");
+
+    let input =
+    document.getElementById("momentsTopic")
+    .value.trim();
 
 
-    if(!topic){
-        box.innerHTML =
-            currentLanguage === "zh"
-            ? "请输入主题"
-            : "Please enter topic";
+
+    let box =
+    document.getElementById("momentsResult");
+
+
+
+    if(!input){
+
+        box.innerText =
+        currentLanguage==="zh"
+        ?
+        "请输入主题"
+        :
+        "Please enter topic";
+
         return;
+
     }
 
 
-    box.innerHTML =
-        currentLanguage === "zh"
-        ? "🤖 AI正在生成，请稍等..."
-        : "🤖 AI is generating, please wait...";
+
+    box.innerText=getGeneratingText();
+
 
 
     try{
 
-        const response = await fetch(
-            "https://ai-toolbox-api.2243178691.workers.dev",
-            {
-                method:"POST",
 
-                headers:{
-                    "Content-Type":"application/json"
-                },
+        let prompt =
+        currentLanguage==="zh"
 
-                body:JSON.stringify({
+        ?
 
-                    messages:[
+        `你是一名朋友圈文案创作者。
 
-                        {
-                            role:"system",
-                            content:
-                            currentLanguage === "zh"
-                            ?
-                            "你是一名专业朋友圈文案创作者。请根据用户提供的主题，生成5条适合朋友圈发布的文案。要求自然、有感染力、有生活感，只输出文案，不要解释。"
-                            :
-                            "You are a professional social media copywriter. Generate 5 natural and engaging posts based on the topic. Output only the posts."
-                        },
+根据主题生成5条朋友圈文案。
+
+要求：
+1. 中文输出
+2. 自然真实
+3. 每条独立一行
+4. 不要编号
+5. 不要解释`
+
+        :
+
+        `You are a social media copywriter.
+
+Generate 5 social media posts.
+
+Requirements:
+1. English only.
+2. Natural and engaging.
+3. One post per line.
+4. No numbering.
+5. No explanation.`;
 
 
-                        {
-                            role:"user",
-                            content:topic
-                        }
 
-                    ]
+        let result =
+        await callAI(prompt,input);
 
-                })
-            }
+
+
+        showResultList(
+
+            "momentsResult",
+
+            cleanAIResult(result)
+
         );
 
 
-        const data = await response.json();
 
+    }catch(e){
 
-        if(!response.ok){
-
-            box.innerHTML =
-                currentLanguage === "zh"
-                ? "❌ AI生成失败，请稍后再试。"
-                : "❌ AI generation failed.";
-
-            return;
-        }
-
-
-        const result = data?.content;
-
-
-        if(!result){
-
-            box.innerHTML =
-                currentLanguage === "zh"
-                ? "❌ AI没有返回内容。"
-                : "❌ AI returned no content.";
-
-            return;
-        }
-
-
-box.innerHTML =
-    result
-    .split("\n")
-    .map(x => x.trim())
-    .filter(x => x.length > 0)
-    .filter(x => !x.toLowerCase().includes("user safety"))
-    .map((x,i)=>`${i+1}. ${x.replace(/^\d+[\.\、\s]*/, "")}`)
-    .join("<br>");
-
-    }catch(error){
-
-        console.error(error);
-
-        box.innerHTML =
-            currentLanguage === "zh"
-            ? "❌ 网络连接失败，请稍后再试。"
-            : "❌ Network error.";
+        box.innerText=getErrorText();
 
     }
 
-}
-
-
-  
-
-
-
-
-
-function generateMail(){
-
-
-let t=document.getElementById("mailTopic").value.trim();
-
-
-if(!t)return;
-
-
-
-document.getElementById("mailResult").innerHTML=
-
-
-currentLanguage==="zh"
-
-?
-
-"主题："+t+"<br><br>您好，感谢您的联系。<br>期待进一步沟通。"
-
-:
-
-"Subject: "+t+"<br><br>Hello, thank you for contacting us.<br>Looking forward to communication.";
-
 
 }
 
@@ -2937,29 +2969,145 @@ currentLanguage==="zh"
 
 
 
-// 复制
+
+// ===============================
+// AI邮件助手
+// ===============================
+
+
+async function generateMail(){
+
+
+    let input =
+    document.getElementById("mailTopic")
+    .value.trim();
+
+
+
+    let box =
+    document.getElementById("mailResult");
+
+
+
+    if(!input){
+
+        box.innerText =
+        currentLanguage==="zh"
+        ?
+        "请输入邮件类型"
+        :
+        "Please enter email type";
+
+        return;
+
+    }
+
+
+
+    box.innerText=getGeneratingText();
+
+
+
+    try{
+
+
+        let prompt =
+        currentLanguage==="zh"
+
+        ?
+
+        `你是一名专业邮件写作助手。
+
+根据邮件类型生成邮件内容。
+
+要求：
+1. 中文输出
+2. 格式正式
+3. 直接输出邮件内容`
+
+        :
+
+        `You are a professional email writing assistant.
+
+Create an email based on the topic.
+
+Requirements:
+1. English only.
+2. Professional format.
+3. Output only email content.`;
+
+
+
+        let result =
+        await callAI(prompt,input);
+
+
+
+        box.innerText=result;
+
+
+
+    }catch(e){
+
+        box.innerText=getErrorText();
+
+    }
+
+
+}
+
+
+
+
+
+// ===============================
+// JS-4 其他功能 + 初始化
+// ===============================
+
+
+
+// ===============================
+// 复制文本
+// ===============================
+
 
 function copyText(id){
 
 
-let el=document.getElementById(id);
+    let el =
+    document.getElementById(id);
 
 
-if(!el)return;
+
+    if(!el){
+
+        return;
+
+    }
 
 
-navigator.clipboard.writeText(el.innerText);
+
+    navigator.clipboard.writeText(
+
+        el.innerText
+
+    );
 
 
-alert(
 
-currentLanguage==="zh"
-?
-"已复制"
-:
-"Copied"
+    alert(
 
-);
+        currentLanguage==="zh"
+
+        ?
+
+        "已复制"
+
+        :
+
+        "Copied"
+
+    );
 
 
 }
@@ -2970,80 +3118,113 @@ currentLanguage==="zh"
 
 
 
+// ===============================
+// 分享网站
+// ===============================
 
-// 分享
 
 function shareSite(){
 
 
-let url=window.location.href;
+    let url =
+    window.location.href;
 
 
-if(navigator.share){
+
+    if(navigator.share){
 
 
-navigator.share({
+        navigator.share({
 
-title:
-currentLanguage==="zh"
-?
-"AI小工具箱"
-:
-"AI Toolbox",
+            title:
 
-url:url
+            currentLanguage==="zh"
 
-});
+            ?
 
+            "AI小工具箱"
 
-}else{
+            :
+
+            "AI Toolbox",
 
 
-navigator.clipboard.writeText(url);
+            url:url
+
+        });
 
 
-alert(
+    }else{
 
-currentLanguage==="zh"
-?
-"网址已复制"
-:
-"Link copied"
 
-);
+        navigator.clipboard.writeText(url);
+
+
+
+        alert(
+
+            currentLanguage==="zh"
+
+            ?
+
+            "网址已复制"
+
+            :
+
+            "Link copied"
+
+        );
+
+
+    }
 
 
 }
 
 
 
-}
 
 
 
 
 
+// ===============================
+// 打赏弹窗
+// ===============================
 
-
-
-// 打赏
 
 function showDonate(){
 
 
-document.getElementById("donateModal")
-.style.display="flex";
+    let modal =
+    document.getElementById("donateModal");
+
+
+    if(modal){
+
+        modal.style.display="flex";
+
+    }
 
 
 }
+
+
 
 
 
 function hideDonate(){
 
 
-document.getElementById("donateModal")
-.style.display="none";
+    let modal =
+    document.getElementById("donateModal");
+
+
+    if(modal){
+
+        modal.style.display="none";
+
+    }
 
 
 }
@@ -3055,32 +3236,43 @@ document.getElementById("donateModal")
 
 
 
-// 切换语言后更新placeholder
-
-let oldSetLanguage=setLanguage;
-
-
-setLanguage=function(lang){
-
-oldSetLanguage(lang);
-
-currentLanguage=lang;
-
-updatePlaceholder();
-
-}
-
-
-
-
-
+// ===============================
 // 启动
+// ===============================
 
-setLanguage("zh");
+
+document.addEventListener(
+
+"DOMContentLoaded",
+
+function(){
+
+
+    setLanguage("zh");
+
+
+}
+
+);
+
+
+
+function copySingle(text){
+
+    navigator.clipboard.writeText(text);
+
+    alert(
+        currentLanguage==="zh"
+        ?
+        "标题已复制"
+        :
+        "Title copied"
+    );
+
+}
+
 
 </script>
-
-
 
 
 
