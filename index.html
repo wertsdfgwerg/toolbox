@@ -5,7 +5,7 @@
 
 <meta charset="UTF-8">
 
-<link rel="icon" href="logo.png">
+<link rel="icon" type="image/png" href="logo.png">
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,19 +25,20 @@ data-cf-beacon='{"token":"4eb5597f43294acfbf1573e4628dcf28"}'>
 
 
 <title id="pageTitle">
-AI工具箱 - 免费AI提示词、简历、标题生成工具
+AI工具箱 - 免费在线AI提示词生成器、简历助手、小红书标题生成器
 </title>
 
 
 
-<meta name="description"
-content="AI工具箱提供免费的AI提示词生成器、AI简历助手、AI标题生成器、小红书标题生成工具，帮助学生、创作者和普通用户提升学习、工作和创作效率。">
-
+<meta id="metaDescription" name="description"
+content="AI工具箱提供免费的在线AI工具，包括AI提示词生成器、AI简历助手、AI标题生成器、小红书标题生成器等，无需注册。">
 <link rel="canonical" href="https://wertsdfgwerg.github.io/toolbox/">
 
-<meta name="keywords"
-content="AI工具箱,免费AI工具,AI提示词生成器,AI简历助手,AI标题生成器">
 
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI Toolbox">
+<meta name="twitter:description" content="Free AI tools">
+  
 
 <meta name="robots" content="index,follow">
 
@@ -689,16 +690,21 @@ Title Generator
 免费 AI 工具箱介绍
 </h2>
 
+
 <p id="seoText1">
-AI工具箱提供免费的在线AI效率工具，包括AI提示词生成器、AI简历助手、AI标题生成器等。
+AI工具箱提供免费的在线AI工具，包括AI提示词生成器、AI简历助手、AI标题生成器和小红书标题生成器。
 </p>
 
 <p id="seoText2">
-无需安装软件，打开网页即可使用，适合学生、创作者、自媒体运营人员和办公用户。
+用户无需注册和安装软件，打开网页即可使用AI工具，适合学生、自媒体创作者、办公人员和开发者。
 </p>
 
-</section>
+<p id="seoText3">
+AI工具箱持续更新更多人工智能工具，帮助用户提升学习效率、工作效率以及内容创作能力。
+</p>
 
+
+</section>
 
 
 
@@ -1514,7 +1520,7 @@ margin-top:30px;
 ">
 
 
-<h2>
+<h2 id="adTitle">
 
 📢 广告合作
 
@@ -1522,7 +1528,7 @@ margin-top:30px;
 
 
 
-<p style="color:#777;">
+<p id="adText" style="color:#777;">
 
 网站正在成长中，未来这里将展示优质广告
 
@@ -1837,7 +1843,21 @@ const languageText = {
 
 zh:{
 
-
+metaDescription:
+"AI工具箱提供免费的在线AI工具，包括AI提示词生成器、AI简历助手、AI标题生成器等，无需注册，提高效率。",
+  
+adTitle:
+"📢 广告合作",
+  
+mailDesc:
+"快速生成邮件内容。",
+  
+momentsDesc:
+"生成适合朋友圈发布的文案。",
+  
+articleDesc:
+"输入主题，生成吸引人的文章标题。",
+  
 siteTitle:
 "🤖 AI小工具箱",
 
@@ -1968,16 +1988,6 @@ mailTitle:"AI邮件助手",
 
 generate:"生成",
 
-seoTitle1:
-"免费 AI 工具箱介绍",
-
-seoText1:
-"AI工具箱提供免费的在线AI效率工具，包括AI提示词生成器、AI简历助手、AI标题生成器等。",
-
-seoText2:
-"无需安装软件，打开网页即可使用，适合学生、创作者、自媒体运营人员和办公用户。",
-
-
 optionGeneral:
 "通用任务",
 
@@ -1997,10 +2007,6 @@ optionBusiness:
 "💼 商业",
 
 
-waiting:
-"等待生成...",
-
-
 aboutTitle:
 "🌍 关于 AI小工具箱",
 
@@ -2013,7 +2019,27 @@ moreTools:
 pageTitle:
 "AI工具箱 - 免费AI提示词、简历、标题生成工具",
 
+seoTitle1:
+"免费 AI 工具箱介绍",
 
+seoText1:
+"AI工具箱提供免费的在线AI工具，包括AI提示词生成器、AI简历助手、AI标题生成器和小红书标题生成器。",
+
+seoText2:
+"用户无需注册和安装软件，打开网页即可使用AI工具，适合学生、自媒体创作者、办公人员和开发者。",
+
+seoText3:
+"AI工具箱持续更新更多人工智能工具，帮助用户提升学习效率、工作效率以及内容创作能力。",
+
+thanksText:
+"感谢支持 ❤️",
+
+closeDonate:
+"关闭",
+
+adText:
+"网站正在成长中，未来这里将展示优质广告",
+  
 },
 
 
@@ -2021,6 +2047,11 @@ pageTitle:
 
 en:{
 
+metaDescription:
+"AI Toolbox provides free online AI tools including AI prompt generator, resume assistant and title generator. No registration required.",
+  
+adTitle:
+"📢 Advertising",
 
 siteTitle:
 "🤖 AI Toolbox",
@@ -2176,12 +2207,14 @@ seoTitle1:
 "Free AI Toolbox Introduction",
 
 seoText1:
-"AI Toolbox provides free online AI productivity tools, including AI prompt generator, AI resume assistant and AI title generator.",
+"AI Toolbox provides free online AI tools, including AI prompt generator, AI resume assistant, AI title generator and social media title generator.",
 
 seoText2:
-"No installation required. Open the website and use it instantly. Suitable for students, creators, content creators and office users.",
+"No registration or installation is required. Users can open the website and use AI tools instantly for study, content creation, office work and development.",
 
-
+seoText3:
+"AI Toolbox continuously develops more artificial intelligence tools to help users improve learning efficiency, work productivity and content creation.",
+  
 optionGeneral:
 "General Task",
 
@@ -2201,10 +2234,6 @@ optionBusiness:
 "💼 Business",
 
 
-waiting:
-"Waiting for generation...",
-
-
 aboutTitle:
 "🌍 About AI Toolbox",
 
@@ -2216,6 +2245,15 @@ moreTools:
 
 pageTitle:
 "AI Toolbox - Free AI Prompt, Resume and Title Generator",
+
+thanksText:
+"Thank you for your support ❤️",
+
+closeDonate:
+"Close",
+
+adText:
+"The website is growing. Quality advertisements will appear here in the future.",
   
 }
 
@@ -2308,7 +2346,11 @@ function setLanguage(lang){
 
         }
 
+        if(key==="pageTitle"){
+document.title=t[key];
+}
 
+      
     });
 
 
@@ -2323,10 +2365,7 @@ function setLanguage(lang){
     document.getElementById("enBtn");
 
 
-     if(key==="pageTitle"){
-document.title=t[key];
-}
-
+   
 
 
 
@@ -2365,107 +2404,151 @@ document.title=t[key];
 }
 
 
-
-
-
-
-
-
-
 function updatePlaceholder(){
 
 
-    const zh =
-    currentLanguage==="zh";
+const zh=currentLanguage==="zh";
+
+
+const list={
+
+
+promptInput:
+zh
+?
+"例如：帮我写一篇关于减肥的文章"
+:
+"Example: Write an article about weight loss",
 
 
 
-    const list = {
-
-
-        promptInput:
-        zh
-        ?
-        "例如：帮我写一篇关于减肥的文章"
-        :
-        "Example: Write an article about weight loss",
+resumeInput:
+zh
+?
+"例如：大学毕业，会Python，做过网站项目"
+:
+"Example: College graduate, knows Python, built a website project",
 
 
 
-        resumeInput:
-        zh
-        ?
-        "例如：大学毕业，会Python，做过网站项目"
-        :
-        "Example: College graduate, knows Python, built a website project",
+titleInput:
+zh
+?
+"例如：大学生如何利用AI提高学习效率"
+:
+"Example: How students use AI to improve learning",
 
 
 
-        titleInput:
-        zh
-        ?
-        "例如：大学生如何利用AI提高学习效率"
-        :
-        "Example: How students use AI to improve learning",
+topicInput:
+zh
+?
+"例如：旅行攻略、减肥早餐"
+:
+"Example: Travel guide, healthy breakfast",
 
 
 
-        topicInput:
-        zh
-        ?
-        "例如：旅行攻略、减肥早餐"
-        :
-        "Example: Travel guide, healthy breakfast",
+articleTopic:
+zh
+?
+"输入文章主题"
+:
+"Enter article topic",
 
 
 
-        articleTopic:
-        zh
-        ?
-        "输入文章主题"
-        :
-        "Enter article topic",
+momentsTopic:
+zh
+?
+"输入朋友圈主题"
+:
+"Enter social media topic",
 
 
 
-        momentsTopic:
-        zh
-        ?
-        "输入朋友圈主题"
-        :
-        "Enter social media topic",
+mailTopic:
+zh
+?
+"输入邮件类型"
+:
+"Enter email type"
+
+
+};
 
 
 
-        mailTopic:
-        zh
-        ?
-        "输入邮件类型"
-        :
-        "Enter email type"
-
-    };
+Object.keys(list).forEach(id=>{
 
 
-
-    Object.keys(list).forEach(id=>{
-
-
-        const el =
-        document.getElementById(id);
+let el=document.getElementById(id);
 
 
-        if(el){
+if(el){
 
-            el.placeholder=list[id];
+el.placeholder=list[id];
 
-        }
+}
 
 
-    });
+});
+
+
+
+
+
+// 下拉菜单
+
+let options={
+
+
+optionGeneral:
+zh?"通用任务":"General Task",
+
+optionWriting:
+zh?"📝 写作":"📝 Writing",
+
+optionXhs:
+zh?"📱 小红书":"📱 Xiaohongshu",
+
+optionStudy:
+zh?"📚 学习":"📚 Study",
+
+optionProgramming:
+zh?"💻 编程":"💻 Programming",
+
+optionBusiness:
+zh?"💼 商业":"💼 Business"
+
+
+};
+
+
+
+Object.keys(options).forEach(id=>{
+
+
+let el=document.getElementById(id);
+
+
+if(el){
+
+el.innerText=options[id];
+
+}
+
+
+});
 
 
 }
+
+
+
+
+
+
 
 
 
