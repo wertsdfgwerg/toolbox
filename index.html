@@ -417,11 +417,26 @@ background:#f8f8f8;
 
 border-radius:12px;
 
-white-space:pre-wrap;
-
 line-height:1.6;
 
 min-height:40px;
+
+}
+
+
+.result-item{
+
+background:white;
+
+padding:12px 15px;
+
+border-radius:12px;
+
+margin-bottom:8px;
+
+border:1px solid #eee;
+
+line-height:1.5;
 
 }
 
@@ -1637,11 +1652,8 @@ function cleanAIResult(text){
     .split("\n")
 
 
-   .map(line=>line.replace(/\s+/g," ").trim())
-
-
-    .filter(line=>line.length>0)
-
+   .map(line=>line.trim())
+.filter(line=>line.length>2);
 
     .filter(line=>{
 
