@@ -24,7 +24,7 @@ data-cf-beacon='{"token":"4eb5597f43294acfbf1573e4628dcf28"}'>
 
 
 
-<title>
+<title id="pageTitle">
 AI工具箱 - 免费AI提示词、简历、标题生成工具
 </title>
 
@@ -1968,6 +1968,52 @@ mailTitle:"AI邮件助手",
 
 generate:"生成",
 
+seoTitle1:
+"免费 AI 工具箱介绍",
+
+seoText1:
+"AI工具箱提供免费的在线AI效率工具，包括AI提示词生成器、AI简历助手、AI标题生成器等。",
+
+seoText2:
+"无需安装软件，打开网页即可使用，适合学生、创作者、自媒体运营人员和办公用户。",
+
+
+optionGeneral:
+"通用任务",
+
+optionWriting:
+"📝 写作",
+
+optionXhs:
+"📱 小红书",
+
+optionStudy:
+"📚 学习",
+
+optionProgramming:
+"💻 编程",
+
+optionBusiness:
+"💼 商业",
+
+
+waiting:
+"等待生成...",
+
+
+aboutTitle:
+"🌍 关于 AI小工具箱",
+
+aboutText:
+"我们正在制作免费 AI 效率工具，帮助学生、创作者和普通用户提高效率。",
+
+moreTools:
+"更多工具正在开发中。",
+
+pageTitle:
+"AI工具箱 - 免费AI提示词、简历、标题生成工具",
+
+
 },
 
 
@@ -2125,6 +2171,52 @@ momentsGenerate:
 
 mailGenerate:
 "Generate",
+
+seoTitle1:
+"Free AI Toolbox Introduction",
+
+seoText1:
+"AI Toolbox provides free online AI productivity tools, including AI prompt generator, AI resume assistant and AI title generator.",
+
+seoText2:
+"No installation required. Open the website and use it instantly. Suitable for students, creators, content creators and office users.",
+
+
+optionGeneral:
+"General Task",
+
+optionWriting:
+"📝 Writing",
+
+optionXhs:
+"📱 Social Media",
+
+optionStudy:
+"📚 Study",
+
+optionProgramming:
+"💻 Programming",
+
+optionBusiness:
+"💼 Business",
+
+
+waiting:
+"Waiting for generation...",
+
+
+aboutTitle:
+"🌍 About AI Toolbox",
+
+aboutText:
+"We are creating free AI productivity tools to help students, creators and everyday users improve efficiency.",
+
+moreTools:
+"More tools are under development.",
+
+pageTitle:
+"AI Toolbox - Free AI Prompt, Resume and Title Generator",
+  
 }
 
 
@@ -2231,7 +2323,14 @@ function setLanguage(lang){
     document.getElementById("enBtn");
 
 
+     if(key==="pageTitle"){
+document.title=t[key];
+}
 
+
+
+
+  
     if(zhBtn){
 
         zhBtn.classList.toggle(
