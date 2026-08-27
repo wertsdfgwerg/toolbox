@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+AI简历怎么写？AI Resume新手入门指南
+</title>
+
+
+<meta name="description"
+content="学习如何使用AI制作简历，了解AI Resume技巧，获取简历优化方法和AI简历模板，提高求职效率。">
+
+
+<link rel="icon" href="logo.png">
+
+
+<style>
+
+
+*{
+box-sizing:border-box;
+}
+
+
+body{
+
+margin:0;
+
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+"Microsoft YaHei",
+Arial,
+sans-serif;
+
+background:#f7f9fc;
+
+color:#222;
+
+}
+
+
+.container{
+
+max-width:900px;
+
+margin:auto;
+
+padding:30px 20px 60px;
+
+}
+
+
+
+.language-switch{
+
+text-align:right;
+
+margin-bottom:20px;
+
+}
+
+
+
+.language-switch button{
+
+padding:8px 18px;
+
+border-radius:20px;
+
+border:1px solid #ddd;
+
+background:white;
+
+cursor:pointer;
+
+margin-left:8px;
+
+}
+
+
+
+.box{
+
+background:white;
+
+padding:35px;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.05);
+
+}
+
+
+
+h1{
+
+font-size:38px;
+
+color:#2563eb;
+
+}
+
+
+
+h2{
+
+margin-top:35px;
+
+}
+
+
+
+.card{
+
+background:#f8fafc;
+
+padding:20px;
+
+border-radius:15px;
+
+margin:20px 0;
+
+}
+
+
+
+.code{
+
+background:#111;
+
+color:white;
+
+padding:20px;
+
+border-radius:12px;
+
+white-space:pre-line;
+
+line-height:1.7;
+
+}
+
+
+
+a{
+
+color:#2563eb;
+
+text-decoration:none;
+
+font-weight:600;
+
+}
+
+
+.back{
+
+margin-top:30px;
+
+}
+
+
+
+@media(max-width:700px){
+
+h1{
+
+font-size:30px;
+
+}
+
+
+.box{
+
+padding:20px;
+
+}
+
+}
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="container">
+
+
+<div class="language-switch">
+
+
+<button onclick="setLanguage('zh')">
+中文
+</button>
+
+
+<button onclick="setLanguage('en')">
+English
+</button>
+
+
+</div>
+
+
+
+<div class="box">
+
+
+
+<h1 id="title">
+
+AI简历怎么写？AI Resume新手入门指南
+
+</h1>
+
+
+
+<p id="intro">
+
+学习如何利用AI制作和优化简历，提高求职效率，让AI帮助你打造更专业的简历。
+
+</p>
+
+
+
+
+<div class="card">
+
+
+<h2 id="whatTitle">
+
+什么是AI Resume？
+
+</h2>
+
+
+
+<p id="whatText">
+
+AI Resume是利用人工智能帮助用户创建、优化和修改简历的工具，可以帮助求职者快速提升简历质量。
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+
+<h2 id="benefitTitle">
+
+AI简历有什么优势？
+
+</h2>
+
+
+
+<ul>
+
+<li id="benefit1">
+快速生成简历内容
+</li>
+
+
+<li id="benefit2">
+优化工作经历描述
+</li>
+
+
+<li id="benefit3">
+突出个人技能优势
+</li>
+
+
+<li id="benefit4">
+节省修改简历时间
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2 id="writeTitle">
+
+如何制作高质量AI简历？
+
+</h2>
+
+
+
+<p id="writeText">
+
+一份优秀的简历通常包含以下内容：
+
+</p>
+
+
+
+<ul>
+
+<li id="item1">
+个人信息
+</li>
+
+
+<li id="item2">
+教育背景
+</li>
+
+
+<li id="item3">
+工作经历
+</li>
+
+
+<li id="item4">
+项目经验
+</li>
+
+
+<li id="item5">
+专业技能
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+
+<h2 id="promptTitle">
+
+AI简历优化Prompt模板
+
+</h2>
+
+
+
+<p id="promptText">
+
+你可以使用下面的Prompt让AI帮助优化简历：
+
+</p>
+
+
+
+<div class="code" id="promptCode">
+
+你是一名专业的职业规划顾问。
+
+请帮我优化我的简历。
+
+目标岗位：
+【填写职位】
+
+我的经历：
+【填写经历】
+
+要求：
+1. 突出核心技能
+2. 优化工作描述
+3. 使用专业表达
+4. 提高简历竞争力
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+
+<h2 id="toolTitle">
+
+在线AI简历助手
+
+</h2>
+
+
+
+<p id="toolText">
+
+不知道如何修改简历？
+
+可以使用AI工具箱提供的免费AI简历助手。
+
+</p>
+
+
+
+<p>
+
+
+🔥
+
+<a href="ai-resume-helper.html">
+
+AI简历助手
+
+</a>
+
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2 id="tipsTitle">
+
+AI简历使用技巧
+
+</h2>
+
+
+
+<ul>
+
+<li id="tips1">
+根据目标职位调整简历
+</li>
+
+
+<li id="tips2">
+突出与岗位相关的技能
+</li>
+
+
+<li id="tips3">
+避免填写虚假经历
+</li>
+
+
+<li id="tips4">
+持续优化简历内容
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2 id="summaryTitle">
+
+总结
+
+</h2>
+
+
+
+<p id="summaryText">
+
+AI可以帮助你快速制作和优化简历，但个人经历和能力才是求职成功的核心。
+
+合理使用AI工具，可以提高求职效率。
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="back">
+
+
+<a href="index.html">
+
+← 返回 AI工具箱首页
+
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+const text={
+
+
+zh:{
+
+
+title:"AI简历怎么写？AI Resume新手入门指南",
+
+intro:"学习如何利用AI制作和优化简历，提高求职效率，让AI帮助你打造更专业的简历。",
+
+
+whatTitle:"什么是AI Resume？",
+
+whatText:"AI Resume是利用人工智能帮助用户创建、优化和修改简历的工具，可以帮助求职者快速提升简历质量。",
+
+
+benefitTitle:"AI简历有什么优势？",
+
+benefit1:"快速生成简历内容",
+
+benefit2:"优化工作经历描述",
+
+benefit3:"突出个人技能优势",
+
+benefit4:"节省修改简历时间",
+
+
+writeTitle:"如何制作高质量AI简历？",
+
+writeText:"一份优秀的简历通常包含以下内容：",
+
+item1:"个人信息",
+
+item2:"教育背景",
+
+item3:"工作经历",
+
+item4:"项目经验",
+
+item5:"专业技能",
+
+
+promptTitle:"AI简历优化Prompt模板",
+
+promptText:"你可以使用下面的Prompt让AI帮助优化简历：",
+
+
+toolTitle:"在线AI简历助手",
+
+toolText:"不知道如何修改简历？可以使用AI工具箱提供的免费AI简历助手。",
+
+
+tipsTitle:"AI简历使用技巧",
+
+tips1:"根据目标职位调整简历",
+
+tips2:"突出与岗位相关的技能",
+
+tips3:"避免填写虚假经历",
+
+tips4:"持续优化简历内容",
+
+
+summaryTitle:"总结",
+
+summaryText:"AI可以帮助你快速制作和优化简历，但个人经历和能力才是求职成功的核心。合理使用AI工具，可以提高求职效率。"
+
+
+},
+
+
+
+
+
+
+en:{
+
+
+title:"How to Write an AI Resume? Beginner Guide",
+
+intro:"Learn how to use AI to create and optimize resumes, improve job search efficiency, and build a professional resume.",
+
+
+whatTitle:"What is AI Resume?",
+
+whatText:"AI Resume uses artificial intelligence to help users create, optimize and improve resumes.",
+
+
+benefitTitle:"Advantages of AI Resume",
+
+benefit1:"Generate resume content quickly",
+
+benefit2:"Improve work experience descriptions",
+
+benefit3:"Highlight personal skills",
+
+benefit4:"Save resume editing time",
+
+
+writeTitle:"How to Create a High Quality AI Resume?",
+
+writeText:"A professional resume usually includes:",
+
+item1:"Personal Information",
+
+item2:"Education Background",
+
+item3:"Work Experience",
+
+item4:"Project Experience",
+
+item5:"Professional Skills",
+
+
+promptTitle:"AI Resume Optimization Prompt Template",
+
+promptText:"Use the following prompt to ask AI to improve your resume:",
+
+
+toolTitle:"Online AI Resume Assistant",
+
+toolText:"Need help editing your resume? Try our free AI Resume Assistant.",
+
+
+tipsTitle:"AI Resume Tips",
+
+tips1:"Customize your resume for the target job",
+
+tips2:"Highlight relevant skills",
+
+tips3:"Avoid false information",
+
+tips4:"Keep improving your resume",
+
+
+summaryTitle:"Conclusion",
+
+summaryText:"AI can help create and optimize resumes, but your real experience and skills are the key to success. Using AI tools properly can improve your job search efficiency."
+
+
+}
+
+
+};
+
+
+
+
+
+
+function setLanguage(lang){
+
+
+let t=text[lang];
+
+
+Object.keys(t).forEach(id=>{
+
+
+let el=document.getElementById(id);
+
+
+if(el){
+
+el.innerText=t[id];
+
+}
+
+
+});
+
+
+}
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>
