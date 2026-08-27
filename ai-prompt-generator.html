@@ -8,13 +8,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<title>AI提示词生成器 - 免费在线Prompt生成工具</title>
+<title id="pageTitle">
+AI提示词生成器 - 免费在线Prompt生成工具
+</title>
 
 
-<meta name="description" content="AI提示词生成器，免费在线生成高质量Prompt，帮助用户提高AI写作、学习、编程和内容创作效率。">
+<meta id="metaDescription" name="description" content="AI提示词生成器，免费在线生成高质量Prompt，帮助用户提高AI写作、学习、编程和内容创作效率。">
 
 
 <link rel="icon" href="logo.png">
+
 
 
 <style>
@@ -102,9 +105,9 @@ box-shadow:0 10px 30px rgba(0,0,0,.05);
 
 h1{
 
-color:#2563eb;
-
 font-size:38px;
+
+color:#2563eb;
 
 }
 
@@ -150,6 +153,7 @@ font-size:30px;
 
 }
 
+
 .box{
 
 padding:20px;
@@ -157,6 +161,7 @@ padding:20px;
 }
 
 }
+
 
 </style>
 
@@ -175,12 +180,16 @@ padding:20px;
 
 
 <button onclick="setLanguage('zh')">
+
 中文
+
 </button>
 
 
 <button onclick="setLanguage('en')">
+
 English
+
 </button>
 
 
@@ -188,7 +197,11 @@ English
 
 
 
+
+
 <div class="box">
+
+
 
 
 
@@ -200,11 +213,17 @@ AI提示词生成器
 
 
 
+
+
 <p id="intro">
 
 AI提示词（Prompt）决定人工智能输出效果。好的提示词可以帮助AI更准确地完成任务。
 
 </p>
+
+
+
+
 
 
 
@@ -218,6 +237,7 @@ AI提示词（Prompt）决定人工智能输出效果。好的提示词可以帮
 </h2>
 
 
+
 <p id="sceneText">
 
 写作、学习、编程、商业分析、内容创作。
@@ -225,11 +245,133 @@ AI提示词（Prompt）决定人工智能输出效果。好的提示词可以帮
 </p>
 
 
+
 </div>
 
 
 
+
+
+
+
+<!-- SEO内容1 -->
+
+
+<div class="card">
+
+
+<h2 id="whatPromptTitle">
+
+什么是AI Prompt？
+
+</h2>
+
+
+<p id="whatPromptText">
+
+AI Prompt（提示词）是用户输入给人工智能的指令，它决定AI生成内容的方向和质量。
+
+</p>
+
+
+<p id="whatPromptText2">
+
+高质量Prompt通常包含角色、任务、背景信息、限制条件以及输出格式，可以帮助AI更加准确理解需求。
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- SEO内容2 -->
+
+
+<div class="card">
+
+
+<h2 id="howPromptTitle">
+
+如何写出高质量AI提示词？
+
+</h2>
+
+
+
+<p id="howPromptText">
+
+编写Prompt时，需要明确角色、任务、背景信息和输出要求。
+
+<br>
+1. 让AI扮演专业角色。
+<br>
+2. 描述具体任务。
+<br>
+3. 提供相关背景。
+<br>
+4. 指定输出格式。
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- SEO内容3 -->
+
+
+<div class="card">
+
+
+<h2 id="examplePromptTitle">
+
+AI提示词示例
+
+</h2>
+
+
+
+<p id="examplePromptText">
+
+普通提示词：
+
+<br>
+帮我写一篇文章。
+
+<br><br>
+
+优化后的Prompt：
+
+<br>
+你是一名专业内容作者，请帮我写一篇关于人工智能发展的文章，要求包含标题、摘要和三个章节。
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
 <p>
+
 
 <a href="index.html#promptTool" id="useLink">
 
@@ -237,11 +379,20 @@ AI提示词（Prompt）决定人工智能输出效果。好的提示词可以帮
 
 </a>
 
+
 </p>
 
 
 
+
+
+
+
 <hr>
+
+
+
+
 
 
 <h3 id="moreTitle">
@@ -249,6 +400,9 @@ AI提示词（Prompt）决定人工智能输出效果。好的提示词可以帮
 🚀 更多 AI 工具
 
 </h3>
+
+
+
 
 
 
@@ -264,6 +418,8 @@ AI工具箱首页
 
 
 
+
+
 <p>
 
 <a href="ai-tools.html" id="allToolsLink">
@@ -273,6 +429,8 @@ AI工具箱首页
 </a>
 
 </p>
+
+
 
 
 
@@ -288,6 +446,8 @@ AI简历助手
 
 
 
+
+
 <p>
 
 <a href="xiaohongshu-title-generator.html" id="xhsLink">
@@ -297,6 +457,8 @@ AI小红书标题生成器
 </a>
 
 </p>
+
+
 
 
 
@@ -312,10 +474,15 @@ AI小红书标题生成器
 
 
 
+
+
+
 </div>
 
 
 </div>
+
+
 
 
 
@@ -323,112 +490,336 @@ AI小红书标题生成器
 <script>
 
 
-const lang={
+
+
+const lang = {
 
 
 zh:{
 
 
-title:"AI提示词生成器",
+title:
+"AI提示词生成器",
 
-intro:"AI提示词（Prompt）决定人工智能输出效果。好的提示词可以帮助AI更准确地完成任务。",
 
-sceneTitle:"适用场景",
+intro:
+"AI提示词（Prompt）决定人工智能输出效果。好的提示词可以帮助AI更准确地完成任务。",
 
-sceneText:"写作、学习、编程、商业分析、内容创作。",
 
-useLink:"立即使用AI提示词生成器",
 
-moreTitle:"🚀 更多 AI 工具",
+sceneTitle:
+"适用场景",
 
-homeLink:"AI工具箱首页",
 
-allToolsLink:"免费AI工具大全",
+sceneText:
+"写作、学习、编程、商业分析、内容创作。",
 
-resumeLink:"AI简历助手",
 
-xhsLink:"AI小红书标题生成器",
 
-aboutLink:"关于AI工具箱"
+
+whatPromptTitle:
+"什么是AI Prompt？",
+
+
+whatPromptText:
+"AI Prompt（提示词）是用户输入给人工智能的指令，它决定AI生成内容的方向和质量。",
+
+
+whatPromptText2:
+"高质量Prompt通常包含角色、任务、背景信息、限制条件以及输出格式，可以帮助AI更加准确理解需求。",
+
+
+
+
+
+howPromptTitle:
+"如何写出高质量AI提示词？",
+
+
+howPromptText:
+"编写Prompt时，需要明确角色、任务、背景信息和输出要求。\n\n1. 让AI扮演专业角色。\n2. 描述具体任务。\n3. 提供相关背景。\n4. 指定输出格式。 ",
+
+
+
+
+
+
+examplePromptTitle:
+"AI提示词示例",
+
+
+examplePromptText:
+"普通提示词：\n帮我写一篇文章。\n\n优化后的Prompt：\n你是一名专业内容作者，请帮我写一篇关于人工智能发展的文章，要求包含标题、摘要和三个章节。",
+
+
+
+
+
+useLink:
+"立即使用AI提示词生成器",
+
+
+
+moreTitle:
+"🚀 更多 AI 工具",
+
+
+
+homeLink:
+"AI工具箱首页",
+
+
+allToolsLink:
+"免费AI工具大全",
+
+
+resumeLink:
+"AI简历助手",
+
+
+xhsLink:
+"AI小红书标题生成器",
+
+
+aboutLink:
+"关于AI工具箱"
+
 
 
 },
 
 
 
+
+
 en:{
 
 
-title:"AI Prompt Generator",
 
-intro:"AI prompts determine the quality of AI output. Good prompts help AI complete tasks more accurately.",
+title:
+"AI Prompt Generator",
 
-sceneTitle:"Application Scenarios",
 
-sceneText:"Writing, learning, programming, business analysis and content creation.",
 
-useLink:"Use AI Prompt Generator Now",
+intro:
+"AI prompts determine the quality of AI output. Good prompts help AI complete tasks more accurately.",
 
-moreTitle:"🚀 More AI Tools",
 
-homeLink:"AI Toolbox Home",
 
-allToolsLink:"Free AI Tools Collection",
 
-resumeLink:"AI Resume Assistant",
 
-xhsLink:"Xiaohongshu Title Generator",
+sceneTitle:
+"Application Scenarios",
 
-aboutLink:"About AI Toolbox"
+
+
+sceneText:
+"Writing, learning, programming, business analysis and content creation.",
+
+
+
+
+
+whatPromptTitle:
+"What is AI Prompt?",
+
+
+
+whatPromptText:
+"An AI Prompt is an instruction given to artificial intelligence. It determines the direction and quality of AI-generated content.",
+
+
+
+whatPromptText2:
+"A high-quality prompt usually includes role, task, background information, requirements and output format.",
+
+
+
+
+
+howPromptTitle:
+"How to Write High Quality AI Prompts?",
+
+
+
+howPromptText:
+"When writing prompts, define the role, task, background information and output requirements.\n\n1. Set an AI role.\n2. Describe the task.\n3. Provide background information.\n4. Specify the output format.",
+
+
+
+
+
+examplePromptTitle:
+"AI Prompt Example",
+
+
+
+examplePromptText:
+"Basic Prompt:\nWrite an article.\n\nOptimized Prompt:\nYou are a professional content writer. Write an article about artificial intelligence with a title, summary and three sections.",
+
+
+
+
+
+
+useLink:
+"Use AI Prompt Generator Now",
+
+
+
+
+moreTitle:
+"🚀 More AI Tools",
+
+
+
+homeLink:
+"AI Toolbox Home",
+
+
+
+allToolsLink:
+"Free AI Tools Collection",
+
+
+
+resumeLink:
+"AI Resume Assistant",
+
+
+
+xhsLink:
+"Xiaohongshu Title Generator",
+
+
+
+aboutLink:
+"About AI Toolbox"
+
 
 
 }
+
+
+
 
 
 };
 
 
 
+
+
+
+
 function setLanguage(type){
 
 
-let t=lang[type];
+let t = lang[type];
 
 
-document.getElementById("title").innerText=t.title;
+
+document.getElementById("title").innerText =
+t.title;
 
 
-document.getElementById("intro").innerText=t.intro;
+
+document.getElementById("intro").innerText =
+t.intro;
 
 
-document.getElementById("sceneTitle").innerText=t.sceneTitle;
+
+document.getElementById("sceneTitle").innerText =
+t.sceneTitle;
 
 
-document.getElementById("sceneText").innerText=t.sceneText;
+
+document.getElementById("sceneText").innerText =
+t.sceneText;
 
 
-document.getElementById("useLink").innerText=t.useLink;
 
 
-document.getElementById("moreTitle").innerText=t.moreTitle;
+
+document.getElementById("whatPromptTitle").innerText =
+t.whatPromptTitle;
 
 
-document.getElementById("homeLink").innerText=t.homeLink;
+
+document.getElementById("whatPromptText").innerText =
+t.whatPromptText;
 
 
-document.getElementById("allToolsLink").innerText=t.allToolsLink;
+
+document.getElementById("whatPromptText2").innerText =
+t.whatPromptText2;
 
 
-document.getElementById("resumeLink").innerText=t.resumeLink;
 
 
-document.getElementById("xhsLink").innerText=t.xhsLink;
+
+document.getElementById("howPromptTitle").innerText =
+t.howPromptTitle;
 
 
-document.getElementById("aboutLink").innerText=t.aboutLink;
+
+document.getElementById("howPromptText").innerText =
+t.howPromptText;
+
+
+
+
+
+
+document.getElementById("examplePromptTitle").innerText =
+t.examplePromptTitle;
+
+
+
+document.getElementById("examplePromptText").innerText =
+t.examplePromptText;
+
+
+
+
+
+document.getElementById("useLink").innerText =
+t.useLink;
+
+
+
+document.getElementById("moreTitle").innerText =
+t.moreTitle;
+
+
+
+document.getElementById("homeLink").innerText =
+t.homeLink;
+
+
+
+document.getElementById("allToolsLink").innerText =
+t.allToolsLink;
+
+
+
+document.getElementById("resumeLink").innerText =
+t.resumeLink;
+
+
+
+document.getElementById("xhsLink").innerText =
+t.xhsLink;
+
+
+
+document.getElementById("aboutLink").innerText =
+t.aboutLink;
+
 
 
 }
+
 
 
 
