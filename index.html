@@ -716,10 +716,8 @@ AI工具箱持续更新更多人工智能工具，帮助用户提升学习效率
 <div class="card" id="promptTool">
 
 
-<span class="badge">
-
+<span class="badge" id="freeBadge1">
 FREE
-
 </span>
 
 
@@ -827,10 +825,11 @@ onclick="copyText('promptOutput')">
 
 <div class="result" id="promptOutput">
 
+<span id="promptWaiting">
 等待生成...
+</span>
 
 </div>
-
 
 
 </div>
@@ -849,10 +848,8 @@ onclick="copyText('promptOutput')">
 <div class="card" id="resumeTool">
 
 
-<span class="badge">
-
+<span class="badge" id="freeBadge2">
 FREE
-
 </span>
 
 
@@ -910,10 +907,11 @@ onclick="copyText('resumeOutput')">
 
 <div class="result" id="resumeOutput">
 
+<span id="resumeWaiting">
 等待生成...
+</span>
 
 </div>
-
 
 
 </div>
@@ -932,12 +930,9 @@ onclick="copyText('resumeOutput')">
 <div class="card" id="titleTool">
 
 
-<span class="badge">
-
+<span class="badge" id="freeBadge3">
 FREE
-
 </span>
-
 
 <h2 id="titleToolTitle">
 
@@ -994,10 +989,11 @@ onclick="copyText('titleOutput')">
 
 <div class="result" id="titleOutput">
 
+<span id="titleWaiting">
 等待生成...
+</span>
 
 </div>
-
 
 
 </div>
@@ -1538,6 +1534,7 @@ margin-top:30px;
 
 
 <div
+id="adPlaceholder"
 style="
 height:90px;
 border:1px dashed #ccc;
@@ -1550,7 +1547,6 @@ border-radius:12px;
 广告位预留
 
 </div>
-
 
 
 </section>
@@ -1743,23 +1739,17 @@ async function callAI(systemPrompt,userInput){
 
 
 
-    const data =
-    await response.json();
+  let text = await response.text();
 
+let data;
 
+try{
+    data = JSON.parse(text);
+}catch{
+    throw new Error("Invalid response");
+}
 
-    if(!response.ok){
-
-        throw new Error(
-            "AI request failed"
-        );
-
-    }
-
-
-
-    return data.content || "";
-
+return data.content || "";
 }
 
 
@@ -1924,6 +1914,14 @@ xhButton:
 waiting:
 "等待生成...",
 
+promptWaiting:
+"等待生成...",
+
+resumeWaiting:
+"等待生成...",
+
+titleWaiting:
+"等待生成...",
 
 
 supportAuthor:
@@ -2039,6 +2037,13 @@ closeDonate:
 
 adText:
 "网站正在成长中，未来这里将展示优质广告",
+
+adPlaceholder:
+"广告位预留",
+
+freeBadge1:"免费",
+freeBadge2:"免费",
+freeBadge3:"免费",
   
 },
 
@@ -2119,7 +2124,14 @@ xhButton:
 waiting:
 "Waiting for generation...",
 
+promptWaiting:
+"Waiting for generation...",
 
+resumeWaiting:
+"Waiting for generation...",
+
+titleWaiting:
+"Waiting for generation...",
 
 supportAuthor:
 "💚 Support Author",
@@ -2254,6 +2266,13 @@ closeDonate:
 
 adText:
 "The website is growing. Quality advertisements will appear here in the future.",
+
+adPlaceholder:
+"Advertisement Placeholder",
+
+freeBadge1:"FREE",
+freeBadge2:"FREE",
+freeBadge3:"FREE",
   
 }
 
