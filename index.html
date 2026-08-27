@@ -583,72 +583,45 @@ English
 </header>
 
 
-
-
-
 <!-- 工具导航 -->
-
 
 <div class="tools">
 
 
-
 <a class="tool" href="#promptTool">
 
-
 <div class="tool-icon">
-
 🔥
-
 </div>
-
 
 <div class="tool-title" id="navPrompt">
-
 AI提示词
-
 </div>
-
 
 <div class="tool-subtitle">
-
 Prompt Generator
-
 </div>
 
-
 </a>
-
 
 
 
 
 <a class="tool" href="#resumeTool">
 
-
 <div class="tool-icon">
-
 📝
-
 </div>
-
 
 <div class="tool-title" id="navResume">
-
 AI简历助手
-
 </div>
-
 
 <div class="tool-subtitle">
-
 Resume Assistant
-
 </div>
 
-
 </a>
-
 
 
 
@@ -656,33 +629,107 @@ Resume Assistant
 
 <a class="tool" href="#titleTool">
 
-
 <div class="tool-icon">
-
 💡
-
 </div>
-
 
 <div class="tool-title" id="navTitle">
-
 AI标题生成
-
 </div>
-
 
 <div class="tool-subtitle">
-
 Title Generator
-
 </div>
 
+</a>
+
+
+
+
+
+<a class="tool" href="#xiaohongshuTool">
+
+<div class="tool-icon">
+📱
+</div>
+
+<div class="tool-title" id="navXhs">
+小红书标题生成
+</div>
+
+<div class="tool-subtitle">
+Xiaohongshu Title Generator
+</div>
+
+</a>
+
+
+
+
+
+<a class="tool" href="#articleTool">
+
+<div class="tool-icon">
+📰
+</div>
+
+<div class="tool-title" id="navArticle">
+文章标题生成
+</div>
+
+<div class="tool-subtitle">
+Article Title Generator
+</div>
+
+</a>
+
+
+
+
+
+<a class="tool" href="#momentsTool">
+
+<div class="tool-icon">
+💬
+</div>
+
+<div class="tool-title" id="navMoments">
+朋友圈文案生成
+</div>
+
+<div class="tool-subtitle">
+Social Media Copy Generator
+</div>
+
+</a>
+
+
+
+
+
+<a class="tool" href="#mailTool">
+
+<div class="tool-icon">
+📧
+</div>
+
+<div class="tool-title" id="navMail">
+AI邮件助手
+</div>
+
+<div class="tool-subtitle">
+AI Email Assistant
+</div>
 
 </a>
 
 
 
 </div>
+
+
+
+
 
 
 
@@ -1084,11 +1131,9 @@ AI效率工具
 
 
 
-<div>
-
+<div id="articleTool">
 
 <h3>
-
 📝 <span id="articleTitle">
 
 AI文章标题生成器
@@ -1879,6 +1924,18 @@ navTitle:
 "AI标题生成",
 
 
+navXhs:
+"小红书标题生成",
+
+navArticle:
+"文章标题生成",
+
+navMoments:
+"朋友圈文案生成",
+
+navMail:
+"AI邮件助手",
+
 
 promptTitle:
 "🔥 AI提示词生成器",
@@ -2097,7 +2154,17 @@ navResume:
 navTitle:
 "AI Title Generator",
 
+navXhs:
+"Xiaohongshu Title Generator",
 
+navArticle:
+"Article Title Generator",
+
+navMoments:
+"Social Media Copy Generator",
+
+navMail:
+"AI Email Assistant",
 
 promptTitle:
 "🔥 AI Prompt Generator",
@@ -2379,20 +2446,19 @@ function setLanguage(lang){
 
 
 
-        if(el){
+       if(el){
 
-            if(key==="siteDescription"){
+    if(key==="siteDescription"){
 
-                el.innerHTML=t[key];
+        el.innerHTML=t[key];
 
-            }else{
+    }else{
 
-                el.setAttribute("content", t[key]);
+        el.setAttribute("content", t[key]);
 
-            }
+    }
 
-        }
-
+}
         if(key==="pageTitle"){
 document.title=t[key];
 }
