@@ -731,6 +731,14 @@ guideLink:"AI Prompt Beginner Guide: How to Write Better Prompts"
 function setLanguage(type){
 
 
+localStorage.setItem("language", type);
+
+
+document.documentElement.lang =
+type=="en" ? "en" : "zh-CN";
+
+  
+
 let t = lang[type];
 
 
@@ -739,6 +747,24 @@ document.getElementById("title").innerText =
 t.title;
 
 
+document.getElementById("pageTitle").innerText =
+type=="en"
+?
+"AI Prompt Generator - Free Online Prompt Tool"
+:
+"AI提示词生成器 - 免费在线Prompt生成工具";
+
+
+document.getElementById("metaDescription").content =
+type=="en"
+?
+"Free AI Prompt Generator. Create high quality prompts for writing, learning, coding and content creation."
+:
+"AI提示词生成器，免费在线生成高质量Prompt，帮助用户提高AI写作、学习、编程和内容创作效率。";
+
+
+
+  
 
 document.getElementById("intro").innerText =
 t.intro;
@@ -840,6 +866,18 @@ document.getElementById("guideLink").innerText=t.guideLink;
 }
 
 
+window.onload=function(){
+
+let savedLanguage = localStorage.getItem("language") || "zh";
+
+setLanguage(savedLanguage);
+
+}
+
+
+
+
+  
 
 
 </script>
