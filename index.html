@@ -706,6 +706,16 @@ Email Assistant
 
 
 
+<a class="tool" href="#polisherTool" id="polisherNav">
+    ✨ AI文章润色工具
+</a>
+
+  
+
+
+  
+
+
 </div>
 
 
@@ -1027,6 +1037,102 @@ onclick="copyText('titleOutput')">
 </div>
 
 
+
+
+<!-- AI文章润色工具 -->
+<section class="card" id="polisherTool">
+
+    <h2 id="polisherTitle" style="text-align:center;">
+        ✨ AI文章润色工具
+    </h2>
+
+    <p id="polisherDesc" style="text-align:center;color:#777;">
+        让 AI 帮你优化文章表达，使内容更加自然、流畅
+    </p>
+
+    <textarea
+        id="polisherInput"
+        placeholder="粘贴或输入你需要润色的文章..."
+        style="width:100%;min-height:180px;"
+    ></textarea>
+
+    <div style="margin-top:15px;">
+
+        <label id="polisherModeLabel">
+            选择润色方式：
+        </label>
+
+        <select id="polisherMode" style="width:100%;margin-top:8px;padding:10px;">
+
+            <option value="natural">
+                ✨ 更自然
+            </option>
+
+            <option value="professional">
+                📚 更专业
+            </option>
+
+            <option value="formal">
+                🎓 更正式
+            </option>
+
+            <option value="conversational">
+                😊 更口语化
+            </option>
+
+            <option value="concise">
+                ✂️ 简洁精炼
+            </option>
+
+            <option value="engaging">
+                🔥 更有吸引力
+            </option>
+
+        </select>
+
+    </div>
+
+    <button
+        id="polisherBtn"
+        onclick="polishWriting()"
+        style="margin-top:15px;width:100%;"
+    >
+        ✨ 开始润色
+    </button>
+
+    <p
+        id="polisherStatus"
+        style="text-align:center;margin-top:12px;color:#777;"
+    ></p>
+
+    <div
+        id="polisherResult"
+        style="display:none;margin-top:15px;"
+    >
+
+        <textarea
+            id="polisherOutput"
+            readonly
+            style="width:100%;min-height:200px;"
+        ></textarea>
+
+        <button
+            id="polisherCopyBtn"
+            onclick="copyPolishedText()"
+            style="margin-top:10px;width:100%;"
+        >
+            📋 一键复制
+        </button>
+
+    </div>
+
+</section>
+
+
+
+
+
+  
 
 
 
