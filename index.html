@@ -706,8 +706,20 @@ Email Assistant
 
 
 
-<a class="tool" href="#polisherTool" id="polisherNav">
-    ✨ AI文章润色工具
+<a class="tool" href="#polisherTool">
+
+<div class="tool-icon">
+✨
+</div>
+
+<div class="tool-title" id="navPolisher">
+AI文章润色
+</div>
+
+<div class="tool-subtitle" id="navPolisherSub">
+Writing Polisher
+</div>
+
 </a>
 
   
@@ -1064,39 +1076,39 @@ onclick="copyText('titleOutput')">
 
         <select id="polisherMode" style="width:100%;margin-top:8px;padding:10px;">
 
-            <option value="natural">
-                ✨ 更自然
-            </option>
+<option value="natural" id="polisherNatural">
+✨ 更自然
+</option>
 
-            <option value="professional">
-                📚 更专业
-            </option>
+<option value="professional" id="polisherProfessional">
+📚 更专业
+</option>
 
-            <option value="formal">
-                🎓 更正式
-            </option>
+<option value="formal" id="polisherFormal">
+🎓 更正式
+</option>
 
-            <option value="conversational">
-                😊 更口语化
-            </option>
+<option value="conversational" id="polisherConversational">
+😊 更口语化
+</option>
 
-            <option value="concise">
-                ✂️ 简洁精炼
-            </option>
+<option value="concise" id="polisherConcise">
+✂️ 简洁精炼
+</option>
 
-            <option value="engaging">
-                🔥 更有吸引力
-            </option>
+          <option value="engaging" id="polisherEngaging">
+          🔥 更有吸引力
+          </option>
 
-        </select>
-
+          </select>
     </div>
 
-    <button
-        id="polisherBtn"
-        onclick="polishWriting()"
-        style="margin-top:15px;width:100%;"
-    >
+   <button
+    id="polisherBtn"
+    class="primary"
+    onclick="polishWriting()"
+    style="margin-top:15px;width:100%;"
+>
         ✨ 开始润色
     </button>
 
@@ -2001,6 +2013,47 @@ xhsGuideNav:
 
 navMail:
 "AI邮件助手",
+
+navPolisher:
+"AI文章润色",
+
+navPolisherSub:
+"Writing Polisher",
+
+polisherTitle:
+"✨ AI文章润色工具",
+
+polisherDesc:
+"让 AI 帮你优化文章表达，使内容更加自然、流畅",
+
+polisherModeLabel:
+"选择润色方式：",
+
+polisherNatural:
+"✨ 更自然",
+
+polisherProfessional:
+"📚 更专业",
+
+polisherFormal:
+"🎓 更正式",
+
+polisherConversational:
+"😊 更口语化",
+
+polisherConcise:
+"✂️ 简洁精炼",
+
+polisherEngaging:
+"🔥 更有吸引力",
+
+polisherBtn:
+"✨ 开始润色",
+
+polisherCopyBtn:
+"📋 一键复制",
+
+
   
 navArticle:
 "AI文章标题",
@@ -2164,6 +2217,12 @@ mailTitle:"AI邮件助手",
 
 generate:"生成",
 
+articleGenerate:"生成",
+
+momentsGenerate:"生成",
+
+mailGenerate:"生成",
+
 optionGeneral:
 "通用任务",
 
@@ -2256,6 +2315,48 @@ xhsGuideNav:
 
 navMail:
 "AI Email Assistant",
+
+navPolisher:
+"AI Writing Polisher",
+
+navPolisherSub:
+"Writing Polisher",
+
+polisherTitle:
+"✨ AI Writing Polisher",
+
+polisherDesc:
+"Use AI to improve your writing and make it more natural and fluent",
+
+polisherModeLabel:
+"Choose a polishing style:",
+
+polisherNatural:
+"✨ More Natural",
+
+polisherProfessional:
+"📚 More Professional",
+
+polisherFormal:
+"🎓 More Formal",
+
+polisherConversational:
+"😊 More Conversational",
+
+polisherConcise:
+"✂️ More Concise",
+
+polisherEngaging:
+"🔥 More Engaging",
+
+polisherBtn:
+"✨ Polish Writing",
+
+polisherCopyBtn:
+"📋 Copy",
+
+
+
   
 navArticle:
 "AI Article Title",
@@ -2707,8 +2808,19 @@ zh
 ?
 "输入邮件类型"
 :
-"Enter email type"
+"Enter email type",
 
+
+
+polisherInput:
+zh
+?
+"粘贴或输入你需要润色的文章..."
+:
+"Paste or enter the text you want to polish...",
+
+
+  
 
 };
 
@@ -2819,6 +2931,222 @@ function getErrorText(){
 }
 
 
+
+
+// ===============================
+// AI文章润色工具
+// ===============================
+
+async function polishWriting(){
+
+    const input = document
+        .getElementById("polisherInput")
+        .value
+        .trim();
+
+    const mode = document
+        .getElementById("polisherMode")
+        .value;
+
+    const status = document
+        .getElementById("polisherStatus");
+
+    const resultBox = document
+        .getElementById("polisherResult");
+
+    const output = document
+        .getElementById("polisherOutput");
+
+    if(!input){
+
+        status.innerText =
+            currentLanguage === "zh"
+            ? "❌ 请输入需要润色的内容"
+            : "❌ Please enter some text to polish.";
+
+        resultBox.style.display = "none";
+
+        return;
+
+    }
+
+
+    status.innerText = getGeneratingText();
+
+    resultBox.style.display = "none";
+
+
+    const modeTextZh = {
+
+        natural: "让文章表达更加自然、流畅，减少生硬和机械感",
+
+        professional: "让文章表达更加专业、准确",
+
+        formal: "让文章语气更加正式、规范",
+
+        conversational: "让文章更加轻松、自然、口语化",
+
+        concise: "在不改变核心意思的情况下，让文章更加简洁、精炼",
+
+        engaging: "让文章表达更加有吸引力，更容易吸引读者"
+
+    };
+
+
+    const modeTextEn = {
+
+        natural: "Make the writing sound more natural and fluent.",
+
+        professional: "Make the writing sound more professional and precise.",
+
+        formal: "Make the tone more formal and polished.",
+
+        conversational: "Make the writing more natural and conversational.",
+
+        concise: "Make the writing more concise while preserving the original meaning.",
+
+        engaging: "Make the writing more engaging and appealing to readers."
+
+    };
+
+
+    try{
+
+        let systemPrompt;
+
+
+        if(currentLanguage === "zh"){
+
+            systemPrompt = `
+你是一名专业的中文文章编辑。
+
+你的任务是根据用户选择的润色方式优化文章。
+
+润色方式：
+${modeTextZh[mode]}
+
+重要要求：
+
+1. 必须使用中文输出
+2. 保持原文核心意思
+3. 不要添加不存在的信息
+4. 不要解释你的修改
+5. 不要添加标题
+6. 不要写“润色后的内容如下”
+7. 不要使用编号
+8. 不要使用项目列表
+9. 只输出最终润色后的完整文章
+`;
+
+        }else{
+
+            systemPrompt = `
+You are a professional English writing editor.
+
+Your task is to polish the user's writing according to the selected style.
+
+Style:
+${modeTextEn[mode]}
+
+Important requirements:
+
+1. Output in English only
+2. Preserve the original meaning
+3. Do not add unrelated information
+4. Do not explain your changes
+5. Do not add a title
+6. Do not write introductions such as "Here is the polished version"
+7. Do not use numbering
+8. Do not use bullet points
+9. Output only the final polished text
+`;
+
+        }
+
+
+        const result = await callAI(
+            systemPrompt,
+            input
+        );
+
+
+        output.value = result.trim();
+
+        resultBox.style.display = "block";
+
+        status.innerText =
+            currentLanguage === "zh"
+            ? "✨ 润色完成"
+            : "✨ Polishing complete";
+
+
+    }catch(error){
+
+        console.error(error);
+
+        status.innerText = getErrorText();
+
+        resultBox.style.display = "none";
+
+    }
+
+}
+
+
+
+// ===============================
+// 复制润色结果
+// ===============================
+
+async function copyPolishedText(){
+
+    const output = document
+        .getElementById("polisherOutput");
+
+    if(!output.value.trim()){
+        return;
+    }
+
+
+    try{
+
+        await navigator.clipboard.writeText(
+            output.value
+        );
+
+        const button = document
+            .getElementById("polisherCopyBtn");
+
+
+        const oldText = button.innerText;
+
+
+        button.innerText =
+            currentLanguage === "zh"
+            ? "✅ 已复制"
+            : "✅ Copied";
+
+
+        setTimeout(()=>{
+
+            button.innerText = oldText;
+
+        },2000);
+
+
+    }catch(error){
+
+        output.select();
+
+        document.execCommand("copy");
+
+    }
+
+}
+  
+
+
+  
 
 
 
