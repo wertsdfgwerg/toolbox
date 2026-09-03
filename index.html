@@ -741,6 +741,23 @@ Article Summarizer
 </a>
 
 
+
+<a class="tool" href="#replyTool">
+
+<div class="tool-icon">
+💬
+</div>
+
+<div class="tool-title" id="navReply">
+AI回复助手
+</div>
+
+<div class="tool-subtitle" id="navReplySub">
+Reply Assistant
+</div>
+
+</a>
+
   
 
 
@@ -1251,6 +1268,134 @@ onclick="copyText('titleOutput')">
 </section>
 
 
+
+
+
+<!-- AI回复助手 -->
+
+<section class="card" id="replyTool">
+
+    <h2 id="replyTitle" style="text-align:center;">
+        💬 AI回复助手
+    </h2>
+
+    <p id="replyDesc" style="text-align:center;color:#777;">
+        粘贴收到的消息，让 AI 帮你生成自然的回复
+    </p>
+
+
+    <textarea
+        id="replyInput"
+        placeholder="粘贴你收到的消息..."
+        style="width:100%;min-height:180px;"
+    ></textarea>
+
+
+    <div style="margin-top:15px;">
+
+        <label id="replyStyleLabel">
+            选择回复风格：
+        </label>
+
+
+        <select
+            id="replyStyle"
+            style="width:100%;margin-top:8px;padding:10px;"
+        >
+
+            <option value="natural" id="replyNatural">
+                🗣️ 自然聊天
+            </option>
+
+            <option value="friendly" id="replyFriendly">
+                😊 友好
+            </option>
+
+            <option value="formal" id="replyFormal">
+                💼 正式
+            </option>
+
+            <option value="casual" id="replyCasual">
+                😄 轻松
+            </option>
+
+            <option value="polite" id="replyPolite">
+                🙏 礼貌
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div style="margin-top:15px;">
+
+        <label id="replyLengthLabel">
+            选择回复长度：
+        </label>
+
+
+        <select
+            id="replyLength"
+            style="width:100%;margin-top:8px;padding:10px;"
+        >
+
+            <option value="short" id="replyShort">
+                ⚡ 简短
+            </option>
+
+            <option value="normal" id="replyNormal" selected>
+                📝 正常
+            </option>
+
+            <option value="long" id="replyLong">
+                💬 详细
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <button
+        id="replyBtn"
+        class="primary"
+        onclick="generateReply()"
+        style="margin-top:15px;width:100%;"
+    >
+        ✨ 生成回复
+    </button>
+
+
+    <p
+        id="replyStatus"
+        style="text-align:center;margin-top:12px;color:#777;"
+    ></p>
+
+
+    <div
+        id="replyResult"
+        style="display:none;margin-top:15px;"
+    >
+
+        <textarea
+            id="replyOutput"
+            readonly
+            style="width:100%;min-height:160px;"
+        ></textarea>
+
+
+        <button
+            id="replyCopyBtn"
+            onclick="copyReplyText()"
+            style="margin-top:10px;width:100%;"
+        >
+            📋 一键复制
+        </button>
+
+    </div>
+
+</section>
 
 
   
