@@ -722,6 +722,25 @@ Writing Polisher
 
 </a>
 
+
+
+<a class="tool" href="#summaryTool">
+
+<div class="tool-icon">
+📋
+</div>
+
+<div class="tool-title" id="navSummary">
+AI文章摘要
+</div>
+
+<div class="tool-subtitle" id="navSummarySub">
+Article Summarizer
+</div>
+
+</a>
+
+
   
 
 
@@ -1142,6 +1161,99 @@ onclick="copyText('titleOutput')">
 
 
 
+<!-- AI文章摘要生成器 -->
+
+<section class="card" id="summaryTool">
+
+    <h2 id="summaryTitle" style="text-align:center;">
+        📝 AI文章摘要生成器
+    </h2>
+
+    <p id="summaryDesc" style="text-align:center;color:#777;">
+        粘贴文章内容，让 AI 帮你快速提取核心信息
+    </p>
+
+
+    <textarea
+        id="summaryInput"
+        placeholder="粘贴或输入需要总结的文章..."
+        style="width:100%;min-height:180px;"
+    ></textarea>
+
+
+    <div style="margin-top:15px;">
+
+        <label id="summaryLengthLabel">
+            选择摘要长度：
+        </label>
+
+
+        <select
+            id="summaryLength"
+            style="width:100%;margin-top:8px;padding:10px;"
+        >
+
+            <option value="short" id="summaryShort">
+                ⚡ 简短摘要
+            </option>
+
+            <option value="medium" id="summaryMedium">
+                📝 标准摘要
+            </option>
+
+            <option value="long" id="summaryLong">
+                📚 详细摘要
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <button
+        id="summaryBtn"
+        class="primary"
+        onclick="generateSummary()"
+        style="margin-top:15px;width:100%;"
+    >
+        ✨ 生成摘要
+    </button>
+
+
+    <p
+        id="summaryStatus"
+        style="text-align:center;margin-top:12px;color:#777;"
+    ></p>
+
+
+    <div
+        id="summaryResult"
+        style="display:none;margin-top:15px;"
+    >
+
+        <textarea
+            id="summaryOutput"
+            readonly
+            style="width:100%;min-height:200px;"
+        ></textarea>
+
+
+        <button
+            id="summaryCopyBtn"
+            onclick="copySummaryText()"
+            style="margin-top:10px;width:100%;"
+        >
+            📋 一键复制
+        </button>
+
+    </div>
+
+</section>
+
+
+
+
+  
 
 
   
@@ -2014,6 +2126,36 @@ xhsGuideNav:
 navMail:
 "AI邮件助手",
 
+navSummary:
+"AI文章摘要",
+
+navSummarySub:
+"Article Summarizer",
+
+summaryTitle:
+"📝 AI文章摘要生成器",
+
+summaryDesc:
+"粘贴文章内容，让 AI 帮你快速提取核心信息",
+
+summaryLengthLabel:
+"选择摘要长度：",
+
+summaryShort:
+"⚡ 简短摘要",
+
+summaryMedium:
+"📝 标准摘要",
+
+summaryLong:
+"📚 详细摘要",
+
+summaryBtn:
+"✨ 生成摘要",
+
+summaryCopyBtn:
+"📋 一键复制",
+  
 navPolisher:
 "AI文章润色",
 
@@ -2316,6 +2458,36 @@ xhsGuideNav:
 navMail:
 "AI Email Assistant",
 
+navSummary:
+"AI Article Summarizer",
+
+navSummarySub:
+"Article Summarizer",
+
+summaryTitle:
+"📝 AI Article Summarizer",
+
+summaryDesc:
+"Paste your article and let AI quickly extract the key information",
+
+summaryLengthLabel:
+"Choose a summary length:",
+
+summaryShort:
+"⚡ Short Summary",
+
+summaryMedium:
+"📝 Standard Summary",
+
+summaryLong:
+"📚 Detailed Summary",
+
+summaryBtn:
+"✨ Generate Summary",
+
+summaryCopyBtn:
+"📋 Copy",
+  
 navPolisher:
 "AI Writing Polisher",
 
@@ -2820,6 +2992,13 @@ zh
 "Paste or enter the text you want to polish...",
 
 
+
+summaryInput:
+zh
+?
+"粘贴或输入需要总结的文章..."
+:
+"Paste or enter the article you want to summarize...",
   
 
 };
@@ -3145,6 +3324,226 @@ async function copyPolishedText(){
 }
   
 
+
+
+// ===============================
+// AI文章摘要生成器
+// ===============================
+
+async function generateSummary(){
+
+    const input = document
+        .getElementById("summaryInput")
+        .value
+        .trim();
+
+
+    const length = document
+        .getElementById("summaryLength")
+        .value;
+
+
+    const status = document
+        .getElementById("summaryStatus");
+
+
+    const resultBox = document
+        .getElementById("summaryResult");
+
+
+    const output = document
+        .getElementById("summaryOutput");
+
+
+    if(!input){
+
+        status.innerText =
+            currentLanguage === "zh"
+            ? "❌ 请输入需要总结的文章"
+            : "❌ Please enter an article to summarize.";
+
+        resultBox.style.display = "none";
+
+        return;
+
+    }
+
+
+    status.innerText = getGeneratingText();
+
+    resultBox.style.display = "none";
+
+
+    const lengthTextZh = {
+
+        short:
+        "生成非常简短的摘要，只保留最重要的核心信息。",
+
+        medium:
+        "生成标准长度的摘要，概括文章的主要内容和重点。",
+
+        long:
+        "生成较详细的摘要，保留文章的重要观点和关键信息。"
+
+    };
+
+
+    const lengthTextEn = {
+
+        short:
+        "Create a very short summary containing only the most important information.",
+
+        medium:
+        "Create a standard-length summary covering the main ideas and key points.",
+
+        long:
+        "Create a detailed summary that preserves important ideas and key information."
+
+    };
+
+
+    try{
+
+        let systemPrompt;
+
+
+        if(currentLanguage === "zh"){
+
+            systemPrompt = `
+
+你是一名专业的文章编辑和内容总结专家。
+
+你的任务是总结用户提供的文章。
+
+摘要要求：
+
+${lengthTextZh[length]}
+
+重要要求：
+
+1. 必须使用中文输出
+2. 保持原文核心意思
+3. 不要添加原文不存在的信息
+4. 不要解释总结过程
+5. 不要添加标题
+6. 不要写“摘要如下”
+7. 直接输出最终摘要内容
+
+`;
+
+        }else{
+
+            systemPrompt = `
+
+You are a professional editor and content summarization expert.
+
+Your task is to summarize the article provided by the user.
+
+Summary requirements:
+
+${lengthTextEn[length]}
+
+Important requirements:
+
+1. Output in English only
+2. Preserve the original meaning
+3. Do not add information that does not exist in the original text
+4. Do not explain the summarization process
+5. Do not add a title
+6. Do not write introductions such as "Here is the summary"
+7. Output only the final summary
+
+`;
+
+        }
+
+
+        const result = await callAI(
+            systemPrompt,
+            input
+        );
+
+
+        output.value = result.trim();
+
+
+        resultBox.style.display = "block";
+
+
+        status.innerText =
+            currentLanguage === "zh"
+            ? "✨ 摘要生成完成"
+            : "✨ Summary complete";
+
+
+    }catch(error){
+
+        console.error(error);
+
+
+        status.innerText = getErrorText();
+
+
+        resultBox.style.display = "none";
+
+    }
+
+}
+
+
+// ===============================
+// 复制文章摘要
+// ===============================
+
+async function copySummaryText(){
+
+    const output = document
+        .getElementById("summaryOutput");
+
+
+    if(!output.value.trim()){
+        return;
+    }
+
+
+    try{
+
+        await navigator.clipboard.writeText(
+            output.value
+        );
+
+
+        const button = document
+            .getElementById("summaryCopyBtn");
+
+
+        const oldText = button.innerText;
+
+
+        button.innerText =
+            currentLanguage === "zh"
+            ? "✅ 已复制"
+            : "✅ Copied";
+
+
+        setTimeout(()=>{
+
+            button.innerText = oldText;
+
+        },2000);
+
+
+    }catch(error){
+
+        output.select();
+
+        document.execCommand("copy");
+
+    }
+
+}
+
+  
 
   
 
