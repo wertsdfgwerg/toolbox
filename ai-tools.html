@@ -9,21 +9,17 @@
 
 <title>免费AI工具大全 - AI工具箱</title>
 
-<meta name="description" content="免费AI工具大全，提供AI提示词生成器、AI简历助手、AI标题生成器、小红书标题生成工具等在线AI工具。">
+<meta name="description" content="免费AI工具大全，提供AI提示词生成器、AI简历助手、AI标题生成器、小红书标题生成器等免费在线AI工具。">
 
-
-<meta name="keywords" content="免费AI工具,AI工具箱,AI提示词生成器,AI简历助手,AI标题生成器">
-
+<meta name="keywords" content="免费AI工具,AI工具箱,在线AI工具,AI提示词生成器,AI简历助手,AI标题生成器">
 
 <link rel="icon" href="logo.png">
-
 
 <style>
 
 *{
 box-sizing:border-box;
 }
-
 
 body{
 
@@ -41,8 +37,9 @@ background:#f7f9fc;
 
 color:#222;
 
-}
+line-height:1.8;
 
+}
 
 .container{
 
@@ -54,8 +51,6 @@ padding:30px 20px 60px;
 
 }
 
-
-
 .language-switch{
 
 text-align:right;
@@ -63,7 +58,6 @@ text-align:right;
 margin-bottom:20px;
 
 }
-
 
 .language-switch button{
 
@@ -81,8 +75,6 @@ margin-left:8px;
 
 }
 
-
-
 .box{
 
 background:white;
@@ -95,8 +87,6 @@ box-shadow:0 10px 30px rgba(0,0,0,.05);
 
 }
 
-
-
 h1{
 
 font-size:38px;
@@ -105,16 +95,13 @@ color:#2563eb;
 
 }
 
-
-
 h2{
 
-margin-top:35px;
+margin-top:30px;
 
 }
 
-
-.tool{
+.card{
 
 background:#f8fafc;
 
@@ -126,8 +113,6 @@ margin:20px 0;
 
 }
 
-
-
 a{
 
 color:#2563eb;
@@ -136,20 +121,11 @@ text-decoration:none;
 
 }
 
+a:hover{
 
-.footer{
-
-text-align:center;
-
-margin-top:40px;
-
-color:#777;
-
-font-size:14px;
+text-decoration:underline;
 
 }
-
-
 
 @media(max-width:700px){
 
@@ -169,7 +145,6 @@ padding:20px;
 
 </style>
 
-
 </head>
 
 
@@ -185,7 +160,6 @@ padding:20px;
 中文
 </button>
 
-
 <button onclick="setLanguage('en')">
 English
 </button>
@@ -198,106 +172,134 @@ English
 
 
 <h1 id="pageTitle">
+
 免费AI工具大全
+
 </h1>
 
 
 <p id="pageDesc">
 
-AI小工具箱提供免费的在线AI工具，包括AI提示词生成器、AI简历助手、AI标题生成器和小红书标题生成器。
+AI工具箱提供多种免费的在线AI工具，帮助用户进行提示词创作、简历优化、标题生成和内容创作。
 
 </p>
 
 
 
-<div class="tool">
-
+<div class="card">
 
 <h2 id="promptTitle">
 
-AI提示词生成器
+🔥 AI提示词生成器
 
 </h2>
-
 
 <p id="promptDesc">
 
-快速生成适合写作、学习、编程和商业场景的AI Prompt。
+帮助你快速生成适合写作、学习、编程和内容创作的AI提示词。
 
 </p>
 
+<p>
 
 <a href="ai-prompt-generator.html" id="promptLink">
 
-立即使用
+查看工具介绍 →
 
 </a>
 
+</p>
 
 </div>
 
 
 
-
-
-<div class="tool">
-
+<div class="card">
 
 <h2 id="resumeTitle">
 
-AI简历助手
+📝 AI简历助手
 
 </h2>
-
 
 <p id="resumeDesc">
 
-帮助优化个人简历内容，提高求职竞争力。
+帮助优化简历内容，让你的个人经历表达更加清晰。
 
 </p>
 
+<p>
 
 <a href="ai-resume-helper.html" id="resumeLink">
 
-立即使用
+查看工具介绍 →
 
 </a>
-
-
-</div>
-
-
-
-
-
-<div class="tool">
-
-
-<h2 id="titleTitle">
-
-AI标题生成器
-
-</h2>
-
-
-<p id="titleDesc">
-
-生成文章标题、自媒体标题和内容创作灵感。
 
 </p>
 
+</div>
 
-<a href="xiaohongshu-title-generator.html" id="titleLink">
 
-立即使用
+
+<div class="card">
+
+<h2 id="xhsTitle">
+
+📱 AI小红书标题生成器
+
+</h2>
+
+<p id="xhsDesc">
+
+输入主题，快速生成多个适合小红书内容发布的标题。
+
+</p>
+
+<p>
+
+<a href="xiaohongshu-title-generator.html" id="xhsLink">
+
+查看工具介绍 →
 
 </a>
 
+</p>
 
 </div>
 
 
+
+<div class="card">
+
+<h2 id="polishTitle">
+
+✨ AI文本润色工具
+
+</h2>
+
+<p id="polishDesc">
+
+帮助优化文章表达，让文字更加自然、清晰和流畅。
+
+</p>
+
+<p>
+
+<a href="ai-writing-polisher.html" id="polishLink">
+
+查看工具介绍 →
+
+</a>
+
+</p>
+
+</div>
+
+
+
 <hr>
+
 
 
 <h3 id="moreTitle">
@@ -307,15 +309,18 @@ AI标题生成器
 </h3>
 
 
+
 <p>
 
 <a href="index.html" id="homeLink">
 
-返回 AI工具箱首页
+AI工具箱首页
 
 </a>
 
 </p>
+
+
 
 <p>
 
@@ -326,6 +331,7 @@ AI标题生成器
 </a>
 
 </p>
+
 
 
 <p>
@@ -339,20 +345,34 @@ AI标题生成器
 </p>
 
 
+
 <p>
 
 <a href="xiaohongshu-title-generator.html" id="xhsNav">
 
-📱 小红书标题生成器
+📱 AI小红书标题生成器
 
 </a>
 
 </p>
 
 
+
 <p>
 
-<a href="about-ai-tools.html" id="aboutNav">
+<a href="ai-writing-polisher.html" id="polishNav">
+
+✨ AI文本润色工具
+
+</a>
+
+</p>
+
+
+
+<p>
+
+<a href="about-ai-tools.html" id="aboutLink">
 
 🌍 关于AI工具箱
 
@@ -361,10 +381,17 @@ AI标题生成器
 </p>
 
 
+</div>
+
+
+</div>
+
+
+
 <script>
 
 
-const langText = {
+const lang={
 
 
 zh:{
@@ -372,38 +399,52 @@ zh:{
 
 pageTitle:"免费AI工具大全",
 
-pageDesc:"AI小工具箱提供免费的在线AI工具，包括AI提示词生成器、AI简历助手、AI标题生成器和小红书标题生成器。",
+pageDesc:"AI工具箱提供多种免费的在线AI工具，帮助用户进行提示词创作、简历优化、标题生成和内容创作。",
 
 
-promptTitle:"AI提示词生成器",
+promptTitle:"🔥 AI提示词生成器",
 
-promptDesc:"快速生成适合写作、学习、编程和商业场景的AI Prompt。",
+promptDesc:"帮助你快速生成适合写作、学习、编程和内容创作的AI提示词。",
 
-promptLink:"立即使用",
-
-
-resumeTitle:"AI简历助手",
-
-resumeDesc:"帮助优化个人简历内容，提高求职竞争力。",
-
-resumeLink:"立即使用",
+promptLink:"查看工具介绍 →",
 
 
-titleTitle:"AI标题生成器",
+resumeTitle:"📝 AI简历助手",
 
-titleDesc:"生成文章标题、自媒体标题和内容创作灵感。",
+resumeDesc:"帮助优化简历内容，让你的个人经历表达更加清晰。",
 
-titleLink:"立即使用",
+resumeLink:"查看工具介绍 →",
+
+
+xhsTitle:"📱 AI小红书标题生成器",
+
+xhsDesc:"输入主题，快速生成多个适合小红书内容发布的标题。",
+
+xhsLink:"查看工具介绍 →",
+
+
+polishTitle:"✨ AI文本润色工具",
+
+polishDesc:"帮助优化文章表达，让文字更加自然、清晰和流畅。",
+
+polishLink:"查看工具介绍 →",
 
 
 moreTitle:"🚀 更多 AI 工具",
 
-homeLink:"返回 AI工具箱首页",
+homeLink:"AI工具箱首页",
 
 promptNav:"🔥 AI提示词生成器",
+
 resumeNav:"📝 AI简历助手",
-xhsNav:"📱 小红书标题生成器",
-aboutNav:"🌍 关于AI工具箱"
+
+xhsNav:"📱 AI小红书标题生成器",
+
+polishNav:"✨ AI文本润色工具",
+
+aboutLink:"🌍 关于AI工具箱"
+
+
 },
 
 
@@ -413,98 +454,96 @@ en:{
 
 pageTitle:"Free AI Tools Collection",
 
-
-pageDesc:"AI Toolbox provides free online AI tools, including AI Prompt Generator, AI Resume Assistant, AI Title Generator and Xiaohongshu Title Generator.",
-
+pageDesc:"AI Toolbox provides free online AI tools for prompt creation, resume improvement, title generation and content creation.",
 
 
-promptTitle:"AI Prompt Generator",
+promptTitle:"🔥 AI Prompt Generator",
 
-promptDesc:"Generate useful AI prompts for writing, learning, programming and business scenarios.",
+promptDesc:"Quickly generate useful AI prompts for writing, learning, programming and content creation.",
 
-promptLink:"Use Now",
-
-
-
-resumeTitle:"AI Resume Assistant",
-
-resumeDesc:"Optimize your resume content and improve your career opportunities.",
-
-resumeLink:"Use Now",
+promptLink:"View Tool Details →",
 
 
+resumeTitle:"📝 AI Resume Assistant",
 
-titleTitle:"AI Title Generator",
+resumeDesc:"Improve your resume content and present your experience more clearly.",
 
-titleDesc:"Generate article titles, social media titles and content ideas.",
+resumeLink:"View Tool Details →",
 
-titleLink:"Use Now",
 
+xhsTitle:"📱 Xiaohongshu Title Generator",
+
+xhsDesc:"Enter a topic and quickly generate multiple titles suitable for Xiaohongshu content.",
+
+xhsLink:"View Tool Details →",
+
+
+polishTitle:"✨ AI Text Polisher",
+
+polishDesc:"Improve your writing and make your text clearer, more natural and more fluent.",
+
+polishLink:"View Tool Details →",
 
 
 moreTitle:"🚀 More AI Tools",
 
-homeLink:"Back to AI Toolbox Home",
+homeLink:"AI Toolbox Home",
 
 promptNav:"🔥 AI Prompt Generator",
+
 resumeNav:"📝 AI Resume Assistant",
+
 xhsNav:"📱 Xiaohongshu Title Generator",
-aboutNav:"🌍 About AI Toolbox"
+
+polishNav:"✨ AI Text Polisher",
+
+aboutLink:"🌍 About AI Toolbox"
+
 
 }
-
 
 
 };
 
 
 
+function setLanguage(type){
 
 
-function setLanguage(lang){
-
-
-let t=langText[lang];
-
+let t=lang[type];
 
 
 document.getElementById("pageTitle").innerText=t.pageTitle;
 
-
 document.getElementById("pageDesc").innerText=t.pageDesc;
-
 
 
 document.getElementById("promptTitle").innerText=t.promptTitle;
 
-
 document.getElementById("promptDesc").innerText=t.promptDesc;
-
 
 document.getElementById("promptLink").innerText=t.promptLink;
 
 
-
-
 document.getElementById("resumeTitle").innerText=t.resumeTitle;
 
-
 document.getElementById("resumeDesc").innerText=t.resumeDesc;
-
 
 document.getElementById("resumeLink").innerText=t.resumeLink;
 
 
+document.getElementById("xhsTitle").innerText=t.xhsTitle;
+
+document.getElementById("xhsDesc").innerText=t.xhsDesc;
+
+document.getElementById("xhsLink").innerText=t.xhsLink;
 
 
-document.getElementById("titleTitle").innerText=t.titleTitle;
+document.getElementById("polishTitle").innerText=t.polishTitle;
 
+document.getElementById("polishDesc").innerText=t.polishDesc;
 
-document.getElementById("titleDesc").innerText=t.titleDesc;
-
-
-document.getElementById("titleLink").innerText=t.titleLink;
-
+document.getElementById("polishLink").innerText=t.polishLink;
 
 
 document.getElementById("moreTitle").innerText=t.moreTitle;
@@ -518,17 +557,17 @@ document.getElementById("resumeNav").innerText=t.resumeNav;
 
 document.getElementById("xhsNav").innerText=t.xhsNav;
 
-document.getElementById("aboutNav").innerText=t.aboutNav;
-}
+document.getElementById("polishNav").innerText=t.polishNav;
 
+document.getElementById("aboutLink").innerText=t.aboutLink;
+
+
+}
 
 
 </script>
 
 
-
 </body>
 
 </html>
-
-</div>
