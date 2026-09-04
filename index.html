@@ -516,6 +516,113 @@ flex-direction:column;
 }
 
 
+/* ===============================
+SEO导航
+=============================== */
+
+.seo-nav-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:12px;
+
+margin:20px 0 35px;
+
+}
+
+
+.seo-nav-grid a{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+background:#f8f9fb;
+
+border:1px solid #eee;
+
+border-radius:12px;
+
+padding:14px 16px;
+
+text-decoration:none;
+
+color:#222;
+
+font-weight:600;
+
+transition:.2s;
+
+}
+
+
+.seo-nav-grid a:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 6px 15px rgba(0,0,0,.06);
+
+background:white;
+
+}
+
+
+.seo-nav-arrow{
+
+font-size:20px;
+
+color:#999;
+
+}
+
+
+#toolNavDesc,
+#guideNavDesc{
+
+color:#777;
+
+line-height:1.7;
+
+}
+
+
+.seo-about-link{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+margin-top:10px;
+
+}
+
+
+.seo-about-link a{
+
+display:inline-block;
+
+}
+
+
+@media(max-width:768px){
+
+.seo-nav-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+
+
+  
 
 </style>
 
@@ -1672,79 +1779,358 @@ onclick="shareSite()">
 
 <!-- SEO内容导航 -->
 
-<div class="card">
+<div class="card" id="seoNavigation">
 
-<h3 id="toolNavTitle">
+
+<h2 id="toolNavTitle">
+
 🛠️ AI工具介绍
-</h3>
+
+</h2>
 
 
-<p>
-<a href="ai-tools.html" id="seoNav1">
-🚀 免费AI工具大全
-</a>
+<p id="toolNavDesc">
+
+了解每个 AI 工具的功能、用途和使用方法。
+
 </p>
 
 
-<p>
-<a href="ai-prompt-generator.html" id="seoNav2">
+
+<div class="seo-nav-grid">
+
+
+<a href="ai-prompt-generator.html">
+
+<span id="seoNavPrompt">
+
 🔥 AI提示词生成器
+
+</span>
+
+<span class="seo-nav-arrow">
+
+→
+
+</span>
+
 </a>
-</p>
 
 
-<p>
-<a href="ai-resume-helper.html" id="seoNav3">
+
+<a href="ai-resume-helper.html">
+
+<span id="seoNavResume">
+
 📝 AI简历助手
+
+</span>
+
+<span class="seo-nav-arrow">
+
+→
+
+</span>
+
 </a>
-</p>
 
 
-<p>
-<a href="xiaohongshu-title-generator.html" id="seoNav4">
+
+<a href="ai-title-generator.html">
+
+<span id="seoNavTitleGenerator">
+
+💡 AI标题生成器
+
+</span>
+
+<span class="seo-nav-arrow">
+
+→
+
+</span>
+
+</a>
+
+
+
+<a href="xiaohongshu-title-generator.html">
+
+<span id="seoNavXhs">
+
 📱 小红书标题生成器
+
+</span>
+
+<span class="seo-nav-arrow">
+
+→
+
+</span>
+
 </a>
-</p>
 
 
-<p>
-<a href="about-ai-tools.html" id="seoNav5">
-🌍 关于AI工具箱
+
+<a href="ai-email-assistant.html">
+
+<span id="seoNavMail">
+
+📧 AI邮件助手
+
+</span>
+
+<span class="seo-nav-arrow">
+
+→
+
+</span>
+
 </a>
-</p>
 
 
 
-<h3 id="guideNavTitle">
-📚 AI教程指南
-</h3>
+<a href="ai-writing-polisher.html">
 
+<span id="seoNavPolisher">
 
-<p>
-<a href="ai-prompt-guide.html" id="promptGuideNav">
-🔥 AI Prompt入门指南
+✨ AI文章润色工具
+
+</span>
+
+<span class="seo-nav-arrow">
+
+→
+
+</span>
+
 </a>
-</p>
 
 
-<p>
-<a href="ai-resume-guide.html" id="resumeGuideNav">
-📝 AI简历优化指南
+
+<a href="ai-article-summarizer.html">
+
+<span id="seoNavSummary">
+
+📋 AI文章摘要生成器
+
+</span>
+
+<span class="seo-nav-arrow">
+
+→
+
+</span>
+
 </a>
-</p>
 
 
-<p>
-<a href="ai-xiaohongshu-guide.html" id="xhsGuideNav">
-📱 小红书标题技巧指南
+
+<a href="ai-reply-assistant.html">
+
+<span id="seoNavReply">
+
+💬 AI回复助手
+
+</span>
+
+<span class="seo-nav-arrow">
+
+→
+
+</span>
+
 </a>
-</p>
 
-
-
-  
 
 </div>
+
+
+
+<h2 id="guideNavTitle">
+
+📚 AI教程指南
+
+</h2>
+
+
+<p id="guideNavDesc">
+
+学习 AI 工具的使用方法和实用技巧。
+
+</p>
+
+
+
+<div class="seo-nav-grid">
+
+
+<a href="ai-prompt-guide.html">
+
+<span id="guideNavPrompt">
+
+🔥 AI Prompt入门指南
+
+</span>
+
+<span class="seo-nav-arrow">
+
+→
+
+</span>
+
+</a>
+
+
+
+<a href="ai-resume-guide.html">
+
+<span id="guideNavResume">
+
+📝 AI简历优化指南
+
+</span>
+
+<span class="seo-nav-arrow">
+
+→
+
+</span>
+
+</a>
+
+
+
+<a href="ai-title-guide.html">
+
+<span id="guideNavTitleGenerator">
+
+💡 AI标题生成指南
+
+</span>
+
+<span class="seo-nav-arrow">
+
+→
+
+</span>
+
+</a>
+
+
+
+<a href="ai-xiaohongshu-guide.html">
+
+<span id="guideNavXhs">
+
+📱 小红书标题技巧指南
+
+</span>
+
+<span class="seo-nav-arrow">
+
+→
+
+</span>
+
+</a>
+
+
+
+<a href="ai-email-guide.html">
+
+<span id="guideNavMail">
+
+📧 AI邮件写作指南
+
+</span>
+
+<span class="seo-nav-arrow">
+
+→
+
+</span>
+
+</a>
+
+
+
+<a href="ai-writing-polisher-guide.html">
+
+<span id="guideNavPolisher">
+
+✨ AI文章润色指南
+
+</span>
+
+<span class="seo-nav-arrow">
+
+→
+
+</span>
+
+</a>
+
+
+
+<a href="ai-article-summarizer-guide.html">
+
+<span id="guideNavSummary">
+
+📋 AI文章摘要指南
+
+</span>
+
+<span class="seo-nav-arrow">
+
+→
+
+</span>
+
+</a>
+
+
+
+<a href="ai-reply-guide.html">
+
+<span id="guideNavReply">
+
+💬 AI回复技巧指南
+
+</span>
+
+<span class="seo-nav-arrow">
+
+→
+
+</span>
+
+</a>
+
+
+</div>
+
+
+
+<p class="seo-about-link">
+
+<a href="ai-tools.html" id="seoNavAllTools">
+
+🚀 查看全部免费 AI 工具
+
+</a>
+
+<a href="about-ai-tools.html" id="seoNavAbout">
+
+🌍 关于 AI工具箱
+
+</a>
+
+</p>
+
+
+</div>
+  
 
 
 
@@ -2186,6 +2572,71 @@ const languageText = {
 
 zh:{
 
+toolNavDesc:
+"了解每个 AI 工具的功能、用途和使用方法。",
+
+seoNavPrompt:
+"🔥 AI提示词生成器",
+
+seoNavResume:
+"📝 AI简历助手",
+
+seoNavTitleGenerator:
+"💡 AI标题生成器",
+
+seoNavXhs:
+"📱 小红书标题生成器",
+
+seoNavMail:
+"📧 AI邮件助手",
+
+seoNavPolisher:
+"✨ AI文章润色工具",
+
+seoNavSummary:
+"📋 AI文章摘要生成器",
+
+seoNavReply:
+"💬 AI回复助手",
+
+
+
+guideNavDesc:
+"学习 AI 工具的使用方法和实用技巧。",
+
+guideNavPrompt:
+"🔥 AI Prompt入门指南",
+
+guideNavResume:
+"📝 AI简历优化指南",
+
+guideNavTitleGenerator:
+"💡 AI标题生成指南",
+
+guideNavXhs:
+"📱 小红书标题技巧指南",
+
+guideNavMail:
+"📧 AI邮件写作指南",
+
+guideNavPolisher:
+"✨ AI文章润色指南",
+
+guideNavSummary:
+"📋 AI文章摘要指南",
+
+guideNavReply:
+"💬 AI回复技巧指南",
+
+seoNavAllTools:
+"🚀 查看全部免费 AI 工具",
+
+seoNavAbout:
+"🌍 关于 AI工具箱",
+
+
+
+  
 toolNavTitle:
 "🛠️ AI工具介绍",
 
@@ -2554,6 +3005,68 @@ donateText:
 
 en:{
 
+toolNavDesc:
+"Learn about the features, uses and how to use each AI tool.",
+
+seoNavPrompt:
+"🔥 AI Prompt Generator",
+
+seoNavResume:
+"📝 AI Resume Assistant",
+
+seoNavTitleGenerator:
+"💡 AI Title Generator",
+
+seoNavXhs:
+"📱 Social Media Title Generator",
+
+seoNavMail:
+"📧 AI Email Assistant",
+
+seoNavPolisher:
+"✨ AI Writing Polisher",
+
+seoNavSummary:
+"📋 AI Article Summarizer",
+
+seoNavReply:
+"💬 AI Reply Assistant",
+
+
+
+guideNavDesc:
+"Learn how to use AI tools and discover practical tips.",
+
+guideNavPrompt:
+"🔥 AI Prompt Beginner Guide",
+
+guideNavResume:
+"📝 AI Resume Optimization Guide",
+
+guideNavTitleGenerator:
+"💡 AI Title Generation Guide",
+
+guideNavXhs:
+"📱 Social Media Title Guide",
+
+guideNavMail:
+"📧 AI Email Writing Guide",
+
+guideNavPolisher:
+"✨ AI Writing Polisher Guide",
+
+guideNavSummary:
+"📋 AI Article Summarizer Guide",
+
+guideNavReply:
+"💬 AI Reply Writing Guide",
+
+seoNavAllTools:
+"🚀 Explore All Free AI Tools",
+
+seoNavAbout:
+"🌍 About AI Toolbox",
+  
 toolNavTitle:
 "🛠️ AI Tools",
 
