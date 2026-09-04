@@ -8,13 +8,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<title>
-AI小红书标题怎么写？AI标题生成器新手指南
-</title>
+<title>AI文本润色工具 - 免费在线AI写作润色</title>
 
 
-<meta name="description"
-content="学习如何使用AI生成小红书标题，掌握爆款标题写作技巧，利用AI小红书标题生成器快速创建吸引人的内容标题。">
+<meta name="description" content="AI文本润色工具，帮助优化文章表达，让文字更加自然、清晰和流畅。免费在线使用AI写作润色工具。">
 
 
 <link rel="icon" href="logo.png">
@@ -43,6 +40,8 @@ background:#f7f9fc;
 
 color:#222;
 
+line-height:1.8;
+
 }
 
 
@@ -57,7 +56,6 @@ padding:30px 20px 60px;
 }
 
 
-
 .language-switch{
 
 text-align:right;
@@ -65,7 +63,6 @@ text-align:right;
 margin-bottom:20px;
 
 }
-
 
 
 .language-switch button{
@@ -85,7 +82,6 @@ margin-left:8px;
 }
 
 
-
 .box{
 
 background:white;
@@ -94,11 +90,9 @@ padding:35px;
 
 border-radius:20px;
 
-box-shadow:
-0 10px 30px rgba(0,0,0,.05);
+box-shadow:0 10px 30px rgba(0,0,0,.05);
 
 }
-
 
 
 h1{
@@ -110,13 +104,11 @@ color:#2563eb;
 }
 
 
-
 h2{
 
-margin-top:35px;
+margin-top:30px;
 
 }
-
 
 
 .card{
@@ -132,43 +124,20 @@ margin:20px 0;
 }
 
 
-
-.code{
-
-background:#111;
-
-color:white;
-
-padding:20px;
-
-border-radius:12px;
-
-white-space:pre-line;
-
-line-height:1.7;
-
-}
-
-
-
 a{
 
 color:#2563eb;
 
 text-decoration:none;
 
-font-weight:600;
-
 }
 
 
+a:hover{
 
-.back{
-
-margin-top:30px;
+text-decoration:underline;
 
 }
-
 
 
 @media(max-width:700px){
@@ -178,7 +147,6 @@ h1{
 font-size:30px;
 
 }
-
 
 .box{
 
@@ -195,6 +163,7 @@ padding:20px;
 </head>
 
 
+
 <body>
 
 
@@ -205,16 +174,22 @@ padding:20px;
 
 
 <button onclick="setLanguage('zh')">
+
 中文
+
 </button>
 
 
 <button onclick="setLanguage('en')">
+
 English
+
 </button>
 
 
 </div>
+
+
 
 
 <div class="box">
@@ -222,31 +197,34 @@ English
 
 <h1 id="title">
 
-AI小红书标题怎么写？AI标题生成器新手指南
+AI文本润色工具
 
 </h1>
 
 
+
 <p id="intro">
 
-学习如何使用AI生成小红书标题，提高内容吸引力，让AI帮助你快速创建更好的标题。
+输入需要修改的文字，AI可以帮助优化表达，让内容更加自然、清晰和流畅。
 
 </p>
 
 
+
+
 <div class="card">
 
 
-<h2 id="whatTitle">
+<h2 id="userTitle">
 
-什么是AI小红书标题生成器？
+适合用户
 
 </h2>
 
 
-<p id="whatText">
+<p id="userText">
 
-AI小红书标题生成器是利用人工智能帮助用户快速生成内容标题的工具，可以根据主题、关键词和目标用户创建更有吸引力的标题。
+学生、内容创作者、自媒体作者，以及需要优化文章表达的用户。
 
 </p>
 
@@ -255,201 +233,34 @@ AI小红书标题生成器是利用人工智能帮助用户快速生成内容标
 
 
 
-
-
 <div class="card">
 
 
-<h2 id="whyTitle">
+<h2 id="featureTitle">
 
-为什么小红书标题很重要？
+可以做什么
 
 </h2>
 
 
-<ul>
+<p id="featureText">
 
-<li id="why1">
-提高内容点击率
-</li>
-
-
-<li id="why2">
-吸引目标用户关注
-</li>
-
-
-<li id="why3">
-帮助内容获得更多曝光
-</li>
-
-
-<li id="why4">
-减少标题创作时间
-</li>
-
-
-</ul>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<h2 id="advantageTitle">
-
-AI生成小红书标题有什么优势？
-
-</h2>
-
-
-<ul>
-
-
-<li id="advantage1">
-快速生成多个标题方案
-</li>
-
-
-<li id="advantage2">
-提供不同风格的标题创意
-</li>
-
-
-<li id="advantage3">
-优化标题表达方式
-</li>
-
-
-<li id="advantage4">
-帮助提升内容质量
-</li>
-
-
-</ul>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<h2 id="createTitle">
-
-如何使用AI生成高质量小红书标题？
-
-</h2>
-
-
-<p id="createText">
-
-生成标题时，可以提供以下信息：
+帮助改善文章表达、优化语句结构、减少重复内容，让文字阅读起来更加自然。
 
 </p>
 
 
-<ul>
-
-
-<li id="create1">
-内容主题
-</li>
-
-
-<li id="create2">
-目标用户
-</li>
-
-
-<li id="create3">
-内容特点
-</li>
-
-
-<li id="create4">
-希望达到的效果
-</li>
-
-
-</ul>
-
-
 </div>
 
 
 
+<p>
 
+<a href="index.html#writingPolisherTool" id="useLink">
 
-<div class="card">
+立即使用润色工具
 
-
-<h2 id="promptTitle">
-
-AI小红书标题Prompt模板
-
-</h2>
-
-
-<p id="promptText">
-
-使用下面的Prompt，让AI帮助生成小红书标题：
-
-</p>
-
-
-
-<div class="code" id="promptCode">
-
-你是一名专业的小红书内容运营专家。
-
-请帮我生成10个高质量小红书标题。
-
-内容主题：
-【填写主题】
-
-目标用户：
-【填写用户】
-
-要求：
-
-1. 标题具有吸引力
-2. 符合小红书风格
-3. 激发用户点击兴趣
-4. 避免夸大和虚假宣传
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<h2 id="toolTitle">
-
-在线AI小红书标题生成器
-
-</h2>
-
-
-<p id="toolText">
-
-想快速生成小红书标题？
-
-可以使用AI工具箱提供的免费AI标题生成工具。
+</a>
 
 </p>
 
@@ -457,98 +268,98 @@ AI小红书标题Prompt模板
 
 <p>
 
-🔥
+<a href="ai-writing-polisher-guide.html" id="guideLink">
 
-<a href="xiaohongshu-title-generator.html" id="toolLink">
-
-AI小红书标题生成器
+📚 AI文本润色技巧：如何让文章表达更自然
 
 </a>
 
-
 </p>
 
 
-</div>
+
+<hr>
 
 
 
+<h3 id="moreTitle">
 
+🚀 更多 AI 工具
 
-<div class="card">
-
-
-<h2 id="tipsTitle">
-
-小红书标题优化技巧
-
-</h2>
-
-
-<ul>
-
-
-<li id="tips1">
-突出用户需求
-</li>
-
-
-<li id="tips2">
-使用具体场景描述
-</li>
-
-
-<li id="tips3">
-避免标题党内容
-</li>
-
-
-<li id="tips4">
-持续测试不同标题效果
-</li>
-
-
-</ul>
-
-
-</div>
+</h3>
 
 
 
-
-
-<div class="card">
-
-
-<h2 id="summaryTitle">
-
-总结
-
-</h2>
-
-
-<p id="summaryText">
-
-AI可以帮助快速生成小红书标题，但优质内容仍然是吸引用户的核心。合理使用AI工具，可以提高内容创作效率。
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="back">
-
+<p>
 
 <a href="index.html" id="homeLink">
 
-← 返回 AI工具箱首页
+AI工具箱首页
 
 </a>
 
+</p>
+
+
+
+<p>
+
+<a href="ai-tools.html" id="allToolsLink">
+
+免费AI工具大全
+
+</a>
+
+</p>
+
+
+
+<p>
+
+<a href="ai-prompt-generator.html" id="promptLink">
+
+🔥 AI提示词生成器
+
+</a>
+
+</p>
+
+
+
+<p>
+
+<a href="ai-resume-helper.html" id="resumeLink">
+
+📝 AI简历助手
+
+</a>
+
+</p>
+
+
+
+<p>
+
+<a href="xiaohongshu-title-generator.html" id="xhsLink">
+
+📱 AI小红书标题生成器
+
+</a>
+
+</p>
+
+
+
+<p>
+
+<a href="about-ai-tools.html" id="aboutLink">
+
+🌍 关于AI工具箱
+
+</a>
+
+</p>
+
 
 </div>
 
@@ -556,203 +367,113 @@ AI可以帮助快速生成小红书标题，但优质内容仍然是吸引用户
 </div>
 
 
-</div>
 
 
 
 <script>
 
 
-const text={
+const lang={
 
 
 zh:{
 
 
-title:"AI小红书标题怎么写？AI标题生成器新手指南",
-
-intro:"学习如何使用AI生成小红书标题，提高内容吸引力，让AI帮助你快速创建更好的标题。",
+title:"AI文本润色工具",
 
 
-
-whatTitle:"什么是AI小红书标题生成器？",
-
-whatText:"AI小红书标题生成器是利用人工智能帮助用户快速生成内容标题的工具，可以根据主题、关键词和目标用户创建更有吸引力的标题。",
+intro:"输入需要修改的文字，AI可以帮助优化表达，让内容更加自然、清晰和流畅。",
 
 
-
-whyTitle:"为什么小红书标题很重要？",
-
-why1:"提高内容点击率",
-
-why2:"吸引目标用户关注",
-
-why3:"帮助内容获得更多曝光",
-
-why4:"减少标题创作时间",
+userTitle:"适合用户",
 
 
-
-advantageTitle:"AI生成小红书标题有什么优势？",
-
-advantage1:"快速生成多个标题方案",
-
-advantage2:"提供不同风格的标题创意",
-
-advantage3:"优化标题表达方式",
-
-advantage4:"帮助提升内容质量",
+userText:"学生、内容创作者、自媒体作者，以及需要优化文章表达的用户。",
 
 
-
-createTitle:"如何使用AI生成高质量小红书标题？",
-
-createText:"生成标题时，可以提供以下信息：",
-
-create1:"内容主题",
-
-create2:"目标用户",
-
-create3:"内容特点",
-
-create4:"希望达到的效果",
+featureTitle:"可以做什么",
 
 
-
-promptTitle:"AI小红书标题Prompt模板",
-
-promptText:"使用下面的Prompt，让AI帮助生成小红书标题：",
+featureText:"帮助改善文章表达、优化语句结构、减少重复内容，让文字阅读起来更加自然。",
 
 
-promptCode:"你是一名专业的小红书内容运营专家。\n\n请帮我生成10个高质量小红书标题。\n\n内容主题：\n【填写主题】\n\n目标用户：\n【填写用户】\n\n要求：\n1. 标题具有吸引力\n2. 符合小红书风格\n3. 激发用户点击兴趣\n4. 避免夸大和虚假宣传",
+useLink:"立即使用润色工具",
 
 
-
-toolTitle:"在线AI小红书标题生成器",
-
-toolText:"想快速生成小红书标题？可以使用AI工具箱提供的免费AI标题生成工具。",
-
-toolLink:"AI小红书标题生成器",
+guideLink:"📚 AI文本润色技巧：如何让文章表达更自然",
 
 
-
-tipsTitle:"小红书标题优化技巧",
-
-tips1:"突出用户需求",
-
-tips2:"使用具体场景描述",
-
-tips3:"避免标题党内容",
-
-tips4:"持续测试不同标题效果",
+moreTitle:"🚀 更多 AI 工具",
 
 
-
-summaryTitle:"总结",
-
-summaryText:"AI可以帮助快速生成小红书标题，但优质内容仍然是吸引用户的核心。合理使用AI工具，可以提高内容创作效率。",
+homeLink:"AI工具箱首页",
 
 
+allToolsLink:"免费AI工具大全",
 
-homeLink:"← 返回 AI工具箱首页"
+
+promptLink:"🔥 AI提示词生成器",
+
+
+resumeLink:"📝 AI简历助手",
+
+
+xhsLink:"📱 AI小红书标题生成器",
+
+
+aboutLink:"🌍 关于AI工具箱"
 
 
 },
 
 
 
-
-
 en:{
 
 
-title:"How to Write Xiaohongshu Titles? AI Title Generator Guide",
-
-intro:"Learn how to use AI to generate Xiaohongshu titles, improve content attraction, and create better titles faster.",
+title:"AI Writing Polisher",
 
 
-
-whatTitle:"What is an AI Xiaohongshu Title Generator?",
-
-whatText:"An AI Xiaohongshu Title Generator uses artificial intelligence to help users quickly create attractive content titles based on topics, keywords and audiences.",
+intro:"Enter your text and use AI to improve the writing, making it clearer, more natural and easier to read.",
 
 
-
-whyTitle:"Why Are Xiaohongshu Titles Important?",
-
-why1:"Increase content click rates",
-
-why2:"Attract target audiences",
-
-why3:"Help content gain more exposure",
-
-why4:"Reduce title creation time",
+userTitle:"Suitable Users",
 
 
-
-advantageTitle:"Advantages of AI Generated Xiaohongshu Titles",
-
-advantage1:"Generate multiple title ideas quickly",
-
-advantage2:"Provide different title styles",
-
-advantage3:"Improve title expressions",
-
-advantage4:"Help improve content quality",
+userText:"Students, content creators, social media creators and anyone who wants to improve their writing.",
 
 
-
-createTitle:"How to Create High Quality Xiaohongshu Titles?",
-
-createText:"When generating titles, you can provide:",
-
-create1:"Content topic",
-
-create2:"Target audience",
-
-create3:"Content features",
-
-create4:"Expected results",
+featureTitle:"What It Can Do",
 
 
-
-promptTitle:"AI Xiaohongshu Title Prompt Template",
-
-promptText:"Use the following prompt to ask AI to generate Xiaohongshu titles:",
+featureText:"Improve writing style, optimize sentence structure and reduce repetitive expressions to make your text more natural.",
 
 
-
-promptCode:"You are a professional Xiaohongshu content marketing expert.\n\nPlease generate 10 high quality Xiaohongshu titles.\n\nContent Topic:\n[Enter topic]\n\nTarget Audience:\n[Enter audience]\n\nRequirements:\n1. Make titles attractive\n2. Follow Xiaohongshu style\n3. Encourage user clicks\n4. Avoid exaggeration and false claims",
-
+useLink:"Use Writing Polisher Now",
 
 
-toolTitle:"Online AI Xiaohongshu Title Generator",
-
-toolText:"Want to generate Xiaohongshu titles quickly? Try our free AI title generator.",
-
-toolLink:"AI Xiaohongshu Title Generator",
+guideLink:"📚 AI Writing Tips: How to Make Your Writing More Natural",
 
 
-
-tipsTitle:"Xiaohongshu Title Optimization Tips",
-
-tips1:"Focus on user needs",
-
-tips2:"Use specific scenarios",
-
-tips3:"Avoid clickbait titles",
-
-tips4:"Test different title styles",
+moreTitle:"🚀 More AI Tools",
 
 
-
-summaryTitle:"Conclusion",
-
-summaryText:"AI can help generate Xiaohongshu titles quickly, but valuable content remains the key to attracting users. Using AI tools properly can improve content creation efficiency.",
+homeLink:"AI Toolbox Home",
 
 
+allToolsLink:"Free AI Tools Collection",
 
-homeLink:"← Back to AI Toolbox Home"
+
+promptLink:"🔥 AI Prompt Generator",
+
+
+resumeLink:"📝 AI Resume Assistant",
+
+
+xhsLink:"📱 Xiaohongshu Title Generator",
+
+
+aboutLink:"🌍 About AI Toolbox"
 
 
 }
@@ -764,32 +485,62 @@ homeLink:"← Back to AI Toolbox Home"
 
 
 
-function setLanguage(lang){
+function setLanguage(type){
 
 
-let t=text[lang];
+let t=lang[type];
 
 
-Object.keys(t).forEach(id=>{
+document.getElementById("title").innerText=t.title;
 
 
-let el=document.getElementById(id);
+document.getElementById("intro").innerText=t.intro;
 
 
-if(el){
-
-el.innerText=t[id];
-
-}
+document.getElementById("userTitle").innerText=t.userTitle;
 
 
-});
+document.getElementById("userText").innerText=t.userText;
+
+
+document.getElementById("featureTitle").innerText=t.featureTitle;
+
+
+document.getElementById("featureText").innerText=t.featureText;
+
+
+document.getElementById("useLink").innerText=t.useLink;
+
+
+document.getElementById("guideLink").innerText=t.guideLink;
+
+
+document.getElementById("moreTitle").innerText=t.moreTitle;
+
+
+document.getElementById("homeLink").innerText=t.homeLink;
+
+
+document.getElementById("allToolsLink").innerText=t.allToolsLink;
+
+
+document.getElementById("promptLink").innerText=t.promptLink;
+
+
+document.getElementById("resumeLink").innerText=t.resumeLink;
+
+
+document.getElementById("xhsLink").innerText=t.xhsLink;
+
+
+document.getElementById("aboutLink").innerText=t.aboutLink;
 
 
 }
 
 
 </script>
+
 
 </body>
 
