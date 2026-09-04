@@ -1,0 +1,2119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<!-- 网站图标 -->
+
+<link rel="icon" type="image/png" href="/toolbox/logo.png">
+
+<link rel="shortcut icon" type="image/png" href="/toolbox/logo.png">
+
+<link rel="apple-touch-icon" href="/toolbox/logo.png">
+
+
+<!-- SEO -->
+
+<title id="pageTitle">
+AI文章润色工具 - 免费在线AI写作润色 | AI工具箱
+</title>
+
+
+<meta
+id="metaDescription"
+name="description"
+content="免费在线AI文章润色工具，帮助优化文章表达，让文字更加自然、专业、正式、简洁或有吸引力。无需注册即可使用。"
+>
+
+
+<link
+rel="canonical"
+href="https://wertsdfgwerg.github.io/toolbox/ai-writing-polisher.html"
+>
+
+
+<meta name="robots" content="index,follow">
+
+
+<!-- Open Graph -->
+
+<meta
+property="og:title"
+content="AI文章润色工具 - 免费在线AI写作润色"
+>
+
+
+<meta
+property="og:description"
+content="使用AI优化文章表达，让内容更加自然、流畅、专业。"
+>
+
+
+<meta
+property="og:type"
+content="website"
+>
+
+
+<meta
+property="og:url"
+content="https://wertsdfgwerg.github.io/toolbox/ai-writing-polisher.html"
+>
+
+
+<!-- Twitter -->
+
+<meta name="twitter:card" content="summary">
+
+<meta
+name="twitter:title"
+content="AI Writing Polisher"
+>
+
+<meta
+name="twitter:description"
+content="Free online AI writing polishing tool."
+>
+
+
+<style>
+
+
+*{
+
+box-sizing:border-box;
+
+}
+
+
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+
+
+body{
+
+margin:0;
+
+font-family:
+
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+"Microsoft YaHei",
+Arial,
+sans-serif;
+
+background:#f7f9fc;
+
+color:#222;
+
+line-height:1.8;
+
+}
+
+
+
+.container{
+
+max-width:1000px;
+
+margin:auto;
+
+padding:30px 20px 60px;
+
+}
+
+
+
+/* =========================
+顶部
+========================= */
+
+
+.header{
+
+position:relative;
+
+text-align:center;
+
+padding:35px 0 45px;
+
+}
+
+
+
+.logo{
+
+width:60px;
+
+height:60px;
+
+object-fit:contain;
+
+}
+
+
+
+.header h1{
+
+font-size:42px;
+
+margin:18px 0 12px;
+
+font-weight:800;
+
+}
+
+
+
+.header p{
+
+font-size:18px;
+
+color:#666;
+
+margin:0;
+
+}
+
+
+
+/* =========================
+语言切换
+========================= */
+
+
+.language-switch{
+
+position:absolute;
+
+right:0;
+
+top:10px;
+
+display:flex;
+
+background:white;
+
+border:1px solid #eee;
+
+border-radius:30px;
+
+padding:4px;
+
+}
+
+
+
+.language-switch button{
+
+border:none;
+
+background:none;
+
+padding:10px 18px;
+
+border-radius:25px;
+
+cursor:pointer;
+
+font-size:14px;
+
+}
+
+
+
+.language-switch button.active{
+
+background:#111;
+
+color:white;
+
+}
+
+
+
+/* =========================
+卡片
+========================= */
+
+
+.card{
+
+background:white;
+
+border-radius:20px;
+
+padding:30px;
+
+margin-bottom:22px;
+
+border:1px solid #eee;
+
+box-shadow:
+
+0 8px 25px rgba(0,0,0,.05);
+
+}
+
+
+
+.card h2{
+
+margin-top:0;
+
+font-size:26px;
+
+}
+
+
+
+.card h3{
+
+font-size:20px;
+
+margin-top:28px;
+
+}
+
+
+
+.card p{
+
+color:#555;
+
+}
+
+
+
+/* =========================
+Hero
+========================= */
+
+
+.hero{
+
+text-align:center;
+
+padding:45px 30px;
+
+}
+
+
+
+.hero h1{
+
+font-size:36px;
+
+margin:0 0 15px;
+
+}
+
+
+
+.hero p{
+
+font-size:18px;
+
+max-width:700px;
+
+margin:auto;
+
+}
+
+
+
+/* =========================
+按钮
+========================= */
+
+
+.primary-button{
+
+display:inline-block;
+
+margin-top:22px;
+
+padding:14px 28px;
+
+background:#111;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:12px;
+
+font-weight:600;
+
+transition:.2s;
+
+}
+
+
+
+.primary-button:hover{
+
+transform:translateY(-2px);
+
+opacity:.9;
+
+}
+
+
+
+/* =========================
+步骤
+========================= */
+
+
+.steps{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(3,1fr);
+
+gap:18px;
+
+margin-top:20px;
+
+}
+
+
+
+.step{
+
+background:#f8f9fb;
+
+padding:22px;
+
+border-radius:16px;
+
+}
+
+
+
+.step-number{
+
+font-size:13px;
+
+font-weight:bold;
+
+color:#777;
+
+margin-bottom:8px;
+
+}
+
+
+
+/* =========================
+润色方式
+========================= */
+
+
+.mode-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+gap:16px;
+
+margin-top:20px;
+
+}
+
+
+
+.mode{
+
+background:#f8f9fb;
+
+border-radius:16px;
+
+padding:20px;
+
+}
+
+
+
+.mode h3{
+
+margin:0 0 8px;
+
+font-size:18px;
+
+}
+
+
+
+.mode p{
+
+margin:0;
+
+font-size:15px;
+
+}
+
+
+
+/* =========================
+技巧
+========================= */
+
+
+.tip-list{
+
+padding-left:20px;
+
+}
+
+
+
+.tip-list li{
+
+margin:12px 0;
+
+color:#555;
+
+}
+
+
+
+/* =========================
+导航链接
+========================= */
+
+
+.nav-links{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+gap:14px;
+
+margin-top:18px;
+
+}
+
+
+
+.nav-links a{
+
+text-decoration:none;
+
+color:#222;
+
+background:#f8f9fb;
+
+padding:15px;
+
+border-radius:12px;
+
+font-weight:600;
+
+transition:.2s;
+
+}
+
+
+
+.nav-links a:hover{
+
+background:#eee;
+
+transform:translateY(-2px);
+
+}
+
+
+
+/* =========================
+返回首页
+========================= */
+
+
+.back-home{
+
+text-align:center;
+
+margin:35px 0;
+
+}
+
+
+
+.back-home a{
+
+color:#555;
+
+text-decoration:none;
+
+}
+
+
+
+/* =========================
+Footer
+========================= */
+
+
+.footer{
+
+text-align:center;
+
+color:#777;
+
+padding-top:30px;
+
+font-size:14px;
+
+}
+
+
+
+/* =========================
+手机
+========================= */
+
+
+@media(max-width:768px){
+
+.header h1{
+
+font-size:30px;
+
+}
+
+
+.hero h1{
+
+font-size:28px;
+
+}
+
+
+.language-switch{
+
+position:relative;
+
+justify-content:center;
+
+right:auto;
+
+top:auto;
+
+margin-bottom:25px;
+
+}
+
+
+.steps{
+
+grid-template-columns:1fr;
+
+}
+
+
+.mode-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.nav-links{
+
+grid-template-columns:1fr;
+
+}
+
+
+.card{
+
+padding:22px;
+
+}
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+
+<!-- =========================
+顶部
+========================= -->
+
+
+<header class="header">
+
+
+<div class="language-switch">
+
+
+<button
+id="zhBtn"
+class="active"
+onclick="setLanguage('zh')">
+
+中文
+
+</button>
+
+
+<button
+id="enBtn"
+onclick="setLanguage('en')">
+
+English
+
+</button>
+
+
+</div>
+
+
+
+<a href="index.html">
+
+<img
+src="logo.png"
+class="logo"
+alt="AI工具箱"
+>
+
+</a>
+
+
+
+<h1 id="siteTitle">
+
+🤖 AI小工具箱
+
+</h1>
+
+
+<p id="siteDescription">
+
+免费、简单、实用的 AI 效率工具
+
+</p>
+
+
+</header>
+
+
+
+<!-- =========================
+Hero
+========================= -->
+
+
+<section class="card hero">
+
+
+<h1 id="heroTitle">
+
+✨ AI文章润色工具
+
+</h1>
+
+
+<p id="heroDescription">
+
+使用 AI 优化文章表达，让你的文字更加自然、流畅、专业。
+
+</p>
+
+
+<a
+href="index.html#polisherTool"
+class="primary-button"
+id="startButton">
+
+✨ 免费开始润色
+
+</a>
+
+
+</section>
+
+
+
+<!-- =========================
+介绍
+========================= -->
+
+
+<section class="card">
+
+
+<h2 id="introTitle">
+
+📖 什么是 AI文章润色？
+
+</h2>
+
+
+<p id="introText1">
+
+AI文章润色工具可以帮助用户优化已经写好的文章，让文字表达更加自然、流畅和清晰。
+
+</p>
+
+
+<p id="introText2">
+
+你只需要输入或粘贴文章内容，然后选择希望的润色方式，AI 就会根据原文的核心意思重新优化表达。
+
+</p>
+
+
+<p id="introText3">
+
+AI文章润色并不是简单地修改几个词语，而是可以从语言表达、语气、句子结构和整体可读性等方面进行优化。
+
+</p>
+
+
+</section>
+
+
+
+<!-- =========================
+用途
+========================= -->
+
+
+<section class="card">
+
+
+<h2 id="useTitle">
+
+🛠️ AI文章润色工具有什么用？
+
+</h2>
+
+
+<div class="mode-grid">
+
+
+<div class="mode">
+
+<h3 id="use1Title">
+
+✍️ 优化文章表达
+
+</h3>
+
+<p id="use1Text">
+
+让原本生硬或不够流畅的文字更加自然易读。
+
+</p>
+
+</div>
+
+
+
+<div class="mode">
+
+<h3 id="use2Title">
+
+💼 提升专业感
+
+</h3>
+
+<p id="use2Text">
+
+适合优化工作报告、文章、邮件和其他正式内容。
+
+</p>
+
+</div>
+
+
+
+<div class="mode">
+
+<h3 id="use3Title">
+
+📚 改善写作质量
+
+</h3>
+
+<p id="use3Text">
+
+帮助调整句子表达，让文章逻辑更加清晰。
+
+</p>
+
+</div>
+
+
+
+<div class="mode">
+
+<h3 id="use4Title">
+
+⚡ 节省修改时间
+
+</h3>
+
+<p id="use4Text">
+
+不需要逐句反复修改，可以快速获得优化后的版本。
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================
+如何使用
+========================= -->
+
+
+<section class="card">
+
+
+<h2 id="howTitle">
+
+📚 AI文章润色怎么使用？
+
+</h2>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<div class="step-number" id="step1Number">
+
+STEP 1
+
+</div>
+
+
+<h3 id="step1Title">
+
+输入文章
+
+</h3>
+
+
+<p id="step1Text">
+
+粘贴或输入你想要优化的文章内容。
+
+</p>
+
+
+</div>
+
+
+
+<div class="step">
+
+<div class="step-number" id="step2Number">
+
+STEP 2
+
+</div>
+
+
+<h3 id="step2Title">
+
+选择润色方式
+
+</h3>
+
+
+<p id="step2Text">
+
+根据你的需求选择自然、专业、正式等不同风格。
+
+</p>
+
+
+</div>
+
+
+
+<div class="step">
+
+<div class="step-number" id="step3Number">
+
+STEP 3
+
+</div>
+
+
+<h3 id="step3Title">
+
+获取润色结果
+
+</h3>
+
+
+<p id="step3Text">
+
+点击开始润色，AI 会生成优化后的文章。
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================
+润色方式
+========================= -->
+
+
+<section class="card">
+
+
+<h2 id="modeTitle">
+
+✨ 不同的文章润色方式
+
+</h2>
+
+
+<div class="mode-grid">
+
+
+<div class="mode">
+
+<h3 id="naturalTitle">
+
+✨ 更自然
+
+</h3>
+
+<p id="naturalText">
+
+让文章减少机械感，使表达更加自然、流畅。
+
+</p>
+
+</div>
+
+
+
+<div class="mode">
+
+<h3 id="professionalTitle">
+
+📚 更专业
+
+</h3>
+
+<p id="professionalText">
+
+让文章的表达更加准确、专业，适合工作和正式内容。
+
+</p>
+
+</div>
+
+
+
+<div class="mode">
+
+<h3 id="formalTitle">
+
+🎓 更正式
+
+</h3>
+
+<p id="formalText">
+
+让文章语气更加规范、正式，适合报告和正式场景。
+
+</p>
+
+</div>
+
+
+
+<div class="mode">
+
+<h3 id="conversationalTitle">
+
+😊 更口语化
+
+</h3>
+
+<p id="conversationalText">
+
+让文字更加轻松自然，更像真实的人在交流。
+
+</p>
+
+</div>
+
+
+
+<div class="mode">
+
+<h3 id="conciseTitle">
+
+✂️ 简洁精炼
+
+</h3>
+
+<p id="conciseText">
+
+减少重复和冗余表达，在保持核心意思的同时让文章更简洁。
+
+</p>
+
+</div>
+
+
+
+<div class="mode">
+
+<h3 id="engagingTitle">
+
+🔥 更有吸引力
+
+</h3>
+
+<p id="engagingText">
+
+优化表达方式，让内容更容易吸引读者继续阅读。
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================
+技巧
+========================= -->
+
+
+<section class="card">
+
+
+<h2 id="tipsTitle">
+
+💡 AI文章润色使用技巧
+
+</h2>
+
+
+<ul class="tip-list">
+
+
+<li id="tip1">
+
+先完成文章初稿，再使用 AI 进行润色，通常效果更好。
+
+</li>
+
+
+<li id="tip2">
+
+如果文章用于正式场景，可以选择“更专业”或“更正式”。
+
+</li>
+
+
+<li id="tip3">
+
+如果是日常文章、社交媒体内容，可以选择“更自然”或“更口语化”。
+
+</li>
+
+
+<li id="tip4">
+
+如果文章内容比较长，可以分段进行润色。
+
+</li>
+
+
+<li id="tip5">
+
+润色完成后，建议再次阅读，确保最终表达符合你的真实想法。
+
+</li>
+
+
+</ul>
+
+
+</section>
+
+
+
+<!-- =========================
+开始使用
+========================= -->
+
+
+<section class="card hero">
+
+
+<h2 id="ctaTitle">
+
+🚀 现在开始使用 AI文章润色工具
+
+</h2>
+
+
+<p id="ctaText">
+
+无需注册，直接输入文章内容即可开始使用。
+
+</p>
+
+
+<a
+href="index.html#polisherTool"
+class="primary-button"
+id="ctaButton">
+
+✨ 前往 AI文章润色工具
+
+</a>
+
+
+</section>
+
+
+
+<!-- =========================
+相关工具
+========================= -->
+
+
+<section class="card">
+
+
+<h2 id="relatedToolsTitle">
+
+🛠️ 相关 AI工具
+
+</h2>
+
+
+<div class="nav-links">
+
+
+<a
+href="ai-prompt-generator.html"
+id="relatedPrompt">
+
+🔥 AI提示词生成器介绍
+
+</a>
+
+
+<a
+href="ai-resume-helper.html"
+id="relatedResume">
+
+📝 AI简历助手介绍
+
+</a>
+
+
+<a
+href="xiaohongshu-title-generator.html"
+id="relatedXhs">
+
+📱 小红书标题生成器介绍
+
+</a>
+
+
+<a
+href="ai-tools.html"
+id="relatedTools">
+
+🚀 免费AI工具大全
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================
+AI工具介绍
+========================= -->
+
+
+<section class="card">
+
+
+<h2 id="toolNavTitle">
+
+🛠️ AI工具介绍
+
+</h2>
+
+
+<div class="nav-links">
+
+
+<a
+href="ai-tools.html"
+id="seoNav1">
+
+🚀 免费AI工具大全
+
+</a>
+
+
+<a
+href="ai-prompt-generator.html"
+id="seoNav2">
+
+🔥 AI提示词生成器
+
+</a>
+
+
+<a
+href="ai-resume-helper.html"
+id="seoNav3">
+
+📝 AI简历助手
+
+</a>
+
+
+<a
+href="xiaohongshu-title-generator.html"
+id="seoNav4">
+
+📱 小红书标题生成器
+
+</a>
+
+
+<a
+href="about-ai-tools.html"
+id="seoNav5">
+
+🌍 关于AI工具箱
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================
+AI教程指南
+========================= -->
+
+
+<section class="card">
+
+
+<h2 id="guideNavTitle">
+
+📚 AI教程指南
+
+</h2>
+
+
+<div class="nav-links">
+
+
+<a
+href="ai-prompt-guide.html"
+id="guide1">
+
+🔥 AI Prompt入门指南
+
+</a>
+
+
+<a
+href="ai-resume-guide.html"
+id="guide2">
+
+📝 AI简历优化指南
+
+</a>
+
+
+<a
+href="ai-xiaohongshu-guide.html"
+id="guide3">
+
+📱 小红书标题技巧指南
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================
+返回首页
+========================= -->
+
+
+<div class="back-home">
+
+
+<a
+href="index.html"
+id="backHome">
+
+← 返回 AI工具箱首页
+
+</a>
+
+
+</div>
+
+
+
+<!-- =========================
+Footer
+========================= -->
+
+
+<footer class="footer">
+
+
+<div id="footerText">
+
+© 2026 AI小工具箱 · Free AI Tools
+
+</div>
+
+
+</footer>
+
+
+
+</div>
+
+
+
+<script>
+
+
+let currentLanguage = "zh";
+
+
+const languageText = {
+
+
+zh:{
+
+
+pageTitle:
+"AI文章润色工具 - 免费在线AI写作润色 | AI工具箱",
+
+
+metaDescription:
+"免费在线AI文章润色工具，帮助优化文章表达，让文字更加自然、专业、正式、简洁或有吸引力。无需注册即可使用。",
+
+
+siteTitle:
+"🤖 AI小工具箱",
+
+
+siteDescription:
+"免费、简单、实用的 AI 效率工具",
+
+
+heroTitle:
+"✨ AI文章润色工具",
+
+
+heroDescription:
+"使用 AI 优化文章表达，让你的文字更加自然、流畅、专业。",
+
+
+startButton:
+"✨ 免费开始润色",
+
+
+introTitle:
+"📖 什么是 AI文章润色？",
+
+
+introText1:
+"AI文章润色工具可以帮助用户优化已经写好的文章，让文字表达更加自然、流畅和清晰。",
+
+
+introText2:
+"你只需要输入或粘贴文章内容，然后选择希望的润色方式，AI 就会根据原文的核心意思重新优化表达。",
+
+
+introText3:
+"AI文章润色并不是简单地修改几个词语，而是可以从语言表达、语气、句子结构和整体可读性等方面进行优化。",
+
+
+useTitle:
+"🛠️ AI文章润色工具有什么用？",
+
+
+use1Title:
+"✍️ 优化文章表达",
+
+
+use1Text:
+"让原本生硬或不够流畅的文字更加自然易读。",
+
+
+use2Title:
+"💼 提升专业感",
+
+
+use2Text:
+"适合优化工作报告、文章、邮件和其他正式内容。",
+
+
+use3Title:
+"📚 改善写作质量",
+
+
+use3Text:
+"帮助调整句子表达，让文章逻辑更加清晰。",
+
+
+use4Title:
+"⚡ 节省修改时间",
+
+
+use4Text:
+"不需要逐句反复修改，可以快速获得优化后的版本。",
+
+
+howTitle:
+"📚 AI文章润色怎么使用？",
+
+
+step1Title:
+"输入文章",
+
+
+step1Text:
+"粘贴或输入你想要优化的文章内容。",
+
+
+step2Title:
+"选择润色方式",
+
+
+step2Text:
+"根据你的需求选择自然、专业、正式等不同风格。",
+
+
+step3Title:
+"获取润色结果",
+
+
+step3Text:
+"点击开始润色，AI 会生成优化后的文章。",
+
+
+modeTitle:
+"✨ 不同的文章润色方式",
+
+
+naturalTitle:
+"✨ 更自然",
+
+
+naturalText:
+"让文章减少机械感，使表达更加自然、流畅。",
+
+
+professionalTitle:
+"📚 更专业",
+
+
+professionalText:
+"让文章的表达更加准确、专业，适合工作和正式内容。",
+
+
+formalTitle:
+"🎓 更正式",
+
+
+formalText:
+"让文章语气更加规范、正式，适合报告和正式场景。",
+
+
+conversationalTitle:
+"😊 更口语化",
+
+
+conversationalText:
+"让文字更加轻松自然，更像真实的人在交流。",
+
+
+conciseTitle:
+"✂️ 简洁精炼",
+
+
+conciseText:
+"减少重复和冗余表达，在保持核心意思的同时让文章更简洁。",
+
+
+engagingTitle:
+"🔥 更有吸引力",
+
+
+engagingText:
+"优化表达方式，让内容更容易吸引读者继续阅读。",
+
+
+tipsTitle:
+"💡 AI文章润色使用技巧",
+
+
+tip1:
+"先完成文章初稿，再使用 AI 进行润色，通常效果更好。",
+
+
+tip2:
+"如果文章用于正式场景，可以选择“更专业”或“更正式”。",
+
+
+tip3:
+"如果是日常文章、社交媒体内容，可以选择“更自然”或“更口语化”。",
+
+
+tip4:
+"如果文章内容比较长，可以分段进行润色。",
+
+
+tip5:
+"润色完成后，建议再次阅读，确保最终表达符合你的真实想法。",
+
+
+ctaTitle:
+"🚀 现在开始使用 AI文章润色工具",
+
+
+ctaText:
+"无需注册，直接输入文章内容即可开始使用。",
+
+
+ctaButton:
+"✨ 前往 AI文章润色工具",
+
+
+relatedToolsTitle:
+"🛠️ 相关 AI工具",
+
+
+relatedPrompt:
+"🔥 AI提示词生成器介绍",
+
+
+relatedResume:
+"📝 AI简历助手介绍",
+
+
+relatedXhs:
+"📱 小红书标题生成器介绍",
+
+
+relatedTools:
+"🚀 免费AI工具大全",
+
+
+toolNavTitle:
+"🛠️ AI工具介绍",
+
+
+seoNav1:
+"🚀 免费AI工具大全",
+
+
+seoNav2:
+"🔥 AI提示词生成器",
+
+
+seoNav3:
+"📝 AI简历助手",
+
+
+seoNav4:
+"📱 小红书标题生成器",
+
+
+seoNav5:
+"🌍 关于AI工具箱",
+
+
+guideNavTitle:
+"📚 AI教程指南",
+
+
+guide1:
+"🔥 AI Prompt入门指南",
+
+
+guide2:
+"📝 AI简历优化指南",
+
+
+guide3:
+"📱 小红书标题技巧指南",
+
+
+backHome:
+"← 返回 AI工具箱首页",
+
+
+footerText:
+"© 2026 AI小工具箱 · Free AI Tools"
+
+
+},
+
+
+
+en:{
+
+
+pageTitle:
+"AI Writing Polisher - Free Online AI Writing Tool | AI Toolbox",
+
+
+metaDescription:
+"Free online AI writing polisher that helps improve writing and make text more natural, professional, formal, concise or engaging. No registration required.",
+
+
+siteTitle:
+"🤖 AI Toolbox",
+
+
+siteDescription:
+"Free, simple and useful AI productivity tools",
+
+
+heroTitle:
+"✨ AI Writing Polisher",
+
+
+heroDescription:
+"Use AI to improve your writing and make your text more natural, fluent and professional.",
+
+
+startButton:
+"✨ Start Polishing for Free",
+
+
+introTitle:
+"📖 What Is an AI Writing Polisher?",
+
+
+introText1:
+"An AI writing polisher helps improve existing writing and makes text more natural, fluent and clear.",
+
+
+introText2:
+"You simply paste your writing, choose a polishing style, and AI will improve the expression while preserving the core meaning.",
+
+
+introText3:
+"AI writing polishing can improve language, tone, sentence structure and overall readability instead of simply replacing a few words.",
+
+
+useTitle:
+"🛠️ What Can an AI Writing Polisher Do?",
+
+
+use1Title:
+"✍️ Improve Expression",
+
+
+use1Text:
+"Make writing that feels awkward or unnatural easier and smoother to read.",
+
+
+use2Title:
+"💼 Sound More Professional",
+
+
+use2Text:
+"Useful for improving work reports, articles, emails and other professional content.",
+
+
+use3Title:
+"📚 Improve Writing Quality",
+
+
+use3Text:
+"Help improve sentence expression and make ideas clearer.",
+
+
+use4Title:
+"⚡ Save Editing Time",
+
+
+use4Text:
+"Get an improved version quickly without repeatedly editing every sentence.",
+
+
+howTitle:
+"📚 How to Use the AI Writing Polisher",
+
+
+step1Title:
+"Enter Your Writing",
+
+
+step1Text:
+"Paste or type the text you want to improve.",
+
+
+step2Title:
+"Choose a Style",
+
+
+step2Text:
+"Choose natural, professional, formal or another style based on your needs.",
+
+
+step3Title:
+"Get the Result",
+
+
+step3Text:
+"Click the polish button and AI will generate an improved version.",
+
+
+modeTitle:
+"✨ Different Writing Styles",
+
+
+naturalTitle:
+"✨ More Natural",
+
+
+naturalText:
+"Reduce mechanical language and make the writing sound smoother and more natural.",
+
+
+professionalTitle:
+"📚 More Professional",
+
+
+professionalText:
+"Make the writing more accurate and professional for work and formal content.",
+
+
+formalTitle:
+"🎓 More Formal",
+
+
+formalText:
+"Make the tone more formal and polished for reports and official situations.",
+
+
+conversationalTitle:
+"😊 More Conversational",
+
+
+conversationalText:
+"Make the writing feel more relaxed, natural and human.",
+
+
+conciseTitle:
+"✂️ More Concise",
+
+
+conciseText:
+"Reduce unnecessary repetition while preserving the core meaning.",
+
+
+engagingTitle:
+"🔥 More Engaging",
+
+
+engagingText:
+"Improve the expression to make the content more interesting and appealing to readers.",
+
+
+tipsTitle:
+"💡 Tips for Using an AI Writing Polisher",
+
+
+tip1:
+"Finish your first draft before polishing it with AI for better results.",
+
+
+tip2:
+"For professional situations, choose the Professional or Formal style.",
+
+
+tip3:
+"For everyday writing and social media, choose Natural or Conversational.",
+
+
+tip4:
+"For long articles, you can polish the content section by section.",
+
+
+tip5:
+"Read the final result again to make sure it still reflects what you really want to say.",
+
+
+ctaTitle:
+"🚀 Start Using the AI Writing Polisher",
+
+
+ctaText:
+"No registration required. Simply enter your writing and start polishing.",
+
+
+ctaButton:
+"✨ Open AI Writing Polisher",
+
+
+relatedToolsTitle:
+"🛠️ Related AI Tools",
+
+
+relatedPrompt:
+"🔥 AI Prompt Generator",
+
+
+relatedResume:
+"📝 AI Resume Assistant",
+
+
+relatedXhs:
+"📱 Social Media Title Generator",
+
+
+relatedTools:
+"🚀 Free AI Tools",
+
+
+toolNavTitle:
+"🛠️ AI Tool Guides",
+
+
+seoNav1:
+"🚀 Free AI Tools",
+
+
+seoNav2:
+"🔥 AI Prompt Generator",
+
+
+seoNav3:
+"📝 AI Resume Assistant",
+
+
+seoNav4:
+"📱 Social Media Title Generator",
+
+
+seoNav5:
+"🌍 About AI Toolbox",
+
+
+guideNavTitle:
+"📚 AI Tutorials",
+
+
+guide1:
+"🔥 AI Prompt Beginner Guide",
+
+
+guide2:
+"📝 AI Resume Optimization Guide",
+
+
+guide3:
+"📱 Social Media Title Guide",
+
+
+backHome:
+"← Back to AI Toolbox",
+
+
+footerText:
+"© 2026 AI Toolbox · Free AI Tools"
+
+
+}
+
+
+};
+
+
+
+
+function setLanguage(lang){
+
+
+currentLanguage = lang;
+
+
+const t = languageText[lang];
+
+
+
+Object.keys(t).forEach(function(key){
+
+
+const el = document.getElementById(key);
+
+
+if(!el){
+
+return;
+
+}
+
+
+
+if(key === "pageTitle"){
+
+document.title = t[key];
+
+}
+
+
+else if(key === "metaDescription"){
+
+el.setAttribute("content",t[key]);
+
+}
+
+
+else{
+
+el.innerText = t[key];
+
+}
+
+
+});
+
+
+
+document.documentElement.lang =
+
+lang === "zh"
+
+?
+
+"zh-CN"
+
+:
+
+"en";
+
+
+
+document.getElementById("zhBtn")
+
+.classList.toggle(
+
+"active",
+
+lang === "zh"
+
+);
+
+
+
+document.getElementById("enBtn")
+
+.classList.toggle(
+
+"active",
+
+lang === "en"
+
+);
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
