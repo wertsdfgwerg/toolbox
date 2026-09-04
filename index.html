@@ -667,26 +667,6 @@ Xiaohongshu Title
 
 
 
-<a class="tool" href="#articleTool">
-
-<div class="tool-icon">
-📄
-</div>
-
-<div class="tool-title" id="navArticle">
-
-AI文章标题
-
-</div>
-
-<div class="tool-subtitle">
-Article Title
-</div>
-
-</a>
-
-
-
 
 <a class="tool" href="#mailTool">
 
@@ -1483,58 +1463,6 @@ AI效率工具
 </h2>
 
 
-
-
-
-<div id="articleTool">
-<h3>
-
-📝 <span id="articleTitle">
-
-AI文章标题生成器
-
-</span>
-
-</h3>
-
-
-
-<p id="articleDesc">
-
-输入主题，生成吸引人的文章标题。
-
-</p>
-
-
-
-<input
-id="articleTopic"
-placeholder="输入文章主题">
-
-
-
-<button
-class="primary"
-onclick="generateArticleTitle()">
-
-<span id="articleGenerate">
-
-生成
-
-</span>
-
-</button>
-
-
-
-<div
-class="result"
-id="articleResult">
-
-</div>
-
-
-</div>
 
 
 
@@ -2389,11 +2317,6 @@ polisherBtn:
 polisherCopyBtn:
 "📋 一键复制",
 
-
-  
-navArticle:
-"AI文章标题",
-  
 navXhs:
 "小红书标题生成",
   
@@ -2411,9 +2334,6 @@ mailDesc:
   
 momentsDesc:
 "生成适合朋友圈发布的文案。",
-  
-articleDesc:
-"输入主题，生成吸引人的文章标题。",
   
 siteTitle:
 "🤖 AI小工具箱",
@@ -2545,15 +2465,11 @@ seoNav5:
   
 newToolsTitle:"AI效率工具",
 
-articleTitle:"AI文章标题生成器",
-
 momentsTitle:"AI朋友圈文案生成器",
 
 mailTitle:"AI邮件助手",
 
 generate:"生成",
-
-articleGenerate:"生成",
 
 momentsGenerate:"生成",
 
@@ -2768,12 +2684,6 @@ polisherBtn:
 
 polisherCopyBtn:
 "📋 Copy",
-
-
-
-  
-navArticle:
-"AI Article Title",
   
 navXhs:
 "Social Media Title Generator",
@@ -2916,8 +2826,6 @@ seoNav5:
   
 newToolsTitle:
 "AI Productivity Tools",
-  
-articleTitle:"AI Article Title Generator",
 
 momentsTitle:"AI Social Media Copy Generator",
 
@@ -2925,18 +2833,8 @@ mailTitle:"AI Email Assistant",
 
 generate:"Generate",
 
-articleDesc:
-"Enter a topic and generate attractive article titles.",
-
-momentsDesc:
-"Generate social media posts.",
-
 mailDesc:
 "Quickly generate email content.",
-
-
-articleGenerate:
-"Generate",
 
 momentsGenerate:
 "Generate",
@@ -3197,14 +3095,6 @@ zh
 :
 "Example: Travel guide, healthy breakfast",
 
-
-
-articleTopic:
-zh
-?
-"输入文章主题"
-:
-"Enter article topic",
 
 
 
@@ -4178,105 +4068,6 @@ Requirements:
 
 
 }
-
-
-
-
-// ===============================
-// AI文章标题生成器
-// ===============================
-
-
-async function generateArticleTitle(){
-
-
-    let input =
-    document.getElementById("articleTopic")
-    .value.trim();
-
-
-
-    let box =
-    document.getElementById("articleResult");
-
-
-
-    if(!input){
-
-        box.innerText =
-        currentLanguage==="zh"
-        ?
-        "请输入主题"
-        :
-        "Please enter topic";
-
-        return;
-
-    }
-
-
-
-    box.innerText=getGeneratingText();
-
-
-
-    try{
-
-
-        let prompt =
-        currentLanguage==="zh"
-
-        ?
-
-        `你是一名专业内容创作者。
-
-根据主题生成10个文章标题。
-
-要求：
-1. 中文输出
-2. 每行一个标题
-3. 不要编号
-4. 不要解释`
-
-        :
-
-        `You are a professional content creator.
-
-Generate 10 article titles.
-
-Requirements:
-1. English only.
-2. One title per line.
-3. No numbering.
-4. No explanation.`;
-
-
-
-        let result =
-        await callAI(prompt,input);
-
-
-
-        showResultList(
-
-            "articleResult",
-
-            cleanAIResult(result)
-
-        );
-
-
-
-    }catch(e){
-
-        box.innerText=getErrorText();
-
-    }
-
-
-}
-
-
 
 
 
