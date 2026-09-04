@@ -4472,7 +4472,290 @@ Requirements:
 
 
 
+// ===============================
+// AI回复助手
+// ===============================
 
+async function generateReply(){
+
+    const input = document
+        .getElementById("replyInput")
+        .value
+        .trim();
+
+
+    const style = document
+        .getElementById("replyStyle")
+        .value;
+
+
+    const length = document
+        .getElementById("replyLength")
+        .value;
+
+
+    const status = document
+        .getElementById("replyStatus");
+
+
+    const resultBox = document
+        .getElementById("replyResult");
+
+
+    const output = document
+        .getElementById("replyOutput");
+
+
+    if(!input){
+
+        status.innerText =
+            currentLanguage === "zh"
+            ? "❌ 请输入收到的消息"
+            : "❌ Please enter the message you received.";
+
+        resultBox.style.display = "none";
+
+        return;
+
+    }
+
+
+    status.innerText = getGeneratingText();
+
+    resultBox.style.display = "none";
+
+
+    const styleTextZh = {
+
+        natural:
+        "自然聊天，像真实的人正常回复",
+
+        friendly:
+        "友好、亲切，让对方感觉舒服",
+
+        formal:
+        "正式、专业、得体",
+
+        casual:
+        "轻松、随意、不太正式",
+
+        polite:
+        "礼貌、尊重对方、表达得体"
+
+    };
+
+
+    const styleTextEn = {
+
+        natural:
+        "Natural and human-like",
+
+        friendly:
+        "Friendly and warm",
+
+        formal:
+        "Formal and professional",
+
+        casual:
+        "Casual and relaxed",
+
+        polite:
+        "Polite and respectful"
+
+    };
+
+
+    const lengthTextZh = {
+
+        short:
+        "生成简短的回复，尽量简洁",
+
+        normal:
+        "生成长度自然、正常的回复",
+
+        long:
+        "生成较详细、完整的回复"
+
+    };
+
+
+    const lengthTextEn = {
+
+        short:
+        "Generate a short and concise reply",
+
+        normal:
+        "Generate a natural, normal-length reply",
+
+        long:
+        "Generate a detailed and complete reply"
+
+    };
+
+
+    try{
+
+        let systemPrompt;
+
+
+        if(currentLanguage === "zh"){
+
+            systemPrompt = `
+
+你是一名擅长日常沟通的回复助手。
+
+用户会提供一条自己收到的消息。
+
+你的任务是帮助用户生成一条可以直接发送的自然回复。
+
+回复风格：
+
+${styleTextZh[style]}
+
+回复长度：
+
+${lengthTextZh[length]}
+
+重要要求：
+
+1. 必须使用中文输出
+2. 回复必须自然，像真实的人说的话
+3. 不要显得像AI
+4. 不要解释回复内容
+5. 不要添加“建议回复”
+6. 不要添加标题
+7. 不要使用编号
+8. 只输出最终可以直接发送的回复
+
+`;
+
+        }else{
+
+            systemPrompt = `
+
+You are a helpful communication assistant.
+
+The user will provide a message they received.
+
+Your task is to generate a natural reply that the user can send directly.
+
+Reply style:
+
+${styleTextEn[style]}
+
+Reply length:
+
+${lengthTextEn[length]}
+
+Important requirements:
+
+1. Output in English only
+2. Make the reply sound natural and human
+3. Do not sound robotic or AI-generated
+4. Do not explain the reply
+5. Do not add phrases like "Suggested reply"
+6. Do not add a title
+7. Do not use numbering
+8. Output only the final reply that can be sent directly
+
+`;
+
+        }
+
+
+        const result = await callAI(
+            systemPrompt,
+            input
+        );
+
+
+        output.value = result.trim();
+
+
+        resultBox.style.display = "block";
+
+
+        status.innerText =
+            currentLanguage === "zh"
+            ? "✨ 回复生成完成"
+            : "✨ Reply generated";
+
+
+    }catch(error){
+
+        console.error(error);
+
+        status.innerText = getErrorText();
+
+        resultBox.style.display = "none";
+
+    }
+
+}
+
+
+
+// ===============================
+// 复制AI回复
+// ===============================
+
+async function copyReplyText(){
+
+    const output = document
+        .getElementById("replyOutput");
+
+
+    if(!output.value.trim()){
+
+        return;
+
+    }
+
+
+    try{
+
+        await navigator.clipboard.writeText(
+            output.value
+        );
+
+
+        const button = document
+            .getElementById("replyCopyBtn");
+
+
+        const oldText = button.innerText;
+
+
+        button.innerText =
+            currentLanguage === "zh"
+            ? "✅ 已复制"
+            : "✅ Copied";
+
+
+        setTimeout(()=>{
+
+            button.innerText = oldText;
+
+        },2000);
+
+
+    }catch(error){
+
+        output.select();
+
+        document.execCommand("copy");
+
+    }
+
+}
+
+
+
+
+
+
+
+  
 
 // ===============================
 // JS-4 其他功能 + 初始化
