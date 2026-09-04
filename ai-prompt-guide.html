@@ -8,17 +8,69 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<title>
-AI Prompt是什么？新手入门指南与提示词模板
+<!-- 网站图标 -->
+
+<link rel="icon" type="image/png" href="/toolbox/logo.png">
+
+<link rel="shortcut icon" type="image/png" href="/toolbox/logo.png">
+
+<link rel="apple-touch-icon" href="/toolbox/logo.png">
+
+
+<!-- SEO -->
+
+<title id="pageTitle">
+AI Prompt 使用教程 - 如何写好提示词 | AI工具箱
 </title>
 
 
-<meta name="description"
-content="了解AI Prompt是什么，学习如何编写高质量提示词，并获取学习、写作、办公等场景的AI提示词模板。">
+<meta
+id="metaDescription"
+name="description"
+content="免费 AI Prompt 使用教程，学习什么是提示词、如何写出更好的 ChatGPT Prompt，并查看写作、学习、编程和工作场景的 AI 提示词示例。"
+>
 
 
-<link rel="icon" href="logo.png">
+<meta name="robots" content="index,follow">
 
+
+<link
+rel="canonical"
+href="https://wertsdfgwerg.github.io/toolbox/ai-prompt-guide.html"
+>
+
+
+<meta
+property="og:title"
+content="AI Prompt 使用教程 - 如何写好提示词"
+>
+
+
+<meta
+property="og:description"
+content="学习什么是 AI Prompt，以及如何写出更清晰、更有效的提示词。"
+>
+
+
+<meta property="og:type" content="website">
+
+
+<meta
+property="og:url"
+content="https://wertsdfgwerg.github.io/toolbox/ai-prompt-guide.html"
+>
+
+
+<meta name="twitter:card" content="summary">
+
+
+<!-- Cloudflare Web Analytics -->
+
+<script
+type="module"
+src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"4eb5597f43294acfbf1573e4628dcf28"}'>
+</script>
 
 
 <style>
@@ -26,6 +78,11 @@ content="了解AI Prompt是什么，学习如何编写高质量提示词，并�
 
 *{
 box-sizing:border-box;
+}
+
+
+html{
+scroll-behavior:smooth;
 }
 
 
@@ -45,13 +102,14 @@ background:#f7f9fc;
 
 color:#222;
 
-}
+line-height:1.8;
 
+}
 
 
 .container{
 
-max-width:900px;
+max-width:1000px;
 
 margin:auto;
 
@@ -60,543 +118,993 @@ padding:30px 20px 60px;
 }
 
 
+.header{
+
+position:relative;
+
+text-align:center;
+
+padding:40px 0 30px;
+
+}
+
+
+.logo{
+
+width:60px;
+
+height:60px;
+
+object-fit:contain;
+
+}
+
+
+.header h1{
+
+font-size:42px;
+
+margin:20px 0 15px;
+
+font-weight:800;
+
+}
+
+
+.header p{
+
+font-size:18px;
+
+color:#666;
+
+max-width:750px;
+
+margin:0 auto;
+
+}
+
 
 .language-switch{
 
-text-align:right;
+position:absolute;
+
+right:0;
+
+top:10px;
+
+display:flex;
+
+background:white;
+
+border:1px solid #eee;
+
+border-radius:30px;
+
+padding:4px;
+
+}
+
+
+.language-switch button{
+
+border:none;
+
+background:none;
+
+padding:9px 18px;
+
+border-radius:25px;
+
+cursor:pointer;
+
+font-size:14px;
+
+}
+
+
+.language-switch button.active{
+
+background:#111;
+
+color:white;
+
+}
+
+
+.card{
+
+background:white;
+
+border-radius:20px;
+
+padding:30px;
+
+margin-bottom:20px;
+
+border:1px solid #eee;
+
+box-shadow:0 8px 25px rgba(0,0,0,.05);
+
+}
+
+
+.card h2{
+
+margin-top:0;
+
+font-size:26px;
+
+}
+
+
+.card h3{
+
+font-size:20px;
+
+margin-top:25px;
+
+}
+
+
+.button-row{
+
+display:flex;
+
+gap:15px;
+
+margin-top:25px;
+
+flex-wrap:wrap;
+
+}
+
+
+.button{
+
+display:inline-block;
+
+text-decoration:none;
+
+padding:14px 22px;
+
+border-radius:12px;
+
+font-weight:600;
+
+text-align:center;
+
+transition:.2s;
+
+}
+
+
+.primary{
+
+background:#111;
+
+color:white;
+
+}
+
+
+.primary:hover{
+
+transform:translateY(-2px);
+
+}
+
+
+.secondary{
+
+background:#f1f1f1;
+
+color:#222;
+
+}
+
+
+.secondary:hover{
+
+background:#e8e8e8;
+
+}
+
+
+.steps{
+
+padding-left:24px;
+
+}
+
+
+.steps li{
+
+margin-bottom:14px;
+
+}
+
+
+.example{
+
+background:#f8f9fb;
+
+border:1px solid #eee;
+
+border-radius:14px;
+
+padding:18px;
+
+margin-top:15px;
+
+white-space:pre-line;
+
+}
+
+
+.example-title{
+
+font-weight:700;
+
+margin-bottom:8px;
+
+}
+
+
+.tip-box{
+
+background:#f8f9fb;
+
+border-radius:14px;
+
+padding:18px;
+
+margin-top:15px;
+
+border-left:4px solid #222;
+
+}
+
+
+.tool-links{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:12px;
+
+margin-top:20px;
+
+}
+
+
+.tool-link{
+
+display:block;
+
+text-decoration:none;
+
+color:#222;
+
+background:#f8f9fb;
+
+border:1px solid #eee;
+
+padding:15px;
+
+border-radius:12px;
+
+font-weight:600;
+
+transition:.2s;
+
+}
+
+
+.tool-link:hover{
+
+transform:translateY(-2px);
+
+background:#f2f4f7;
+
+}
+
+
+.footer{
+
+text-align:center;
+
+color:#777;
+
+padding:30px 0 10px;
+
+font-size:14px;
+
+}
+
+
+@media(max-width:768px){
+
+
+.header h1{
+
+font-size:31px;
+
+}
+
+
+.language-switch{
+
+position:relative;
+
+right:auto;
+
+top:auto;
+
+justify-content:center;
 
 margin-bottom:20px;
 
 }
 
 
-
-.language-switch button{
-
-padding:8px 18px;
-
-border-radius:20px;
-
-border:1px solid #ddd;
-
-background:white;
-
-cursor:pointer;
-
-margin-left:8px;
-
-}
-
-
-
-.box{
-
-background:white;
-
-padding:35px;
-
-border-radius:20px;
-
-box-shadow:
-0 10px 30px rgba(0,0,0,.05);
-
-}
-
-
-
-h1{
-
-font-size:38px;
-
-color:#2563eb;
-
-}
-
-
-
-h2{
-
-margin-top:35px;
-
-}
-
-
-
 .card{
 
-background:#f8fafc;
-
-padding:20px;
-
-border-radius:15px;
-
-margin:20px 0;
+padding:22px;
 
 }
 
 
+.tool-links{
 
-.code{
-
-background:#111;
-
-color:white;
-
-padding:20px;
-
-border-radius:12px;
-
-white-space:pre-line;
-
-line-height:1.7;
+grid-template-columns:1fr;
 
 }
 
 
+.button-row{
 
-a{
-
-color:#2563eb;
-
-text-decoration:none;
-
-font-weight:600;
+flex-direction:column;
 
 }
 
 
+.button{
 
-.back{
-
-margin-top:30px;
-
-}
-
-
-
-@media(max-width:700px){
-
-h1{
-
-font-size:30px;
+width:100%;
 
 }
 
-
-.box{
-
-padding:20px;
-
-}
 
 }
 
 
 </style>
 
-
 </head>
-
 
 
 <body>
 
 
-
 <div class="container">
 
+
+<!-- 顶部 -->
+
+
+<header class="header">
 
 
 <div class="language-switch">
 
 
-<button onclick="setLanguage('zh')">
+<button
+id="zhBtn"
+class="active"
+onclick="setLanguage('zh')">
+
 中文
+
 </button>
 
 
-<button onclick="setLanguage('en')">
+<button
+id="enBtn"
+onclick="setLanguage('en')">
+
 English
+
 </button>
 
 
 </div>
 
 
+<img
+src="logo.png"
+class="logo"
+alt="AI Toolbox"
+>
 
 
+<h1 id="heroTitle">
 
-<div class="box">
-
-
-
-<h1 id="title">
-
-AI Prompt是什么？新手入门指南
+📚 AI Prompt 使用教程
 
 </h1>
 
 
+<p id="heroDesc">
 
-
-<p id="intro">
-
-学习AI提示词基础知识，掌握编写高质量Prompt的方法，让AI工具发挥更大作用。
+从零开始学习什么是 AI 提示词，以及如何写出更清晰、更有效的 Prompt。
 
 </p>
 
 
+<div class="button-row">
+
+
+<a
+href="index.html#promptTool"
+class="button primary"
+id="useToolBtn">
+
+🔥 使用 AI 提示词生成器
+
+</a>
+
+
+<a
+href="ai-prompt-generator.html"
+class="button secondary"
+id="introBtn">
+
+📖 查看工具介绍
+
+</a>
+
+
+</div>
+
+
+</header>
 
 
 
-<div class="card">
+<!-- 什么是 Prompt -->
+
+
+<section class="card">
 
 
 <h2 id="whatTitle">
 
-什么是AI Prompt？
+🤖 什么是 AI Prompt？
 
 </h2>
 
 
+<p id="whatText1">
 
-<p id="whatText">
-
-AI Prompt（提示词）是用户输入给人工智能模型的指令，用于告诉AI需要完成什么任务。
+AI Prompt，也叫 AI 提示词，是用户向 ChatGPT 或其他人工智能工具输入的指令、问题或要求。
 
 </p>
 
 
+<p id="whatText2">
 
-</div>
+AI 会根据 Prompt 中提供的信息理解你的目标，然后生成相应的回答、文章、代码、计划或其他内容。
 
-
-
-
-
-
-
-<div class="card">
-
-
-<h2 id="exampleTitle">
-
-普通Prompt和优秀Prompt的区别
-
-</h2>
-
-
-
-<p id="normalPrompt">
-普通：
-</p>
-
-<div class="code" id="simpleCode">
-
-帮我写一篇文章
-
-</div>
-
-
-<p id="betterPrompt">
-优化：
 </p>
 
 
-<div class="code"  id="betterCode">
+<div class="tip-box" id="whatTip">
 
-你是一名专业内容编辑。
-
-请帮我写一篇关于AI学习的文章。
-
-目标读者：
-大学生
-
-要求：
-语言简单
-结构清晰
-包含标题和小标题
+💡 简单理解：你告诉 AI 什么，它就根据你的描述尝试完成任务。
 
 </div>
 
 
-
-</div>
-
+</section>
 
 
 
+<!-- Prompt 为什么重要 -->
 
 
-
-<div class="card">
+<section class="card">
 
 
 <h2 id="importantTitle">
 
-为什么Prompt很重要？
+🎯 为什么 Prompt 很重要？
 
 </h2>
 
 
 <p id="importantText">
 
-优秀的Prompt可以帮助AI更准确理解需求，提高生成内容质量，并减少反复修改时间。
+AI 并不能完全知道你脑海中的想法，因此你提供的信息越清晰，AI 通常就越容易理解你真正想要的结果。
 
 </p>
 
 
-<ul>
+<p id="importantText2">
 
-<li id="important1">
-提高AI回答准确性
-</li>
-
-<li id="important2">
-节省工作和学习时间
-</li>
-
-<li id="important3">
-获得更专业的结果
-</li>
-
-<li id="important4">
-让AI成为个人助手
-</li>
-
-</ul>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="card">
-
-
-<h2 id="formulaTitle">
-
-高质量Prompt公式
-
-</h2>
-
-
-
-<p id="formulaText">
-
-一个好的Prompt通常包含：
+例如，“帮我写文章”和“帮我写一篇面向大学生的 AI 学习方法文章，使用轻松易懂的语言，大约 800 字”相比，后者提供的信息更加明确。
 
 </p>
 
-<ul>
 
-<li id="roleText">
-角色（Role）：告诉AI扮演什么身份
-</li>
-
-<li id="taskText">
-任务（Task）：明确需要完成什么
-</li>
-
-<li id="contextText">
-背景（Context）：提供相关信息
-</li>
-
-<li id="requirementText">
-要求（Requirement）：说明限制条件
-</li>
-
-<li id="outputText">
-格式（Output）：指定输出方式
-</li>
-
-</ul>
-
-</div>
+</section>
 
 
 
+<!-- 基础结构 -->
 
 
+<section class="card">
 
 
-<div class="card">
+<h2 id="structureTitle">
 
-
-<h2 id="templateTitle">
-
-常用AI Prompt模板
+🧩 一个好的 Prompt 可以包含什么？
 
 </h2>
 
 
+<p id="structureIntro">
+
+你不需要每次都写非常复杂的提示词，但以下几个部分通常可以帮助 AI 更好地理解任务：
+
+</p>
 
 
-<h3 id="writingTemplate">
-📝 写作模板
+<ol class="steps">
+
+
+<li id="structure1">
+
+🎯 任务目标：告诉 AI 你希望完成什么。
+
+</li>
+
+
+<li id="structure2">
+
+📚 背景信息：提供必要的上下文。
+
+</li>
+
+
+<li id="structure3">
+
+👥 目标对象：说明内容是给谁看的。
+
+</li>
+
+
+<li id="structure4">
+
+📝 输出要求：告诉 AI 希望什么格式、风格或长度。
+
+</li>
+
+
+</ol>
+
+
+</section>
+
+
+
+<!-- 示例 -->
+
+
+<section class="card">
+
+
+<h2 id="exampleTitle">
+
+💬 AI Prompt 示例
+
+</h2>
+
+
+<h3 id="exampleBadTitle">
+
+❌ 比较模糊的 Prompt
+
 </h3>
 
 
+<div
+class="example"
+id="badExample">
 
-<div class="code" id="writingCode">
+帮我写一篇关于 AI 的文章。
 
-你是一名专业作家。
+</div>
 
-请帮我写一篇关于【主题】的文章。
+
+<h3 id="exampleGoodTitle">
+
+✅ 更清晰的 Prompt
+
+</h3>
+
+
+<div
+class="example"
+id="goodExample">
+
+请帮我写一篇关于 AI 如何帮助大学生提高学习效率的文章。
 
 要求：
-1. 结构清晰
-2. 内容丰富
-3. 适合普通用户阅读
+
+使用简单易懂的语言；
+面向大学生；
+介绍几个实际使用 AI 的方法；
+文章长度约 800 字；
+内容自然、有条理。
 
 </div>
 
 
+<p id="exampleText">
 
-
-
-
-<h3 id="learningTemplate">
-
-📚 学习模板
-
-</h3>
-
-
-
-<div class="code" id="learningCode">
-
-你是一名老师。
-
-请用简单方式解释【知识点】。
-
-要求：
-1. 包含概念
-2. 提供例子
-3. 给出练习
-
-</div>
-
-
-
-
-
-
-
-<h3 id="workTemplate">
-
-💼 工作模板
-
-</h3>
-
-
-<div class="code" id="workCode">
-
-你是一名办公助手。
-
-请帮我整理以下内容：
-
-【输入内容】
-
-输出要求：
-简洁、有条理。
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-<div class="card">
-
-
-<h2 id="toolTitle">
-
-在线AI Prompt生成器
-
-</h2>
-
-
-
-<p id="toolText">
-
-不知道如何写提示词？
-
-可以使用AI工具箱提供的免费Prompt生成器。
+第二种 Prompt 提供了更多具体信息，因此 AI 更容易理解任务目标。
 
 </p>
 
 
+</section>
 
-<p>
 
 
-🔥
+<!-- 写作 Prompt -->
 
-<a href="ai-prompt-generator.html" id="toolLink">
 
-AI提示词生成器
+<section class="card">
+
+
+<h2 id="writingTitle">
+
+📝 AI 写作 Prompt 示例
+
+</h2>
+
+
+<div
+class="example"
+id="writingExample">
+
+任务：写一篇文章
+
+主题：如何提高学习效率
+
+目标读者：大学生
+
+写作风格：简单、自然、容易理解
+
+要求：包含实际建议和例子
+
+长度：约 1000 字
+
+</div>
+
+
+<p id="writingText">
+
+这种方式可以帮助 AI 更清楚地了解文章主题、读者和输出要求。
+
+</p>
+
+
+</section>
+
+
+
+<!-- 学习 Prompt -->
+
+
+<section class="card">
+
+
+<h2 id="studyTitle">
+
+📚 AI 学习 Prompt 示例
+
+</h2>
+
+
+<div
+class="example"
+id="studyExample">
+
+请用简单易懂的方式解释光合作用。
+
+要求：
+
+假设我是初学者；
+使用简单的语言；
+解释核心过程；
+最后给我几个问题帮助复习。
+
+</div>
+
+
+<p id="studyText">
+
+学习时，可以告诉 AI 你的知识水平，以及希望它如何解释内容。
+
+</p>
+
+
+</section>
+
+
+
+<!-- 编程 Prompt -->
+
+
+<section class="card">
+
+
+<h2 id="codingTitle">
+
+💻 AI 编程 Prompt 示例
+
+</h2>
+
+
+<div
+class="example"
+id="codingExample">
+
+请帮我编写一个简单的 HTML 页面。
+
+功能：
+
+显示一个标题；
+有一个输入框；
+点击按钮后显示输入内容。
+
+要求：
+
+代码尽量简单；
+适合编程初学者；
+解释每个主要部分的作用。
+
+</div>
+
+
+<p id="codingText">
+
+描述清楚你需要的功能、技术和要求，可以帮助 AI 更准确地生成代码。
+
+</p>
+
+
+</section>
+
+
+
+<!-- 工作 Prompt -->
+
+
+<section class="card">
+
+
+<h2 id="workTitle">
+
+💼 工作场景 Prompt 示例
+
+</h2>
+
+
+<div
+class="example"
+id="workExample">
+
+请帮我写一封正式的工作邮件。
+
+内容：
+
+向客户说明项目进度。
+
+要求：
+
+语气专业；
+表达清楚；
+内容简洁；
+最后加上礼貌的结束语。
+
+</div>
+
+
+</section>
+
+
+
+<!-- 常见错误 -->
+
+
+<section class="card">
+
+
+<h2 id="mistakesTitle">
+
+⚠️ 使用 AI Prompt 的常见错误
+
+</h2>
+
+
+<h3 id="mistake1Title">
+
+1️⃣ 信息太少
+
+</h3>
+
+
+<p id="mistake1Text">
+
+如果只给 AI 一句话，AI 可能不知道你的具体需求。可以适当增加背景信息和目标。
+
+</p>
+
+
+<h3 id="mistake2Title">
+
+2️⃣ 要求不明确
+
+</h3>
+
+
+<p id="mistake2Text">
+
+如果你希望文章正式、轻松、简短或详细，可以直接告诉 AI。
+
+</p>
+
+
+<h3 id="mistake3Title">
+
+3️⃣ 一次要求太多复杂任务
+
+</h3>
+
+
+<p id="mistake3Text">
+
+复杂任务可以拆成多个步骤，让 AI 分阶段完成，通常更容易检查和调整结果。
+
+</p>
+
+
+<h3 id="mistake4Title">
+
+4️⃣ 不检查 AI 输出
+
+</h3>
+
+
+<p id="mistake4Text">
+
+AI 生成的内容仍然需要用户自己检查，尤其是重要信息、事实、数据和正式内容。
+
+</p>
+
+
+</section>
+
+
+
+<!-- 提升技巧 -->
+
+
+<section class="card">
+
+
+<h2 id="tipsTitle">
+
+🚀 如何让 AI 输出更符合你的要求？
+
+</h2>
+
+
+<ol class="steps">
+
+
+<li id="tip1">
+
+明确任务目标，不要只写非常模糊的要求。
+
+</li>
+
+
+<li id="tip2">
+
+提供必要的背景信息。
+
+</li>
+
+
+<li id="tip3">
+
+告诉 AI 目标读者是谁。
+
+</li>
+
+
+<li id="tip4">
+
+说明希望的语言、风格和长度。
+
+</li>
+
+
+<li id="tip5">
+
+第一次结果不满意时，可以继续补充要求进行修改。
+
+</li>
+
+
+</ol>
+
+
+<div class="tip-box" id="tipsBox">
+
+💡 使用 AI 的过程通常不是“一次输入就完成”，而是不断调整和完善需求。
+
+</div>
+
+
+</section>
+
+
+
+<!-- CTA -->
+
+
+<section class="card">
+
+
+<h2 id="tryTitle">
+
+✨ 不知道怎么写 Prompt？
+
+</h2>
+
+
+<p id="tryText">
+
+你可以直接使用 AI工具箱的免费 AI 提示词生成器，根据自己的需求快速生成可用的 Prompt。
+
+</p>
+
+
+<div class="button-row">
+
+
+<a
+href="index.html#promptTool"
+class="button primary"
+id="tryBtn">
+
+🔥 免费生成 AI Prompt
 
 </a>
 
-</p>
 
+<a
+href="ai-prompt-generator.html"
+class="button secondary"
+id="toolIntroBtn">
 
-
-</div>
-
-
-
-
-
-
-
-<div class="card">
-
-
-<h2 id="summaryTitle">
-
-总结
-
-</h2>
-
-
-
-<p id="summaryText">
-
-掌握Prompt技巧，可以让AI工具更加准确地完成任务。
-
-通过不断优化提示词，你可以提高学习、工作和创作效率。
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-
-
-<div class="back">
-
-
-<a href="index.html" id="homeLink">
-
-← 返回 AI工具箱首页
+📖 查看 AI提示词生成器介绍
 
 </a>
 
@@ -604,89 +1112,515 @@ AI提示词生成器
 </div>
 
 
+</section>
+
+
+
+<!-- 统一导航 -->
+
+
+<section class="card">
+
+
+<h2 id="navTitle">
+
+🧭 AI Prompt 导航
+
+</h2>
+
+
+<div class="tool-links">
+
+
+<a
+href="index.html#promptTool"
+class="tool-link"
+id="navTool">
+
+🔥 使用 AI提示词生成器
+
+</a>
+
+
+<a
+href="ai-prompt-generator.html"
+class="tool-link"
+id="navIntro">
+
+📖 AI提示词生成器介绍
+
+</a>
+
+
+<a
+href="index.html"
+class="tool-link"
+id="navHome">
+
+🏠 返回 AI工具箱首页
+
+</a>
+
+
+<a
+href="ai-tools.html"
+class="tool-link"
+id="navTools">
+
+🛠️ 查看全部 AI工具
+
+</a>
+
 
 </div>
 
 
+</section>
+
+
+
+<!-- 其他工具 -->
+
+
+<section class="card">
+
+
+<h2 id="otherTitle">
+
+🛠️ 其他免费 AI 工具
+
+</h2>
+
+
+<p id="otherText">
+
+除了 AI Prompt，你还可以使用以下工具：
+
+</p>
+
+
+<div class="tool-links">
+
+
+<a
+href="index.html#resumeTool"
+class="tool-link"
+id="resumeTool">
+
+📝 AI简历助手
+
+</a>
+
+
+<a
+href="index.html#titleTool"
+class="tool-link"
+id="titleTool">
+
+💡 AI标题生成器
+
+</a>
+
+
+<a
+href="index.html#polisherTool"
+class="tool-link"
+id="polisherTool">
+
+✨ AI文章润色
+
+</a>
+
+
+<a
+href="index.html#summaryTool"
+class="tool-link"
+id="summaryTool">
+
+📋 AI文章摘要
+
+</a>
+
+
+<a
+href="index.html#replyTool"
+class="tool-link"
+id="replyTool">
+
+💬 AI回复助手
+
+</a>
+
+
+<a
+href="index.html#xiaohongshuTool"
+class="tool-link"
+id="xhsTool">
+
+📱 AI社交媒体标题
+
+</a>
+
+
 </div>
 
 
+</section>
 
 
+
+<footer class="footer">
+
+
+<div id="footerText">
+
+© 2026 AI工具箱 · Free AI Tools
+
+</div>
+
+
+</footer>
+
+
+</div>
 
 
 
 <script>
 
 
-const text={
+const languageText={
 
 
 zh:{
 
-writingCode:"你是一名专业作家。\n\n请帮我写一篇关于【主题】的文章。\n\n要求：\n1.结构清晰\n2.内容丰富\n3.适合普通用户阅读",
 
-learningCode:"你是一名老师。\n\n请用简单方式解释【知识点】。\n\n要求：\n1.包含概念\n2.提供例子\n3.给出练习",
+pageTitle:
+"AI Prompt 使用教程 - 如何写好提示词 | AI工具箱",
 
-workCode:"你是一名办公助手。\n\n请帮我整理以下内容：\n\n【输入内容】\n\n输出要求：\n简洁、有条理。",
-  
-roleText:"角色（Role）：告诉AI扮演什么身份",
-taskText:"任务（Task）：明确需要完成什么",
-contextText:"背景（Context）：提供相关信息",
-requirementText:"要求（Requirement）：说明限制条件",
-outputText:"格式（Output）：指定输出方式",
-  
-important1:"提高AI回答准确性",
-important2:"节省工作和学习时间",
-important3:"获得更专业的结果",
-important4:"让AI成为个人助手",
-  
-  
-simpleCode:"帮我写一篇文章",
 
-betterCode:"你是一名专业内容编辑。\n\n请帮我写一篇关于AI学习的文章。\n\n目标读者：\n大学生\n\n要求：\n语言简单\n结构清晰\n包含标题和小标题",
+metaDescription:
+"免费 AI Prompt 使用教程，学习什么是提示词、如何写出更好的 ChatGPT Prompt，并查看写作、学习、编程和工作场景的 AI 提示词示例。",
 
-homeLink:"← 返回 AI工具箱首页",
-  
-toolLink:"AI提示词生成器",
-  
-learningTemplate:"📚 学习模板",
 
-workTemplate:"💼 工作模板",
-  
-formulaText:"一个好的Prompt通常包含：",
-  
-writingTemplate:"📝 写作模板",
+heroTitle:
+"📚 AI Prompt 使用教程",
 
-normalPrompt:"普通：",
 
-betterPrompt:"优化：",
-  
-title:"AI Prompt是什么？新手入门指南",
+heroDesc:
+"从零开始学习什么是 AI 提示词，以及如何写出更清晰、更有效的 Prompt。",
 
-intro:"学习AI提示词基础知识，掌握编写高质量Prompt的方法，让AI工具发挥更大作用。",
 
-whatTitle:"什么是AI Prompt？",
+useToolBtn:
+"🔥 使用 AI 提示词生成器",
 
-whatText:"AI Prompt（提示词）是用户输入给人工智能模型的指令，用于告诉AI需要完成什么任务。",
 
-exampleTitle:"普通Prompt和优秀Prompt的区别",
+introBtn:
+"📖 查看工具介绍",
 
-importantTitle:"为什么Prompt很重要？",
 
-importantText:"优秀的Prompt可以帮助AI更准确理解需求，提高生成内容质量，并减少反复修改时间。",
+whatTitle:
+"🤖 什么是 AI Prompt？",
 
-formulaTitle:"高质量Prompt公式",
 
-templateTitle:"常用AI Prompt模板",
+whatText1:
+"AI Prompt，也叫 AI 提示词，是用户向 ChatGPT 或其他人工智能工具输入的指令、问题或要求。",
 
-toolTitle:"在线AI Prompt生成器",
 
-toolText:"不知道如何写提示词？可以使用AI工具箱提供的免费Prompt生成器。",
+whatText2:
+"AI 会根据 Prompt 中提供的信息理解你的目标，然后生成相应的回答、文章、代码、计划或其他内容。",
 
-summaryTitle:"总结",
 
-summaryText:"掌握Prompt技巧，可以让AI工具更加准确地完成任务。通过不断优化提示词，你可以提高学习、工作和创作效率。"
+whatTip:
+"💡 简单理解：你告诉 AI 什么，它就根据你的描述尝试完成任务。",
+
+
+importantTitle:
+"🎯 为什么 Prompt 很重要？",
+
+
+importantText:
+"AI 并不能完全知道你脑海中的想法，因此你提供的信息越清晰，AI 通常就越容易理解你真正想要的结果。",
+
+
+importantText2:
+"例如，“帮我写文章”和“帮我写一篇面向大学生的 AI 学习方法文章，使用轻松易懂的语言，大约 800 字”相比，后者提供的信息更加明确。",
+
+
+structureTitle:
+"🧩 一个好的 Prompt 可以包含什么？",
+
+
+structureIntro:
+"你不需要每次都写非常复杂的提示词，但以下几个部分通常可以帮助 AI 更好地理解任务：",
+
+
+structure1:
+"🎯 任务目标：告诉 AI 你希望完成什么。",
+
+
+structure2:
+"📚 背景信息：提供必要的上下文。",
+
+
+structure3:
+"👥 目标对象：说明内容是给谁看的。",
+
+
+structure4:
+"📝 输出要求：告诉 AI 希望什么格式、风格或长度。",
+
+
+exampleTitle:
+"💬 AI Prompt 示例",
+
+
+exampleBadTitle:
+"❌ 比较模糊的 Prompt",
+
+
+badExample:
+"帮我写一篇关于 AI 的文章。",
+
+
+exampleGoodTitle:
+"✅ 更清晰的 Prompt",
+
+
+goodExample:
+`请帮我写一篇关于 AI 如何帮助大学生提高学习效率的文章。
+
+要求：
+
+使用简单易懂的语言；
+面向大学生；
+介绍几个实际使用 AI 的方法；
+文章长度约 800 字；
+内容自然、有条理。`,
+
+
+exampleText:
+"第二种 Prompt 提供了更多具体信息，因此 AI 更容易理解任务目标。",
+
+
+writingTitle:
+"📝 AI 写作 Prompt 示例",
+
+
+writingExample:
+`任务：写一篇文章
+
+主题：如何提高学习效率
+
+目标读者：大学生
+
+写作风格：简单、自然、容易理解
+
+要求：包含实际建议和例子
+
+长度：约 1000 字`,
+
+
+writingText:
+"这种方式可以帮助 AI 更清楚地了解文章主题、读者和输出要求。",
+
+
+studyTitle:
+"📚 AI 学习 Prompt 示例",
+
+
+studyExample:
+`请用简单易懂的方式解释光合作用。
+
+要求：
+
+假设我是初学者；
+使用简单的语言；
+解释核心过程；
+最后给我几个问题帮助复习。`,
+
+
+studyText:
+"学习时，可以告诉 AI 你的知识水平，以及希望它如何解释内容。",
+
+
+codingTitle:
+"💻 AI 编程 Prompt 示例",
+
+
+codingExample:
+`请帮我编写一个简单的 HTML 页面。
+
+功能：
+
+显示一个标题；
+有一个输入框；
+点击按钮后显示输入内容。
+
+要求：
+
+代码尽量简单；
+适合编程初学者；
+解释每个主要部分的作用。`,
+
+
+codingText:
+"描述清楚你需要的功能、技术和要求，可以帮助 AI 更准确地生成代码。",
+
+
+workTitle:
+"💼 工作场景 Prompt 示例",
+
+
+workExample:
+`请帮我写一封正式的工作邮件。
+
+内容：
+
+向客户说明项目进度。
+
+要求：
+
+语气专业；
+表达清楚；
+内容简洁；
+最后加上礼貌的结束语。`,
+
+
+mistakesTitle:
+"⚠️ 使用 AI Prompt 的常见错误",
+
+
+mistake1Title:
+"1️⃣ 信息太少",
+
+
+mistake1Text:
+"如果只给 AI 一句话，AI 可能不知道你的具体需求。可以适当增加背景信息和目标。",
+
+
+mistake2Title:
+"2️⃣ 要求不明确",
+
+
+mistake2Text:
+"如果你希望文章正式、轻松、简短或详细，可以直接告诉 AI。",
+
+
+mistake3Title:
+"3️⃣ 一次要求太多复杂任务",
+
+
+mistake3Text:
+"复杂任务可以拆成多个步骤，让 AI 分阶段完成，通常更容易检查和调整结果。",
+
+
+mistake4Title:
+"4️⃣ 不检查 AI 输出",
+
+
+mistake4Text:
+"AI 生成的内容仍然需要用户自己检查，尤其是重要信息、事实、数据和正式内容。",
+
+
+tipsTitle:
+"🚀 如何让 AI 输出更符合你的要求？",
+
+
+tip1:
+"明确任务目标，不要只写非常模糊的要求。",
+
+
+tip2:
+"提供必要的背景信息。",
+
+
+tip3:
+"告诉 AI 目标读者是谁。",
+
+
+tip4:
+"说明希望的语言、风格和长度。",
+
+
+tip5:
+"第一次结果不满意时，可以继续补充要求进行修改。",
+
+
+tipsBox:
+"💡 使用 AI 的过程通常不是“一次输入就完成”，而是不断调整和完善需求。",
+
+
+tryTitle:
+"✨ 不知道怎么写 Prompt？",
+
+
+tryText:
+"你可以直接使用 AI工具箱的免费 AI 提示词生成器，根据自己的需求快速生成可用的 Prompt。",
+
+
+tryBtn:
+"🔥 免费生成 AI Prompt",
+
+
+toolIntroBtn:
+"📖 查看 AI提示词生成器介绍",
+
+
+navTitle:
+"🧭 AI Prompt 导航",
+
+
+navTool:
+"🔥 使用 AI提示词生成器",
+
+
+navIntro:
+"📖 AI提示词生成器介绍",
+
+
+navHome:
+"🏠 返回 AI工具箱首页",
+
+
+navTools:
+"🛠️ 查看全部 AI工具",
+
+
+otherTitle:
+"🛠️ 其他免费 AI 工具",
+
+
+otherText:
+"除了 AI Prompt，你还可以使用以下工具：",
+
+
+resumeTool:
+"📝 AI简历助手",
+
+
+titleTool:
+"💡 AI标题生成器",
+
+
+polisherTool:
+"✨ AI文章润色",
+
+
+summaryTool:
+"📋 AI文章摘要",
+
+
+replyTool:
+"💬 AI回复助手",
+
+
+xhsTool:
+"📱 AI社交媒体标题",
+
+
+footerText:
+"© 2026 AI工具箱 · Free AI Tools"
 
 
 },
@@ -695,69 +1629,333 @@ summaryText:"掌握Prompt技巧，可以让AI工具更加准确地完成任务�
 
 en:{
 
-writingCode:"You are a professional writer.\n\nPlease write an article about [Topic].\n\nRequirements:\n1. Clear structure\n2. Rich content\n3. Easy for general users to read",
 
-learningCode:"You are a teacher.\n\nPlease explain [Knowledge Point] in a simple way.\n\nRequirements:\n1. Include concepts\n2. Provide examples\n3. Give exercises",
-
-workCode:"You are an office assistant.\n\nPlease organize the following content:\n\n[Input Content]\n\nOutput:\nClear and concise.",
-  
-roleText:"Role: Tell AI what identity to act as",
-taskText:"Task: Clearly define what needs to be done",
-contextText:"Context: Provide related information",
-requirementText:"Requirement: Explain limitations and conditions",
-outputText:"Output: Specify the output format",
-  
-important1:"Improve AI answer accuracy",
-important2:"Save learning and working time",
-important3:"Get more professional results",
-important4:"Make AI your personal assistant",
+pageTitle:
+"AI Prompt Guide - How to Write Better Prompts | AI Toolbox",
 
 
-simpleCode:"Write an article for me",
+metaDescription:
+"Learn how to write better AI prompts with this free AI Prompt guide. Explore prompt examples for ChatGPT, writing, study, coding and productivity.",
 
-betterCode:"You are a professional content editor.\n\nPlease write an article about AI learning.\n\nTarget readers:\nCollege students\n\nRequirements:\nSimple language\nClear structure\nInclude title and subtitles",
-  
-homeLink:"← Back to AI Toolbox Home",
 
-toolLink:"AI Prompt Generator",
+heroTitle:
+"📚 AI Prompt Guide",
 
-learningTemplate:"📚 Learning Template",
 
-workTemplate:"💼 Work Template",
-  
-formulaText:"A good prompt usually includes:",  
-  
-writingTemplate:"📝 Writing Template",
+heroDesc:
+"Learn what AI prompts are and how to write clearer and more effective prompts from the beginning.",
 
-normalPrompt:"Simple:",
 
-betterPrompt:"Better:",  
+useToolBtn:
+"🔥 Use AI Prompt Generator",
 
-title:"What is AI Prompt? Beginner Guide",
 
-intro:"Learn AI prompt basics and how to write better prompts to improve AI results.",
+introBtn:
+"📖 View Tool Introduction",
 
-whatTitle:"What is AI Prompt?",
 
-whatText:"AI Prompt is an instruction given to an artificial intelligence model to tell it what task to complete.",
+whatTitle:
+"🤖 What Is an AI Prompt?",
 
-exampleTitle:"Simple Prompt vs Better Prompt",
 
-importantTitle:"Why are Prompts Important?",
+whatText1:
+"An AI prompt is an instruction, question or request that a user gives to ChatGPT or another artificial intelligence tool.",
 
-importantText:"Good prompts help AI understand your needs better and generate higher quality results.",
 
-formulaTitle:"High Quality Prompt Formula",
+whatText2:
+"The AI uses the information in the prompt to understand your goal and generate a response, article, code, plan or other content.",
 
-templateTitle:"Common AI Prompt Templates",
 
-toolTitle:"Online AI Prompt Generator",
+whatTip:
+"💡 Simply put: tell AI what you want, and it will try to complete the task based on your instructions.",
 
-toolText:"Not sure how to write prompts? Try our free AI Prompt Generator.",
 
-summaryTitle:"Conclusion",
+importantTitle:
+"🎯 Why Are Prompts Important?",
 
-summaryText:"Learning prompt skills helps you use AI tools more effectively for study, work and creativity."
+
+importantText:
+"AI cannot completely know what is in your mind, so clearer information usually makes it easier for AI to understand the result you actually want.",
+
+
+importantText2:
+"For example, “write an article” provides much less information than a request that explains the topic, audience, writing style and desired length.",
+
+
+structureTitle:
+"🧩 What Can a Good Prompt Include?",
+
+
+structureIntro:
+"You do not need to write an extremely complicated prompt every time, but these parts can often help AI understand your task better:",
+
+
+structure1:
+"🎯 Task goal: Explain what you want AI to do.",
+
+
+structure2:
+"📚 Background information: Provide useful context.",
+
+
+structure3:
+"👥 Target audience: Explain who the content is for.",
+
+
+structure4:
+"📝 Output requirements: Specify the format, style or length you want.",
+
+
+exampleTitle:
+"💬 AI Prompt Example",
+
+
+exampleBadTitle:
+"❌ A Vague Prompt",
+
+
+badExample:
+"Write an article about AI.",
+
+
+exampleGoodTitle:
+"✅ A Clearer Prompt",
+
+
+goodExample:
+`Write an article about how AI can help college students improve their learning efficiency.
+
+Requirements:
+
+Use simple and easy-to-understand language;
+Target college students;
+Include several practical ways to use AI;
+Around 800 words;
+Keep the content natural and well organized.`,
+
+
+exampleText:
+"The second prompt provides more specific information, making it easier for AI to understand the task.",
+
+
+writingTitle:
+"📝 AI Writing Prompt Example",
+
+
+writingExample:
+`Task: Write an article
+
+Topic: How to improve learning efficiency
+
+Target audience: College students
+
+Writing style: Simple, natural and easy to understand
+
+Requirements: Include practical advice and examples
+
+Length: Around 1000 words`,
+
+
+writingText:
+"This structure helps AI better understand the topic, audience and output requirements.",
+
+
+studyTitle:
+"📚 AI Study Prompt Example",
+
+
+studyExample:
+`Explain photosynthesis in a simple and easy-to-understand way.
+
+Requirements:
+
+Assume I am a beginner;
+Use simple language;
+Explain the main process;
+Give me several questions at the end to help me review.`,
+
+
+studyText:
+"When studying, you can tell AI your current knowledge level and how you want the topic explained.",
+
+
+codingTitle:
+"💻 AI Coding Prompt Example",
+
+
+codingExample:
+`Help me create a simple HTML page.
+
+Features:
+
+Display a title;
+Include an input box;
+Show the entered content after clicking a button.
+
+Requirements:
+
+Keep the code simple;
+Suitable for beginners;
+Explain the purpose of each major part.`,
+
+
+codingText:
+"Clearly describing the features, technology and requirements can help AI generate more relevant code.",
+
+
+workTitle:
+"💼 Work Prompt Example",
+
+
+workExample:
+`Help me write a professional work email.
+
+Content:
+
+Explain the project progress to a client.
+
+Requirements:
+
+Professional tone;
+Clear writing;
+Concise content;
+Include a polite closing.`,
+
+
+mistakesTitle:
+"⚠️ Common AI Prompt Mistakes",
+
+
+mistake1Title:
+"1️⃣ Providing Too Little Information",
+
+
+mistake1Text:
+"If you only give AI one short sentence, it may not understand your specific needs. Add useful background information and goals when necessary.",
+
+
+mistake2Title:
+"2️⃣ Unclear Requirements",
+
+
+mistake2Text:
+"If you want the content to be formal, casual, short or detailed, tell the AI directly.",
+
+
+mistake3Title:
+"3️⃣ Asking for Too Many Complex Tasks at Once",
+
+
+mistake3Text:
+"Complex tasks can often be divided into smaller steps, making the results easier to review and improve.",
+
+
+mistake4Title:
+"4️⃣ Not Reviewing AI Output",
+
+
+mistake4Text:
+"AI-generated content should still be reviewed by the user, especially when important facts, data or formal information are involved.",
+
+
+tipsTitle:
+"🚀 How to Get Better AI Results",
+
+
+tip1:
+"Clearly explain the task instead of writing only vague instructions.",
+
+
+tip2:
+"Provide useful background information.",
+
+
+tip3:
+"Tell AI who the target audience is.",
+
+
+tip4:
+"Specify the language, style and desired length.",
+
+
+tip5:
+"If the first result is not ideal, add more requirements and continue refining the request.",
+
+
+tipsBox:
+"💡 Using AI is often an iterative process rather than something completed perfectly with a single instruction.",
+
+
+tryTitle:
+"✨ Not Sure How to Write a Prompt?",
+
+
+tryText:
+"You can use the free AI Prompt Generator from AI Toolbox to quickly create prompts based on your needs.",
+
+
+tryBtn:
+"🔥 Generate an AI Prompt for Free",
+
+
+toolIntroBtn:
+"📖 View AI Prompt Generator Introduction",
+
+
+navTitle:
+"🧭 AI Prompt Navigation",
+
+
+navTool:
+"🔥 Use AI Prompt Generator",
+
+
+navIntro:
+"📖 AI Prompt Generator Introduction",
+
+
+navHome:
+"🏠 Back to AI Toolbox",
+
+
+navTools:
+"🛠️ Explore All AI Tools",
+
+
+otherTitle:
+"🛠️ Other Free AI Tools",
+
+
+otherText:
+"Besides AI prompts, you can also try these tools:",
+
+
+resumeTool:
+"📝 AI Resume Assistant",
+
+
+titleTool:
+"💡 AI Title Generator",
+
+
+polisherTool:
+"✨ AI Writing Polisher",
+
+
+summaryTool:
+"📋 AI Article Summarizer",
+
+
+replyTool:
+"💬 AI Reply Assistant",
+
+
+xhsTool:
+"📱 AI Social Media Title Generator",
+
+
+footerText:
+"© 2026 AI Toolbox · Free AI Tools"
 
 
 }
@@ -767,22 +1965,45 @@ summaryText:"Learning prompt skills helps you use AI tools more effectively for 
 
 
 
-
 function setLanguage(lang){
 
 
-let t=text[lang];
+const t=languageText[lang];
 
 
-Object.keys(t).forEach(id=>{
+
+Object.keys(t).forEach(key=>{
 
 
-let el=document.getElementById(id);
+const el=document.getElementById(key);
+
+
+
+if(key==="pageTitle"){
+
+document.title=t[key];
+
+return;
+
+}
+
+
+
+if(key==="metaDescription"){
+
+document
+.getElementById("metaDescription")
+.setAttribute("content",t[key]);
+
+return;
+
+}
+
 
 
 if(el){
 
-el.innerText=t[id];
+el.innerText=t[key];
 
 }
 
@@ -790,12 +2011,22 @@ el.innerText=t[id];
 });
 
 
+
+document
+.getElementById("zhBtn")
+.classList.toggle("active",lang==="zh");
+
+
+
+document
+.getElementById("enBtn")
+.classList.toggle("active",lang==="en");
+
+
 }
 
 
-
 </script>
-
 
 
 </body>
