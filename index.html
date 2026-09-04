@@ -1968,6 +1968,10 @@ function cleanAIResult(text){
 
     const blockWords = [
 
+        "sexual",
+        "safety categories",
+        "unsafe",
+        "needs caution",
         "user safety",
         "safety check",
         "safety verification",
@@ -3760,12 +3764,25 @@ Requirements:
 
 
 
-        let result =
-        await callAI(prompt,input);
+       let result =
+await callAI(prompt,input);
 
+let cleanedResult = cleanAIResult(result);
 
+if(cleanedResult.length===0){
 
-        box.innerText=result;
+    box.innerText =
+    currentLanguage==="zh"
+    ?
+    "❌ 这个内容暂时无法生成提示词，请尝试修改输入内容。"
+    :
+    "❌ This content cannot be processed. Please try changing your input.";
+
+}else{
+
+    box.innerText = cleanedResult.join("\n");
+
+}
 
 
 
