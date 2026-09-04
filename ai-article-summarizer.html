@@ -1,0 +1,2606 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<!-- 网站图标 -->
+
+<link rel="icon" type="image/png" href="/toolbox/logo.png">
+
+<link rel="shortcut icon" type="image/png" href="/toolbox/logo.png">
+
+<link rel="apple-touch-icon" href="/toolbox/logo.png">
+
+
+<!-- SEO -->
+
+<title id="pageTitle">
+AI文章摘要工具 - 免费在线AI文章总结工具 | AI工具箱
+</title>
+
+
+<meta
+id="metaDescription"
+name="description"
+content="免费在线AI文章摘要工具，帮助快速提取文章重点，总结长文本、文章和内容核心信息。无需注册即可使用。"
+>
+
+
+<meta name="robots" content="index,follow">
+
+
+<link
+rel="canonical"
+href="https://wertsdfgwerg.github.io/toolbox/ai-article-summarizer.html"
+>
+
+
+<!-- Open Graph -->
+
+<meta
+id="ogTitle"
+property="og:title"
+content="AI文章摘要工具 - 免费在线AI文章总结工具"
+>
+
+
+<meta
+id="ogDescription"
+property="og:description"
+content="使用AI快速总结文章内容，提取重点信息，让长文本更加简洁易读。"
+>
+
+
+<meta property="og:type" content="website">
+
+
+<meta
+property="og:url"
+content="https://wertsdfgwerg.github.io/toolbox/ai-article-summarizer.html"
+>
+
+
+<!-- Twitter -->
+
+<meta name="twitter:card" content="summary">
+
+
+<meta
+id="twitterTitle"
+name="twitter:title"
+content="AI文章摘要工具 - AI Article Summarizer"
+>
+
+
+<meta
+id="twitterDescription"
+name="twitter:description"
+content="免费AI文章摘要工具，帮助快速总结长文章并提取重点信息。"
+>
+
+
+<!-- Cloudflare Web Analytics -->
+
+<script
+type="module"
+src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"4eb5597f43294acfbf1573e4628dcf28"}'>
+</script>
+
+
+<style>
+
+
+*{
+box-sizing:border-box;
+}
+
+
+html{
+scroll-behavior:smooth;
+}
+
+
+body{
+
+margin:0;
+
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+"Microsoft YaHei",
+Arial,
+sans-serif;
+
+background:#f7f9fc;
+
+color:#222;
+
+line-height:1.8;
+
+}
+
+
+.container{
+
+max-width:1000px;
+
+margin:auto;
+
+padding:30px 20px 60px;
+
+}
+
+
+/* 顶部 */
+
+
+.header{
+
+position:relative;
+
+text-align:center;
+
+padding:30px 0 40px;
+
+}
+
+
+.logo{
+
+width:60px;
+
+height:60px;
+
+object-fit:contain;
+
+}
+
+
+.site-name{
+
+font-size:28px;
+
+font-weight:800;
+
+margin:18px 0 5px;
+
+}
+
+
+.site-description{
+
+font-size:16px;
+
+color:#666;
+
+margin:0;
+
+}
+
+
+/* 语言切换 */
+
+
+.language-switch{
+
+position:absolute;
+
+right:0;
+
+top:10px;
+
+display:flex;
+
+background:white;
+
+border:1px solid #eee;
+
+border-radius:30px;
+
+padding:4px;
+
+}
+
+
+.language-switch button{
+
+border:none;
+
+background:none;
+
+padding:9px 18px;
+
+border-radius:25px;
+
+cursor:pointer;
+
+font-size:14px;
+
+}
+
+
+.language-switch button.active{
+
+background:#111;
+
+color:white;
+
+}
+
+
+/* 卡片 */
+
+
+.card{
+
+background:white;
+
+border-radius:20px;
+
+padding:30px;
+
+margin-bottom:22px;
+
+border:1px solid #eee;
+
+box-shadow:0 8px 25px rgba(0,0,0,.05);
+
+}
+
+
+.card h2{
+
+margin-top:0;
+
+font-size:26px;
+
+}
+
+
+.card h3{
+
+margin-top:24px;
+
+font-size:20px;
+
+}
+
+
+/* Hero */
+
+
+.hero-card{
+
+text-align:center;
+
+padding:45px 30px;
+
+}
+
+
+.badge{
+
+display:inline-block;
+
+background:#111;
+
+color:white;
+
+padding:5px 12px;
+
+border-radius:20px;
+
+font-size:12px;
+
+margin-bottom:10px;
+
+}
+
+
+.hero-card h1{
+
+font-size:40px;
+
+margin:12px 0;
+
+font-weight:800;
+
+}
+
+
+.hero-card p{
+
+color:#666;
+
+font-size:18px;
+
+max-width:700px;
+
+margin:15px auto 25px;
+
+}
+
+
+/* 按钮 */
+
+
+.button-row{
+
+display:flex;
+
+gap:14px;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+margin-top:22px;
+
+}
+
+
+.button{
+
+display:inline-block;
+
+text-decoration:none;
+
+padding:14px 24px;
+
+border-radius:12px;
+
+font-weight:600;
+
+transition:.2s;
+
+text-align:center;
+
+}
+
+
+.primary{
+
+background:#111;
+
+color:white;
+
+}
+
+
+.primary:hover{
+
+transform:translateY(-2px);
+
+}
+
+
+.secondary{
+
+background:#f1f1f1;
+
+color:#222;
+
+}
+
+
+.secondary:hover{
+
+background:#e8e8e8;
+
+}
+
+
+/* 列表 */
+
+
+.feature-list{
+
+padding-left:20px;
+
+}
+
+
+.feature-list li{
+
+margin:12px 0;
+
+}
+
+
+/* 功能网格 */
+
+
+.feature-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+
+.feature{
+
+background:#f8f9fb;
+
+border-radius:14px;
+
+padding:18px;
+
+border:1px solid #eee;
+
+}
+
+
+.feature h3{
+
+margin:0 0 8px;
+
+font-size:17px;
+
+}
+
+
+.feature p{
+
+margin:0;
+
+color:#666;
+
+}
+
+
+/* 使用步骤 */
+
+
+.steps{
+
+counter-reset:step;
+
+padding:0;
+
+}
+
+
+.step{
+
+position:relative;
+
+padding-left:55px;
+
+margin:24px 0;
+
+}
+
+
+.step::before{
+
+counter-increment:step;
+
+content:counter(step);
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:34px;
+
+height:34px;
+
+border-radius:50%;
+
+background:#111;
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:bold;
+
+}
+
+
+/* FAQ */
+
+
+.faq{
+
+border-top:1px solid #eee;
+
+padding:18px 0;
+
+}
+
+
+.faq:last-child{
+
+border-bottom:1px solid #eee;
+
+}
+
+
+.faq h3{
+
+margin:0 0 8px;
+
+font-size:18px;
+
+}
+
+
+.faq p{
+
+margin:0;
+
+color:#666;
+
+}
+
+
+/* 导航链接 */
+
+
+.link-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:12px;
+
+margin-top:18px;
+
+}
+
+
+.tool-link{
+
+display:block;
+
+background:#f8f9fb;
+
+padding:15px 16px;
+
+border-radius:12px;
+
+text-decoration:none;
+
+color:#222;
+
+font-weight:600;
+
+border:1px solid #eee;
+
+transition:.2s;
+
+}
+
+
+.tool-link:hover{
+
+transform:translateY(-2px);
+
+background:#f1f3f5;
+
+}
+
+
+/* 返回首页 */
+
+
+.home-link{
+
+text-align:center;
+
+margin-top:30px;
+
+}
+
+
+/* Footer */
+
+
+.footer{
+
+text-align:center;
+
+color:#777;
+
+padding:28px 0 10px;
+
+font-size:14px;
+
+}
+
+
+/* 手机端 */
+
+
+@media(max-width:768px){
+
+
+.container{
+
+padding:20px 15px 45px;
+
+}
+
+
+.language-switch{
+
+position:relative;
+
+right:auto;
+
+top:auto;
+
+justify-content:center;
+
+margin-bottom:20px;
+
+}
+
+
+.hero-card h1{
+
+font-size:30px;
+
+}
+
+
+.card{
+
+padding:22px;
+
+}
+
+
+.feature-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.link-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.button-row{
+
+flex-direction:column;
+
+}
+
+
+.button{
+
+width:100%;
+
+}
+
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- 顶部 -->
+
+
+<header class="header">
+
+
+<div class="language-switch">
+
+
+<button
+id="zhBtn"
+class="active"
+onclick="setLanguage('zh')">
+
+中文
+
+</button>
+
+
+<button
+id="enBtn"
+onclick="setLanguage('en')">
+
+English
+
+</button>
+
+
+</div>
+
+
+<a href="index.html">
+
+<img
+src="logo.png"
+class="logo"
+alt="AI Toolbox"
+>
+
+</a>
+
+
+<div
+class="site-name"
+id="siteTitle">
+
+🤖 AI工具箱
+
+</div>
+
+
+<p
+class="site-description"
+id="siteDescription">
+
+免费、简单、实用的 AI 效率工具
+
+</p>
+
+
+</header>
+
+
+
+<!-- Hero -->
+
+
+<section class="card hero-card">
+
+
+<span
+class="badge"
+id="freeBadge">
+
+免费使用
+
+</span>
+
+
+<h1 id="heroTitle">
+
+📋 AI文章摘要工具
+
+</h1>
+
+
+<p id="heroDescription">
+
+使用 AI 快速总结长文章，提取核心内容和重点信息。
+
+</p>
+
+
+<div class="button-row">
+
+
+<a
+href="index.html#summaryTool"
+class="button primary"
+id="useToolBtn">
+
+🚀 立即使用 AI文章摘要工具
+
+</a>
+
+
+<a
+href="ai-article-summarizer-guide.html"
+class="button secondary"
+id="heroGuideBtn">
+
+📚 查看使用教程
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 工具介绍 -->
+
+
+<section class="card">
+
+
+<h2 id="introTitle">
+
+🤖 什么是 AI文章摘要工具？
+
+</h2>
+
+
+<p id="introText1">
+
+AI文章摘要工具可以帮助你快速理解长文章的核心内容，将较长的文字整理成更加简洁、清晰的摘要。
+
+</p>
+
+
+<p id="introText2">
+
+你只需要输入或粘贴需要总结的文章内容，AI 就可以帮助提取其中的重要信息、主要观点和核心内容。
+
+</p>
+
+
+<p id="introText3">
+
+它适合阅读长文章、学习资料、新闻内容、工作文档以及各种需要快速了解重点信息的场景。
+
+</p>
+
+
+</section>
+
+
+
+<!-- 如何使用 -->
+
+
+<section class="card">
+
+
+<h2 id="howTitle">
+
+📖 如何使用 AI文章摘要工具？
+
+</h2>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+
+<strong id="step1Title">
+
+输入文章内容
+
+</strong>
+
+
+<p id="step1Text">
+
+粘贴或输入你希望总结的文章、段落或长文本。
+
+</p>
+
+
+</div>
+
+
+<div class="step">
+
+
+<strong id="step2Title">
+
+选择摘要需求
+
+</strong>
+
+
+<p id="step2Text">
+
+根据你的需求选择适合的摘要方式或总结重点。
+
+</p>
+
+
+</div>
+
+
+<div class="step">
+
+
+<strong id="step3Title">
+
+开始生成摘要
+
+</strong>
+
+
+<p id="step3Text">
+
+点击开始生成，让 AI 分析文章内容并提取核心信息。
+
+</p>
+
+
+</div>
+
+
+<div class="step">
+
+
+<strong id="step4Title">
+
+查看摘要结果
+
+</strong>
+
+
+<p id="step4Text">
+
+查看生成的摘要内容，快速了解文章的主要观点和重点信息。
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 主要功能 -->
+
+
+<section class="card">
+
+
+<h2 id="featureTitle">
+
+✨ AI文章摘要工具可以做什么？
+
+</h2>
+
+
+<div class="feature-grid">
+
+
+<div class="feature">
+
+
+<h3 id="feature1Title">
+
+📋 提取文章重点
+
+</h3>
+
+
+<p id="feature1Text">
+
+帮助快速找出文章中的核心内容和重要信息。
+
+</p>
+
+
+</div>
+
+
+<div class="feature">
+
+
+<h3 id="feature2Title">
+
+⚡ 节省阅读时间
+
+</h3>
+
+
+<p id="feature2Text">
+
+通过简洁的摘要快速了解长文章的大致内容。
+
+</p>
+
+
+</div>
+
+
+<div class="feature">
+
+
+<h3 id="feature3Title">
+
+🧠 快速理解内容
+
+</h3>
+
+
+<p id="feature3Text">
+
+帮助整理复杂内容，让文章结构和主要观点更加清晰。
+
+</p>
+
+
+</div>
+
+
+<div class="feature">
+
+
+<h3 id="feature4Title">
+
+📚 总结学习资料
+
+</h3>
+
+
+<p id="feature4Text">
+
+可以用于整理学习资料、笔记和较长的知识内容。
+
+</p>
+
+
+</div>
+
+
+<div class="feature">
+
+
+<h3 id="feature5Title">
+
+💼 整理工作内容
+
+</h3>
+
+
+<p id="feature5Text">
+
+帮助快速总结工作文档、报告和其他文字资料。
+
+</p>
+
+
+</div>
+
+
+<div class="feature">
+
+
+<h3 id="feature6Title">
+
+📰 快速阅读文章
+
+</h3>
+
+
+<p id="feature6Text">
+
+快速了解新闻、文章和其他长文本的核心信息。
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 适合谁 -->
+
+
+<section class="card">
+
+
+<h2 id="whoTitle">
+
+👥 AI文章摘要工具适合谁？
+
+</h2>
+
+
+<ul class="feature-list">
+
+
+<li id="who1">
+
+🎓 学生：快速整理学习资料、文章和知识内容。
+
+</li>
+
+
+<li id="who2">
+
+📚 阅读者：快速了解长文章的重点和核心内容。
+
+</li>
+
+
+<li id="who3">
+
+💼 办公用户：总结工作文档、报告和会议资料。
+
+</li>
+
+
+<li id="who4">
+
+✍️ 内容创作者：快速整理文章资料和参考内容。
+
+</li>
+
+
+<li id="who5">
+
+📝 普通用户：节省阅读时间，快速获取重要信息。
+
+</li>
+
+
+</ul>
+
+
+</section>
+
+
+
+<!-- FAQ -->
+
+
+<section class="card">
+
+
+<h2 id="faqTitle">
+
+❓ 常见问题
+
+</h2>
+
+
+<div class="faq">
+
+
+<h3 id="faq1Question">
+
+AI文章摘要工具是免费的吗？
+
+</h3>
+
+
+<p id="faq1Answer">
+
+是的，你可以免费使用 AI工具箱提供的文章摘要工具。
+
+</p>
+
+
+</div>
+
+
+<div class="faq">
+
+
+<h3 id="faq2Question">
+
+摘要会保留文章的重点吗？
+
+</h3>
+
+
+<p id="faq2Answer">
+
+工具会尽量提取文章中的核心信息和主要观点，但对于重要内容，建议结合原文进行确认。
+
+</p>
+
+
+</div>
+
+
+<div class="faq">
+
+
+<h3 id="faq3Question">
+
+可以总结哪些内容？
+
+</h3>
+
+
+<p id="faq3Answer">
+
+你可以总结文章、学习资料、新闻内容、工作文档、报告和其他文字内容。
+
+</p>
+
+
+</div>
+
+
+<div class="faq">
+
+
+<h3 id="faq4Question">
+
+需要注册账号吗？
+
+</h3>
+
+
+<p id="faq4Answer">
+
+不需要注册账号，打开 AI工具箱即可开始使用。
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 再次使用工具 -->
+
+
+<section class="card">
+
+
+<h2 id="useTitle">
+
+🚀 立即开始总结文章
+
+</h2>
+
+
+<p id="useText">
+
+打开 AI工具箱，免费使用 AI文章摘要工具，快速提取文章重点信息。
+
+</p>
+
+
+<div class="button-row">
+
+
+<a
+href="index.html#summaryTool"
+class="button primary"
+id="useToolBtn2">
+
+📋 立即生成文章摘要
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 自己的教程 -->
+
+
+<section class="card">
+
+
+<h2 id="guideTitle">
+
+📚 AI文章摘要使用教程
+
+</h2>
+
+
+<p id="guideText">
+
+想了解如何更高效地总结文章？你可以查看完整的使用指南和文章摘要技巧。
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a
+href="ai-article-summarizer-guide.html"
+class="tool-link"
+id="ownGuideLink">
+
+📖 AI文章摘要使用指南
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 所有 AI 工具 -->
+
+
+<section class="card">
+
+
+<h2 id="allToolsTitle">
+
+🛠️ 所有 AI 工具
+
+</h2>
+
+
+<p id="allToolsText">
+
+探索 AI工具箱中的免费 AI 效率工具：
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a
+href="index.html#promptTool"
+class="tool-link"
+id="toolPrompt">
+
+🔥 AI提示词生成器
+
+</a>
+
+
+<a
+href="index.html#resumeTool"
+class="tool-link"
+id="toolResume">
+
+📝 AI简历助手
+
+</a>
+
+
+<a
+href="index.html#titleTool"
+class="tool-link"
+id="toolTitle">
+
+💡 AI标题生成器
+
+</a>
+
+
+<a
+href="index.html#polisherTool"
+class="tool-link"
+id="toolPolisher">
+
+✨ AI文章润色工具
+
+</a>
+
+
+<a
+href="index.html#summaryTool"
+class="tool-link"
+id="toolSummary">
+
+📋 AI文章摘要工具
+
+</a>
+
+
+<a
+href="index.html#replyTool"
+class="tool-link"
+id="toolReply">
+
+💬 AI回复助手
+
+</a>
+
+
+<a
+href="index.html#xiaohongshuTool"
+class="tool-link"
+id="toolXhs">
+
+📱 AI小红书标题生成器
+
+</a>
+
+
+<a
+href="index.html#mailTool"
+class="tool-link"
+id="toolMail">
+
+📧 AI邮件助手
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 所有工具介绍 -->
+
+
+<section class="card">
+
+
+<h2 id="toolPagesTitle">
+
+📖 AI工具介绍
+
+</h2>
+
+
+<p id="toolPagesText">
+
+了解每个 AI 工具的功能、使用场景和详细介绍：
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a
+href="ai-prompt-generator.html"
+class="tool-link"
+id="pagePrompt">
+
+🔥 AI提示词生成器介绍
+
+</a>
+
+
+<a
+href="ai-resume-helper.html"
+class="tool-link"
+id="pageResume">
+
+📝 AI简历助手介绍
+
+</a>
+
+
+<a
+href="ai-title-generator.html"
+class="tool-link"
+id="pageTitleGenerator">
+
+💡 AI标题生成器介绍
+
+</a>
+
+
+<a
+href="ai-writing-polisher.html"
+class="tool-link"
+id="pagePolisher">
+
+✨ AI文章润色工具介绍
+
+</a>
+
+
+<a
+href="ai-article-summarizer.html"
+class="tool-link"
+id="pageSummary">
+
+📋 AI文章摘要工具介绍
+
+</a>
+
+
+<a
+href="ai-reply-assistant.html"
+class="tool-link"
+id="pageReply">
+
+💬 AI回复助手介绍
+
+</a>
+
+
+<a
+href="xiaohongshu-title-generator.html"
+class="tool-link"
+id="pageXhs">
+
+📱 AI小红书标题生成器介绍
+
+</a>
+
+
+<a
+href="ai-email-assistant.html"
+class="tool-link"
+id="pageMail">
+
+📧 AI邮件助手介绍
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 所有教程 -->
+
+
+<section class="card">
+
+
+<h2 id="guidesTitle">
+
+📚 AI教程指南
+
+</h2>
+
+
+<p id="guidesText">
+
+学习如何更高效地使用 AI 工具，提高学习、工作和创作效率：
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a
+href="ai-prompt-guide.html"
+class="tool-link"
+id="guidePrompt">
+
+🔥 AI Prompt入门指南
+
+</a>
+
+
+<a
+href="ai-resume-guide.html"
+class="tool-link"
+id="guideResume">
+
+📝 AI简历优化指南
+
+</a>
+
+
+<a
+href="ai-title-generator-guide.html"
+class="tool-link"
+id="guideTitleGenerator">
+
+💡 AI标题生成指南
+
+</a>
+
+
+<a
+href="ai-writing-polisher-guide.html"
+class="tool-link"
+id="guidePolisher">
+
+✨ AI文章润色指南
+
+</a>
+
+
+<a
+href="ai-article-summarizer-guide.html"
+class="tool-link"
+id="guideSummary">
+
+📋 AI文章摘要指南
+
+</a>
+
+
+<a
+href="ai-reply-assistant-guide.html"
+class="tool-link"
+id="guideReply">
+
+💬 AI回复技巧指南
+
+</a>
+
+
+<a
+href="ai-xiaohongshu-guide.html"
+class="tool-link"
+id="guideXhs">
+
+📱 小红书标题技巧指南
+
+</a>
+
+
+<a
+href="ai-email-assistant-guide.html"
+class="tool-link"
+id="guideMail">
+
+📧 AI邮件写作指南
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 返回首页 -->
+
+
+<div class="home-link">
+
+
+<a
+href="index.html"
+class="button secondary"
+id="homeBtn">
+
+🏠 返回 AI工具箱首页
+
+</a>
+
+
+</div>
+
+
+
+<!-- Footer -->
+
+
+<footer class="footer">
+
+
+<div id="footerText">
+
+© 2026 AI工具箱 · Free AI Tools
+
+</div>
+
+
+</footer>
+
+
+</div>
+
+
+
+<script>
+
+
+const languageText = {
+
+
+zh:{
+
+
+pageTitle:
+"AI文章摘要工具 - 免费在线AI文章总结工具 | AI工具箱",
+
+
+metaDescription:
+"免费在线AI文章摘要工具，帮助快速提取文章重点，总结长文本、文章和内容核心信息。无需注册即可使用。",
+
+
+ogTitle:
+"AI文章摘要工具 - 免费在线AI文章总结工具",
+
+
+ogDescription:
+"使用AI快速总结文章内容，提取重点信息，让长文本更加简洁易读。",
+
+
+twitterTitle:
+"AI文章摘要工具 - AI Article Summarizer",
+
+
+twitterDescription:
+"免费AI文章摘要工具，帮助快速总结长文章并提取重点信息。",
+
+
+siteTitle:
+"🤖 AI工具箱",
+
+
+siteDescription:
+"免费、简单、实用的 AI 效率工具",
+
+
+freeBadge:
+"免费使用",
+
+
+heroTitle:
+"📋 AI文章摘要工具",
+
+
+heroDescription:
+"使用 AI 快速总结长文章，提取核心内容和重点信息。",
+
+
+useToolBtn:
+"🚀 立即使用 AI文章摘要工具",
+
+
+heroGuideBtn:
+"📚 查看使用教程",
+
+
+introTitle:
+"🤖 什么是 AI文章摘要工具？",
+
+
+introText1:
+"AI文章摘要工具可以帮助你快速理解长文章的核心内容，将较长的文字整理成更加简洁、清晰的摘要。",
+
+
+introText2:
+"你只需要输入或粘贴需要总结的文章内容，AI 就可以帮助提取其中的重要信息、主要观点和核心内容。",
+
+
+introText3:
+"它适合阅读长文章、学习资料、新闻内容、工作文档以及各种需要快速了解重点信息的场景。",
+
+
+howTitle:
+"📖 如何使用 AI文章摘要工具？",
+
+
+step1Title:
+"输入文章内容",
+
+
+step1Text:
+"粘贴或输入你希望总结的文章、段落或长文本。",
+
+
+step2Title:
+"选择摘要需求",
+
+
+step2Text:
+"根据你的需求选择适合的摘要方式或总结重点。",
+
+
+step3Title:
+"开始生成摘要",
+
+
+step3Text:
+"点击开始生成，让 AI 分析文章内容并提取核心信息。",
+
+
+step4Title:
+"查看摘要结果",
+
+
+step4Text:
+"查看生成的摘要内容，快速了解文章的主要观点和重点信息。",
+
+
+featureTitle:
+"✨ AI文章摘要工具可以做什么？",
+
+
+feature1Title:
+"📋 提取文章重点",
+
+
+feature1Text:
+"帮助快速找出文章中的核心内容和重要信息。",
+
+
+feature2Title:
+"⚡ 节省阅读时间",
+
+
+feature2Text:
+"通过简洁的摘要快速了解长文章的大致内容。",
+
+
+feature3Title:
+"🧠 快速理解内容",
+
+
+feature3Text:
+"帮助整理复杂内容，让文章结构和主要观点更加清晰。",
+
+
+feature4Title:
+"📚 总结学习资料",
+
+
+feature4Text:
+"可以用于整理学习资料、笔记和较长的知识内容。",
+
+
+feature5Title:
+"💼 整理工作内容",
+
+
+feature5Text:
+"帮助快速总结工作文档、报告和其他文字资料。",
+
+
+feature6Title:
+"📰 快速阅读文章",
+
+
+feature6Text:
+"快速了解新闻、文章和其他长文本的核心信息。",
+
+
+whoTitle:
+"👥 AI文章摘要工具适合谁？",
+
+
+who1:
+"🎓 学生：快速整理学习资料、文章和知识内容。",
+
+
+who2:
+"📚 阅读者：快速了解长文章的重点和核心内容。",
+
+
+who3:
+"💼 办公用户：总结工作文档、报告和会议资料。",
+
+
+who4:
+"✍️ 内容创作者：快速整理文章资料和参考内容。",
+
+
+who5:
+"📝 普通用户：节省阅读时间，快速获取重要信息。",
+
+
+faqTitle:
+"❓ 常见问题",
+
+
+faq1Question:
+"AI文章摘要工具是免费的吗？",
+
+
+faq1Answer:
+"是的，你可以免费使用 AI工具箱提供的文章摘要工具。",
+
+
+faq2Question:
+"摘要会保留文章的重点吗？",
+
+
+faq2Answer:
+"工具会尽量提取文章中的核心信息和主要观点，但对于重要内容，建议结合原文进行确认。",
+
+
+faq3Question:
+"可以总结哪些内容？",
+
+
+faq3Answer:
+"你可以总结文章、学习资料、新闻内容、工作文档、报告和其他文字内容。",
+
+
+faq4Question:
+"需要注册账号吗？",
+
+
+faq4Answer:
+"不需要注册账号，打开 AI工具箱即可开始使用。",
+
+
+useTitle:
+"🚀 立即开始总结文章",
+
+
+useText:
+"打开 AI工具箱，免费使用 AI文章摘要工具，快速提取文章重点信息。",
+
+
+useToolBtn2:
+"📋 立即生成文章摘要",
+
+
+guideTitle:
+"📚 AI文章摘要使用教程",
+
+
+guideText:
+"想了解如何更高效地总结文章？你可以查看完整的使用指南和文章摘要技巧。",
+
+
+ownGuideLink:
+"📖 AI文章摘要使用指南",
+
+
+allToolsTitle:
+"🛠️ 所有 AI 工具",
+
+
+allToolsText:
+"探索 AI工具箱中的免费 AI 效率工具：",
+
+
+toolPrompt:
+"🔥 AI提示词生成器",
+
+
+toolResume:
+"📝 AI简历助手",
+
+
+toolTitle:
+"💡 AI标题生成器",
+
+
+toolPolisher:
+"✨ AI文章润色工具",
+
+
+toolSummary:
+"📋 AI文章摘要工具",
+
+
+toolReply:
+"💬 AI回复助手",
+
+
+toolXhs:
+"📱 AI小红书标题生成器",
+
+
+toolMail:
+"📧 AI邮件助手",
+
+
+toolPagesTitle:
+"📖 AI工具介绍",
+
+
+toolPagesText:
+"了解每个 AI 工具的功能、使用场景和详细介绍：",
+
+
+pagePrompt:
+"🔥 AI提示词生成器介绍",
+
+
+pageResume:
+"📝 AI简历助手介绍",
+
+
+pageTitleGenerator:
+"💡 AI标题生成器介绍",
+
+
+pagePolisher:
+"✨ AI文章润色工具介绍",
+
+
+pageSummary:
+"📋 AI文章摘要工具介绍",
+
+
+pageReply:
+"💬 AI回复助手介绍",
+
+
+pageXhs:
+"📱 AI小红书标题生成器介绍",
+
+
+pageMail:
+"📧 AI邮件助手介绍",
+
+
+guidesTitle:
+"📚 AI教程指南",
+
+
+guidesText:
+"学习如何更高效地使用 AI 工具，提高学习、工作和创作效率：",
+
+
+guidePrompt:
+"🔥 AI Prompt入门指南",
+
+
+guideResume:
+"📝 AI简历优化指南",
+
+
+guideTitleGenerator:
+"💡 AI标题生成指南",
+
+
+guidePolisher:
+"✨ AI文章润色指南",
+
+
+guideSummary:
+"📋 AI文章摘要指南",
+
+
+guideReply:
+"💬 AI回复技巧指南",
+
+
+guideXhs:
+"📱 小红书标题技巧指南",
+
+
+guideMail:
+"📧 AI邮件写作指南",
+
+
+homeBtn:
+"🏠 返回 AI工具箱首页",
+
+
+footerText:
+"© 2026 AI工具箱 · Free AI Tools"
+
+
+},
+
+
+
+en:{
+
+
+pageTitle:
+"AI Article Summarizer - Free Online AI Text Summary Tool | AI Toolbox",
+
+
+metaDescription:
+"Free online AI article summarizer that helps summarize long articles, extract key points and quickly understand important information. No registration required.",
+
+
+ogTitle:
+"AI Article Summarizer - Free Online AI Text Summary Tool",
+
+
+ogDescription:
+"Use AI to summarize long articles, extract key points and quickly understand important information.",
+
+
+twitterTitle:
+"AI Article Summarizer - AI Toolbox",
+
+
+twitterDescription:
+"Free AI article summarizer to summarize long text and extract key information.",
+
+
+siteTitle:
+"🤖 AI Toolbox",
+
+
+siteDescription:
+"Free, simple and useful AI productivity tools",
+
+
+freeBadge:
+"FREE",
+
+
+heroTitle:
+"📋 AI Article Summarizer",
+
+
+heroDescription:
+"Use AI to quickly summarize long articles and extract key information.",
+
+
+useToolBtn:
+"🚀 Use AI Article Summarizer",
+
+
+heroGuideBtn:
+"📚 View User Guide",
+
+
+introTitle:
+"🤖 What Is an AI Article Summarizer?",
+
+
+introText1:
+"An AI article summarizer helps you quickly understand the main content of long articles by turning lengthy text into shorter and clearer summaries.",
+
+
+introText2:
+"Simply paste the content you want to summarize, and AI can help identify important information, main ideas and key points.",
+
+
+introText3:
+"It can be useful for long articles, study materials, news, work documents and many other situations where you want to understand key information quickly.",
+
+
+howTitle:
+"📖 How to Use the AI Article Summarizer",
+
+
+step1Title:
+"Enter Your Content",
+
+
+step1Text:
+"Paste or enter the article, paragraph or long text you want to summarize.",
+
+
+step2Title:
+"Choose Your Summary Needs",
+
+
+step2Text:
+"Choose the type of summary or focus that best fits your needs.",
+
+
+step3Title:
+"Generate the Summary",
+
+
+step3Text:
+"Click generate and let AI analyze the content and extract key information.",
+
+
+step4Title:
+"Review the Result",
+
+
+step4Text:
+"Review the generated summary and quickly understand the main ideas and key points.",
+
+
+featureTitle:
+"✨ What Can the AI Article Summarizer Do?",
+
+
+feature1Title:
+"📋 Extract Key Points",
+
+
+feature1Text:
+"Quickly identify important information and the core content of an article.",
+
+
+feature2Title:
+"⚡ Save Reading Time",
+
+
+feature2Text:
+"Understand the general content of long articles through concise summaries.",
+
+
+feature3Title:
+"🧠 Understand Content Faster",
+
+
+feature3Text:
+"Organize complex information and make the main ideas easier to understand.",
+
+
+feature4Title:
+"📚 Summarize Study Materials",
+
+
+feature4Text:
+"Useful for organizing study materials, notes and longer educational content.",
+
+
+feature5Title:
+"💼 Organize Work Content",
+
+
+feature5Text:
+"Quickly summarize work documents, reports and other written materials.",
+
+
+feature6Title:
+"📰 Read Articles Faster",
+
+
+feature6Text:
+"Quickly understand the key information in news, articles and other long text.",
+
+
+whoTitle:
+"👥 Who Can Use This Tool?",
+
+
+who1:
+"🎓 Students: Organize study materials, articles and educational content.",
+
+
+who2:
+"📚 Readers: Quickly understand the key points of long articles.",
+
+
+who3:
+"💼 Office Users: Summarize work documents, reports and meeting materials.",
+
+
+who4:
+"✍️ Content Creators: Organize article research and reference materials.",
+
+
+who5:
+"📝 Everyday Users: Save reading time and quickly find important information.",
+
+
+faqTitle:
+"❓ Frequently Asked Questions",
+
+
+faq1Question:
+"Is the AI Article Summarizer free?",
+
+
+faq1Answer:
+"Yes. You can use the AI Article Summarizer provided by AI Toolbox for free.",
+
+
+faq2Question:
+"Will the summary keep the important information?",
+
+
+faq2Answer:
+"The tool aims to extract the main ideas and key information, but important content should still be checked against the original text.",
+
+
+faq3Question:
+"What content can I summarize?",
+
+
+faq3Answer:
+"You can summarize articles, study materials, news, work documents, reports and other text.",
+
+
+faq4Question:
+"Do I need to register?",
+
+
+faq4Answer:
+"No registration is required. Simply open AI Toolbox and start using the tool.",
+
+
+useTitle:
+"🚀 Start Summarizing Now",
+
+
+useText:
+"Open AI Toolbox and use the AI Article Summarizer for free to quickly extract important information.",
+
+
+useToolBtn2:
+"📋 Generate a Summary",
+
+
+guideTitle:
+"📚 AI Article Summarizer Guide",
+
+
+guideText:
+"Want to learn how to summarize articles more effectively? Read the complete guide and useful summarizing tips.",
+
+
+ownGuideLink:
+"📖 AI Article Summarizer Guide",
+
+
+allToolsTitle:
+"🛠️ All AI Tools",
+
+
+allToolsText:
+"Explore free AI productivity tools from AI Toolbox:",
+
+
+toolPrompt:
+"🔥 AI Prompt Generator",
+
+
+toolResume:
+"📝 AI Resume Assistant",
+
+
+toolTitle:
+"💡 AI Title Generator",
+
+
+toolPolisher:
+"✨ AI Writing Polisher",
+
+
+toolSummary:
+"📋 AI Article Summarizer",
+
+
+toolReply:
+"💬 AI Reply Assistant",
+
+
+toolXhs:
+"📱 AI Social Media Title Generator",
+
+
+toolMail:
+"📧 AI Email Assistant",
+
+
+toolPagesTitle:
+"📖 AI Tool Pages",
+
+
+toolPagesText:
+"Learn about the features, use cases and details of each AI tool:",
+
+
+pagePrompt:
+"🔥 AI Prompt Generator",
+
+
+pageResume:
+"📝 AI Resume Assistant",
+
+
+pageTitleGenerator:
+"💡 AI Title Generator",
+
+
+pagePolisher:
+"✨ AI Writing Polisher",
+
+
+pageSummary:
+"📋 AI Article Summarizer",
+
+
+pageReply:
+"💬 AI Reply Assistant",
+
+
+pageXhs:
+"📱 AI Social Media Title Generator",
+
+
+pageMail:
+"📧 AI Email Assistant",
+
+
+guidesTitle:
+"📚 AI Guides",
+
+
+guidesText:
+"Learn how to use AI tools more effectively for studying, work and content creation:",
+
+
+guidePrompt:
+"🔥 AI Prompt Beginner Guide",
+
+
+guideResume:
+"📝 AI Resume Optimization Guide",
+
+
+guideTitleGenerator:
+"💡 AI Title Generator Guide",
+
+
+guidePolisher:
+"✨ AI Writing Polisher Guide",
+
+
+guideSummary:
+"📋 AI Article Summarizer Guide",
+
+
+guideReply:
+"💬 AI Reply Guide",
+
+
+guideXhs:
+"📱 Social Media Title Guide",
+
+
+guideMail:
+"📧 AI Email Writing Guide",
+
+
+homeBtn:
+"🏠 Back to AI Toolbox",
+
+
+footerText:
+"© 2026 AI Toolbox · Free AI Tools"
+
+
+}
+
+
+};
+
+
+
+function setLanguage(lang){
+
+
+const t = languageText[lang];
+
+
+
+Object.keys(t).forEach(id=>{
+
+
+const el = document.getElementById(id);
+
+
+
+if(id === "pageTitle"){
+
+document.title = t[id];
+
+return;
+
+}
+
+
+if(id === "metaDescription"){
+
+document
+.getElementById("metaDescription")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+if(id === "ogTitle"){
+
+document
+.getElementById("ogTitle")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+if(id === "ogDescription"){
+
+document
+.getElementById("ogDescription")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+if(id === "twitterTitle"){
+
+document
+.getElementById("twitterTitle")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+if(id === "twitterDescription"){
+
+document
+.getElementById("twitterDescription")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+if(el){
+
+el.innerText = t[id];
+
+}
+
+
+});
+
+
+
+document
+.getElementById("zhBtn")
+.classList.toggle("active",lang==="zh");
+
+
+
+document
+.getElementById("enBtn")
+.classList.toggle("active",lang==="en");
+
+
+
+document.documentElement.lang =
+lang==="zh"
+?
+"zh-CN"
+:
+"en";
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
