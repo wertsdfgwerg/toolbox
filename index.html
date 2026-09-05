@@ -2508,9 +2508,9 @@ try{
     throw new Error("Invalid response");
 }
 
-return data.content || "";
-}
-
+return (data.content || "")
+.replace(/User Safety:[\s\S]*?(safe|unsafe)/gi,"")
+.trim();
 
 
 
@@ -4409,13 +4409,18 @@ Requirements:
 
 
 
-        let result =
-        await callAI(prompt,input);
+       let result =
+await callAI(prompt,input);
 
 
+let cleanedResult = result
+.replace(/User Safety:\s*safe/gi,"")
+.replace(/User Safety:/gi,"")
+.replace(/safe/gi,"")
+.trim();
 
-        box.innerText=result;
 
+box.innerText = cleanedResult;
 
 
     }catch(e){
