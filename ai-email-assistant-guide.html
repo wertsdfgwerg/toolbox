@@ -1,0 +1,2706 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<!-- 网站图标 -->
+
+<link rel="icon" type="image/png" href="/toolbox/logo.png">
+
+<link rel="shortcut icon" type="image/png" href="/toolbox/logo.png">
+
+<link rel="apple-touch-icon" href="/toolbox/logo.png">
+
+
+<!-- SEO -->
+
+<title id="pageTitle">
+AI邮件助手使用指南 - 免费AI邮件写作教程 | AI工具箱
+</title>
+
+
+<meta
+id="metaDescription"
+name="description"
+content="免费AI邮件助手使用指南，学习如何使用AI撰写商务邮件、正式邮件、日常邮件和英文邮件，提高邮件写作效率。"
+>
+
+
+<meta name="robots" content="index,follow">
+
+
+<link
+rel="canonical"
+href="https://wertsdfgwerg.github.io/toolbox/ai-email-assistant-guide.html"
+>
+
+
+<!-- Open Graph -->
+
+<meta
+id="ogTitle"
+property="og:title"
+content="AI邮件助手使用指南 - 免费AI邮件写作教程"
+>
+
+
+<meta
+id="ogDescription"
+property="og:description"
+content="学习如何使用AI邮件助手快速生成清晰、专业、自然的邮件内容。"
+>
+
+
+<meta property="og:type" content="website">
+
+
+<meta
+property="og:url"
+content="https://wertsdfgwerg.github.io/toolbox/ai-email-assistant-guide.html"
+>
+
+
+<!-- Twitter -->
+
+<meta name="twitter:card" content="summary">
+
+
+<meta
+id="twitterTitle"
+name="twitter:title"
+content="AI邮件助手使用指南 - AI Email Assistant Guide"
+>
+
+
+<meta
+id="twitterDescription"
+name="twitter:description"
+content="免费AI邮件写作指南，学习如何更高效地使用AI撰写邮件。"
+>
+
+
+<!-- Cloudflare Web Analytics -->
+
+<script
+type="module"
+src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"4eb5597f43294acfbf1573e4628dcf28"}'>
+</script>
+
+
+<style>
+
+
+*{
+box-sizing:border-box;
+}
+
+
+html{
+scroll-behavior:smooth;
+}
+
+
+body{
+
+margin:0;
+
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+"Microsoft YaHei",
+Arial,
+sans-serif;
+
+background:#f7f9fc;
+
+color:#222;
+
+line-height:1.8;
+
+}
+
+
+.container{
+
+max-width:1000px;
+
+margin:auto;
+
+padding:30px 20px 60px;
+
+}
+
+
+/* 顶部 */
+
+
+.header{
+
+position:relative;
+
+text-align:center;
+
+padding:30px 0 40px;
+
+}
+
+
+.logo{
+
+width:60px;
+
+height:60px;
+
+object-fit:contain;
+
+}
+
+
+.site-name{
+
+font-size:28px;
+
+font-weight:800;
+
+margin:18px 0 5px;
+
+}
+
+
+.site-description{
+
+font-size:16px;
+
+color:#666;
+
+margin:0;
+
+}
+
+
+/* 语言切换 */
+
+
+.language-switch{
+
+position:absolute;
+
+right:0;
+
+top:10px;
+
+display:flex;
+
+background:white;
+
+border:1px solid #eee;
+
+border-radius:30px;
+
+padding:4px;
+
+}
+
+
+.language-switch button{
+
+border:none;
+
+background:none;
+
+padding:9px 18px;
+
+border-radius:25px;
+
+cursor:pointer;
+
+font-size:14px;
+
+}
+
+
+.language-switch button.active{
+
+background:#111;
+
+color:white;
+
+}
+
+
+/* 卡片 */
+
+
+.card{
+
+background:white;
+
+border-radius:20px;
+
+padding:30px;
+
+margin-bottom:22px;
+
+border:1px solid #eee;
+
+box-shadow:0 8px 25px rgba(0,0,0,.05);
+
+}
+
+
+.card h2{
+
+margin-top:0;
+
+font-size:26px;
+
+}
+
+
+.card h3{
+
+margin-top:24px;
+
+font-size:20px;
+
+}
+
+
+/* Hero */
+
+
+.hero-card{
+
+text-align:center;
+
+padding:45px 30px;
+
+}
+
+
+.badge{
+
+display:inline-block;
+
+background:#111;
+
+color:white;
+
+padding:5px 12px;
+
+border-radius:20px;
+
+font-size:12px;
+
+margin-bottom:10px;
+
+}
+
+
+.hero-card h1{
+
+font-size:40px;
+
+margin:12px 0;
+
+font-weight:800;
+
+}
+
+
+.hero-card p{
+
+color:#666;
+
+font-size:18px;
+
+max-width:700px;
+
+margin:15px auto 25px;
+
+}
+
+
+/* 按钮 */
+
+
+.button-row{
+
+display:flex;
+
+gap:14px;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+margin-top:22px;
+
+}
+
+
+.button{
+
+display:inline-block;
+
+text-decoration:none;
+
+padding:14px 24px;
+
+border-radius:12px;
+
+font-weight:600;
+
+transition:.2s;
+
+text-align:center;
+
+}
+
+
+.primary{
+
+background:#111;
+
+color:white;
+
+}
+
+
+.primary:hover{
+
+transform:translateY(-2px);
+
+}
+
+
+.secondary{
+
+background:#f1f1f1;
+
+color:#222;
+
+}
+
+
+.secondary:hover{
+
+background:#e8e8e8;
+
+}
+
+
+/* 列表 */
+
+
+.feature-list{
+
+padding-left:20px;
+
+}
+
+
+.feature-list li{
+
+margin:12px 0;
+
+}
+
+
+/* 邮件类型 */
+
+
+.mode-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+
+.mode{
+
+background:#f8f9fb;
+
+border-radius:14px;
+
+padding:18px;
+
+border:1px solid #eee;
+
+}
+
+
+.mode h3{
+
+margin:0 0 8px;
+
+font-size:17px;
+
+}
+
+
+.mode p{
+
+margin:0;
+
+color:#666;
+
+}
+
+
+/* 使用步骤 */
+
+
+.steps{
+
+counter-reset:step;
+
+padding:0;
+
+}
+
+
+.step{
+
+position:relative;
+
+padding-left:55px;
+
+margin:24px 0;
+
+}
+
+
+.step::before{
+
+counter-increment:step;
+
+content:counter(step);
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:34px;
+
+height:34px;
+
+border-radius:50%;
+
+background:#111;
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:bold;
+
+}
+
+
+/* FAQ */
+
+
+.faq{
+
+border-top:1px solid #eee;
+
+padding:18px 0;
+
+}
+
+
+.faq:last-child{
+
+border-bottom:1px solid #eee;
+
+}
+
+
+.faq h3{
+
+margin:0 0 8px;
+
+font-size:18px;
+
+}
+
+
+.faq p{
+
+margin:0;
+
+color:#666;
+
+}
+
+
+/* 导航链接 */
+
+
+.link-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:12px;
+
+margin-top:18px;
+
+}
+
+
+.tool-link{
+
+display:block;
+
+background:#f8f9fb;
+
+padding:15px 16px;
+
+border-radius:12px;
+
+text-decoration:none;
+
+color:#222;
+
+font-weight:600;
+
+border:1px solid #eee;
+
+transition:.2s;
+
+}
+
+
+.tool-link:hover{
+
+transform:translateY(-2px);
+
+background:#f1f3f5;
+
+}
+
+
+/* 返回首页 */
+
+
+.home-link{
+
+text-align:center;
+
+margin-top:30px;
+
+}
+
+
+/* Footer */
+
+
+.footer{
+
+text-align:center;
+
+color:#777;
+
+padding:28px 0 10px;
+
+font-size:14px;
+
+}
+
+
+/* 手机端 */
+
+
+@media(max-width:768px){
+
+
+.container{
+
+padding:20px 15px 45px;
+
+}
+
+
+.language-switch{
+
+position:relative;
+
+right:auto;
+
+top:auto;
+
+justify-content:center;
+
+margin-bottom:20px;
+
+}
+
+
+.hero-card h1{
+
+font-size:30px;
+
+}
+
+
+.card{
+
+padding:22px;
+
+}
+
+
+.mode-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.link-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.button-row{
+
+flex-direction:column;
+
+}
+
+
+.button{
+
+width:100%;
+
+}
+
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- 顶部 -->
+
+
+<header class="header">
+
+
+<div class="language-switch">
+
+
+<button
+id="zhBtn"
+class="active"
+onclick="setLanguage('zh')">
+
+中文
+
+</button>
+
+
+<button
+id="enBtn"
+onclick="setLanguage('en')">
+
+English
+
+</button>
+
+
+</div>
+
+
+<a href="index.html">
+
+<img
+src="logo.png"
+class="logo"
+alt="AI Toolbox"
+>
+
+</a>
+
+
+<div
+class="site-name"
+id="siteTitle">
+
+🤖 AI工具箱
+
+</div>
+
+
+<p
+class="site-description"
+id="siteDescription">
+
+免费、简单、实用的 AI 效率工具
+
+</p>
+
+
+</header>
+
+
+
+<!-- Hero -->
+
+
+<section class="card hero-card">
+
+
+<span
+class="badge"
+id="guideBadge">
+
+使用指南
+
+</span>
+
+
+<h1 id="heroTitle">
+
+📧 AI邮件助手使用指南
+
+</h1>
+
+
+<p id="heroDescription">
+
+学习如何使用 AI邮件助手更高效地撰写清晰、自然、专业的邮件。
+
+</p>
+
+
+<div class="button-row">
+
+
+<a
+href="index.html#mailTool"
+class="button primary"
+id="useToolBtn">
+
+🚀 立即使用 AI邮件助手
+
+</a>
+
+
+<a
+href="ai-email-assistant.html"
+class="button secondary"
+id="heroIntroBtn">
+
+📖 查看工具介绍
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 教程介绍 -->
+
+
+<section class="card">
+
+
+<h2 id="introTitle">
+
+🤖 如何使用 AI邮件助手？
+
+</h2>
+
+
+<p id="introText1">
+
+AI邮件助手可以帮助你快速整理邮件内容，并根据不同的使用场景生成更加清晰、自然和合适的表达方式。
+
+</p>
+
+
+<p id="introText2">
+
+你不需要从头思考整封邮件应该怎么写，只需要告诉 AI 邮件的大致目的、需要表达的信息以及希望使用的语气，就可以获得一份可参考的邮件内容。
+
+</p>
+
+
+<p id="introText3">
+
+无论是工作邮件、商务沟通、正式通知、日常联系还是英文邮件，都可以通过 AI邮件助手提高写作效率。
+
+</p>
+
+
+</section>
+
+
+
+<!-- 使用步骤 -->
+
+
+<section class="card">
+
+
+<h2 id="howTitle">
+
+📖 AI邮件助手使用步骤
+
+</h2>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+
+<strong id="step1Title">
+
+确定邮件目的
+
+</strong>
+
+
+<p id="step1Text">
+
+先想清楚这封邮件需要完成什么事情，例如请求帮助、回复消息、发送通知、表达感谢或进行商务沟通。
+
+</p>
+
+
+</div>
+
+
+<div class="step">
+
+
+<strong id="step2Title">
+
+输入关键信息
+
+</strong>
+
+
+<p id="step2Text">
+
+输入邮件需要包含的主要内容，例如背景信息、重点事项、时间、要求或希望对方采取的行动。
+
+</p>
+
+
+</div>
+
+
+<div class="step">
+
+
+<strong id="step3Title">
+
+选择合适的语气
+
+</strong>
+
+
+<p id="step3Text">
+
+根据邮件对象和使用场景选择更正式、专业、友好或简洁的表达方式。
+
+</p>
+
+
+</div>
+
+
+<div class="step">
+
+
+<strong id="step4Title">
+
+生成并检查邮件
+
+</strong>
+
+
+<p id="step4Text">
+
+让 AI 生成邮件后，检查姓名、时间、具体信息和重要内容是否准确，再进行修改或发送。
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 邮件类型 -->
+
+
+<section class="card">
+
+
+<h2 id="modeTitle">
+
+✉️ 常见邮件写作场景
+
+</h2>
+
+
+<div class="mode-grid">
+
+
+<div class="mode">
+
+
+<h3 id="businessTitle">
+
+💼 商务邮件
+
+</h3>
+
+
+<p id="businessText">
+
+适合客户沟通、合作邀请、项目联系等需要专业表达的场景。
+
+</p>
+
+
+</div>
+
+
+<div class="mode">
+
+
+<h3 id="workTitle">
+
+🗂️ 工作邮件
+
+</h3>
+
+
+<p id="workText">
+
+适合工作汇报、任务沟通、会议安排和日常办公交流。
+
+</p>
+
+
+</div>
+
+
+<div class="mode">
+
+
+<h3 id="formalTitle">
+
+🎓 正式邮件
+
+</h3>
+
+
+<p id="formalText">
+
+适合申请、通知、请求以及其他需要更加规范正式表达的内容。
+
+</p>
+
+
+</div>
+
+
+<div class="mode">
+
+
+<h3 id="replyTitle">
+
+💬 回复邮件
+
+</h3>
+
+
+<p id="replyText">
+
+帮助整理回复思路，让邮件回应更加清楚、有礼貌。
+
+</p>
+
+
+</div>
+
+
+<div class="mode">
+
+
+<h3 id="thankTitle">
+
+🙏 感谢邮件
+
+</h3>
+
+
+<p id="thankText">
+
+用于表达感谢、确认收到信息或维护良好的沟通关系。
+
+</p>
+
+
+</div>
+
+
+<div class="mode">
+
+
+<h3 id="englishTitle">
+
+🌍 英文邮件
+
+</h3>
+
+
+<p id="englishText">
+
+帮助整理英文邮件表达，使内容更加自然、清晰和符合常见沟通方式。
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 写作技巧 -->
+
+
+<section class="card">
+
+
+<h2 id="tipsTitle">
+
+💡 使用 AI 写邮件的技巧
+
+</h2>
+
+
+<ul class="feature-list">
+
+
+<li id="tip1">
+
+🎯 说明邮件目的：告诉 AI 你为什么要写这封邮件，可以让生成结果更加准确。
+
+</li>
+
+
+<li id="tip2">
+
+📝 提供关键信息：姓名、时间、事件和具体要求等信息越清楚，邮件内容通常越符合需求。
+
+</li>
+
+
+<li id="tip3">
+
+👤 考虑收件人：给上司、客户、老师、朋友写邮件时，适合使用不同的表达方式。
+
+</li>
+
+
+<li id="tip4">
+
+🎨 选择合适语气：正式邮件不一定适合日常聊天式表达，友好邮件也不需要过于生硬。
+
+</li>
+
+
+<li id="tip5">
+
+🔍 发送前再次检查：AI 可以帮助写作，但重要信息仍然建议自己确认。
+
+</li>
+
+
+</ul>
+
+
+</section>
+
+
+
+<!-- 常见错误 -->
+
+
+<section class="card">
+
+
+<h2 id="mistakesTitle">
+
+⚠️ 写邮件时需要注意什么？
+
+</h2>
+
+
+<ul class="feature-list">
+
+
+<li id="mistake1">
+
+❌ 不要只输入非常模糊的需求，否则生成的内容可能过于通用。
+
+</li>
+
+
+<li id="mistake2">
+
+❌ 不要直接复制发送所有内容，重要邮件最好先检查事实和具体信息。
+
+</li>
+
+
+<li id="mistake3">
+
+❌ 不要忽略邮件对象，不同对象需要不同的语气和表达方式。
+
+</li>
+
+
+<li id="mistake4">
+
+❌ 不要让邮件内容过长，尽量让重点清楚、结构明确。
+
+</li>
+
+
+<li id="mistake5">
+
+❌ 不要遗漏重要信息，例如时间、联系方式、附件或具体行动要求。
+
+</li>
+
+
+</ul>
+
+
+</section>
+
+
+
+<!-- FAQ -->
+
+
+<section class="card">
+
+
+<h2 id="faqTitle">
+
+❓ 常见问题
+
+</h2>
+
+
+<div class="faq">
+
+
+<h3 id="faq1Question">
+
+AI邮件助手可以写哪些邮件？
+
+</h3>
+
+
+<p id="faq1Answer">
+
+可以用于工作邮件、商务邮件、正式邮件、回复邮件、感谢邮件以及其他日常沟通邮件。
+
+</p>
+
+
+</div>
+
+
+<div class="faq">
+
+
+<h3 id="faq2Question">
+
+生成的邮件可以直接发送吗？
+
+</h3>
+
+
+<p id="faq2Answer">
+
+建议先检查生成结果，尤其是姓名、时间、具体事实和重要信息，确认无误后再发送。
+
+</p>
+
+
+</div>
+
+
+<div class="faq">
+
+
+<h3 id="faq3Question">
+
+如何让生成的邮件更符合我的需求？
+
+</h3>
+
+
+<p id="faq3Answer">
+
+尽量提供清楚的邮件目的、背景信息、重点内容和希望使用的语气。
+
+</p>
+
+
+</div>
+
+
+<div class="faq">
+
+
+<h3 id="faq4Question">
+
+可以用 AI邮件助手写英文邮件吗？
+
+</h3>
+
+
+<p id="faq4Answer">
+
+可以。你可以根据需要让 AI 帮助整理英文邮件内容和表达方式。
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 再次使用工具 -->
+
+
+<section class="card">
+
+
+<h2 id="useTitle">
+
+🚀 立即开始写邮件
+
+</h2>
+
+
+<p id="useText">
+
+打开 AI工具箱，免费使用 AI邮件助手，更快速地整理和撰写邮件内容。
+
+</p>
+
+
+<div class="button-row">
+
+
+<a
+href="index.html#mailTool"
+class="button primary"
+id="useToolBtn2">
+
+📧 立即使用 AI邮件助手
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 自己的介绍页面 -->
+
+
+<section class="card">
+
+
+<h2 id="toolIntroTitle">
+
+📖 AI邮件助手工具介绍
+
+</h2>
+
+
+<p id="toolIntroText">
+
+想了解 AI邮件助手的功能和适合使用的场景？可以查看完整的工具介绍页面。
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a
+href="ai-email-assistant.html"
+class="tool-link"
+id="ownIntroLink">
+
+📧 查看 AI邮件助手介绍
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 所有 AI 工具 -->
+
+
+<section class="card">
+
+
+<h2 id="allToolsTitle">
+
+🛠️ 所有 AI 工具
+
+</h2>
+
+
+<p id="allToolsText">
+
+探索 AI工具箱中的免费 AI 效率工具：
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a
+href="index.html#promptTool"
+class="tool-link"
+id="toolPrompt">
+
+🔥 AI提示词生成器
+
+</a>
+
+
+<a
+href="index.html#resumeTool"
+class="tool-link"
+id="toolResume">
+
+📝 AI简历助手
+
+</a>
+
+
+<a
+href="index.html#titleTool"
+class="tool-link"
+id="toolTitle">
+
+💡 AI标题生成器
+
+</a>
+
+
+<a
+href="index.html#polisherTool"
+class="tool-link"
+id="toolPolisher">
+
+✨ AI文章润色工具
+
+</a>
+
+
+<a
+href="index.html#summaryTool"
+class="tool-link"
+id="toolSummary">
+
+📋 AI文章摘要工具
+
+</a>
+
+
+<a
+href="index.html#replyTool"
+class="tool-link"
+id="toolReply">
+
+💬 AI回复助手
+
+</a>
+
+
+<a
+href="index.html#xiaohongshuTool"
+class="tool-link"
+id="toolXhs">
+
+📱 AI小红书标题生成器
+
+</a>
+
+
+<a
+href="index.html#mailTool"
+class="tool-link"
+id="toolMail">
+
+📧 AI邮件助手
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 所有工具介绍 -->
+
+
+<section class="card">
+
+
+<h2 id="toolPagesTitle">
+
+📖 AI工具介绍
+
+</h2>
+
+
+<p id="toolPagesText">
+
+了解每个 AI 工具的功能、使用场景和详细介绍：
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a
+href="ai-prompt-generator.html"
+class="tool-link"
+id="pagePrompt">
+
+🔥 AI提示词生成器介绍
+
+</a>
+
+
+<a
+href="ai-resume-helper.html"
+class="tool-link"
+id="pageResume">
+
+📝 AI简历助手介绍
+
+</a>
+
+
+<a
+href="ai-title-generator.html"
+class="tool-link"
+id="pageTitleGenerator">
+
+💡 AI标题生成器介绍
+
+</a>
+
+
+<a
+href="ai-writing-polisher.html"
+class="tool-link"
+id="pagePolisher">
+
+✨ AI文章润色工具介绍
+
+</a>
+
+
+<a
+href="ai-article-summarizer.html"
+class="tool-link"
+id="pageSummary">
+
+📋 AI文章摘要工具介绍
+
+</a>
+
+
+<a
+href="ai-reply-assistant.html"
+class="tool-link"
+id="pageReply">
+
+💬 AI回复助手介绍
+
+</a>
+
+
+<a
+href="xiaohongshu-title-generator.html"
+class="tool-link"
+id="pageXhs">
+
+📱 AI小红书标题生成器介绍
+
+</a>
+
+
+<a
+href="ai-email-assistant.html"
+class="tool-link"
+id="pageMail">
+
+📧 AI邮件助手介绍
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 所有教程 -->
+
+
+<section class="card">
+
+
+<h2 id="guidesTitle">
+
+📚 AI教程指南
+
+</h2>
+
+
+<p id="guidesText">
+
+学习如何更高效地使用 AI 工具，提高学习、工作和创作效率：
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a
+href="ai-prompt-guide.html"
+class="tool-link"
+id="guidePrompt">
+
+🔥 AI Prompt入门指南
+
+</a>
+
+
+<a
+href="ai-resume-guide.html"
+class="tool-link"
+id="guideResume">
+
+📝 AI简历优化指南
+
+</a>
+
+
+<a
+href="ai-title-generator-guide.html"
+class="tool-link"
+id="guideTitleGenerator">
+
+💡 AI标题生成指南
+
+</a>
+
+
+<a
+href="ai-writing-polisher-guide.html"
+class="tool-link"
+id="guidePolisher">
+
+✨ AI文章润色指南
+
+</a>
+
+
+<a
+href="ai-article-summarizer-guide.html"
+class="tool-link"
+id="guideSummary">
+
+📋 AI文章摘要指南
+
+</a>
+
+
+<a
+href="ai-reply-assistant-guide.html"
+class="tool-link"
+id="guideReply">
+
+💬 AI回复技巧指南
+
+</a>
+
+
+<a
+href="ai-xiaohongshu-guide.html"
+class="tool-link"
+id="guideXhs">
+
+📱 小红书标题技巧指南
+
+</a>
+
+
+<a
+href="ai-email-assistant-guide.html"
+class="tool-link"
+id="guideMail">
+
+📧 AI邮件写作指南
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 返回首页 -->
+
+
+<div class="home-link">
+
+
+<a
+href="index.html"
+class="button secondary"
+id="homeBtn">
+
+🏠 返回 AI工具箱首页
+
+</a>
+
+
+</div>
+
+
+
+<!-- Footer -->
+
+
+<footer class="footer">
+
+
+<div id="footerText">
+
+© 2026 AI工具箱 · Free AI Tools
+
+</div>
+
+
+</footer>
+
+
+</div>
+
+
+
+<script>
+
+
+const languageText = {
+
+
+zh:{
+
+
+pageTitle:
+"AI邮件助手使用指南 - 免费AI邮件写作教程 | AI工具箱",
+
+
+metaDescription:
+"免费AI邮件助手使用指南，学习如何使用AI撰写商务邮件、正式邮件、日常邮件和英文邮件，提高邮件写作效率。",
+
+
+ogTitle:
+"AI邮件助手使用指南 - 免费AI邮件写作教程",
+
+
+ogDescription:
+"学习如何使用AI邮件助手快速生成清晰、专业、自然的邮件内容。",
+
+
+twitterTitle:
+"AI邮件助手使用指南 - AI Email Assistant Guide",
+
+
+twitterDescription:
+"免费AI邮件写作指南，学习如何更高效地使用AI撰写邮件。",
+
+
+siteTitle:
+"🤖 AI工具箱",
+
+
+siteDescription:
+"免费、简单、实用的 AI 效率工具",
+
+
+guideBadge:
+"使用指南",
+
+
+heroTitle:
+"📧 AI邮件助手使用指南",
+
+
+heroDescription:
+"学习如何使用 AI邮件助手更高效地撰写清晰、自然、专业的邮件。",
+
+
+useToolBtn:
+"🚀 立即使用 AI邮件助手",
+
+
+heroIntroBtn:
+"📖 查看工具介绍",
+
+
+introTitle:
+"🤖 如何使用 AI邮件助手？",
+
+
+introText1:
+"AI邮件助手可以帮助你快速整理邮件内容，并根据不同的使用场景生成更加清晰、自然和合适的表达方式。",
+
+
+introText2:
+"你不需要从头思考整封邮件应该怎么写，只需要告诉 AI 邮件的大致目的、需要表达的信息以及希望使用的语气，就可以获得一份可参考的邮件内容。",
+
+
+introText3:
+"无论是工作邮件、商务沟通、正式通知、日常联系还是英文邮件，都可以通过 AI邮件助手提高写作效率。",
+
+
+howTitle:
+"📖 AI邮件助手使用步骤",
+
+
+step1Title:
+"确定邮件目的",
+
+
+step1Text:
+"先想清楚这封邮件需要完成什么事情，例如请求帮助、回复消息、发送通知、表达感谢或进行商务沟通。",
+
+
+step2Title:
+"输入关键信息",
+
+
+step2Text:
+"输入邮件需要包含的主要内容，例如背景信息、重点事项、时间、要求或希望对方采取的行动。",
+
+
+step3Title:
+"选择合适的语气",
+
+
+step3Text:
+"根据邮件对象和使用场景选择更正式、专业、友好或简洁的表达方式。",
+
+
+step4Title:
+"生成并检查邮件",
+
+
+step4Text:
+"让 AI 生成邮件后，检查姓名、时间、具体信息和重要内容是否准确，再进行修改或发送。",
+
+
+modeTitle:
+"✉️ 常见邮件写作场景",
+
+
+businessTitle:
+"💼 商务邮件",
+
+
+businessText:
+"适合客户沟通、合作邀请、项目联系等需要专业表达的场景。",
+
+
+workTitle:
+"🗂️ 工作邮件",
+
+
+workText:
+"适合工作汇报、任务沟通、会议安排和日常办公交流。",
+
+
+formalTitle:
+"🎓 正式邮件",
+
+
+formalText:
+"适合申请、通知、请求以及其他需要更加规范正式表达的内容。",
+
+
+replyTitle:
+"💬 回复邮件",
+
+
+replyText:
+"帮助整理回复思路，让邮件回应更加清楚、有礼貌。",
+
+
+thankTitle:
+"🙏 感谢邮件",
+
+
+thankText:
+"用于表达感谢、确认收到信息或维护良好的沟通关系。",
+
+
+englishTitle:
+"🌍 英文邮件",
+
+
+englishText:
+"帮助整理英文邮件表达，使内容更加自然、清晰和符合常见沟通方式。",
+
+
+tipsTitle:
+"💡 使用 AI 写邮件的技巧",
+
+
+tip1:
+"🎯 说明邮件目的：告诉 AI 你为什么要写这封邮件，可以让生成结果更加准确。",
+
+
+tip2:
+"📝 提供关键信息：姓名、时间、事件和具体要求等信息越清楚，邮件内容通常越符合需求。",
+
+
+tip3:
+"👤 考虑收件人：给上司、客户、老师、朋友写邮件时，适合使用不同的表达方式。",
+
+
+tip4:
+"🎨 选择合适语气：正式邮件不一定适合日常聊天式表达，友好邮件也不需要过于生硬。",
+
+
+tip5:
+"🔍 发送前再次检查：AI 可以帮助写作，但重要信息仍然建议自己确认。",
+
+
+mistakesTitle:
+"⚠️ 写邮件时需要注意什么？",
+
+
+mistake1:
+"❌ 不要只输入非常模糊的需求，否则生成的内容可能过于通用。",
+
+
+mistake2:
+"❌ 不要直接复制发送所有内容，重要邮件最好先检查事实和具体信息。",
+
+
+mistake3:
+"❌ 不要忽略邮件对象，不同对象需要不同的语气和表达方式。",
+
+
+mistake4:
+"❌ 不要让邮件内容过长，尽量让重点清楚、结构明确。",
+
+
+mistake5:
+"❌ 不要遗漏重要信息，例如时间、联系方式、附件或具体行动要求。",
+
+
+faqTitle:
+"❓ 常见问题",
+
+
+faq1Question:
+"AI邮件助手可以写哪些邮件？",
+
+
+faq1Answer:
+"可以用于工作邮件、商务邮件、正式邮件、回复邮件、感谢邮件以及其他日常沟通邮件。",
+
+
+faq2Question:
+"生成的邮件可以直接发送吗？",
+
+
+faq2Answer:
+"建议先检查生成结果，尤其是姓名、时间、具体事实和重要信息，确认无误后再发送。",
+
+
+faq3Question:
+"如何让生成的邮件更符合我的需求？",
+
+
+faq3Answer:
+"尽量提供清楚的邮件目的、背景信息、重点内容和希望使用的语气。",
+
+
+faq4Question:
+"可以用 AI邮件助手写英文邮件吗？",
+
+
+faq4Answer:
+"可以。你可以根据需要让 AI 帮助整理英文邮件内容和表达方式。",
+
+
+useTitle:
+"🚀 立即开始写邮件",
+
+
+useText:
+"打开 AI工具箱，免费使用 AI邮件助手，更快速地整理和撰写邮件内容。",
+
+
+useToolBtn2:
+"📧 立即使用 AI邮件助手",
+
+
+toolIntroTitle:
+"📖 AI邮件助手工具介绍",
+
+
+toolIntroText:
+"想了解 AI邮件助手的功能和适合使用的场景？可以查看完整的工具介绍页面。",
+
+
+ownIntroLink:
+"📧 查看 AI邮件助手介绍",
+
+
+allToolsTitle:
+"🛠️ 所有 AI 工具",
+
+
+allToolsText:
+"探索 AI工具箱中的免费 AI 效率工具：",
+
+
+toolPrompt:
+"🔥 AI提示词生成器",
+
+
+toolResume:
+"📝 AI简历助手",
+
+
+toolTitle:
+"💡 AI标题生成器",
+
+
+toolPolisher:
+"✨ AI文章润色工具",
+
+
+toolSummary:
+"📋 AI文章摘要工具",
+
+
+toolReply:
+"💬 AI回复助手",
+
+
+toolXhs:
+"📱 AI小红书标题生成器",
+
+
+toolMail:
+"📧 AI邮件助手",
+
+
+toolPagesTitle:
+"📖 AI工具介绍",
+
+
+toolPagesText:
+"了解每个 AI 工具的功能、使用场景和详细介绍：",
+
+
+pagePrompt:
+"🔥 AI提示词生成器介绍",
+
+
+pageResume:
+"📝 AI简历助手介绍",
+
+
+pageTitleGenerator:
+"💡 AI标题生成器介绍",
+
+
+pagePolisher:
+"✨ AI文章润色工具介绍",
+
+
+pageSummary:
+"📋 AI文章摘要工具介绍",
+
+
+pageReply:
+"💬 AI回复助手介绍",
+
+
+pageXhs:
+"📱 AI小红书标题生成器介绍",
+
+
+pageMail:
+"📧 AI邮件助手介绍",
+
+
+guidesTitle:
+"📚 AI教程指南",
+
+
+guidesText:
+"学习如何更高效地使用 AI 工具，提高学习、工作和创作效率：",
+
+
+guidePrompt:
+"🔥 AI Prompt入门指南",
+
+
+guideResume:
+"📝 AI简历优化指南",
+
+
+guideTitleGenerator:
+"💡 AI标题生成指南",
+
+
+guidePolisher:
+"✨ AI文章润色指南",
+
+
+guideSummary:
+"📋 AI文章摘要指南",
+
+
+guideReply:
+"💬 AI回复技巧指南",
+
+
+guideXhs:
+"📱 小红书标题技巧指南",
+
+
+guideMail:
+"📧 AI邮件写作指南",
+
+
+homeBtn:
+"🏠 返回 AI工具箱首页",
+
+
+footerText:
+"© 2026 AI工具箱 · Free AI Tools"
+
+
+},
+
+
+
+en:{
+
+
+pageTitle:
+"AI Email Assistant Guide - Free AI Email Writing Guide | AI Toolbox",
+
+
+metaDescription:
+"Free AI Email Assistant guide. Learn how to use AI to write business emails, professional emails, everyday emails and English emails more efficiently.",
+
+
+ogTitle:
+"AI Email Assistant Guide - Free AI Email Writing Guide",
+
+
+ogDescription:
+"Learn how to use an AI Email Assistant to write clear, natural and professional emails more efficiently.",
+
+
+twitterTitle:
+"AI Email Assistant Guide - AI Toolbox",
+
+
+twitterDescription:
+"Free AI email writing guide to help you use AI more effectively when writing emails.",
+
+
+siteTitle:
+"🤖 AI Toolbox",
+
+
+siteDescription:
+"Free, simple and useful AI productivity tools",
+
+
+guideBadge:
+"GUIDE",
+
+
+heroTitle:
+"📧 AI Email Assistant Guide",
+
+
+heroDescription:
+"Learn how to use an AI Email Assistant to write clear, natural and professional emails more efficiently.",
+
+
+useToolBtn:
+"🚀 Use AI Email Assistant",
+
+
+heroIntroBtn:
+"📖 View Tool Introduction",
+
+
+introTitle:
+"🤖 How to Use an AI Email Assistant",
+
+
+introText1:
+"An AI Email Assistant can help you organize email content and generate clearer, more natural and appropriate wording for different situations.",
+
+
+introText2:
+"You do not need to figure out every sentence from scratch. Simply explain the purpose of the email, the information you want to include and the tone you prefer.",
+
+
+introText3:
+"Whether you are writing work emails, business messages, formal notices, everyday emails or English emails, an AI Email Assistant can help improve your writing efficiency.",
+
+
+howTitle:
+"📖 Steps to Use the AI Email Assistant",
+
+
+step1Title:
+"Define the Purpose",
+
+
+step1Text:
+"Decide what the email needs to accomplish, such as asking for help, replying to someone, sending information, expressing thanks or discussing business matters.",
+
+
+step2Title:
+"Enter Key Information",
+
+
+step2Text:
+"Provide the main information the email should include, such as background details, important points, dates, requests or actions you expect from the recipient.",
+
+
+step3Title:
+"Choose the Right Tone",
+
+
+step3Text:
+"Choose a formal, professional, friendly or concise tone based on the recipient and situation.",
+
+
+step4Title:
+"Generate and Review",
+
+
+step4Text:
+"After AI generates the email, check names, dates, facts and important details before editing or sending it.",
+
+
+modeTitle:
+"✉️ Common Email Writing Scenarios",
+
+
+businessTitle:
+"💼 Business Emails",
+
+
+businessText:
+"Useful for client communication, partnership invitations and professional business discussions.",
+
+
+workTitle:
+"🗂️ Work Emails",
+
+
+workText:
+"Useful for work updates, task communication, meeting arrangements and everyday office communication.",
+
+
+formalTitle:
+"🎓 Formal Emails",
+
+
+formalText:
+"Useful for applications, notices, requests and other situations that require more formal wording.",
+
+
+replyTitle:
+"💬 Reply Emails",
+
+
+replyText:
+"Helps organize your response and make email replies clearer and more polite.",
+
+
+thankTitle:
+"🙏 Thank-You Emails",
+
+
+thankText:
+"Useful for expressing appreciation, confirming information or maintaining good communication.",
+
+
+englishTitle:
+"🌍 English Emails",
+
+
+englishText:
+"Helps improve English email wording and make communication more natural and clear.",
+
+
+tipsTitle:
+"💡 Tips for Writing Emails with AI",
+
+
+tip1:
+"🎯 Explain the purpose: Tell AI why you are writing the email to get a more relevant result.",
+
+
+tip2:
+"📝 Provide key information: Clear names, dates, events and requests usually lead to more useful email content.",
+
+
+tip3:
+"👤 Consider the recipient: Emails to managers, clients, teachers and friends may require different wording.",
+
+
+tip4:
+"🎨 Choose the right tone: Formal emails may not need casual language, while friendly emails do not need to sound overly rigid.",
+
+
+tip5:
+"🔍 Review before sending: AI can help with writing, but important information should still be checked carefully.",
+
+
+mistakesTitle:
+"⚠️ What Should You Watch Out for?",
+
+
+mistake1:
+"❌ Avoid giving extremely vague instructions, as the generated email may become too general.",
+
+
+mistake2:
+"❌ Do not automatically send everything without reviewing it, especially for important emails.",
+
+
+mistake3:
+"❌ Do not ignore the recipient, because different audiences may require different tones and wording.",
+
+
+mistake4:
+"❌ Avoid making emails unnecessarily long. Keep the main points clear and well organized.",
+
+
+mistake5:
+"❌ Do not forget important details such as dates, contact information, attachments or requested actions.",
+
+
+faqTitle:
+"❓ Frequently Asked Questions",
+
+
+faq1Question:
+"What types of emails can the AI Email Assistant write?",
+
+
+faq1Answer:
+"It can help with work emails, business emails, formal emails, reply emails, thank-you emails and other everyday communication.",
+
+
+faq2Question:
+"Can I send the generated email directly?",
+
+
+faq2Answer:
+"It is recommended to review the result first, especially names, dates, facts and other important information.",
+
+
+faq3Question:
+"How can I make the generated email fit my needs better?",
+
+
+faq3Answer:
+"Provide a clear purpose, background information, key points and the tone you want to use.",
+
+
+faq4Question:
+"Can I use the AI Email Assistant for English emails?",
+
+
+faq4Answer:
+"Yes. You can use AI to help organize English email content and improve the wording.",
+
+
+useTitle:
+"🚀 Start Writing Emails Now",
+
+
+useText:
+"Open AI Toolbox and use the AI Email Assistant for free to organize and write emails more efficiently.",
+
+
+useToolBtn2:
+"📧 Use AI Email Assistant",
+
+
+toolIntroTitle:
+"📖 AI Email Assistant Introduction",
+
+
+toolIntroText:
+"Want to learn about the features and use cases of the AI Email Assistant? View the complete tool introduction.",
+
+
+ownIntroLink:
+"📧 View AI Email Assistant Introduction",
+
+
+allToolsTitle:
+"🛠️ All AI Tools",
+
+
+allToolsText:
+"Explore free AI productivity tools from AI Toolbox:",
+
+
+toolPrompt:
+"🔥 AI Prompt Generator",
+
+
+toolResume:
+"📝 AI Resume Assistant",
+
+
+toolTitle:
+"💡 AI Title Generator",
+
+
+toolPolisher:
+"✨ AI Writing Polisher",
+
+
+toolSummary:
+"📋 AI Article Summarizer",
+
+
+toolReply:
+"💬 AI Reply Assistant",
+
+
+toolXhs:
+"📱 AI Social Media Title Generator",
+
+
+toolMail:
+"📧 AI Email Assistant",
+
+
+toolPagesTitle:
+"📖 AI Tool Pages",
+
+
+toolPagesText:
+"Learn about the features, use cases and details of each AI tool:",
+
+
+pagePrompt:
+"🔥 AI Prompt Generator",
+
+
+pageResume:
+"📝 AI Resume Assistant",
+
+
+pageTitleGenerator:
+"💡 AI Title Generator",
+
+
+pagePolisher:
+"✨ AI Writing Polisher",
+
+
+pageSummary:
+"📋 AI Article Summarizer",
+
+
+pageReply:
+"💬 AI Reply Assistant",
+
+
+pageXhs:
+"📱 AI Social Media Title Generator",
+
+
+pageMail:
+"📧 AI Email Assistant",
+
+
+guidesTitle:
+"📚 AI Guides",
+
+
+guidesText:
+"Learn how to use AI tools more effectively for studying, work and content creation:",
+
+
+guidePrompt:
+"🔥 AI Prompt Beginner Guide",
+
+
+guideResume:
+"📝 AI Resume Optimization Guide",
+
+
+guideTitleGenerator:
+"💡 AI Title Generator Guide",
+
+
+guidePolisher:
+"✨ AI Writing Polisher Guide",
+
+
+guideSummary:
+"📋 AI Article Summarizer Guide",
+
+
+guideReply:
+"💬 AI Reply Guide",
+
+
+guideXhs:
+"📱 Social Media Title Guide",
+
+
+guideMail:
+"📧 AI Email Writing Guide",
+
+
+homeBtn:
+"🏠 Back to AI Toolbox",
+
+
+footerText:
+"© 2026 AI Toolbox · Free AI Tools"
+
+
+}
+
+
+};
+
+
+
+function setLanguage(lang){
+
+
+const t = languageText[lang];
+
+
+Object.keys(t).forEach(id=>{
+
+
+const el = document.getElementById(id);
+
+
+if(id === "pageTitle"){
+
+document.title = t[id];
+
+return;
+
+}
+
+
+if(id === "metaDescription"){
+
+document
+.getElementById("metaDescription")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+if(id === "ogTitle"){
+
+document
+.getElementById("ogTitle")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+if(id === "ogDescription"){
+
+document
+.getElementById("ogDescription")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+if(id === "twitterTitle"){
+
+document
+.getElementById("twitterTitle")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+if(id === "twitterDescription"){
+
+document
+.getElementById("twitterDescription")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+if(el){
+
+el.innerText = t[id];
+
+}
+
+
+});
+
+
+document
+.getElementById("zhBtn")
+.classList.toggle("active",lang==="zh");
+
+
+document
+.getElementById("enBtn")
+.classList.toggle("active",lang==="en");
+
+
+document.documentElement.lang =
+lang==="zh"
+?
+"zh-CN"
+:
+"en";
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
