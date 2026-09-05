@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 
 <head>
@@ -20,21 +21,18 @@
 <!-- SEO -->
 
 <title id="pageTitle">
-AI提示词生成器 - 免费在线AI Prompt Generator | AI工具箱
+AI提示词生成器 - 免费在线AI Prompt生成工具 | AI工具箱
 </title>
 
 
 <meta
 id="metaDescription"
 name="description"
-content="免费在线AI提示词生成器，帮助用户根据需求快速生成高质量AI Prompt。适用于ChatGPT、写作、学习、编程、内容创作等场景，无需注册即可使用。"
+content="免费在线AI提示词生成器，帮助快速生成更清晰、更详细、更适合ChatGPT等AI工具使用的提示词。无需注册即可使用。"
 >
 
 
-<meta
-name="robots"
-content="index,follow"
->
+<meta name="robots" content="index,follow">
 
 
 <link
@@ -43,22 +41,23 @@ href="https://wertsdfgwerg.github.io/toolbox/ai-prompt-generator.html"
 >
 
 
+<!-- Open Graph -->
+
 <meta
+id="ogTitle"
 property="og:title"
-content="AI提示词生成器 - 免费在线AI Prompt Generator"
+content="AI提示词生成器 - 免费在线AI Prompt生成工具"
 >
 
 
 <meta
+id="ogDescription"
 property="og:description"
-content="免费生成AI提示词，帮助你更高效地使用ChatGPT和其他AI工具。"
+content="使用AI快速生成更清晰、更详细、更有效的提示词，提高AI工具的使用效果。"
 >
 
 
-<meta
-property="og:type"
-content="website"
->
+<meta property="og:type" content="website">
 
 
 <meta
@@ -67,9 +66,22 @@ content="https://wertsdfgwerg.github.io/toolbox/ai-prompt-generator.html"
 >
 
 
+<!-- Twitter -->
+
+<meta name="twitter:card" content="summary">
+
+
 <meta
-name="twitter:card"
-content="summary"
+id="twitterTitle"
+name="twitter:title"
+content="AI提示词生成器 - AI Prompt Generator"
+>
+
+
+<meta
+id="twitterDescription"
+name="twitter:description"
+content="免费AI提示词生成器，帮助快速生成更清晰、更有效的AI Prompt。"
 >
 
 
@@ -100,7 +112,6 @@ body{
 margin:0;
 
 font-family:
-
 -apple-system,
 BlinkMacSystemFont,
 "Segoe UI",
@@ -128,13 +139,16 @@ padding:30px 20px 60px;
 }
 
 
+/* 顶部 */
+
+
 .header{
 
 position:relative;
 
 text-align:center;
 
-padding:40px 0 30px;
+padding:30px 0 40px;
 
 }
 
@@ -150,28 +164,29 @@ object-fit:contain;
 }
 
 
-.header h1{
+.site-name{
 
-font-size:42px;
-
-margin:20px 0 15px;
+font-size:28px;
 
 font-weight:800;
 
+margin:18px 0 5px;
+
 }
 
 
-.header p{
+.site-description{
 
-font-size:18px;
+font-size:16px;
 
 color:#666;
 
-margin:0 auto;
-
-max-width:720px;
+margin:0;
 
 }
+
+
+/* 语言切换 */
 
 
 .language-switch{
@@ -221,6 +236,9 @@ color:white;
 }
 
 
+/* 卡片 */
+
+
 .card{
 
 background:white;
@@ -229,7 +247,7 @@ border-radius:20px;
 
 padding:30px;
 
-margin-bottom:20px;
+margin-bottom:22px;
 
 border:1px solid #eee;
 
@@ -249,29 +267,82 @@ font-size:26px;
 
 .card h3{
 
-margin-top:25px;
+margin-top:24px;
 
 font-size:20px;
 
 }
 
 
-.highlight{
+/* Hero */
 
-font-weight:700;
+
+.hero-card{
+
+text-align:center;
+
+padding:45px 30px;
 
 }
+
+
+.badge{
+
+display:inline-block;
+
+background:#111;
+
+color:white;
+
+padding:5px 12px;
+
+border-radius:20px;
+
+font-size:12px;
+
+margin-bottom:10px;
+
+}
+
+
+.hero-card h1{
+
+font-size:40px;
+
+margin:12px 0;
+
+font-weight:800;
+
+}
+
+
+.hero-card p{
+
+color:#666;
+
+font-size:18px;
+
+max-width:700px;
+
+margin:15px auto 25px;
+
+}
+
+
+/* 按钮 */
 
 
 .button-row{
 
 display:flex;
 
-gap:15px;
+gap:14px;
 
-margin-top:25px;
+justify-content:center;
 
 flex-wrap:wrap;
+
+margin-top:22px;
 
 }
 
@@ -282,7 +353,7 @@ display:inline-block;
 
 text-decoration:none;
 
-padding:14px 22px;
+padding:14px 24px;
 
 border-radius:12px;
 
@@ -327,7 +398,27 @@ background:#e8e8e8;
 }
 
 
-.feature-grid{
+/* 列表 */
+
+
+.feature-list{
+
+padding-left:20px;
+
+}
+
+
+.feature-list li{
+
+margin:12px 0;
+
+}
+
+
+/* 功能网格 */
+
+
+.mode-grid{
 
 display:grid;
 
@@ -340,45 +431,134 @@ margin-top:20px;
 }
 
 
-.feature{
+.mode{
 
 background:#f8f9fb;
 
-padding:18px;
-
 border-radius:14px;
+
+padding:18px;
 
 border:1px solid #eee;
 
 }
 
 
-.feature strong{
+.mode h3{
 
-display:block;
+margin:0 0 8px;
 
 font-size:17px;
 
-margin-bottom:6px;
+}
+
+
+.mode p{
+
+margin:0;
+
+color:#666;
 
 }
+
+
+/* 使用步骤 */
 
 
 .steps{
 
-padding-left:22px;
+counter-reset:step;
+
+padding:0;
 
 }
 
 
-.steps li{
+.step{
 
-margin-bottom:14px;
+position:relative;
+
+padding-left:55px;
+
+margin:24px 0;
 
 }
 
 
-.tool-links{
+.step::before{
+
+counter-increment:step;
+
+content:counter(step);
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:34px;
+
+height:34px;
+
+border-radius:50%;
+
+background:#111;
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:bold;
+
+}
+
+
+/* FAQ */
+
+
+.faq{
+
+border-top:1px solid #eee;
+
+padding:18px 0;
+
+}
+
+
+.faq:last-child{
+
+border-bottom:1px solid #eee;
+
+}
+
+
+.faq h3{
+
+margin:0 0 8px;
+
+font-size:18px;
+
+}
+
+
+.faq p{
+
+margin:0;
+
+color:#666;
+
+}
+
+
+/* 导航链接 */
+
+
+.link-grid{
 
 display:grid;
 
@@ -395,19 +575,19 @@ margin-top:18px;
 
 display:block;
 
+background:#f8f9fb;
+
+padding:15px 16px;
+
+border-radius:12px;
+
 text-decoration:none;
 
 color:#222;
 
-background:#f8f9fb;
-
-padding:15px;
-
-border-radius:12px;
+font-weight:600;
 
 border:1px solid #eee;
-
-font-weight:600;
 
 transition:.2s;
 
@@ -418,9 +598,24 @@ transition:.2s;
 
 transform:translateY(-2px);
 
-background:#f2f4f7;
+background:#f1f3f5;
 
 }
+
+
+/* 返回首页 */
+
+
+.home-link{
+
+text-align:center;
+
+margin-top:30px;
+
+}
+
+
+/* Footer */
 
 
 .footer{
@@ -429,19 +624,22 @@ text-align:center;
 
 color:#777;
 
-padding:30px 0 10px;
+padding:28px 0 10px;
 
 font-size:14px;
 
 }
 
 
+/* 手机端 */
+
+
 @media(max-width:768px){
 
 
-.header h1{
+.container{
 
-font-size:31px;
+padding:20px 15px 45px;
 
 }
 
@@ -461,6 +659,13 @@ margin-bottom:20px;
 }
 
 
+.hero-card h1{
+
+font-size:30px;
+
+}
+
+
 .card{
 
 padding:22px;
@@ -468,14 +673,14 @@ padding:22px;
 }
 
 
-.feature-grid{
+.mode-grid{
 
 grid-template-columns:1fr;
 
 }
 
 
-.tool-links{
+.link-grid{
 
 grid-template-columns:1fr;
 
@@ -510,7 +715,7 @@ width:100%;
 <div class="container">
 
 
-<!-- 页面顶部 -->
+<!-- 顶部 -->
 
 
 <header class="header">
@@ -541,11 +746,52 @@ English
 </div>
 
 
+<a href="index.html">
+
 <img
 src="logo.png"
 class="logo"
 alt="AI Toolbox"
 >
+
+</a>
+
+
+<div
+class="site-name"
+id="siteTitle">
+
+🤖 AI工具箱
+
+</div>
+
+
+<p
+class="site-description"
+id="siteDescription">
+
+免费、简单、实用的 AI 效率工具
+
+</p>
+
+
+</header>
+
+
+
+<!-- Hero -->
+
+
+<section class="card hero-card">
+
+
+<span
+class="badge"
+id="freeBadge">
+
+免费使用
+
+</span>
 
 
 <h1 id="heroTitle">
@@ -555,21 +801,22 @@ alt="AI Toolbox"
 </h1>
 
 
-<p id="heroDesc">
+<p id="heroDescription">
 
-免费生成高质量 AI Prompt，让你更轻松、更高效地使用 ChatGPT 和其他 AI 工具。
+输入你的需求，让 AI 帮助你生成更清晰、更详细、更适合 AI 工具使用的提示词。
 
 </p>
 
 
 <div class="button-row">
 
+
 <a
 href="index.html#promptTool"
 class="button primary"
 id="useToolBtn">
 
-🚀 立即使用提示词生成器
+🚀 立即使用 AI提示词生成器
 
 </a>
 
@@ -577,9 +824,9 @@ id="useToolBtn">
 <a
 href="ai-prompt-guide.html"
 class="button secondary"
-id="guideBtn">
+id="heroGuideBtn">
 
-📚 查看 Prompt 使用教程
+📚 查看使用教程
 
 </a>
 
@@ -587,33 +834,40 @@ id="guideBtn">
 </div>
 
 
-</header>
+</section>
 
 
 
-<!-- 什么是提示词 -->
+<!-- 工具介绍 -->
 
 
 <section class="card">
 
 
-<h2 id="whatTitle">
+<h2 id="introTitle">
 
-🤖 什么是 AI 提示词？
+🤖 什么是 AI提示词生成器？
 
 </h2>
 
 
-<p id="whatText1">
+<p id="introText1">
 
-AI 提示词（Prompt）是你向 ChatGPT 或其他人工智能工具输入的指令、问题或要求。AI 会根据提示词理解你的目标，并生成相应的回答、文章、代码或其他内容。
+AI提示词生成器可以帮助你将简单的想法或需求整理成更加清晰、具体的 AI Prompt，让 AI 更容易理解你真正想要完成的任务。
 
 </p>
 
 
-<p id="whatText2">
+<p id="introText2">
 
-简单来说，<span class="highlight">提示词决定了 AI 如何理解你的需求</span>。一个清晰、具体的 Prompt，通常能够帮助 AI 生成更加符合要求的结果。
+很多时候，AI 的回答效果并不完全取决于 AI 本身，而是与你输入的问题和要求有关。更清晰的背景、目标和要求通常可以帮助 AI 生成更符合需求的结果。
+
+</p>
+
+
+<p id="introText3">
+
+你只需要输入想完成的事情，AI 就可以帮助你整理和扩展成更完整的提示词，适用于 ChatGPT 和其他 AI 工具。
 
 </p>
 
@@ -622,82 +876,7 @@ AI 提示词（Prompt）是你向 ChatGPT 或其他人工智能工具输入的�
 
 
 
-<!-- 为什么使用 -->
-
-
-<section class="card">
-
-
-<h2 id="whyTitle">
-
-💡 为什么要使用 AI 提示词生成器？
-
-</h2>
-
-
-<div class="feature-grid">
-
-
-<div class="feature">
-
-<strong id="feature1Title">
-⚡ 节省时间
-</strong>
-
-<span id="feature1Text">
-不用自己反复思考如何描述需求，快速生成可以直接使用的 AI 指令。
-</span>
-
-</div>
-
-
-<div class="feature">
-
-<strong id="feature2Title">
-🎯 表达更清晰
-</strong>
-
-<span id="feature2Text">
-帮助你把模糊的想法整理成更加明确、具体的任务要求。
-</span>
-
-</div>
-
-
-<div class="feature">
-
-<strong id="feature3Title">
-🚀 提高 AI 输出质量
-</strong>
-
-<span id="feature3Text">
-清晰的任务目标和要求能够帮助 AI 更准确地理解你的需求。
-</span>
-
-</div>
-
-
-<div class="feature">
-
-<strong id="feature4Title">
-🧠 适合不同场景
-</strong>
-
-<span id="feature4Text">
-无论是写作、学习、编程、内容创作还是日常工作，都可以使用 AI Prompt。
-</span>
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-<!-- 使用方法 -->
+<!-- 如何使用 -->
 
 
 <section class="card">
@@ -705,35 +884,417 @@ AI 提示词（Prompt）是你向 ChatGPT 或其他人工智能工具输入的�
 
 <h2 id="howTitle">
 
-📖 如何使用 AI 提示词生成器？
+📖 如何使用 AI提示词生成器？
 
 </h2>
 
 
-<ol class="steps">
+<div class="steps">
 
 
-<li id="step1">
-输入你想让 AI 帮你完成的任务，例如写文章、学习知识或编写代码。
+<div class="step">
+
+
+<strong id="step1Title">
+
+输入你的需求
+
+</strong>
+
+
+<p id="step1Text">
+
+简单描述你希望 AI 帮助你完成什么任务，例如写文章、学习知识、制作计划或分析内容。
+
+</p>
+
+
+</div>
+
+
+<div class="step">
+
+
+<strong id="step2Title">
+
+补充相关信息
+
+</strong>
+
+
+<p id="step2Text">
+
+根据你的需求添加目标、背景、内容要求或其他相关信息，让提示词更加准确。
+
+</p>
+
+
+</div>
+
+
+<div class="step">
+
+
+<strong id="step3Title">
+
+生成 AI 提示词
+
+</strong>
+
+
+<p id="step3Text">
+
+点击生成按钮，让 AI 根据你的需求整理成更加完整、清晰的 Prompt。
+
+</p>
+
+
+</div>
+
+
+<div class="step">
+
+
+<strong id="step4Title">
+
+复制并使用
+
+</strong>
+
+
+<p id="step4Text">
+
+查看生成的提示词，复制后可以直接发送给 ChatGPT 或其他 AI 工具使用。
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 功能特点 -->
+
+
+<section class="card">
+
+
+<h2 id="modeTitle">
+
+✨ AI提示词生成器可以帮助你做什么？
+
+</h2>
+
+
+<div class="mode-grid">
+
+
+<div class="mode">
+
+
+<h3 id="feature1Title">
+
+💡 整理想法
+
+</h3>
+
+
+<p id="feature1Text">
+
+将简单、零散的想法整理成更加清晰的任务描述。
+
+</p>
+
+
+</div>
+
+
+<div class="mode">
+
+
+<h3 id="feature2Title">
+
+🎯 明确目标
+
+</h3>
+
+
+<p id="feature2Text">
+
+帮助明确你希望 AI 完成的任务和最终想要得到的结果。
+
+</p>
+
+
+</div>
+
+
+<div class="mode">
+
+
+<h3 id="feature3Title">
+
+📝 补充要求
+
+</h3>
+
+
+<p id="feature3Text">
+
+让提示词包含更多必要的信息、条件和具体要求。
+
+</p>
+
+
+</div>
+
+
+<div class="mode">
+
+
+<h3 id="feature4Title">
+
+🤖 更适合 AI 理解
+
+</h3>
+
+
+<p id="feature4Text">
+
+使用更加清晰的结构表达需求，方便 AI 理解任务内容。
+
+</p>
+
+
+</div>
+
+
+<div class="mode">
+
+
+<h3 id="feature5Title">
+
+⚡ 节省时间
+
+</h3>
+
+
+<p id="feature5Text">
+
+不需要每次从头思考如何写 Prompt，可以快速生成基础提示词。
+
+</p>
+
+
+</div>
+
+
+<div class="mode">
+
+
+<h3 id="feature6Title">
+
+🔄 可以继续修改
+
+</h3>
+
+
+<p id="feature6Text">
+
+生成后的提示词还可以根据自己的实际需求继续调整和完善。
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 适合谁 -->
+
+
+<section class="card">
+
+
+<h2 id="whoTitle">
+
+👥 AI提示词生成器适合谁？
+
+</h2>
+
+
+<ul class="feature-list">
+
+
+<li id="who1">
+
+🎓 学生：使用 AI 辅助学习、整理知识和完成学习任务。
+
 </li>
 
 
-<li id="step2">
-选择适合的任务类型，例如写作、学习、编程或商业。
+<li id="who2">
+
+✍️ 内容创作者：生成文章、视频、社交媒体等创作相关提示词。
+
 </li>
 
 
-<li id="step3">
-点击生成按钮，让 AI 根据你的需求生成提示词。
+<li id="who3">
+
+💼 办公用户：帮助生成工作计划、邮件、报告和其他办公内容。
+
 </li>
 
 
-<li id="step4">
-复制生成的 Prompt，然后粘贴到 ChatGPT 或其他 AI 工具中使用。
+<li id="who4">
+
+🤖 AI 初学者：不知道如何编写 AI Prompt 的用户。
+
 </li>
 
 
-</ol>
+<li id="who5">
+
+💡 普通用户：希望更高效地使用 ChatGPT 和其他 AI 工具的人。
+
+</li>
+
+
+</ul>
+
+
+</section>
+
+
+
+<!-- FAQ -->
+
+
+<section class="card">
+
+
+<h2 id="faqTitle">
+
+❓ 常见问题
+
+</h2>
+
+
+<div class="faq">
+
+
+<h3 id="faq1Question">
+
+AI提示词生成器是免费的吗？
+
+</h3>
+
+
+<p id="faq1Answer">
+
+是的，你可以免费使用 AI工具箱提供的 AI提示词生成器。
+
+</p>
+
+
+</div>
+
+
+<div class="faq">
+
+
+<h3 id="faq2Question">
+
+什么是 Prompt？
+
+</h3>
+
+
+<p id="faq2Answer">
+
+Prompt 通常指发送给 AI 的指令、问题或任务描述。它可以告诉 AI 你希望完成什么事情以及具体有哪些要求。
+
+</p>
+
+
+</div>
+
+
+<div class="faq">
+
+
+<h3 id="faq3Question">
+
+生成的提示词可以直接使用吗？
+
+</h3>
+
+
+<p id="faq3Answer">
+
+可以。你可以复制生成的提示词直接使用，也可以根据自己的实际需求继续修改。
+
+</p>
+
+
+</div>
+
+
+<div class="faq">
+
+
+<h3 id="faq4Question">
+
+需要注册账号吗？
+
+</h3>
+
+
+<p id="faq4Answer">
+
+不需要注册账号，打开 AI工具箱即可开始使用。
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 再次使用工具 -->
+
+
+<section class="card">
+
+
+<h2 id="useTitle">
+
+🚀 立即生成 AI 提示词
+
+</h2>
+
+
+<p id="useText">
+
+打开 AI工具箱，免费使用 AI提示词生成器，让你的想法更容易转化成清晰、完整的 AI Prompt。
+
+</p>
 
 
 <div class="button-row">
@@ -742,9 +1303,9 @@ AI 提示词（Prompt）是你向 ChatGPT 或其他人工智能工具输入的�
 <a
 href="index.html#promptTool"
 class="button primary"
-id="tryNowBtn">
+id="useToolBtn2">
 
-✨ 免费开始生成 Prompt
+🔥 立即生成提示词
 
 </a>
 
@@ -756,141 +1317,35 @@ id="tryNowBtn">
 
 
 
-<!-- 使用场景 -->
+<!-- 自己的教程 -->
 
 
 <section class="card">
 
 
-<h2 id="useCasesTitle">
+<h2 id="guideTitle">
 
-🌟 AI Prompt 可以用来做什么？
-
-</h2>
-
-
-<h3 id="writingTitle">
-
-📝 AI 写作
-
-</h3>
-
-
-<p id="writingText">
-
-可以用于文章写作、博客、文案、社交媒体内容、邮件以及各种文字创作任务。
-
-</p>
-
-
-<h3 id="studyTitle">
-
-📚 AI 学习
-
-</h3>
-
-
-<p id="studyText">
-
-可以让 AI 帮你解释知识点、制定学习计划、整理笔记、生成练习题或总结文章。
-
-</p>
-
-
-<h3 id="codingTitle">
-
-💻 AI 编程
-
-</h3>
-
-
-<p id="codingText">
-
-可以使用 Prompt 描述你需要的程序功能，让 AI 协助编写代码、解释代码或排查问题。
-
-</p>
-
-
-<h3 id="workTitle">
-
-💼 工作效率
-
-</h3>
-
-
-<p id="workText">
-
-可以用于整理资料、生成邮件、优化简历、总结内容以及完成各种日常办公任务。
-
-</p>
-
-
-</section>
-
-
-
-<!-- 如何写好 -->
-
-
-<section class="card">
-
-
-<h2 id="tipsTitle">
-
-🎯 如何写出更好的 AI 提示词？
+📚 AI提示词使用教程
 
 </h2>
 
 
-<p id="tipsIntro">
+<p id="guideText">
 
-想获得更好的 AI 输出，可以尽量让你的需求更加具体。一个好的 Prompt 通常可以包含以下信息：
-
-</p>
-
-
-<ol class="steps">
-
-
-<li id="tip1">
-明确告诉 AI 你希望完成什么任务。
-</li>
-
-
-<li id="tip2">
-提供必要的背景信息。
-</li>
-
-
-<li id="tip3">
-说明你希望得到什么样的结果。
-</li>
-
-
-<li id="tip4">
-如果需要，可以规定输出语言、格式、长度或风格。
-</li>
-
-
-</ol>
-
-
-<p id="tipsEnd">
-
-例如，与其只输入“帮我写文章”，不如告诉 AI 文章主题、目标读者、写作风格以及希望的文章长度。
+想了解如何写出更好的 AI Prompt？你可以查看完整的 AI提示词入门指南和使用技巧。
 
 </p>
 
 
-<div class="button-row">
+<div class="link-grid">
 
 
 <a
 href="ai-prompt-guide.html"
-class="button secondary"
-id="learnMoreBtn">
+class="tool-link"
+id="ownGuideLink">
 
-📚 查看完整 AI Prompt 教程
+📖 AI Prompt入门指南
 
 </a>
 
@@ -902,121 +1357,37 @@ id="learnMoreBtn">
 
 
 
-<!-- 为什么本站 -->
+<!-- 所有 AI 工具 -->
 
 
 <section class="card">
 
 
-<h2 id="freeTitle">
+<h2 id="allToolsTitle">
 
-🆓 免费使用，无需注册
-
-</h2>
-
-
-<p id="freeText">
-
-AI工具箱提供免费的在线 AI 效率工具。你无需安装软件，也不需要注册账号，打开网页即可开始使用。
-
-</p>
-
-
-<p id="freeText2">
-
-我们的目标是让学生、创作者、办公用户和普通用户都能够更方便地使用人工智能工具，提高学习、工作和内容创作效率。
-
-</p>
-
-
-</section>
-
-
-
-<!-- 页面导航 -->
-
-
-<section class="card">
-
-
-<h2 id="navTitle">
-
-🧭 AI Prompt 相关导航
+🛠️ 所有 AI 工具
 
 </h2>
 
 
-<div class="tool-links">
+<p id="allToolsText">
+
+探索 AI工具箱中的免费 AI 效率工具：
+
+</p>
+
+
+<div class="link-grid">
 
 
 <a
 href="index.html#promptTool"
 class="tool-link"
-id="navUseTool">
+id="toolPrompt">
 
-🔥 使用 AI 提示词生成器
-
-</a>
-
-
-<a
-href="ai-prompt-guide.html"
-class="tool-link"
-id="navGuide">
-
-📚 AI Prompt 入门教程
+🔥 AI提示词生成器
 
 </a>
-
-
-<a
-href="index.html"
-class="tool-link"
-id="navHome">
-
-🏠 返回 AI工具箱首页
-
-</a>
-
-
-<a
-href="ai-tools.html"
-class="tool-link"
-id="navAllTools">
-
-🛠️ 查看免费 AI 工具
-
-</a>
-
-
-</div>
-
-
-</section>
-
-
-
-<!-- 其他工具 -->
-
-
-<section class="card">
-
-
-<h2 id="otherToolsTitle">
-
-🛠️ 其他 AI 工具
-
-</h2>
-
-
-<p id="otherToolsText">
-
-你也可以使用 AI工具箱中的其他免费工具：
-
-</p>
-
-
-<div class="tool-links">
 
 
 <a
@@ -1074,7 +1445,17 @@ href="index.html#xiaohongshuTool"
 class="tool-link"
 id="toolXhs">
 
-📱 AI社交媒体标题生成器
+📱 AI小红书标题生成器
+
+</a>
+
+
+<a
+href="index.html#mailTool"
+class="tool-link"
+id="toolMail">
+
+📧 AI邮件助手
 
 </a>
 
@@ -1084,6 +1465,249 @@ id="toolXhs">
 
 </section>
 
+
+
+<!-- 所有工具介绍 -->
+
+
+<section class="card">
+
+
+<h2 id="toolPagesTitle">
+
+📖 AI工具介绍
+
+</h2>
+
+
+<p id="toolPagesText">
+
+了解每个 AI 工具的功能、使用场景和详细介绍：
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a
+href="ai-prompt-generator.html"
+class="tool-link"
+id="pagePrompt">
+
+🔥 AI提示词生成器介绍
+
+</a>
+
+
+<a
+href="ai-resume-helper.html"
+class="tool-link"
+id="pageResume">
+
+📝 AI简历助手介绍
+
+</a>
+
+
+<a
+href="ai-title-generator.html"
+class="tool-link"
+id="pageTitleGenerator">
+
+💡 AI标题生成器介绍
+
+</a>
+
+
+<a
+href="ai-writing-polisher.html"
+class="tool-link"
+id="pagePolisher">
+
+✨ AI文章润色工具介绍
+
+</a>
+
+
+<a
+href="ai-article-summarizer.html"
+class="tool-link"
+id="pageSummary">
+
+📋 AI文章摘要工具介绍
+
+</a>
+
+
+<a
+href="ai-reply-assistant.html"
+class="tool-link"
+id="pageReply">
+
+💬 AI回复助手介绍
+
+</a>
+
+
+<a
+href="xiaohongshu-title-generator.html"
+class="tool-link"
+id="pageXhs">
+
+📱 AI小红书标题生成器介绍
+
+</a>
+
+
+<a
+href="ai-email-assistant.html"
+class="tool-link"
+id="pageMail">
+
+📧 AI邮件助手介绍
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 所有教程 -->
+
+
+<section class="card">
+
+
+<h2 id="guidesTitle">
+
+📚 AI教程指南
+
+</h2>
+
+
+<p id="guidesText">
+
+学习如何更高效地使用 AI 工具，提高学习、工作和创作效率：
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a
+href="ai-prompt-guide.html"
+class="tool-link"
+id="guidePrompt">
+
+🔥 AI Prompt入门指南
+
+</a>
+
+
+<a
+href="ai-resume-guide.html"
+class="tool-link"
+id="guideResume">
+
+📝 AI简历优化指南
+
+</a>
+
+
+<a
+href="ai-title-generator-guide.html"
+class="tool-link"
+id="guideTitleGenerator">
+
+💡 AI标题生成指南
+
+</a>
+
+
+<a
+href="ai-writing-polisher-guide.html"
+class="tool-link"
+id="guidePolisher">
+
+✨ AI文章润色指南
+
+</a>
+
+
+<a
+href="ai-article-summarizer-guide.html"
+class="tool-link"
+id="guideSummary">
+
+📋 AI文章摘要指南
+
+</a>
+
+
+<a
+href="ai-reply-assistant-guide.html"
+class="tool-link"
+id="guideReply">
+
+💬 AI回复技巧指南
+
+</a>
+
+
+<a
+href="ai-xiaohongshu-guide.html"
+class="tool-link"
+id="guideXhs">
+
+📱 小红书标题技巧指南
+
+</a>
+
+
+<a
+href="ai-email-assistant-guide.html"
+class="tool-link"
+id="guideMail">
+
+📧 AI邮件写作指南
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 返回首页 -->
+
+
+<div class="home-link">
+
+
+<a
+href="index.html"
+class="button secondary"
+id="homeBtn">
+
+🏠 返回 AI工具箱首页
+
+</a>
+
+
+</div>
+
+
+
+<!-- Footer -->
 
 
 <footer class="footer">
@@ -1113,207 +1737,255 @@ zh:{
 
 
 pageTitle:
-"AI提示词生成器 - 免费在线AI Prompt Generator | AI工具箱",
+"AI提示词生成器 - 免费在线AI Prompt生成工具 | AI工具箱",
 
 
 metaDescription:
-"免费在线AI提示词生成器，帮助用户根据需求快速生成高质量AI Prompt。适用于ChatGPT、写作、学习、编程、内容创作等场景，无需注册即可使用。",
+"免费在线AI提示词生成器，帮助快速生成更清晰、更详细、更适合ChatGPT等AI工具使用的提示词。无需注册即可使用。",
+
+
+ogTitle:
+"AI提示词生成器 - 免费在线AI Prompt生成工具",
+
+
+ogDescription:
+"使用AI快速生成更清晰、更详细、更有效的提示词，提高AI工具的使用效果。",
+
+
+twitterTitle:
+"AI提示词生成器 - AI Prompt Generator",
+
+
+twitterDescription:
+"免费AI提示词生成器，帮助快速生成更清晰、更有效的AI Prompt。",
+
+
+siteTitle:
+"🤖 AI工具箱",
+
+
+siteDescription:
+"免费、简单、实用的 AI 效率工具",
+
+
+freeBadge:
+"免费使用",
 
 
 heroTitle:
 "🔥 AI提示词生成器",
 
 
-heroDesc:
-"免费生成高质量 AI Prompt，让你更轻松、更高效地使用 ChatGPT 和其他 AI 工具。",
+heroDescription:
+"输入你的需求，让 AI 帮助你生成更清晰、更详细、更适合 AI 工具使用的提示词。",
 
 
 useToolBtn:
-"🚀 立即使用提示词生成器",
+"🚀 立即使用 AI提示词生成器",
 
 
-guideBtn:
-"📚 查看 Prompt 使用教程",
+heroGuideBtn:
+"📚 查看使用教程",
 
 
-whatTitle:
-"🤖 什么是 AI 提示词？",
+introTitle:
+"🤖 什么是 AI提示词生成器？",
 
 
-whatText1:
-"AI 提示词（Prompt）是你向 ChatGPT 或其他人工智能工具输入的指令、问题或要求。AI 会根据提示词理解你的目标，并生成相应的回答、文章、代码或其他内容。",
+introText1:
+"AI提示词生成器可以帮助你将简单的想法或需求整理成更加清晰、具体的 AI Prompt，让 AI 更容易理解你真正想要完成的任务。",
 
 
-whatText2:
-"简单来说，提示词决定了 AI 如何理解你的需求。一个清晰、具体的 Prompt，通常能够帮助 AI 生成更加符合要求的结果。",
+introText2:
+"很多时候，AI 的回答效果并不完全取决于 AI 本身，而是与你输入的问题和要求有关。更清晰的背景、目标和要求通常可以帮助 AI 生成更符合需求的结果。",
 
 
-whyTitle:
-"💡 为什么要使用 AI 提示词生成器？",
-
-
-feature1Title:
-"⚡ 节省时间",
-
-
-feature1Text:
-"不用自己反复思考如何描述需求，快速生成可以直接使用的 AI 指令。",
-
-
-feature2Title:
-"🎯 表达更清晰",
-
-
-feature2Text:
-"帮助你把模糊的想法整理成更加明确、具体的任务要求。",
-
-
-feature3Title:
-"🚀 提高 AI 输出质量",
-
-
-feature3Text:
-"清晰的任务目标和要求能够帮助 AI 更准确地理解你的需求。",
-
-
-feature4Title:
-"🧠 适合不同场景",
-
-
-feature4Text:
-"无论是写作、学习、编程、内容创作还是日常工作，都可以使用 AI Prompt。",
+introText3:
+"你只需要输入想完成的事情，AI 就可以帮助你整理和扩展成更完整的提示词，适用于 ChatGPT 和其他 AI 工具。",
 
 
 howTitle:
-"📖 如何使用 AI 提示词生成器？",
+"📖 如何使用 AI提示词生成器？",
 
 
-step1:
-"输入你想让 AI 帮你完成的任务，例如写文章、学习知识或编写代码。",
+step1Title:
+"输入你的需求",
 
 
-step2:
-"选择适合的任务类型，例如写作、学习、编程或商业。",
+step1Text:
+"简单描述你希望 AI 帮助你完成什么任务，例如写文章、学习知识、制作计划或分析内容。",
 
 
-step3:
-"点击生成按钮，让 AI 根据你的需求生成提示词。",
+step2Title:
+"补充相关信息",
 
 
-step4:
-"复制生成的 Prompt，然后粘贴到 ChatGPT 或其他 AI 工具中使用。",
+step2Text:
+"根据你的需求添加目标、背景、内容要求或其他相关信息，让提示词更加准确。",
 
 
-tryNowBtn:
-"✨ 免费开始生成 Prompt",
+step3Title:
+"生成 AI 提示词",
 
 
-useCasesTitle:
-"🌟 AI Prompt 可以用来做什么？",
+step3Text:
+"点击生成按钮，让 AI 根据你的需求整理成更加完整、清晰的 Prompt。",
 
 
-writingTitle:
-"📝 AI 写作",
+step4Title:
+"复制并使用",
 
 
-writingText:
-"可以用于文章写作、博客、文案、社交媒体内容、邮件以及各种文字创作任务。",
+step4Text:
+"查看生成的提示词，复制后可以直接发送给 ChatGPT 或其他 AI 工具使用。",
 
 
-studyTitle:
-"📚 AI 学习",
+modeTitle:
+"✨ AI提示词生成器可以帮助你做什么？",
 
 
-studyText:
-"可以让 AI 帮你解释知识点、制定学习计划、整理笔记、生成练习题或总结文章。",
+feature1Title:
+"💡 整理想法",
 
 
-codingTitle:
-"💻 AI 编程",
+feature1Text:
+"将简单、零散的想法整理成更加清晰的任务描述。",
 
 
-codingText:
-"可以使用 Prompt 描述你需要的程序功能，让 AI 协助编写代码、解释代码或排查问题。",
+feature2Title:
+"🎯 明确目标",
 
 
-workTitle:
-"💼 工作效率",
+feature2Text:
+"帮助明确你希望 AI 完成的任务和最终想要得到的结果。",
 
 
-workText:
-"可以用于整理资料、生成邮件、优化简历、总结内容以及完成各种日常办公任务。",
+feature3Title:
+"📝 补充要求",
 
 
-tipsTitle:
-"🎯 如何写出更好的 AI 提示词？",
+feature3Text:
+"让提示词包含更多必要的信息、条件和具体要求。",
 
 
-tipsIntro:
-"想获得更好的 AI 输出，可以尽量让你的需求更加具体。一个好的 Prompt 通常可以包含以下信息：",
+feature4Title:
+"🤖 更适合 AI 理解",
 
 
-tip1:
-"明确告诉 AI 你希望完成什么任务。",
+feature4Text:
+"使用更加清晰的结构表达需求，方便 AI 理解任务内容。",
 
 
-tip2:
-"提供必要的背景信息。",
+feature5Title:
+"⚡ 节省时间",
 
 
-tip3:
-"说明你希望得到什么样的结果。",
+feature5Text:
+"不需要每次从头思考如何写 Prompt，可以快速生成基础提示词。",
 
 
-tip4:
-"如果需要，可以规定输出语言、格式、长度或风格。",
+feature6Title:
+"🔄 可以继续修改",
 
 
-tipsEnd:
-"例如，与其只输入“帮我写文章”，不如告诉 AI 文章主题、目标读者、写作风格以及希望的文章长度。",
+feature6Text:
+"生成后的提示词还可以根据自己的实际需求继续调整和完善。",
 
 
-learnMoreBtn:
-"📚 查看完整 AI Prompt 教程",
+whoTitle:
+"👥 AI提示词生成器适合谁？",
 
 
-freeTitle:
-"🆓 免费使用，无需注册",
+who1:
+"🎓 学生：使用 AI 辅助学习、整理知识和完成学习任务。",
 
 
-freeText:
-"AI工具箱提供免费的在线 AI 效率工具。你无需安装软件，也不需要注册账号，打开网页即可开始使用。",
+who2:
+"✍️ 内容创作者：生成文章、视频、社交媒体等创作相关提示词。",
 
 
-freeText2:
-"我们的目标是让学生、创作者、办公用户和普通用户都能够更方便地使用人工智能工具，提高学习、工作和内容创作效率。",
+who3:
+"💼 办公用户：帮助生成工作计划、邮件、报告和其他办公内容。",
 
 
-navTitle:
-"🧭 AI Prompt 相关导航",
+who4:
+"🤖 AI 初学者：不知道如何编写 AI Prompt 的用户。",
 
 
-navUseTool:
-"🔥 使用 AI 提示词生成器",
+who5:
+"💡 普通用户：希望更高效地使用 ChatGPT 和其他 AI 工具的人。",
 
 
-navGuide:
-"📚 AI Prompt 入门教程",
+faqTitle:
+"❓ 常见问题",
 
 
-navHome:
-"🏠 返回 AI工具箱首页",
+faq1Question:
+"AI提示词生成器是免费的吗？",
 
 
-navAllTools:
-"🛠️ 查看免费 AI 工具",
+faq1Answer:
+"是的，你可以免费使用 AI工具箱提供的 AI提示词生成器。",
 
 
-otherToolsTitle:
-"🛠️ 其他 AI 工具",
+faq2Question:
+"什么是 Prompt？",
 
 
-otherToolsText:
-"你也可以使用 AI工具箱中的其他免费工具：",
+faq2Answer:
+"Prompt 通常指发送给 AI 的指令、问题或任务描述。它可以告诉 AI 你希望完成什么事情以及具体有哪些要求。",
+
+
+faq3Question:
+"生成的提示词可以直接使用吗？",
+
+
+faq3Answer:
+"可以。你可以复制生成的提示词直接使用，也可以根据自己的实际需求继续修改。",
+
+
+faq4Question:
+"需要注册账号吗？",
+
+
+faq4Answer:
+"不需要注册账号，打开 AI工具箱即可开始使用。",
+
+
+useTitle:
+"🚀 立即生成 AI 提示词",
+
+
+useText:
+"打开 AI工具箱，免费使用 AI提示词生成器，让你的想法更容易转化成清晰、完整的 AI Prompt。",
+
+
+useToolBtn2:
+"🔥 立即生成提示词",
+
+
+guideTitle:
+"📚 AI提示词使用教程",
+
+
+guideText:
+"想了解如何写出更好的 AI Prompt？你可以查看完整的 AI提示词入门指南和使用技巧。",
+
+
+ownGuideLink:
+"📖 AI Prompt入门指南",
+
+
+allToolsTitle:
+"🛠️ 所有 AI 工具",
+
+
+allToolsText:
+"探索 AI工具箱中的免费 AI 效率工具：",
+
+
+toolPrompt:
+"🔥 AI提示词生成器",
 
 
 toolResume:
@@ -1337,7 +2009,95 @@ toolReply:
 
 
 toolXhs:
-"📱 AI社交媒体标题生成器",
+"📱 AI小红书标题生成器",
+
+
+toolMail:
+"📧 AI邮件助手",
+
+
+toolPagesTitle:
+"📖 AI工具介绍",
+
+
+toolPagesText:
+"了解每个 AI 工具的功能、使用场景和详细介绍：",
+
+
+pagePrompt:
+"🔥 AI提示词生成器介绍",
+
+
+pageResume:
+"📝 AI简历助手介绍",
+
+
+pageTitleGenerator:
+"💡 AI标题生成器介绍",
+
+
+pagePolisher:
+"✨ AI文章润色工具介绍",
+
+
+pageSummary:
+"📋 AI文章摘要工具介绍",
+
+
+pageReply:
+"💬 AI回复助手介绍",
+
+
+pageXhs:
+"📱 AI小红书标题生成器介绍",
+
+
+pageMail:
+"📧 AI邮件助手介绍",
+
+
+guidesTitle:
+"📚 AI教程指南",
+
+
+guidesText:
+"学习如何更高效地使用 AI 工具，提高学习、工作和创作效率：",
+
+
+guidePrompt:
+"🔥 AI Prompt入门指南",
+
+
+guideResume:
+"📝 AI简历优化指南",
+
+
+guideTitleGenerator:
+"💡 AI标题生成指南",
+
+
+guidePolisher:
+"✨ AI文章润色指南",
+
+
+guideSummary:
+"📋 AI文章摘要指南",
+
+
+guideReply:
+"💬 AI回复技巧指南",
+
+
+guideXhs:
+"📱 小红书标题技巧指南",
+
+
+guideMail:
+"📧 AI邮件写作指南",
+
+
+homeBtn:
+"🏠 返回 AI工具箱首页",
 
 
 footerText:
@@ -1352,207 +2112,255 @@ en:{
 
 
 pageTitle:
-"AI Prompt Generator - Free Online Prompt Generator | AI Toolbox",
+"AI Prompt Generator - Free Online AI Prompt Tool | AI Toolbox",
 
 
 metaDescription:
-"Free online AI prompt generator that helps you create high-quality prompts for ChatGPT and other AI tools. Useful for writing, study, coding, content creation and productivity.",
+"Free online AI prompt generator that helps you create clearer, more detailed and more effective prompts for ChatGPT and other AI tools. No registration required.",
+
+
+ogTitle:
+"AI Prompt Generator - Free Online AI Prompt Tool",
+
+
+ogDescription:
+"Use AI to create clearer, more detailed and more effective prompts for ChatGPT and other AI tools.",
+
+
+twitterTitle:
+"AI Prompt Generator - AI Toolbox",
+
+
+twitterDescription:
+"Free AI prompt generator to help you create clearer and more effective prompts.",
+
+
+siteTitle:
+"🤖 AI Toolbox",
+
+
+siteDescription:
+"Free, simple and useful AI productivity tools",
+
+
+freeBadge:
+"FREE",
 
 
 heroTitle:
 "🔥 AI Prompt Generator",
 
 
-heroDesc:
-"Generate high-quality AI prompts for ChatGPT and other AI tools quickly and easily.",
+heroDescription:
+"Enter your idea or task and let AI help you create a clearer and more detailed prompt for AI tools.",
 
 
 useToolBtn:
-"🚀 Use Prompt Generator",
+"🚀 Use AI Prompt Generator",
 
 
-guideBtn:
+heroGuideBtn:
 "📚 View Prompt Guide",
 
 
-whatTitle:
-"🤖 What Is an AI Prompt?",
+introTitle:
+"🤖 What Is an AI Prompt Generator?",
 
 
-whatText1:
-"An AI prompt is an instruction, question or request that you give to ChatGPT or another artificial intelligence tool. The AI uses the prompt to understand your goal and generate a response, article, code or other content.",
+introText1:
+"An AI prompt generator helps turn simple ideas or requests into clearer and more detailed prompts, making it easier for AI to understand what you want to accomplish.",
 
 
-whatText2:
-"In simple terms, your prompt helps determine how the AI understands your request. A clear and specific prompt can help produce results that better match your needs.",
+introText2:
+"The quality of an AI response often depends on how clearly you describe your task. Providing better goals, context and requirements can help AI generate results that better match your needs.",
 
 
-whyTitle:
-"💡 Why Use an AI Prompt Generator?",
-
-
-feature1Title:
-"⚡ Save Time",
-
-
-feature1Text:
-"Generate useful AI instructions quickly instead of repeatedly thinking about how to describe your request.",
-
-
-feature2Title:
-"🎯 Clearer Requests",
-
-
-feature2Text:
-"Turn vague ideas into clearer and more specific instructions for AI tools.",
-
-
-feature3Title:
-"🚀 Better AI Results",
-
-
-feature3Text:
-"Clear goals and requirements can help AI understand your request more accurately.",
-
-
-feature4Title:
-"🧠 Useful for Many Tasks",
-
-
-feature4Text:
-"AI prompts can be used for writing, studying, coding, content creation and everyday work.",
+introText3:
+"Simply describe what you want to accomplish, and AI can help organize and expand your idea into a more complete prompt for ChatGPT and other AI tools.",
 
 
 howTitle:
 "📖 How to Use the AI Prompt Generator",
 
 
-step1:
-"Enter the task you want AI to help you complete, such as writing, studying or coding.",
+step1Title:
+"Enter Your Request",
 
 
-step2:
-"Choose a suitable task category, such as writing, study, programming or business.",
+step1Text:
+"Briefly describe what you want AI to help you do, such as writing, studying, planning or analyzing content.",
 
 
-step3:
-"Click the generate button and let AI create a prompt based on your needs.",
+step2Title:
+"Add Relevant Details",
 
 
-step4:
-"Copy the generated prompt and use it with ChatGPT or another AI tool.",
+step2Text:
+"Add goals, background information, requirements or other details to make the prompt more accurate.",
 
 
-tryNowBtn:
-"✨ Generate a Prompt for Free",
+step3Title:
+"Generate the Prompt",
 
 
-useCasesTitle:
-"🌟 What Can AI Prompts Be Used For?",
+step3Text:
+"Click the generate button and let AI organize your request into a clearer and more complete prompt.",
 
 
-writingTitle:
-"📝 AI Writing",
+step4Title:
+"Copy and Use It",
 
 
-writingText:
-"Use prompts for articles, blogs, marketing copy, social media content, emails and other writing tasks.",
+step4Text:
+"Review the generated prompt and copy it to use with ChatGPT or other AI tools.",
 
 
-studyTitle:
-"📚 AI Learning",
+modeTitle:
+"✨ What Can the AI Prompt Generator Help You Do?",
 
 
-studyText:
-"Ask AI to explain concepts, create study plans, organize notes, generate practice questions or summarize content.",
+feature1Title:
+"💡 Organize Ideas",
 
 
-codingTitle:
-"💻 AI Coding",
+feature1Text:
+"Turn simple and scattered ideas into clearer task descriptions.",
 
 
-codingText:
-"Describe the program you need and let AI help write code, explain code or troubleshoot problems.",
+feature2Title:
+"🎯 Clarify Goals",
 
 
-workTitle:
-"💼 Productivity",
+feature2Text:
+"Help define what you want AI to accomplish and what result you expect.",
 
 
-workText:
-"Use AI for organizing information, writing emails, improving resumes, summarizing content and other everyday tasks.",
+feature3Title:
+"📝 Add Requirements",
 
 
-tipsTitle:
-"🎯 How to Write Better AI Prompts",
+feature3Text:
+"Include important information, conditions and specific requirements in your prompt.",
 
 
-tipsIntro:
-"To get better AI results, try to make your request more specific. A good prompt can include the following information:",
+feature4Title:
+"🤖 Easier for AI to Understand",
 
 
-tip1:
-"Clearly explain the task you want AI to complete.",
+feature4Text:
+"Express your request in a clearer structure so AI can better understand the task.",
 
 
-tip2:
-"Provide useful background information.",
+feature5Title:
+"⚡ Save Time",
 
 
-tip3:
-"Explain what kind of result you want.",
+feature5Text:
+"Create a useful starting prompt without having to think about every detail from scratch.",
 
 
-tip4:
-"Specify the language, format, length or style when necessary.",
+feature6Title:
+"🔄 Easy to Edit",
 
 
-tipsEnd:
-"For example, instead of simply saying “write an article,” tell the AI the topic, target audience, writing style and desired length.",
+feature6Text:
+"You can continue adjusting and improving the generated prompt based on your needs.",
 
 
-learnMoreBtn:
-"📚 Read the Complete AI Prompt Guide",
+whoTitle:
+"👥 Who Can Use This Tool?",
 
 
-freeTitle:
-"🆓 Free to Use, No Registration Required",
+who1:
+"🎓 Students: Use AI for studying, organizing knowledge and learning tasks.",
 
 
-freeText:
-"AI Toolbox provides free online AI productivity tools. You do not need to install software or create an account to start using them.",
+who2:
+"✍️ Content Creators: Create prompts for articles, videos and social media content.",
 
 
-freeText2:
-"Our goal is to make artificial intelligence tools easier to use for students, creators, office workers and everyday users.",
+who3:
+"💼 Office Users: Create prompts for work plans, emails, reports and other tasks.",
 
 
-navTitle:
-"🧭 AI Prompt Navigation",
+who4:
+"🤖 AI Beginners: Helpful for users who are not sure how to write AI prompts.",
 
 
-navUseTool:
-"🔥 Use AI Prompt Generator",
+who5:
+"💡 Everyday Users: Anyone who wants to use ChatGPT and other AI tools more effectively.",
 
 
-navGuide:
-"📚 AI Prompt Beginner Guide",
+faqTitle:
+"❓ Frequently Asked Questions",
 
 
-navHome:
-"🏠 Back to AI Toolbox",
+faq1Question:
+"Is the AI Prompt Generator free?",
 
 
-navAllTools:
-"🛠️ Explore Free AI Tools",
+faq1Answer:
+"Yes. You can use the AI Prompt Generator provided by AI Toolbox for free.",
 
 
-otherToolsTitle:
-"🛠️ Other AI Tools",
+faq2Question:
+"What is a Prompt?",
 
 
-otherToolsText:
-"You can also try other free tools from AI Toolbox:",
+faq2Answer:
+"A prompt is an instruction, question or task description sent to an AI system. It tells AI what you want it to do and what requirements you have.",
+
+
+faq3Question:
+"Can I use the generated prompt directly?",
+
+
+faq3Answer:
+"Yes. You can copy and use the generated prompt directly, or edit it further based on your needs.",
+
+
+faq4Question:
+"Do I need to register?",
+
+
+faq4Answer:
+"No registration is required. Simply open AI Toolbox and start using the tool.",
+
+
+useTitle:
+"🚀 Generate an AI Prompt Now",
+
+
+useText:
+"Open AI Toolbox and use the AI Prompt Generator for free to turn your ideas into clearer and more complete AI prompts.",
+
+
+useToolBtn2:
+"🔥 Generate a Prompt",
+
+
+guideTitle:
+"📚 AI Prompt Guide",
+
+
+guideText:
+"Want to learn how to write better AI prompts? Read the complete beginner guide and useful prompt tips.",
+
+
+ownGuideLink:
+"📖 AI Prompt Beginner Guide",
+
+
+allToolsTitle:
+"🛠️ All AI Tools",
+
+
+allToolsText:
+"Explore free AI productivity tools from AI Toolbox:",
+
+
+toolPrompt:
+"🔥 AI Prompt Generator",
 
 
 toolResume:
@@ -1579,6 +2387,94 @@ toolXhs:
 "📱 AI Social Media Title Generator",
 
 
+toolMail:
+"📧 AI Email Assistant",
+
+
+toolPagesTitle:
+"📖 AI Tool Pages",
+
+
+toolPagesText:
+"Learn about the features, use cases and details of each AI tool:",
+
+
+pagePrompt:
+"🔥 AI Prompt Generator",
+
+
+pageResume:
+"📝 AI Resume Assistant",
+
+
+pageTitleGenerator:
+"💡 AI Title Generator",
+
+
+pagePolisher:
+"✨ AI Writing Polisher",
+
+
+pageSummary:
+"📋 AI Article Summarizer",
+
+
+pageReply:
+"💬 AI Reply Assistant",
+
+
+pageXhs:
+"📱 AI Social Media Title Generator",
+
+
+pageMail:
+"📧 AI Email Assistant",
+
+
+guidesTitle:
+"📚 AI Guides",
+
+
+guidesText:
+"Learn how to use AI tools more effectively for studying, work and content creation:",
+
+
+guidePrompt:
+"🔥 AI Prompt Beginner Guide",
+
+
+guideResume:
+"📝 AI Resume Optimization Guide",
+
+
+guideTitleGenerator:
+"💡 AI Title Generator Guide",
+
+
+guidePolisher:
+"✨ AI Writing Polisher Guide",
+
+
+guideSummary:
+"📋 AI Article Summarizer Guide",
+
+
+guideReply:
+"💬 AI Reply Guide",
+
+
+guideXhs:
+"📱 Social Media Title Guide",
+
+
+guideMail:
+"📧 AI Email Writing Guide",
+
+
+homeBtn:
+"🏠 Back to AI Toolbox",
+
+
 footerText:
 "© 2026 AI Toolbox · Free AI Tools"
 
@@ -1590,7 +2486,6 @@ footerText:
 
 
 
-
 function setLanguage(lang){
 
 
@@ -1598,16 +2493,16 @@ const t = languageText[lang];
 
 
 
-Object.keys(t).forEach(key=>{
+Object.keys(t).forEach(id=>{
 
 
-const el = document.getElementById(key);
+const el = document.getElementById(id);
 
 
 
-if(key === "pageTitle"){
+if(id === "pageTitle"){
 
-document.title = t[key];
+document.title = t[id];
 
 return;
 
@@ -1615,11 +2510,59 @@ return;
 
 
 
-if(key === "metaDescription"){
+if(id === "metaDescription"){
 
 document
 .getElementById("metaDescription")
-.setAttribute("content",t[key]);
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+
+if(id === "ogTitle"){
+
+document
+.getElementById("ogTitle")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+
+if(id === "ogDescription"){
+
+document
+.getElementById("ogDescription")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+
+if(id === "twitterTitle"){
+
+document
+.getElementById("twitterTitle")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+
+if(id === "twitterDescription"){
+
+document
+.getElementById("twitterDescription")
+.setAttribute("content",t[id]);
 
 return;
 
@@ -1629,7 +2572,7 @@ return;
 
 if(el){
 
-el.innerText = t[key];
+el.innerText = t[id];
 
 }
 
@@ -1649,8 +2592,16 @@ document
 .classList.toggle("active",lang==="en");
 
 
-}
 
+document.documentElement.lang =
+lang==="zh"
+?
+"zh-CN"
+:
+"en";
+
+
+}
 
 
 </script>
