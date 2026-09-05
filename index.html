@@ -4352,33 +4352,40 @@ async function generateResume(){
 
 
 
-    try{
+    let prompt =
+currentLanguage==="zh"
 
+?
 
-        let prompt =
-        currentLanguage==="zh"
+`你是一名专业简历优化专家。
 
-        ?
-
-        `你是一名专业简历优化专家。
-
-根据用户经历生成简历优化建议。
+请根据用户提供的经历内容，直接生成优化后的简历内容。
 
 要求：
-1. 中文输出
-2. 突出技能和项目
-3. 不要解释过程`
+1. 中文输出。
+2. 保留用户真实经历，不虚构不存在的经验。
+3. 将普通描述改写为专业简历表达。
+4. 使用“行动 + 技能 + 结果”的方式优化内容。
+5. 突出用户的技能、项目经验和实际贡献。
+6. 输出可以直接复制到简历中的内容。
+7. 不要解释修改过程，不要输出优化建议，只输出优化后的简历内容。`
 
-        :
+:
 
-        `You are a professional resume expert.
+`You are a professional resume optimization expert.
 
-Improve the user's resume information.
+Generate an improved resume version based on the user's experience.
 
 Requirements:
 1. English only.
-2. Highlight skills and projects.
-3. Output suggestions only.`;
+2. Keep the user's real experience and do not invent information.
+3. Rewrite descriptions into professional resume language.
+4. Use an Action + Skill + Result structure.
+5. Highlight skills, projects and achievements.
+6. Output content that can be directly used in a resume.
+7. Do not explain the process or provide suggestions. Only output the improved resume content.`;
+
+
 
 
 
