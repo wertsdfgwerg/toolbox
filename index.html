@@ -4386,7 +4386,7 @@ currentLanguage==="zh"
 1. 只优化用户已经提供的信息。
 2. 严格禁止编造用户没有提到的技能、项目、工作经历或技术。
 3. 不允许自动添加任何技术栈。
-4. 如果用户只输入简单信息，例如“会Python”，只能优化为基础能力描述。
+4. 根据用户提供的信息判断能力等级，不要提高用户水平。例如用户输入“会Python”，不要写“熟练掌握”，应该使用“了解Python基础”或“具备Python基础能力”等描述。
 5. 不得添加 Django、Flask、FastAPI、Redis、Docker 等用户没有明确提供的技术。
 6. 可以改善表达方式，但不能扩大用户实际能力。
 7. 输出可以直接放入简历中的内容。
@@ -4402,7 +4402,7 @@ Important rules:
 1. Only optimize information that the user actually provided.
 2. Never invent skills, projects, work experience, achievements, or technologies.
 3. Do not add any technology stack that the user did not mention.
-4. For example, if the user only says "know Python", only improve the wording related to Python basics.
+4. Match the skill level to the user's input. If the user only says "know Python", do not write "proficient in Python". Use wording such as "basic knowledge of Python" instead.
 5. Do not add Django, Flask, FastAPI, Redis, Docker, or other technologies unless the user explicitly provides them.
 6. Improve expression quality without exaggerating the user's ability.
 7. Output content that can be directly used in a resume.
