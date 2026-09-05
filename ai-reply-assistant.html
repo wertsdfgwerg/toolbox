@@ -1,0 +1,2400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<!-- 网站图标 -->
+
+<link rel="icon" type="image/png" href="/toolbox/logo.png">
+
+<link rel="shortcut icon" type="image/png" href="/toolbox/logo.png">
+
+<link rel="apple-touch-icon" href="/toolbox/logo.png">
+
+
+<!-- SEO -->
+
+<title id="pageTitle">
+AI回复助手 - 免费在线AI回复生成工具 | AI工具箱
+</title>
+
+
+<meta
+id="metaDescription"
+name="description"
+content="免费在线AI回复助手，帮助生成自然、礼貌、专业、简洁或有趣的回复内容。适用于聊天、社交媒体、工作消息和日常沟通，无需注册即可使用。"
+>
+
+
+<meta name="robots" content="index,follow">
+
+
+<link
+rel="canonical"
+href="https://wertsdfgwerg.github.io/toolbox/ai-reply-assistant.html"
+>
+
+
+<!-- Open Graph -->
+
+<meta
+id="ogTitle"
+property="og:title"
+content="AI回复助手 - 免费在线AI回复生成工具"
+>
+
+
+<meta
+id="ogDescription"
+property="og:description"
+content="使用AI帮助生成自然、礼貌、专业的回复内容，让沟通更加轻松。"
+>
+
+
+<meta property="og:type" content="website">
+
+
+<meta
+property="og:url"
+content="https://wertsdfgwerg.github.io/toolbox/ai-reply-assistant.html"
+>
+
+
+<!-- Twitter -->
+
+<meta name="twitter:card" content="summary">
+
+
+<meta
+id="twitterTitle"
+name="twitter:title"
+content="AI回复助手 - AI Reply Assistant"
+>
+
+
+<meta
+id="twitterDescription"
+name="twitter:description"
+content="免费AI回复助手，帮助快速生成自然合适的回复内容。"
+>
+
+
+<!-- Cloudflare Web Analytics -->
+
+<script
+type="module"
+src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"4eb5597f43294acfbf1573e4628dcf28"}'>
+</script>
+
+
+<style>
+
+
+*{
+box-sizing:border-box;
+}
+
+
+html{
+scroll-behavior:smooth;
+}
+
+
+body{
+
+margin:0;
+
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+"Microsoft YaHei",
+Arial,
+sans-serif;
+
+background:#f7f9fc;
+
+color:#222;
+
+line-height:1.8;
+
+}
+
+
+.container{
+
+max-width:1000px;
+
+margin:auto;
+
+padding:30px 20px 60px;
+
+}
+
+
+/* 顶部 */
+
+
+.header{
+
+position:relative;
+
+text-align:center;
+
+padding:30px 0 40px;
+
+}
+
+
+.logo{
+
+width:60px;
+
+height:60px;
+
+object-fit:contain;
+
+}
+
+
+.site-name{
+
+font-size:28px;
+
+font-weight:800;
+
+margin:18px 0 5px;
+
+}
+
+
+.site-description{
+
+font-size:16px;
+
+color:#666;
+
+margin:0;
+
+}
+
+
+/* 语言切换 */
+
+
+.language-switch{
+
+position:absolute;
+
+right:0;
+
+top:10px;
+
+display:flex;
+
+background:white;
+
+border:1px solid #eee;
+
+border-radius:30px;
+
+padding:4px;
+
+}
+
+
+.language-switch button{
+
+border:none;
+
+background:none;
+
+padding:9px 18px;
+
+border-radius:25px;
+
+cursor:pointer;
+
+font-size:14px;
+
+}
+
+
+.language-switch button.active{
+
+background:#111;
+
+color:white;
+
+}
+
+
+/* 卡片 */
+
+
+.card{
+
+background:white;
+
+border-radius:20px;
+
+padding:30px;
+
+margin-bottom:22px;
+
+border:1px solid #eee;
+
+box-shadow:0 8px 25px rgba(0,0,0,.05);
+
+}
+
+
+.card h2{
+
+margin-top:0;
+
+font-size:26px;
+
+}
+
+
+.card h3{
+
+margin-top:24px;
+
+font-size:20px;
+
+}
+
+
+/* Hero */
+
+
+.hero-card{
+
+text-align:center;
+
+padding:45px 30px;
+
+}
+
+
+.badge{
+
+display:inline-block;
+
+background:#111;
+
+color:white;
+
+padding:5px 12px;
+
+border-radius:20px;
+
+font-size:12px;
+
+margin-bottom:10px;
+
+}
+
+
+.hero-card h1{
+
+font-size:40px;
+
+margin:12px 0;
+
+font-weight:800;
+
+}
+
+
+.hero-card p{
+
+color:#666;
+
+font-size:18px;
+
+max-width:700px;
+
+margin:15px auto 25px;
+
+}
+
+
+/* 按钮 */
+
+
+.button-row{
+
+display:flex;
+
+gap:14px;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+margin-top:22px;
+
+}
+
+
+.button{
+
+display:inline-block;
+
+text-decoration:none;
+
+padding:14px 24px;
+
+border-radius:12px;
+
+font-weight:600;
+
+transition:.2s;
+
+text-align:center;
+
+}
+
+
+.primary{
+
+background:#111;
+
+color:white;
+
+}
+
+
+.primary:hover{
+
+transform:translateY(-2px);
+
+}
+
+
+.secondary{
+
+background:#f1f1f1;
+
+color:#222;
+
+}
+
+
+.secondary:hover{
+
+background:#e8e8e8;
+
+}
+
+
+/* 列表 */
+
+
+.feature-list{
+
+padding-left:20px;
+
+}
+
+
+.feature-list li{
+
+margin:12px 0;
+
+}
+
+
+/* 回复方式 */
+
+
+.mode-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+
+.mode{
+
+background:#f8f9fb;
+
+border-radius:14px;
+
+padding:18px;
+
+border:1px solid #eee;
+
+}
+
+
+.mode h3{
+
+margin:0 0 8px;
+
+font-size:17px;
+
+}
+
+
+.mode p{
+
+margin:0;
+
+color:#666;
+
+}
+
+
+/* 使用步骤 */
+
+
+.steps{
+
+counter-reset:step;
+
+padding:0;
+
+}
+
+
+.step{
+
+position:relative;
+
+padding-left:55px;
+
+margin:24px 0;
+
+}
+
+
+.step::before{
+
+counter-increment:step;
+
+content:counter(step);
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:34px;
+
+height:34px;
+
+border-radius:50%;
+
+background:#111;
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:bold;
+
+}
+
+
+/* FAQ */
+
+
+.faq{
+
+border-top:1px solid #eee;
+
+padding:18px 0;
+
+}
+
+
+.faq:last-child{
+
+border-bottom:1px solid #eee;
+
+}
+
+
+.faq h3{
+
+margin:0 0 8px;
+
+font-size:18px;
+
+}
+
+
+.faq p{
+
+margin:0;
+
+color:#666;
+
+}
+
+
+/* 导航链接 */
+
+
+.link-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:12px;
+
+margin-top:18px;
+
+}
+
+
+.tool-link{
+
+display:block;
+
+background:#f8f9fb;
+
+padding:15px 16px;
+
+border-radius:12px;
+
+text-decoration:none;
+
+color:#222;
+
+font-weight:600;
+
+border:1px solid #eee;
+
+transition:.2s;
+
+}
+
+
+.tool-link:hover{
+
+transform:translateY(-2px);
+
+background:#f1f3f5;
+
+}
+
+
+/* 返回首页 */
+
+
+.home-link{
+
+text-align:center;
+
+margin-top:30px;
+
+}
+
+
+/* Footer */
+
+
+.footer{
+
+text-align:center;
+
+color:#777;
+
+padding:28px 0 10px;
+
+font-size:14px;
+
+}
+
+
+/* 手机端 */
+
+
+@media(max-width:768px){
+
+
+.container{
+
+padding:20px 15px 45px;
+
+}
+
+
+.language-switch{
+
+position:relative;
+
+right:auto;
+
+top:auto;
+
+justify-content:center;
+
+margin-bottom:20px;
+
+}
+
+
+.hero-card h1{
+
+font-size:30px;
+
+}
+
+
+.card{
+
+padding:22px;
+
+}
+
+
+.mode-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.link-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.button-row{
+
+flex-direction:column;
+
+}
+
+
+.button{
+
+width:100%;
+
+}
+
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- 顶部 -->
+
+
+<header class="header">
+
+
+<div class="language-switch">
+
+
+<button
+id="zhBtn"
+class="active"
+onclick="setLanguage('zh')">
+
+中文
+
+</button>
+
+
+<button
+id="enBtn"
+onclick="setLanguage('en')">
+
+English
+
+</button>
+
+
+</div>
+
+
+<a href="index.html">
+
+<img
+src="logo.png"
+class="logo"
+alt="AI Toolbox"
+>
+
+</a>
+
+
+<div
+class="site-name"
+id="siteTitle">
+
+🤖 AI工具箱
+
+</div>
+
+
+<p
+class="site-description"
+id="siteDescription">
+
+免费、简单、实用的 AI 效率工具
+
+</p>
+
+
+</header>
+
+
+
+<!-- Hero -->
+
+
+<section class="card hero-card">
+
+
+<span
+class="badge"
+id="freeBadge">
+
+免费使用
+
+</span>
+
+
+<h1 id="heroTitle">
+
+💬 AI回复助手
+
+</h1>
+
+
+<p id="heroDescription">
+
+使用 AI 快速生成自然、合适的回复，让聊天和沟通更加轻松。
+
+</p>
+
+
+<div class="button-row">
+
+
+<a
+href="index.html#replyTool"
+class="button primary"
+id="useToolBtn">
+
+🚀 立即使用 AI回复助手
+
+</a>
+
+
+<a
+href="ai-reply-assistant-guide.html"
+class="button secondary"
+id="heroGuideBtn">
+
+📚 查看使用教程
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 工具介绍 -->
+
+
+<section class="card">
+
+
+<h2 id="introTitle">
+
+🤖 什么是 AI回复助手？
+
+</h2>
+
+
+<p id="introText1">
+
+AI回复助手可以帮助你根据收到的消息快速生成合适的回复内容，让你在不知道怎么回答时获得一些表达思路。
+
+</p>
+
+
+<p id="introText2">
+
+你只需要输入对方发送的内容，并根据自己的需求选择合适的回复方式，AI 就可以帮助生成更加自然、礼貌或符合场景的回复。
+
+</p>
+
+
+<p id="introText3">
+
+它适合聊天消息、社交媒体互动、工作沟通、朋友交流以及各种日常回复场景。
+
+</p>
+
+
+</section>
+
+
+
+<!-- 如何使用 -->
+
+
+<section class="card">
+
+
+<h2 id="howTitle">
+
+📖 如何使用 AI回复助手？
+
+</h2>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<strong id="step1Title">
+输入收到的消息
+</strong>
+
+<p id="step1Text">
+输入或粘贴你想要回复的聊天内容或消息。
+</p>
+
+</div>
+
+
+<div class="step">
+
+<strong id="step2Title">
+选择回复方式
+</strong>
+
+<p id="step2Text">
+根据你的需求选择自然、礼貌、专业、简洁、有趣或其他合适的回复风格。
+</p>
+
+</div>
+
+
+<div class="step">
+
+<strong id="step3Title">
+生成回复
+</strong>
+
+<p id="step3Text">
+点击生成，让 AI 根据消息内容和你的选择提供回复建议。
+</p>
+
+</div>
+
+
+<div class="step">
+
+<strong id="step4Title">
+选择并使用回复
+</strong>
+
+<p id="step4Text">
+查看生成的内容，选择适合自己的回复后复制使用。
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 回复方式 -->
+
+
+<section class="card">
+
+
+<h2 id="modeTitle">
+
+✨ 多种回复方式
+
+</h2>
+
+
+<div class="mode-grid">
+
+
+<div class="mode">
+
+<h3 id="naturalTitle">
+😊 自然回复
+</h3>
+
+<p id="naturalText">
+让回复更加自然流畅，适合日常聊天和交流。
+</p>
+
+</div>
+
+
+<div class="mode">
+
+<h3 id="politeTitle">
+🙏 礼貌回复
+</h3>
+
+<p id="politeText">
+让表达更加礼貌得体，适合需要注意沟通方式的场景。
+</p>
+
+</div>
+
+
+<div class="mode">
+
+<h3 id="professionalTitle">
+💼 专业回复
+</h3>
+
+<p id="professionalText">
+让回复更加正式、清晰，适合工作和商务沟通。
+</p>
+
+</div>
+
+
+<div class="mode">
+
+<h3 id="conciseTitle">
+✂️ 简洁回复
+</h3>
+
+<p id="conciseText">
+用更少的文字表达重点，让回复更加直接清晰。
+</p>
+
+</div>
+
+
+<div class="mode">
+
+<h3 id="friendlyTitle">
+🤝 友好回复
+</h3>
+
+<p id="friendlyText">
+让语气更加友好轻松，帮助营造更好的沟通氛围。
+</p>
+
+</div>
+
+
+<div class="mode">
+
+<h3 id="interestingTitle">
+😄 有趣回复
+</h3>
+
+<p id="interestingText">
+让回复更有趣、更有个性，为聊天增加一些轻松感。
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 适合谁 -->
+
+
+<section class="card">
+
+
+<h2 id="whoTitle">
+
+👥 AI回复助手适合谁？
+
+</h2>
+
+
+<ul class="feature-list">
+
+
+<li id="who1">
+💬 日常聊天用户：不知道怎么回复消息时获得表达思路。
+</li>
+
+
+<li id="who2">
+📱 社交媒体用户：帮助回复评论、私信和互动内容。
+</li>
+
+
+<li id="who3">
+💼 办公用户：辅助处理工作消息和沟通内容。
+</li>
+
+
+<li id="who4">
+🌍 外语学习者：参考不同语言和表达方式的回复思路。
+</li>
+
+
+<li id="who5">
+📝 普通用户：让日常沟通更加轻松、清晰和自然。
+</li>
+
+
+</ul>
+
+
+</section>
+
+
+
+<!-- FAQ -->
+
+
+<section class="card">
+
+
+<h2 id="faqTitle">
+
+❓ 常见问题
+
+</h2>
+
+
+<div class="faq">
+
+
+<h3 id="faq1Question">
+
+AI回复助手是免费的吗？
+
+</h3>
+
+
+<p id="faq1Answer">
+
+是的，你可以免费使用 AI工具箱提供的 AI回复助手。
+
+</p>
+
+
+</div>
+
+
+<div class="faq">
+
+
+<h3 id="faq2Question">
+
+AI生成的回复可以直接使用吗？
+
+</h3>
+
+
+<p id="faq2Answer">
+
+你可以参考生成的回复内容，并根据实际聊天场景进行调整后使用。
+
+</p>
+
+
+</div>
+
+
+<div class="faq">
+
+
+<h3 id="faq3Question">
+
+可以用于哪些消息？
+
+</h3>
+
+
+<p id="faq3Answer">
+
+可以用于日常聊天、社交媒体互动、工作消息、评论回复以及其他文字沟通场景。
+
+</p>
+
+
+</div>
+
+
+<div class="faq">
+
+
+<h3 id="faq4Question">
+
+需要注册账号吗？
+
+</h3>
+
+
+<p id="faq4Answer">
+
+不需要注册账号，打开 AI工具箱即可开始使用。
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 再次使用工具 -->
+
+
+<section class="card">
+
+
+<h2 id="useTitle">
+
+🚀 立即生成回复
+
+</h2>
+
+
+<p id="useText">
+
+打开 AI工具箱，免费使用 AI回复助手，让沟通和回复消息变得更加轻松。
+
+</p>
+
+
+<div class="button-row">
+
+
+<a
+href="index.html#replyTool"
+class="button primary"
+id="useToolBtn2">
+
+💬 立即使用 AI回复助手
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 自己的教程 -->
+
+
+<section class="card">
+
+
+<h2 id="guideTitle">
+
+📚 AI回复助手使用教程
+
+</h2>
+
+
+<p id="guideText">
+
+想了解如何更好地使用 AI回复助手？你可以查看完整的使用指南和回复技巧。
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a
+href="ai-reply-assistant-guide.html"
+class="tool-link"
+id="ownGuideLink">
+
+📖 AI回复助手使用指南
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 所有 AI 工具 -->
+
+
+<section class="card">
+
+
+<h2 id="allToolsTitle">
+
+🛠️ 所有 AI 工具
+
+</h2>
+
+
+<p id="allToolsText">
+
+探索 AI工具箱中的免费 AI 效率工具：
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a href="index.html#promptTool" class="tool-link" id="toolPrompt">
+🔥 AI提示词生成器
+</a>
+
+
+<a href="index.html#resumeTool" class="tool-link" id="toolResume">
+📝 AI简历助手
+</a>
+
+
+<a href="index.html#titleTool" class="tool-link" id="toolTitle">
+💡 AI标题生成器
+</a>
+
+
+<a href="index.html#polisherTool" class="tool-link" id="toolPolisher">
+✨ AI文章润色工具
+</a>
+
+
+<a href="index.html#summaryTool" class="tool-link" id="toolSummary">
+📋 AI文章摘要工具
+</a>
+
+
+<a href="index.html#replyTool" class="tool-link" id="toolReply">
+💬 AI回复助手
+</a>
+
+
+<a href="index.html#xiaohongshuTool" class="tool-link" id="toolXhs">
+📱 AI小红书标题生成器
+</a>
+
+
+<a href="index.html#mailTool" class="tool-link" id="toolMail">
+📧 AI邮件助手
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 所有工具介绍 -->
+
+
+<section class="card">
+
+
+<h2 id="toolPagesTitle">
+
+📖 AI工具介绍
+
+</h2>
+
+
+<p id="toolPagesText">
+
+了解每个 AI 工具的功能、使用场景和详细介绍：
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a href="ai-prompt-generator.html" class="tool-link" id="pagePrompt">
+🔥 AI提示词生成器介绍
+</a>
+
+
+<a href="ai-resume-helper.html" class="tool-link" id="pageResume">
+📝 AI简历助手介绍
+</a>
+
+
+<a href="ai-title-generator.html" class="tool-link" id="pageTitleGenerator">
+💡 AI标题生成器介绍
+</a>
+
+
+<a href="ai-writing-polisher.html" class="tool-link" id="pagePolisher">
+✨ AI文章润色工具介绍
+</a>
+
+
+<a href="ai-article-summarizer.html" class="tool-link" id="pageSummary">
+📋 AI文章摘要工具介绍
+</a>
+
+
+<a href="ai-reply-assistant.html" class="tool-link" id="pageReply">
+💬 AI回复助手介绍
+</a>
+
+
+<a href="xiaohongshu-title-generator.html" class="tool-link" id="pageXhs">
+📱 AI小红书标题生成器介绍
+</a>
+
+
+<a href="ai-email-assistant.html" class="tool-link" id="pageMail">
+📧 AI邮件助手介绍
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 所有教程 -->
+
+
+<section class="card">
+
+
+<h2 id="guidesTitle">
+
+📚 AI教程指南
+
+</h2>
+
+
+<p id="guidesText">
+
+学习如何更高效地使用 AI 工具，提高学习、工作和创作效率：
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a href="ai-prompt-guide.html" class="tool-link" id="guidePrompt">
+🔥 AI Prompt入门指南
+</a>
+
+
+<a href="ai-resume-guide.html" class="tool-link" id="guideResume">
+📝 AI简历优化指南
+</a>
+
+
+<a href="ai-title-generator-guide.html" class="tool-link" id="guideTitleGenerator">
+💡 AI标题生成指南
+</a>
+
+
+<a href="ai-writing-polisher-guide.html" class="tool-link" id="guidePolisher">
+✨ AI文章润色指南
+</a>
+
+
+<a href="ai-article-summarizer-guide.html" class="tool-link" id="guideSummary">
+📋 AI文章摘要指南
+</a>
+
+
+<a href="ai-reply-assistant-guide.html" class="tool-link" id="guideReply">
+💬 AI回复技巧指南
+</a>
+
+
+<a href="ai-xiaohongshu-guide.html" class="tool-link" id="guideXhs">
+📱 小红书标题技巧指南
+</a>
+
+
+<a href="ai-email-assistant-guide.html" class="tool-link" id="guideMail">
+📧 AI邮件写作指南
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 返回首页 -->
+
+
+<div class="home-link">
+
+
+<a
+href="index.html"
+class="button secondary"
+id="homeBtn">
+
+🏠 返回 AI工具箱首页
+
+</a>
+
+
+</div>
+
+
+
+<!-- Footer -->
+
+
+<footer class="footer">
+
+
+<div id="footerText">
+
+© 2026 AI工具箱 · Free AI Tools
+
+</div>
+
+
+</footer>
+
+
+</div>
+
+
+
+<script>
+
+
+const languageText = {
+
+
+zh:{
+
+
+pageTitle:
+"AI回复助手 - 免费在线AI回复生成工具 | AI工具箱",
+
+
+metaDescription:
+"免费在线AI回复助手，帮助生成自然、礼貌、专业、简洁或有趣的回复内容。适用于聊天、社交媒体、工作消息和日常沟通，无需注册即可使用。",
+
+
+ogTitle:
+"AI回复助手 - 免费在线AI回复生成工具",
+
+
+ogDescription:
+"使用AI帮助生成自然、礼貌、专业的回复内容，让沟通更加轻松。",
+
+
+twitterTitle:
+"AI回复助手 - AI Reply Assistant",
+
+
+twitterDescription:
+"免费AI回复助手，帮助快速生成自然合适的回复内容。",
+
+
+siteTitle:
+"🤖 AI工具箱",
+
+
+siteDescription:
+"免费、简单、实用的 AI 效率工具",
+
+
+freeBadge:
+"免费使用",
+
+
+heroTitle:
+"💬 AI回复助手",
+
+
+heroDescription:
+"使用 AI 快速生成自然、合适的回复，让聊天和沟通更加轻松。",
+
+
+useToolBtn:
+"🚀 立即使用 AI回复助手",
+
+
+heroGuideBtn:
+"📚 查看使用教程",
+
+
+introTitle:
+"🤖 什么是 AI回复助手？",
+
+
+introText1:
+"AI回复助手可以帮助你根据收到的消息快速生成合适的回复内容，让你在不知道怎么回答时获得一些表达思路。",
+
+
+introText2:
+"你只需要输入对方发送的内容，并根据自己的需求选择合适的回复方式，AI 就可以帮助生成更加自然、礼貌或符合场景的回复。",
+
+
+introText3:
+"它适合聊天消息、社交媒体互动、工作沟通、朋友交流以及各种日常回复场景。",
+
+
+howTitle:
+"📖 如何使用 AI回复助手？",
+
+
+step1Title:
+"输入收到的消息",
+
+
+step1Text:
+"输入或粘贴你想要回复的聊天内容或消息。",
+
+
+step2Title:
+"选择回复方式",
+
+
+step2Text:
+"根据你的需求选择自然、礼貌、专业、简洁、有趣或其他合适的回复风格。",
+
+
+step3Title:
+"生成回复",
+
+
+step3Text:
+"点击生成，让 AI 根据消息内容和你的选择提供回复建议。",
+
+
+step4Title:
+"选择并使用回复",
+
+
+step4Text:
+"查看生成的内容，选择适合自己的回复后复制使用。",
+
+
+modeTitle:
+"✨ 多种回复方式",
+
+
+naturalTitle:
+"😊 自然回复",
+
+
+naturalText:
+"让回复更加自然流畅，适合日常聊天和交流。",
+
+
+politeTitle:
+"🙏 礼貌回复",
+
+
+politeText:
+"让表达更加礼貌得体，适合需要注意沟通方式的场景。",
+
+
+professionalTitle:
+"💼 专业回复",
+
+
+professionalText:
+"让回复更加正式、清晰，适合工作和商务沟通。",
+
+
+conciseTitle:
+"✂️ 简洁回复",
+
+
+conciseText:
+"用更少的文字表达重点，让回复更加直接清晰。",
+
+
+friendlyTitle:
+"🤝 友好回复",
+
+
+friendlyText:
+"让语气更加友好轻松，帮助营造更好的沟通氛围。",
+
+
+interestingTitle:
+"😄 有趣回复",
+
+
+interestingText:
+"让回复更有趣、更有个性，为聊天增加一些轻松感。",
+
+
+whoTitle:
+"👥 AI回复助手适合谁？",
+
+
+who1:
+"💬 日常聊天用户：不知道怎么回复消息时获得表达思路。",
+
+
+who2:
+"📱 社交媒体用户：帮助回复评论、私信和互动内容。",
+
+
+who3:
+"💼 办公用户：辅助处理工作消息和沟通内容。",
+
+
+who4:
+"🌍 外语学习者：参考不同语言和表达方式的回复思路。",
+
+
+who5:
+"📝 普通用户：让日常沟通更加轻松、清晰和自然。",
+
+
+faqTitle:
+"❓ 常见问题",
+
+
+faq1Question:
+"AI回复助手是免费的吗？",
+
+
+faq1Answer:
+"是的，你可以免费使用 AI工具箱提供的 AI回复助手。",
+
+
+faq2Question:
+"AI生成的回复可以直接使用吗？",
+
+
+faq2Answer:
+"你可以参考生成的回复内容，并根据实际聊天场景进行调整后使用。",
+
+
+faq3Question:
+"可以用于哪些消息？",
+
+
+faq3Answer:
+"可以用于日常聊天、社交媒体互动、工作消息、评论回复以及其他文字沟通场景。",
+
+
+faq4Question:
+"需要注册账号吗？",
+
+
+faq4Answer:
+"不需要注册账号，打开 AI工具箱即可开始使用。",
+
+
+useTitle:
+"🚀 立即生成回复",
+
+
+useText:
+"打开 AI工具箱，免费使用 AI回复助手，让沟通和回复消息变得更加轻松。",
+
+
+useToolBtn2:
+"💬 立即使用 AI回复助手",
+
+
+guideTitle:
+"📚 AI回复助手使用教程",
+
+
+guideText:
+"想了解如何更好地使用 AI回复助手？你可以查看完整的使用指南和回复技巧。",
+
+
+ownGuideLink:
+"📖 AI回复助手使用指南",
+
+
+allToolsTitle:
+"🛠️ 所有 AI 工具",
+
+
+allToolsText:
+"探索 AI工具箱中的免费 AI 效率工具：",
+
+
+toolPrompt:
+"🔥 AI提示词生成器",
+
+
+toolResume:
+"📝 AI简历助手",
+
+
+toolTitle:
+"💡 AI标题生成器",
+
+
+toolPolisher:
+"✨ AI文章润色工具",
+
+
+toolSummary:
+"📋 AI文章摘要工具",
+
+
+toolReply:
+"💬 AI回复助手",
+
+
+toolXhs:
+"📱 AI小红书标题生成器",
+
+
+toolMail:
+"📧 AI邮件助手",
+
+
+toolPagesTitle:
+"📖 AI工具介绍",
+
+
+toolPagesText:
+"了解每个 AI 工具的功能、使用场景和详细介绍：",
+
+
+pagePrompt:
+"🔥 AI提示词生成器介绍",
+
+
+pageResume:
+"📝 AI简历助手介绍",
+
+
+pageTitleGenerator:
+"💡 AI标题生成器介绍",
+
+
+pagePolisher:
+"✨ AI文章润色工具介绍",
+
+
+pageSummary:
+"📋 AI文章摘要工具介绍",
+
+
+pageReply:
+"💬 AI回复助手介绍",
+
+
+pageXhs:
+"📱 AI小红书标题生成器介绍",
+
+
+pageMail:
+"📧 AI邮件助手介绍",
+
+
+guidesTitle:
+"📚 AI教程指南",
+
+
+guidesText:
+"学习如何更高效地使用 AI 工具，提高学习、工作和创作效率：",
+
+
+guidePrompt:
+"🔥 AI Prompt入门指南",
+
+
+guideResume:
+"📝 AI简历优化指南",
+
+
+guideTitleGenerator:
+"💡 AI标题生成指南",
+
+
+guidePolisher:
+"✨ AI文章润色指南",
+
+
+guideSummary:
+"📋 AI文章摘要指南",
+
+
+guideReply:
+"💬 AI回复技巧指南",
+
+
+guideXhs:
+"📱 小红书标题技巧指南",
+
+
+guideMail:
+"📧 AI邮件写作指南",
+
+
+homeBtn:
+"🏠 返回 AI工具箱首页",
+
+
+footerText:
+"© 2026 AI工具箱 · Free AI Tools"
+
+
+},
+
+
+
+en:{
+
+
+pageTitle:
+"AI Reply Assistant - Free Online AI Reply Generator | AI Toolbox",
+
+
+metaDescription:
+"Free online AI reply assistant that helps generate natural, polite, professional, concise and engaging replies for chats, social media and everyday communication. No registration required.",
+
+
+ogTitle:
+"AI Reply Assistant - Free Online AI Reply Generator",
+
+
+ogDescription:
+"Use AI to generate natural, polite and appropriate replies for easier communication.",
+
+
+twitterTitle:
+"AI Reply Assistant - AI Toolbox",
+
+
+twitterDescription:
+"Free AI reply assistant that helps generate natural and appropriate responses.",
+
+
+siteTitle:
+"🤖 AI Toolbox",
+
+
+siteDescription:
+"Free, simple and useful AI productivity tools",
+
+
+freeBadge:
+"FREE",
+
+
+heroTitle:
+"💬 AI Reply Assistant",
+
+
+heroDescription:
+"Use AI to quickly generate natural and appropriate replies for easier conversations and communication.",
+
+
+useToolBtn:
+"🚀 Use AI Reply Assistant",
+
+
+heroGuideBtn:
+"📚 View Reply Guide",
+
+
+introTitle:
+"🤖 What Is an AI Reply Assistant?",
+
+
+introText1:
+"An AI reply assistant helps you quickly generate appropriate replies based on messages you receive, giving you ideas when you are not sure how to respond.",
+
+
+introText2:
+"Simply enter the message you received and choose a suitable reply style. AI can then help generate a response that sounds more natural, polite or appropriate for the situation.",
+
+
+introText3:
+"It can be useful for chats, social media interactions, work communication, conversations with friends and many other everyday situations.",
+
+
+howTitle:
+"📖 How to Use the AI Reply Assistant",
+
+
+step1Title:
+"Enter the Message",
+
+
+step1Text:
+"Paste or enter the message you want to reply to.",
+
+
+step2Title:
+"Choose a Reply Style",
+
+
+step2Text:
+"Choose a natural, polite, professional, concise, friendly or interesting reply style.",
+
+
+step3Title:
+"Generate a Reply",
+
+
+step3Text:
+"Click generate and let AI provide reply suggestions based on the message and your selection.",
+
+
+step4Title:
+"Choose and Use the Reply",
+
+
+step4Text:
+"Review the generated response, choose the one that fits your situation and use it as needed.",
+
+
+modeTitle:
+"✨ Multiple Reply Styles",
+
+
+naturalTitle:
+"😊 Natural Reply",
+
+
+naturalText:
+"Make the response sound more natural and fluent for everyday conversations.",
+
+
+politeTitle:
+"🙏 Polite Reply",
+
+
+politeText:
+"Make your response more polite and appropriate for situations that require careful communication.",
+
+
+professionalTitle:
+"💼 Professional Reply",
+
+
+professionalText:
+"Make the response more formal and clear for work and business communication.",
+
+
+conciseTitle:
+"✂️ Concise Reply",
+
+
+conciseText:
+"Express the key message with fewer words and make the response more direct.",
+
+
+friendlyTitle:
+"🤝 Friendly Reply",
+
+
+friendlyText:
+"Create a warmer and friendlier tone for more comfortable communication.",
+
+
+interestingTitle:
+"😄 Interesting Reply",
+
+
+interestingText:
+"Make your response more interesting and expressive for a more engaging conversation.",
+
+
+whoTitle:
+"👥 Who Can Use This Tool?",
+
+
+who1:
+"💬 Everyday Chat Users: Get ideas when you are not sure how to reply to a message.",
+
+
+who2:
+"📱 Social Media Users: Get help replying to comments, messages and interactions.",
+
+
+who3:
+"💼 Office Users: Assist with work messages and everyday communication.",
+
+
+who4:
+"🌍 Language Learners: Explore different ways to express replies and responses.",
+
+
+who5:
+"📝 Everyday Users: Make daily communication easier, clearer and more natural.",
+
+
+faqTitle:
+"❓ Frequently Asked Questions",
+
+
+faq1Question:
+"Is the AI Reply Assistant free?",
+
+
+faq1Answer:
+"Yes. You can use the AI Reply Assistant provided by AI Toolbox for free.",
+
+
+faq2Question:
+"Can I use the AI-generated reply directly?",
+
+
+faq2Answer:
+"You can use the generated reply as a reference and adjust it based on the actual conversation before sending it.",
+
+
+faq3Question:
+"What kinds of messages can I use it for?",
+
+
+faq3Answer:
+"You can use it for everyday chats, social media interactions, work messages, comment replies and other text communication.",
+
+
+faq4Question:
+"Do I need to register?",
+
+
+faq4Answer:
+"No registration is required. Simply open AI Toolbox and start using the tool.",
+
+
+useTitle:
+"🚀 Generate a Reply Now",
+
+
+useText:
+"Open AI Toolbox and use the AI Reply Assistant for free to make conversations and replying to messages easier.",
+
+
+useToolBtn2:
+"💬 Use AI Reply Assistant",
+
+
+guideTitle:
+"📚 AI Reply Assistant Guide",
+
+
+guideText:
+"Want to learn how to use the AI Reply Assistant more effectively? Read the complete guide and reply tips.",
+
+
+ownGuideLink:
+"📖 AI Reply Assistant Guide",
+
+
+allToolsTitle:
+"🛠️ All AI Tools",
+
+
+allToolsText:
+"Explore free AI productivity tools from AI Toolbox:",
+
+
+toolPrompt:
+"🔥 AI Prompt Generator",
+
+
+toolResume:
+"📝 AI Resume Assistant",
+
+
+toolTitle:
+"💡 AI Title Generator",
+
+
+toolPolisher:
+"✨ AI Writing Polisher",
+
+
+toolSummary:
+"📋 AI Article Summarizer",
+
+
+toolReply:
+"💬 AI Reply Assistant",
+
+
+toolXhs:
+"📱 AI Social Media Title Generator",
+
+
+toolMail:
+"📧 AI Email Assistant",
+
+
+toolPagesTitle:
+"📖 AI Tool Pages",
+
+
+toolPagesText:
+"Learn about the features, use cases and details of each AI tool:",
+
+
+pagePrompt:
+"🔥 AI Prompt Generator",
+
+
+pageResume:
+"📝 AI Resume Assistant",
+
+
+pageTitleGenerator:
+"💡 AI Title Generator",
+
+
+pagePolisher:
+"✨ AI Writing Polisher",
+
+
+pageSummary:
+"📋 AI Article Summarizer",
+
+
+pageReply:
+"💬 AI Reply Assistant",
+
+
+pageXhs:
+"📱 AI Social Media Title Generator",
+
+
+pageMail:
+"📧 AI Email Assistant",
+
+
+guidesTitle:
+"📚 AI Guides",
+
+
+guidesText:
+"Learn how to use AI tools more effectively for studying, work and content creation:",
+
+
+guidePrompt:
+"🔥 AI Prompt Beginner Guide",
+
+
+guideResume:
+"📝 AI Resume Optimization Guide",
+
+
+guideTitleGenerator:
+"💡 AI Title Generator Guide",
+
+
+guidePolisher:
+"✨ AI Writing Polisher Guide",
+
+
+guideSummary:
+"📋 AI Article Summarizer Guide",
+
+
+guideReply:
+"💬 AI Reply Guide",
+
+
+guideXhs:
+"📱 Social Media Title Guide",
+
+
+guideMail:
+"📧 AI Email Writing Guide",
+
+
+homeBtn:
+"🏠 Back to AI Toolbox",
+
+
+footerText:
+"© 2026 AI Toolbox · Free AI Tools"
+
+
+}
+
+
+};
+
+
+
+function setLanguage(lang){
+
+
+const t = languageText[lang];
+
+
+Object.keys(t).forEach(id=>{
+
+
+const el = document.getElementById(id);
+
+
+if(id === "pageTitle"){
+
+document.title = t[id];
+
+return;
+
+}
+
+
+if(id === "metaDescription"){
+
+document
+.getElementById("metaDescription")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+if(id === "ogTitle"){
+
+document
+.getElementById("ogTitle")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+if(id === "ogDescription"){
+
+document
+.getElementById("ogDescription")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+if(id === "twitterTitle"){
+
+document
+.getElementById("twitterTitle")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+if(id === "twitterDescription"){
+
+document
+.getElementById("twitterDescription")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+if(el){
+
+el.innerText = t[id];
+
+}
+
+
+});
+
+
+document
+.getElementById("zhBtn")
+.classList.toggle("active",lang==="zh");
+
+
+document
+.getElementById("enBtn")
+.classList.toggle("active",lang==="en");
+
+
+document.documentElement.lang =
+lang==="zh"
+?
+"zh-CN"
+:
+"en";
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
