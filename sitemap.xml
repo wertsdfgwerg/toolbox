@@ -2,67 +2,171 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+
+<!-- 首页 -->
+
 <url>
 <loc>https://wertsdfgwerg.github.io/toolbox/</loc>
-<lastmod>2026-08-28</lastmod>
+<lastmod>2026-09-05</lastmod>
 <changefreq>weekly</changefreq>
 <priority>1.0</priority>
 </url>
 
+
+<!-- AI 工具大全 -->
+
 <url>
 <loc>https://wertsdfgwerg.github.io/toolbox/ai-tools.html</loc>
-<lastmod>2026-08-28</lastmod>
+<lastmod>2026-09-05</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.9</priority>
 </url>
 
+
+<!-- AI 工具箱介绍 -->
+
+<url>
+<loc>https://wertsdfgwerg.github.io/toolbox/about-ai-tools.html</loc>
+<lastmod>2026-09-05</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+
+
+<!-- AI 提示词生成器 -->
+
 <url>
 <loc>https://wertsdfgwerg.github.io/toolbox/ai-prompt-generator.html</loc>
-<lastmod>2026-08-28</lastmod>
+<lastmod>2026-09-05</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.9</priority>
 </url>
 
 <url>
 <loc>https://wertsdfgwerg.github.io/toolbox/ai-prompt-guide.html</loc>
-<lastmod>2026-08-28</lastmod>
+<lastmod>2026-09-05</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 
+
+<!-- AI 简历助手 -->
+
 <url>
 <loc>https://wertsdfgwerg.github.io/toolbox/ai-resume-helper.html</loc>
-<lastmod>2026-08-28</lastmod>
+<lastmod>2026-09-05</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.9</priority>
 </url>
 
 <url>
 <loc>https://wertsdfgwerg.github.io/toolbox/ai-resume-guide.html</loc>
-<lastmod>2026-08-28</lastmod>
+<lastmod>2026-09-05</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 
+
+<!-- AI 标题生成器 -->
+
+<url>
+<loc>https://wertsdfgwerg.github.io/toolbox/ai-title-generator.html</loc>
+<lastmod>2026-09-05</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+
+<url>
+<loc>https://wertsdfgwerg.github.io/toolbox/ai-title-generator-guide.html</loc>
+<lastmod>2026-09-05</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+
+
+<!-- AI 文章润色工具 -->
+
+<url>
+<loc>https://wertsdfgwerg.github.io/toolbox/ai-writing-polisher.html</loc>
+<lastmod>2026-09-05</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+
+<url>
+<loc>https://wertsdfgwerg.github.io/toolbox/ai-writing-polisher-guide.html</loc>
+<lastmod>2026-09-05</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+
+
+<!-- AI 文章摘要工具 -->
+
+<url>
+<loc>https://wertsdfgwerg.github.io/toolbox/ai-article-summarizer.html</loc>
+<lastmod>2026-09-05</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+
+<url>
+<loc>https://wertsdfgwerg.github.io/toolbox/ai-article-summarizer-guide.html</loc>
+<lastmod>2026-09-05</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+
+
+<!-- AI 回复助手 -->
+
+<url>
+<loc>https://wertsdfgwerg.github.io/toolbox/ai-reply-assistant.html</loc>
+<lastmod>2026-09-05</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+
+<url>
+<loc>https://wertsdfgwerg.github.io/toolbox/ai-reply-assistant-guide.html</loc>
+<lastmod>2026-09-05</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+
+
+<!-- AI 小红书标题生成器 -->
+
 <url>
 <loc>https://wertsdfgwerg.github.io/toolbox/xiaohongshu-title-generator.html</loc>
-<lastmod>2026-08-28</lastmod>
+<lastmod>2026-09-05</lastmod>
 <changefreq>weekly</changefreq>
-<priority>0.8</priority>
+<priority>0.9</priority>
 </url>
 
 <url>
 <loc>https://wertsdfgwerg.github.io/toolbox/ai-xiaohongshu-guide.html</loc>
-<lastmod>2026-08-28</lastmod>
+<lastmod>2026-09-05</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 
+
+<!-- AI 邮件助手 -->
+
 <url>
-<loc>https://wertsdfgwerg.github.io/toolbox/about-ai-tools.html</loc>
-<lastmod>2026-08-28</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
+<loc>https://wertsdfgwerg.github.io/toolbox/ai-email-assistant.html</loc>
+<lastmod>2026-09-05</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
 </url>
+
+<url>
+<loc>https://wertsdfgwerg.github.io/toolbox/ai-email-assistant-guide.html</loc>
+<lastmod>2026-09-05</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+
 
 </urlset>
