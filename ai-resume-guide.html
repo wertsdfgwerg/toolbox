@@ -7,9 +7,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
 <link rel="icon" type="image/png" href="/toolbox/logo.png">
 
 <link rel="shortcut icon" type="image/png" href="/toolbox/logo.png">
+
+<link rel="apple-touch-icon" href="/toolbox/logo.png">
 
 
 <title id="pageTitle">
@@ -17,37 +20,65 @@ AI简历优化教程 - 如何使用AI制作优秀简历 | AI工具箱
 </title>
 
 
-<meta 
-name="description"
+<meta
 id="metaDescription"
-content="免费AI简历优化教程，学习如何使用AI优化简历内容，提高简历表达效果，帮助求职者制作更加清晰专业的简历。">
+name="description"
+content="免费AI简历优化教程，学习如何使用AI优化简历内容，改善经历表达，提高简历专业度，帮助求职者制作更加清晰有效的简历。"
+>
 
 
-<meta name="robots" content="index,follow">
+<meta
+name="robots"
+content="index,follow"
+>
 
 
-<link rel="canonical"
-href="https://wertsdfgwerg.github.io/toolbox/ai-resume-guide.html">
+<link
+rel="canonical"
+href="https://wertsdfgwerg.github.io/toolbox/ai-resume-guide.html"
+>
 
 
-<meta property="og:title"
-content="AI简历优化教程 - 如何使用AI制作优秀简历">
+<meta
+property="og:title"
+content="AI简历优化教程 - 如何使用AI制作优秀简历"
+>
 
 
-<meta property="og:description"
-content="学习如何使用AI优化简历内容，让简历更加清晰专业。">
+<meta
+property="og:description"
+content="学习如何使用AI优化简历，让个人经历、技能和优势表达更加清晰专业。"
+>
 
 
-<meta property="og:type"
-content="website">
+<meta
+property="og:type"
+content="website"
+>
 
 
-<meta property="og:image"
-content="https://wertsdfgwerg.github.io/toolbox/logo.png">
-  
+<meta
+property="og:url"
+content="https://wertsdfgwerg.github.io/toolbox/ai-resume-guide.html"
+>
 
-<meta property="og:url"
-content="https://wertsdfgwerg.github.io/toolbox/ai-resume-guide.html">
+
+<meta
+name="twitter:card"
+content="summary"
+>
+
+
+<meta
+name="twitter:title"
+content="AI Resume Optimization Guide"
+>
+
+
+<meta
+name="twitter:description"
+content="Learn how to use AI to improve your resume and create a more professional CV."
+>
 
 
 <script
@@ -57,10 +88,17 @@ data-cf-beacon='{"token":"4eb5597f43294acfbf1573e4628dcf28"}'>
 </script>
 
 
+
 <style>
+
 
 *{
 box-sizing:border-box;
+}
+
+
+html{
+scroll-behavior:smooth;
 }
 
 
@@ -85,6 +123,7 @@ line-height:1.8;
 }
 
 
+
 .container{
 
 max-width:1000px;
@@ -96,17 +135,17 @@ padding:30px 20px 60px;
 }
 
 
-/* 顶部 */
 
 .header{
 
-text-align:center;
-
 position:relative;
+
+text-align:center;
 
 padding:30px 0 40px;
 
 }
+
 
 
 .logo{
@@ -120,27 +159,32 @@ object-fit:contain;
 }
 
 
-.site-name{
+
+.site-title{
 
 font-size:42px;
 
-font-weight:800;
-
 margin:20px 0 15px;
 
+font-weight:800;
+
 }
+
 
 
 .header p{
 
+font-size:18px;
+
 color:#666;
 
-font-size:18px;
+margin:auto;
+
+max-width:700px;
 
 }
 
 
-/*语言*/
 
 .language-switch{
 
@@ -149,6 +193,8 @@ position:absolute;
 right:0;
 
 top:10px;
+
+display:flex;
 
 background:white;
 
@@ -161,22 +207,26 @@ padding:4px;
 }
 
 
+
 .language-switch button{
 
 border:none;
 
 background:none;
 
-padding:8px 18px;
+padding:9px 18px;
 
-border-radius:20px;
+border-radius:25px;
 
 cursor:pointer;
+
+font-size:14px;
 
 }
 
 
-.language-switch .active{
+
+.language-switch button.active{
 
 background:#111;
 
@@ -185,7 +235,6 @@ color:white;
 }
 
 
-/*卡片*/
 
 .card{
 
@@ -193,21 +242,49 @@ background:white;
 
 border-radius:20px;
 
-padding:30px;
+padding:28px;
 
 margin-bottom:22px;
 
 border:1px solid #eee;
 
-box-shadow:
-0 8px 20px rgba(0,0,0,.05);
+box-shadow:0 8px 20px rgba(0,0,0,.05);
 
 }
 
 
-.hero-title{
+
+.card h2{
+
+margin-top:0;
+
+font-size:25px;
+
+}
+
+
+
+.card h3{
+
+margin-top:25px;
+
+font-size:20px;
+
+}
+
+
+
+.hero-card{
 
 text-align:center;
+
+padding:40px 30px;
+
+}
+
+
+
+.hero-card h1{
 
 font-size:36px;
 
@@ -216,23 +293,40 @@ margin:10px 0;
 }
 
 
-h2{
 
-font-size:26px;
+.hero-card p{
 
-margin-top:0;
+color:#666;
 
-}
+font-size:17px;
 
+max-width:700px;
 
-h3{
-
-font-size:20px;
+margin:15px auto 25px;
 
 }
 
 
-/*按钮*/
+
+.badge{
+
+display:inline-block;
+
+background:#111;
+
+color:white;
+
+padding:5px 12px;
+
+border-radius:20px;
+
+font-size:12px;
+
+margin-bottom:12px;
+
+}
+
+
 
 .button-row{
 
@@ -240,7 +334,7 @@ display:flex;
 
 justify-content:center;
 
-gap:15px;
+gap:12px;
 
 flex-wrap:wrap;
 
@@ -249,62 +343,87 @@ margin-top:25px;
 }
 
 
-.btn{
+.primary{
+
+display:inline-block;
+
+background:#111;
+
+color:white;
+
+text-decoration:none;
 
 padding:14px 24px;
 
 border-radius:12px;
 
+font-size:16px;
+
+font-weight:600;
+
+transition:.2s;
+
+}
+
+
+
+.primary:hover{
+
+transform:translateY(-2px);
+
+}
+
+
+
+.secondary{
+
+display:inline-block;
+
+background:#f1f1f1;
+
+color:#222;
+
 text-decoration:none;
+
+padding:14px 22px;
+
+border-radius:12px;
+
+font-size:15px;
 
 font-weight:600;
 
 }
 
 
-.primary{
-
-background:#111;
-
-color:white;
-
-}
-
-
-.secondary{
-
-background:#eee;
-
-color:#222;
-
-}
-
-
-/*步骤*/
 
 .steps{
 
-counter-reset:item;
+counter-reset:step;
+
+padding:0;
 
 }
+
 
 
 .step{
 
-padding-left:55px;
-
 position:relative;
 
-margin:25px 0;
+padding-left:55px;
+
+margin:24px 0;
 
 }
 
 
-.step:before{
 
-counter-increment:item;
+.step::before{
 
-content:counter(item);
+counter-increment:step;
+
+content:counter(step);
 
 position:absolute;
 
@@ -312,9 +431,9 @@ left:0;
 
 top:0;
 
-width:35px;
+width:34px;
 
-height:35px;
+height:34px;
 
 border-radius:50%;
 
@@ -328,27 +447,83 @@ align-items:center;
 
 justify-content:center;
 
-}
-
-
-/*列表*/
-
-.feature-list li{
-
-margin:12px 0;
+font-weight:bold;
 
 }
 
 
-/*FAQ*/
+.mode-grid{
 
-.faq{
+display:grid;
 
-border-top:1px solid #eee;
+grid-template-columns:repeat(2,1fr);
 
-padding:18px 0;
+gap:15px;
+
+margin-top:20px;
 
 }
+
+
+
+.mode{
+
+background:#f8f9fb;
+
+border-radius:14px;
+
+padding:18px;
+
+border:1px solid #eee;
+
+}
+
+
+
+.link-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:12px;
+
+margin-top:15px;
+
+}
+
+
+
+.tool-link{
+
+display:block;
+
+background:#f8f9fb;
+
+padding:14px 16px;
+
+border-radius:12px;
+
+text-decoration:none;
+
+color:#222;
+
+font-weight:600;
+
+border:1px solid #eee;
+
+}
+
+
+
+.home-link{
+
+text-align:center;
+
+margin-top:30px;
+
+}
+
 
 
 .footer{
@@ -357,7 +532,9 @@ text-align:center;
 
 color:#777;
 
-padding:30px;
+padding:25px 0;
+
+font-size:14px;
 
 }
 
@@ -365,31 +542,37 @@ padding:30px;
 
 @media(max-width:768px){
 
-.language-switch{
 
-position:relative;
-
-top:auto;
-
-right:auto;
-
-margin-bottom:20px;
-
-}
-
-
-.site-name{
+.site-title{
 
 font-size:30px;
 
 }
 
 
-h1{
+.language-switch{
 
-font-size:28px;
+position:relative;
+
+right:auto;
+
+top:auto;
+
+justify-content:center;
+
+margin-bottom:20px;
 
 }
+
+
+
+.mode-grid,
+.link-grid{
+
+grid-template-columns:1fr;
+
+}
+
 
 
 .card{
@@ -398,123 +581,27 @@ padding:22px;
 
 }
 
+
+
+.primary,
+.secondary{
+
+width:100%;
+
+text-align:center;
+
 }
+
+
+}
+
+
 
 </style>
 
 
-</head>
 
-
-
-<body>
-
-
-<div class="container">
-
-
-
-<header class="header">
-
-
-<div class="language-switch">
-
-<button id="zhBtn"
-class="active"
-onclick="setLanguage('zh')">
-
-中文
-
-</button>
-
-
-<button id="enBtn"
-onclick="setLanguage('en')">
-
-English
-
-</button>
-
-
-</div>
-
-
-
-<a href="index.html">
-
-<img src="logo.png"
-class="logo"
-alt="AI Toolbox">
-
-</a>
-
-
-
-<div class="site-name"
-id="siteTitle">
-
-🤖 AI工具箱
-
-</div>
-
-
-<p id="siteDescription">
-
-免费、简单、实用的 AI 效率工具
-
-</p>
-
-
-</header>
-
-
-
-
-<section class="card">
-
-
-<h1 id="heroTitle" class="hero-title">
-
-📚 AI简历优化教程
-
-</h1>
-
-
-<p id="heroDescription">
-
-学习如何使用 AI 优化简历内容，让你的经历、技能和优势表达更加清晰专业。
-
-</p>
-
-
-<div class="button-row">
-
-
-<a href="index.html#resumeTool"
-class="btn primary"
-id="useBtn">
-
-🚀 使用AI简历助手
-
-</a>
-
-
-<a href="ai-resume-helper.html"
-class="btn secondary"
-id="introBtn">
-
-📖 查看工具介绍
-
-</a>
-
-
-</div>
-
-
-</section>
-
-
-
+<!-- 教程介绍 -->
 
 
 <section class="card">
@@ -522,21 +609,28 @@ id="introBtn">
 
 <h2 id="startTitle">
 
-🤖 AI简历应该怎么使用？
+🤖 AI简历优化应该怎么用？
 
 </h2>
 
 
 <p id="startText1">
 
-AI简历优化不是简单生成一份模板，而是帮助你整理经历、突出优势，并改善简历表达方式。
+AI简历优化不是简单生成一份模板，而是帮助你整理经历、突出优势，并改善简历中的表达方式。
 
 </p>
 
 
 <p id="startText2">
 
-不同求职目标需要不同的简历重点，例如学生、实习、工作经验丰富的人，优化方向都会有所不同。
+不同求职目标需要不同的简历重点，例如学生、实习生、应届毕业生和有工作经验的人，优化方向都会有所不同。
+
+</p>
+
+
+<p id="startText3">
+
+通过合理使用 AI，可以帮助你更快速整理信息，让简历内容更加清晰、有针对性。
 
 </p>
 
@@ -546,12 +640,15 @@ AI简历优化不是简单生成一份模板，而是帮助你整理经历、突
 
 
 
+<!-- 使用步骤 -->
+
+
 <section class="card">
 
 
-<h2 id="stepTitle">
+<h2 id="howTitle">
 
-📖 AI简历优化步骤
+📖 AI简历优化使用步骤
 
 </h2>
 
@@ -561,18 +658,20 @@ AI简历优化不是简单生成一份模板，而是帮助你整理经历、突
 
 <div class="step">
 
-<h3 id="step1Title">
+
+<strong id="step1Title">
 
 整理个人信息
 
-</h3>
+</strong>
 
 
 <p id="step1Text">
 
-准备教育经历、技能、项目经验、工作经历等基本信息。
+准备教育经历、技能、项目经验、实习经历、工作经历等基础信息。
 
 </p>
+
 
 </div>
 
@@ -580,18 +679,20 @@ AI简历优化不是简单生成一份模板，而是帮助你整理经历、突
 
 <div class="step">
 
-<h3 id="step2Title">
 
-明确求职目标
+<strong id="step2Title">
 
-</h3>
+确定求职目标
+
+</strong>
 
 
 <p id="step2Text">
 
-告诉AI你申请的岗位，让优化方向更加符合目标职位。
+告诉 AI 你的目标岗位，让简历内容更加符合职位要求。
 
 </p>
+
 
 </div>
 
@@ -599,18 +700,20 @@ AI简历优化不是简单生成一份模板，而是帮助你整理经历、突
 
 <div class="step">
 
-<h3 id="step3Title">
 
-优化经历表达
+<strong id="step3Title">
 
-</h3>
+优化经历描述
+
+</strong>
 
 
 <p id="step3Text">
 
-使用更加专业、有成果导向的方式描述你的经历。
+将简单的职责描述转换为更加专业、突出成果的表达方式。
 
 </p>
+
 
 </div>
 
@@ -618,18 +721,145 @@ AI简历优化不是简单生成一份模板，而是帮助你整理经历、突
 
 <div class="step">
 
-<h3 id="step4Title">
 
-检查最终内容
+<strong id="step4Title">
 
-</h3>
+检查简历内容
+
+</strong>
 
 
 <p id="step4Text">
 
-确认简历信息真实准确，并根据个人情况进一步修改。
+确认所有信息真实准确，并根据个人情况修改 AI 生成的建议。
 
 </p>
+
+
+</div>
+
+
+
+<div class="step">
+
+
+<strong id="step5Title">
+
+针对岗位调整
+
+</strong>
+
+
+<p id="step5Text">
+
+根据不同招聘岗位需求调整重点，提高简历匹配程度。
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+<!-- 不同人群 -->
+
+
+<section class="card">
+
+
+<h2 id="caseTitle">
+
+🌟 不同人群如何使用 AI简历助手？
+
+</h2>
+
+
+<div class="mode-grid">
+
+
+<div class="mode">
+
+
+<h3 id="studentTitle">
+
+🎓 学生和应届毕业生
+
+</h3>
+
+
+<p id="studentText">
+
+帮助整理校园经历、课程项目、技能和实践经历，让简历更加完整。
+
+</p>
+
+
+</div>
+
+
+
+<div class="mode">
+
+
+<h3 id="internTitle">
+
+💼 实习求职者
+
+</h3>
+
+
+<p id="internText">
+
+优化实习经历描述，突出学习能力和项目成果。
+
+</p>
+
+
+</div>
+
+
+
+<div class="mode">
+
+
+<h3 id="workerTitle">
+
+🚀 有工作经验的人
+
+</h3>
+
+
+<p id="workerText">
+
+改善工作经历表达，突出职业能力和实际成果。
+
+</p>
+
+
+</div>
+
+
+
+<div class="mode">
+
+
+<h3 id="changeTitle">
+
+🔄 转行求职者
+
+</h3>
+
+
+<p id="changeText">
+
+重新整理已有技能，让经历更符合新的职业方向。
+
+</p>
+
 
 </div>
 
@@ -641,12 +871,16 @@ AI简历优化不是简单生成一份模板，而是帮助你整理经历、突
 
 
 
+
+<!-- 简历优化技巧 -->
+
+
 <section class="card">
 
 
 <h2 id="tipsTitle">
 
-💡 AI优化简历的技巧
+💡 AI优化简历的5个技巧
 
 </h2>
 
@@ -656,14 +890,14 @@ AI简历优化不是简单生成一份模板，而是帮助你整理经历、突
 
 <li id="tip1">
 
-突出和目标岗位相关的技能与经历。
+突出与目标岗位相关的技能和经历。
 
 </li>
 
 
 <li id="tip2">
 
-使用具体成果描述经历，而不是只写简单职责。
+使用具体成果描述经历，而不是只写简单工作职责。
 
 </li>
 
@@ -677,7 +911,7 @@ AI简历优化不是简单生成一份模板，而是帮助你整理经历、突
 
 <li id="tip4">
 
-根据不同岗位调整简历内容，不要所有岗位使用同一份简历。
+针对不同岗位修改简历，提高职位匹配程度。
 
 </li>
 
@@ -692,63 +926,94 @@ AI生成内容需要结合自己的真实经历进行修改。
 </ul>
 
 
+<div class="tip-box">
+
+
+<strong id="importantTipTitle">
+
+⭐ 一个简单方法
+
+</strong>
+
+
+<span id="importantTipText">
+
+先告诉 AI 你的目标岗位、个人经历和想突出方向，再让 AI 帮助优化，通常可以获得更加符合需求的简历内容。
+
+</span>
+
+
+</div>
+
+
 </section>
 
 
-
+<!-- 常见场景 -->
 
 
 <section class="card">
 
 
-<h2 id="sceneTitle">
+<h2 id="scenesTitle">
 
-🌟 不同人群如何使用AI简历？
+🌟 AI简历优化常见使用场景
 
 </h2>
 
 
-
 <h3 id="scene1Title">
 
-🎓 学生和应届毕业生
+🎓 学生求职
 
 </h3>
 
 
 <p id="scene1Text">
 
-可以帮助整理校园经历、课程项目、技能和实习经历，让简历更加完整。
+帮助整理校园经历、课程项目、技能和比赛经历，让简历更加完整。
 
 </p>
 
 
-
 <h3 id="scene2Title">
 
-💼 有工作经验的人
+💼 实习申请
 
 </h3>
 
 
 <p id="scene2Text">
 
-可以优化工作经历描述，突出项目成果和职业能力。
+优化实习经历表达，突出学习能力、项目经验和个人优势。
 
 </p>
 
 
-
 <h3 id="scene3Title">
 
-🚀 转行求职
+🚀 职场求职
 
 </h3>
 
 
 <p id="scene3Text">
 
-可以帮助重新整理已有经验，让技能更加符合新的职业方向。
+改善工作经历描述，让职业成果和专业能力更加突出。
+
+</p>
+
+
+<h3 id="scene4Title">
+
+🔄 转行方向
+
+</h3>
+
+
+<p id="scene4Text">
+
+重新整理已有经验，让技能和经历更符合新的职业目标。
 
 </p>
 
@@ -758,6 +1023,7 @@ AI生成内容需要结合自己的真实经历进行修改。
 
 
 
+<!-- FAQ -->
 
 
 <section class="card">
@@ -783,7 +1049,7 @@ AI生成的简历可以直接使用吗？
 
 <p id="faq1Answer">
 
-建议不要完全直接使用。AI可以帮助优化表达，但个人经历和信息需要自己确认。
+不建议完全直接使用。AI可以帮助优化表达和结构，但个人经历、技能和信息需要自己确认。
 
 </p>
 
@@ -804,7 +1070,7 @@ AI生成的简历可以直接使用吗？
 
 <p id="faq2Answer">
 
-可以重点展示学习经历、项目经验、技能、比赛经历和个人作品。
+可以展示学习经历、课程项目、校园活动、技能、比赛经历和个人作品。
 
 </p>
 
@@ -825,7 +1091,28 @@ AI能保证简历通过筛选吗？
 
 <p id="faq3Answer">
 
-AI可以帮助改善表达和结构，但最终效果仍然取决于岗位匹配程度和个人经历。
+AI可以帮助改善简历质量，但最终效果取决于岗位匹配程度和个人经历。
+
+</p>
+
+
+</div>
+
+
+
+<div class="faq">
+
+
+<h3 id="faq4Question">
+
+AI优化简历和自己修改有什么区别？
+
+</h3>
+
+
+<p id="faq4Answer">
+
+AI可以快速提供表达优化建议，而你仍然需要根据真实情况决定最终内容。
 
 </p>
 
@@ -836,9 +1123,7 @@ AI可以帮助改善表达和结构，但最终效果仍然取决于岗位匹配
 </section>
 
 
-
-
-
+<!-- 使用工具 -->
 
 
 <section class="card">
@@ -853,7 +1138,7 @@ AI可以帮助改善表达和结构，但最终效果仍然取决于岗位匹配
 
 <p id="useText">
 
-打开AI工具箱，使用AI简历助手优化你的求职材料。
+打开 AI工具箱，使用 AI简历助手优化你的求职材料，让经历表达更加清晰专业。
 
 </p>
 
@@ -862,21 +1147,22 @@ AI可以帮助改善表达和结构，但最终效果仍然取决于岗位匹配
 <div class="button-row">
 
 
-<a href="index.html#resumeTool"
-class="btn primary"
-id="startBtn">
+<a
+href="index.html#resumeTool"
+class="primary"
+id="useToolBtn2">
 
-✨ 免费使用AI简历助手
+✨ 免费使用 AI简历助手
 
 </a>
 
 
+<a
+href="ai-resume-helper.html"
+class="secondary"
+id="useIntroBtn">
 
-<a href="ai-resume-helper.html"
-class="btn secondary"
-id="pageBtn">
-
-📖 查看AI简历助手介绍
+📖 了解 AI简历助手
 
 </a>
 
@@ -889,65 +1175,204 @@ id="pageBtn">
 
 
 
-
-
+<!-- 所有工具 -->
 
 
 <section class="card">
 
 
-<h2>
+<h2 id="toolsTitle">
 
-🛠️ 免费AI工具
+🛠️ 免费 AI 工具
 
 </h2>
 
 
+<div class="link-grid">
 
-<div>
 
-
-<a class="btn secondary"
-href="index.html#promptTool">
+<a
+href="index.html#promptTool"
+class="tool-link"
+id="toolPrompt">
 
 🔥 AI提示词生成器
 
 </a>
 
 
-<br><br>
-
-
-<a class="btn secondary"
-href="index.html#titleTool">
-
-💡 AI标题生成器
-
-</a>
-
-
-<br><br>
-
-
-<a class="btn secondary"
-href="index.html#polisherTool">
-
-✨ AI文章润色工具
-
-</a>
-
-
-<br><br>
-
-
-<a class="btn secondary"
-href="index.html#resumeTool">
+<a
+href="index.html#resumeTool"
+class="tool-link"
+id="toolResume">
 
 📝 AI简历助手
 
 </a>
 
 
+<a
+href="index.html#titleTool"
+class="tool-link"
+id="toolTitle">
+
+💡 AI标题生成器
+
+</a>
+
+
+<a
+href="index.html#polisherTool"
+class="tool-link"
+id="toolPolisher">
+
+✨ AI文章润色工具
+
+</a>
+
+
+<a
+href="index.html#xiaohongshuTool"
+class="tool-link"
+id="toolXhs">
+
+📱 AI小红书标题生成器
+
+</a>
+
+
+<a
+href="index.html#mailTool"
+class="tool-link"
+id="toolMail">
+
+📧 AI邮件助手
+
+</a>
+
+
+<a
+href="index.html#summaryTool"
+class="tool-link"
+id="toolSummary">
+
+📋 AI文章摘要工具
+
+</a>
+
+
+<a
+href="index.html#replyTool"
+class="tool-link"
+id="toolReply">
+
+💬 AI回复助手
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 工具介绍 -->
+
+
+<section class="card">
+
+
+<h2 id="toolPagesTitle">
+
+📖 AI工具介绍
+
+</h2>
+
+
+<div class="link-grid">
+
+
+<a
+href="ai-prompt-generator.html"
+class="tool-link"
+id="pagePrompt">
+
+🔥 AI提示词生成器介绍
+
+</a>
+
+
+<a
+href="ai-resume-helper.html"
+class="tool-link"
+id="pageResume">
+
+📝 AI简历助手介绍
+
+</a>
+
+
+<a
+href="ai-title-generator.html"
+class="tool-link"
+id="pageTitleGenerator">
+
+💡 AI标题生成器介绍
+
+</a>
+
+
+<a
+href="ai-writing-polisher.html"
+class="tool-link"
+id="pagePolisher">
+
+✨ AI文章润色工具介绍
+
+</a>
+
+
+<a
+href="xiaohongshu-title-generator.html"
+class="tool-link"
+id="pageXhs">
+
+📱 AI小红书标题生成器介绍
+
+</a>
+
+
+<a
+href="ai-email-assistant.html"
+class="tool-link"
+id="pageMail">
+
+📧 AI邮件助手介绍
+
+</a>
+
+
+<a
+href="ai-article-summarizer.html"
+class="tool-link"
+id="pageSummary">
+
+📋 AI文章摘要介绍
+
+</a>
+
+
+<a
+href="ai-reply-assistant.html"
+class="tool-link"
+id="pageReply">
+
+💬 AI回复助手介绍
+
+</a>
+
 
 </div>
 
@@ -958,63 +1383,100 @@ href="index.html#resumeTool">
 
 
 
-
+<!-- 教程指南 -->
 
 
 <section class="card">
 
 
-<h2>
+<h2 id="guidesTitle">
 
 📚 AI教程指南
 
 </h2>
 
 
-
-<div>
-
-
-<a class="btn secondary"
-href="ai-title-generator-guide.html">
-
-💡 AI标题生成指南
-
-</a>
+<div class="link-grid">
 
 
-<br><br>
-
-
-<a class="btn secondary"
-href="ai-writing-polisher-guide.html">
-
-✨ AI文章润色指南
-
-</a>
-
-
-<br><br>
-
-
-<a class="btn secondary"
-href="ai-prompt-guide.html">
+<a
+href="ai-prompt-guide.html"
+class="tool-link"
+id="guidePrompt">
 
 🔥 AI Prompt入门指南
 
 </a>
 
 
-<br><br>
-
-
-<a class="btn secondary"
-href="ai-resume-guide.html">
+<a
+href="ai-resume-guide.html"
+class="tool-link"
+id="guideResume">
 
 📝 AI简历优化指南
 
 </a>
 
+
+<a
+href="ai-title-generator-guide.html"
+class="tool-link"
+id="guideTitleGenerator">
+
+💡 AI标题生成指南
+
+</a>
+
+
+<a
+href="ai-writing-polisher-guide.html"
+class="tool-link"
+id="guidePolisher">
+
+✨ AI文章润色使用指南
+
+</a>
+
+
+<a
+href="ai-xiaohongshu-guide.html"
+class="tool-link"
+id="guideXhs">
+
+📱 小红书标题技巧指南
+
+</a>
+
+
+<a
+href="ai-email-assistant-guide.html"
+class="tool-link"
+id="guideMail">
+
+📧 AI邮件写作指南
+
+</a>
+
+
+<a
+href="ai-article-summarizer-guide.html"
+class="tool-link"
+id="guideSummary">
+
+📋 AI文章摘要指南
+
+</a>
+
+
+<a
+href="ai-reply-assistant-guide.html"
+class="tool-link"
+id="guideReply">
+
+💬 AI回复技巧指南
+
+</a>
 
 
 </div>
@@ -1026,15 +1488,18 @@ href="ai-resume-guide.html">
 
 
 
+<!-- 返回首页 -->
 
 
-<div class="button-row">
+<div class="home-link">
 
 
-<a href="index.html"
-class="btn secondary">
+<a
+href="index.html"
+class="secondary"
+id="homeBtn">
 
-🏠 返回AI工具箱首页
+🏠 返回 AI工具箱首页
 
 </a>
 
@@ -1042,22 +1507,26 @@ class="btn secondary">
 </div>
 
 
-
-
+<!-- Footer -->
 
 
 <footer class="footer">
 
 
+<div id="footerText">
+
 © 2026 AI工具箱 · Free AI Tools
+
+</div>
 
 
 </footer>
 
 
-
-
 </div>
+
+
+
 
 
 <script>
@@ -1085,16 +1554,20 @@ siteDescription:
 "免费、简单、实用的 AI 效率工具",
 
 
+guideBadge:
+"教程",
+
+
 heroTitle:
 "📚 AI简历优化教程",
 
 
 heroDescription:
-"学习如何使用 AI 优化简历内容，让你的经历、技能和优势表达更加清晰专业。",
+"学习如何使用 AI 优化简历内容，让个人经历、技能和优势表达更加清晰专业，提高求职竞争力。",
 
 
-useBtn:
-"🚀 使用AI简历助手",
+useToolBtn:
+"🚀 立即使用 AI简历助手",
 
 
 introBtn:
@@ -1102,19 +1575,23 @@ introBtn:
 
 
 startTitle:
-"🤖 AI简历应该怎么使用？",
+"🤖 AI简历优化应该怎么用？",
 
 
 startText1:
-"AI简历优化不是简单生成一份模板，而是帮助你整理经历、突出优势，并改善简历表达方式。",
+"AI简历优化不是简单生成一份模板，而是帮助你整理经历、突出优势，并改善简历中的表达方式。",
 
 
 startText2:
-"不同求职目标需要不同的简历重点，例如学生、实习、工作经验丰富的人，优化方向都会有所不同。",
+"不同求职目标需要不同的简历重点，例如学生、实习生、应届毕业生和有工作经验的人，优化方向都会有所不同。",
 
 
-stepTitle:
-"📖 AI简历优化步骤",
+startText3:
+"通过合理使用 AI，可以帮助你更快速整理信息，让简历内容更加清晰、有针对性。",
+
+
+howTitle:
+"📖 AI简历优化使用步骤",
 
 
 step1Title:
@@ -1122,76 +1599,75 @@ step1Title:
 
 
 step1Text:
-"准备教育经历、技能、项目经验、工作经历等基本信息。",
+"准备教育经历、技能、项目经验、实习经历、工作经历等基础信息。",
 
 
 step2Title:
-"明确求职目标",
+"确定求职目标",
 
 
 step2Text:
-"告诉AI你申请的岗位，让优化方向更加符合目标职位。",
+"告诉 AI 你的目标岗位，让简历内容更加符合职位要求。",
 
 
 step3Title:
-"优化经历表达",
+"优化经历描述",
 
 
 step3Text:
-"使用更加专业、有成果导向的方式描述你的经历。",
+"将简单的职责描述转换为更加专业、突出成果的表达方式。",
 
 
 step4Title:
-"检查最终内容",
+"检查简历内容",
 
 
 step4Text:
-"确认简历信息真实准确，并根据个人情况进一步修改。",
+"确认所有信息真实准确，并根据个人情况修改 AI 生成的建议。",
 
 
-tipsTitle:
-"💡 AI优化简历的技巧",
+step5Title:
+"针对岗位调整",
 
 
-tip1:
-"突出和目标岗位相关的技能与经历。",
-
-tip2:
-"使用具体成果描述经历，而不是只写简单职责。",
-
-tip3:
-"保持简历结构清晰，让招聘者快速找到重点。",
-
-tip4:
-"根据不同岗位调整简历内容，不要所有岗位使用同一份简历。",
-
-tip5:
-"AI生成内容需要结合自己的真实经历进行修改。",
+step5Text:
+"根据不同招聘岗位需求调整重点，提高简历匹配程度。",
 
 
-sceneTitle:
-"🌟 不同人群如何使用AI简历？",
+caseTitle:
+"🌟 不同人群如何使用 AI简历助手？",
 
 
-scene1Title:
+studentTitle:
 "🎓 学生和应届毕业生",
 
-scene1Text:
-"可以帮助整理校园经历、课程项目、技能和实习经历，让简历更加完整。",
+
+studentText:
+"帮助整理校园经历、课程项目、技能和实践经历，让简历更加完整。",
 
 
-scene2Title:
-"💼 有工作经验的人",
-
-scene2Text:
-"可以优化工作经历描述，突出项目成果和职业能力。",
+internTitle:
+"💼 实习求职者",
 
 
-scene3Title:
-"🚀 转行求职",
+internText:
+"优化实习经历描述，突出学习能力和项目成果。",
 
-scene3Text:
-"可以帮助重新整理已有经验，让技能更加符合新的职业方向。",
+
+workerTitle:
+"🚀 有工作经验的人",
+
+
+workerText:
+"改善工作经历表达，突出职业能力和实际成果。",
+
+
+changeTitle:
+"🔄 转行求职者",
+
+
+changeText:
+"重新整理已有技能，让经历更符合新的职业方向。",
 
 
 faqTitle:
@@ -1201,22 +1677,33 @@ faqTitle:
 faq1Question:
 "AI生成的简历可以直接使用吗？",
 
+
 faq1Answer:
-"建议不要完全直接使用。AI可以帮助优化表达，但个人经历和信息需要自己确认。",
+"不建议完全直接使用。AI可以帮助优化表达和结构，但个人经历、技能和信息需要自己确认。",
 
 
 faq2Question:
 "没有工作经验怎么办？",
 
+
 faq2Answer:
-"可以重点展示学习经历、项目经验、技能、比赛经历和个人作品。",
+"可以展示学习经历、课程项目、校园活动、技能、比赛经历和个人作品。",
 
 
 faq3Question:
 "AI能保证简历通过筛选吗？",
 
+
 faq3Answer:
-"AI可以帮助改善表达和结构，但最终效果仍然取决于岗位匹配程度和个人经历。",
+"AI可以帮助改善简历质量，但最终效果取决于岗位匹配程度和个人经历。",
+
+
+faq4Question:
+"AI优化简历和自己修改有什么区别？",
+
+
+faq4Answer:
+"AI可以快速提供表达优化建议，而你仍然需要根据真实情况决定最终内容。",
 
 
 useTitle:
@@ -1224,19 +1711,14 @@ useTitle:
 
 
 useText:
-"打开AI工具箱，使用AI简历助手优化你的求职材料。",
+"打开 AI工具箱，使用 AI简历助手优化你的求职材料。",
 
 
-startBtn:
-"✨ 免费使用AI简历助手",
-
-
-pageBtn:
-"📖 查看AI简历助手介绍"
+footerText:
+"© 2026 AI工具箱 · Free AI Tools"
 
 
 },
-
 
 
 en:{
@@ -1247,7 +1729,7 @@ pageTitle:
 
 
 metaDescription:
-"Learn how to use AI to optimize resume content, improve writing quality and create a clearer professional resume.",
+"Learn how to use AI to optimize your resume, improve writing quality and create a clearer professional resume.",
 
 
 siteTitle:
@@ -1258,15 +1740,19 @@ siteDescription:
 "Free, simple and useful AI productivity tools",
 
 
+guideBadge:
+"GUIDE",
+
+
 heroTitle:
 "📚 AI Resume Optimization Guide",
 
 
 heroDescription:
-"Learn how to use AI to improve your resume and present your skills and experience more professionally.",
+"Learn how to use AI to improve your resume and present your experience and skills more professionally.",
 
 
-useBtn:
+useToolBtn:
 "🚀 Use AI Resume Assistant",
 
 
@@ -1275,92 +1761,99 @@ introBtn:
 
 
 startTitle:
-"🤖 How Should You Use AI Resume Tools?",
+"🤖 How Should You Use AI Resume Optimization?",
 
 
 startText1:
-"AI resume optimization is not just creating a template. It helps organize experience, highlight strengths and improve presentation.",
+"AI resume optimization is not simply creating a template. It helps organize experience, highlight strengths and improve resume expression.",
 
 
 startText2:
-"Different career goals require different resume focuses.",
+"Different goals require different resume focuses, such as students, interns, graduates and experienced professionals.",
 
 
-stepTitle:
+startText3:
+"Using AI properly can help you organize information faster and create a clearer, more targeted resume.",
+
+
+howTitle:
 "📖 AI Resume Optimization Steps",
 
 
 step1Title:
 "Prepare Personal Information",
 
+
 step1Text:
-"Collect education, skills, projects and work experience.",
+"Prepare education background, skills, projects, internships and work experience.",
 
 
 step2Title:
 "Define Your Career Goal",
 
+
 step2Text:
-"Tell AI your target position to improve relevance.",
+"Tell AI your target position so the resume better matches job requirements.",
 
 
 step3Title:
 "Improve Experience Description",
 
+
 step3Text:
-"Describe achievements using clearer professional language.",
+"Transform simple responsibilities into professional achievement-focused descriptions.",
 
 
 step4Title:
-"Review Final Content",
+"Review Resume Content",
+
 
 step4Text:
-"Check accuracy and adjust according to your situation.",
+"Check accuracy and adjust AI suggestions according to your situation.",
 
 
-tipsTitle:
-"💡 Tips for AI Resume Optimization",
+step5Title:
+"Customize For Positions",
 
 
-tip1:
-"Highlight skills and experience related to the target position.",
-
-tip2:
-"Describe achievements instead of only responsibilities.",
-
-tip3:
-"Keep your resume structure clear.",
-
-tip4:
-"Customize your resume for different positions.",
-
-tip5:
-"Always edit AI results based on your real experience.",
+step5Text:
+"Adjust your resume focus according to different job requirements.",
 
 
-sceneTitle:
-"🌟 How Different People Can Use AI Resume Tools",
+caseTitle:
+"🌟 How Different People Use AI Resume Assistant",
 
 
-scene1Title:
+studentTitle:
 "🎓 Students and Graduates",
 
-scene1Text:
-"Improve education background, projects and skills.",
+
+studentText:
+"Organize education background, projects, skills and practical experience.",
 
 
-scene2Title:
-"💼 Experienced Professionals",
-
-scene2Text:
-"Highlight achievements and professional abilities.",
+internTitle:
+"💼 Internship Applicants",
 
 
-scene3Title:
-"🚀 Career Changers",
+internText:
+"Improve internship descriptions and highlight learning ability and results.",
 
-scene3Text:
-"Reorganize existing experience for a new direction.",
+
+workerTitle:
+"🚀 Experienced Professionals",
+
+
+workerText:
+"Improve work experience descriptions and highlight achievements.",
+
+
+changeTitle:
+"🔄 Career Changers",
+
+
+changeText:
+"Reorganize existing skills to match a new career direction.",
 
 
 faqTitle:
@@ -1368,24 +1861,35 @@ faqTitle:
 
 
 faq1Question:
-"Can AI resumes be used directly?",
+"Can AI-generated resumes be used directly?",
+
 
 faq1Answer:
-"AI results should be reviewed and adjusted according to your real information.",
+"AI should be used as assistance. Personal information and experience should always be reviewed.",
 
 
 faq2Question:
 "What if I have no work experience?",
 
+
 faq2Answer:
-"You can highlight projects, education and skills.",
+"You can show education, projects, skills, competitions and personal works.",
 
 
 faq3Question:
-"Can AI guarantee success?",
+"Can AI guarantee resume success?",
+
 
 faq3Answer:
-"AI helps improve quality, but results depend on your background and target position.",
+"AI can improve resume quality, but results depend on job matching and personal experience.",
+
+
+faq4Question:
+"What is the difference between AI optimization and manual editing?",
+
+
+faq4Answer:
+"AI provides suggestions quickly, while you decide the final content.",
 
 
 useTitle:
@@ -1393,15 +1897,11 @@ useTitle:
 
 
 useText:
-"Open AI Toolbox and use AI Resume Assistant.",
+"Open AI Toolbox and use AI Resume Assistant to improve your application materials.",
 
 
-startBtn:
-"✨ Start for Free",
-
-
-pageBtn:
-"📖 Learn About AI Resume Assistant"
+footerText:
+"© 2026 AI Toolbox · Free AI Tools"
 
 
 }
@@ -1414,7 +1914,7 @@ pageBtn:
 function setLanguage(lang){
 
 
-const t=languageText[lang];
+const t = languageText[lang];
 
 
 Object.keys(t).forEach(id=>{
@@ -1423,29 +1923,50 @@ Object.keys(t).forEach(id=>{
 const el=document.getElementById(id);
 
 
+
 if(id==="pageTitle"){
+
 
 document.title=t[id];
 
+
 return;
 
+
 }
+
 
 
 if(id==="metaDescription"){
 
-document
-.getElementById("metaDescription")
-.setAttribute("content",t[id]);
 
-return;
+const meta=document.getElementById(id);
+
+
+if(meta){
+
+
+meta.setAttribute(
+"content",
+t[id]
+);
+
 
 }
 
 
+return;
+
+
+}
+
+
+
 if(el){
 
+
 el.innerText=t[id];
+
 
 }
 
@@ -1454,31 +1975,52 @@ el.innerText=t[id];
 
 
 
+
+
 document
 .getElementById("zhBtn")
-.classList.toggle("active",lang==="zh");
+.classList
+.toggle(
+"active",
+lang==="zh"
+);
+
 
 
 document
 .getElementById("enBtn")
-.classList.toggle("active",lang==="en");
+.classList
+.toggle(
+"active",
+lang==="en"
+);
+
+
 
 
 
 document.documentElement.lang =
+
 lang==="zh"
+
 ?
+
 "zh-CN"
+
 :
+
 "en";
 
 
+
 }
+
 
 
 </script>
 
 
 </body>
+
 
 </html>
