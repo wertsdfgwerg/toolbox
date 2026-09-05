@@ -8,19 +8,101 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<title>AI文本润色工具 - 免费在线AI写作润色</title>
+<!-- 网站图标 -->
+
+<link rel="icon" type="image/png" href="/toolbox/logo.png">
+
+<link rel="shortcut icon" type="image/png" href="/toolbox/logo.png">
+
+<link rel="apple-touch-icon" href="/toolbox/logo.png">
 
 
-<meta name="description" content="AI文本润色工具，帮助优化文章表达，让文字更加自然、清晰和流畅。免费在线使用AI写作润色工具。">
+<!-- SEO -->
+
+<title id="pageTitle">
+AI小红书标题生成器使用指南 - 免费AI标题写作教程 | AI工具箱
+</title>
 
 
-<link rel="icon" href="logo.png">
+<meta
+id="metaDescription"
+name="description"
+content="免费AI小红书标题生成器使用指南，学习如何使用AI生成更有吸引力的小红书标题，了解标题写作技巧和常见优化方法。"
+>
+
+
+<meta name="robots" content="index,follow">
+
+
+<link
+rel="canonical"
+href="https://wertsdfgwerg.github.io/toolbox/ai-xiaohongshu-guide.html"
+>
+
+
+<!-- Open Graph -->
+
+<meta
+id="ogTitle"
+property="og:title"
+content="AI小红书标题生成器使用指南 | AI工具箱"
+>
+
+
+<meta
+id="ogDescription"
+property="og:description"
+content="学习如何使用AI生成更有吸引力的小红书标题，并了解实用的小红书标题写作技巧。"
+>
+
+
+<meta property="og:type" content="website">
+
+
+<meta
+property="og:url"
+content="https://wertsdfgwerg.github.io/toolbox/ai-xiaohongshu-guide.html"
+>
+
+
+<!-- Twitter -->
+
+<meta name="twitter:card" content="summary">
+
+
+<meta
+id="twitterTitle"
+name="twitter:title"
+content="AI Xiaohongshu Title Generator Guide"
+>
+
+
+<meta
+id="twitterDescription"
+name="twitter:description"
+content="Learn how to create more engaging social media titles with AI."
+>
+
+
+<!-- Cloudflare Web Analytics -->
+
+<script
+type="module"
+src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"4eb5597f43294acfbf1573e4628dcf28"}'>
+</script>
 
 
 <style>
 
+
 *{
 box-sizing:border-box;
+}
+
+
+html{
+scroll-behavior:smooth;
 }
 
 
@@ -47,7 +129,7 @@ line-height:1.8;
 
 .container{
 
-max-width:900px;
+max-width:1000px;
 
 margin:auto;
 
@@ -56,112 +138,574 @@ padding:30px 20px 60px;
 }
 
 
+/* 顶部 */
+
+
+.header{
+
+position:relative;
+
+text-align:center;
+
+padding:30px 0 40px;
+
+}
+
+
+.logo{
+
+width:60px;
+
+height:60px;
+
+object-fit:contain;
+
+}
+
+
+.site-name{
+
+font-size:28px;
+
+font-weight:800;
+
+margin:18px 0 5px;
+
+}
+
+
+.site-description{
+
+font-size:16px;
+
+color:#666;
+
+margin:0;
+
+}
+
+
+/* 语言切换 */
+
+
 .language-switch{
 
-text-align:right;
+position:absolute;
 
-margin-bottom:20px;
+right:0;
+
+top:10px;
+
+display:flex;
+
+background:white;
+
+border:1px solid #eee;
+
+border-radius:30px;
+
+padding:4px;
 
 }
 
 
 .language-switch button{
 
-padding:8px 18px;
+border:none;
 
-border-radius:20px;
+background:none;
 
-border:1px solid #ddd;
+padding:9px 18px;
 
-background:white;
+border-radius:25px;
 
 cursor:pointer;
 
-margin-left:8px;
+font-size:14px;
 
 }
 
 
-.box{
+.language-switch button.active{
+
+background:#111;
+
+color:white;
+
+}
+
+
+/* 卡片 */
+
+
+.card{
 
 background:white;
 
-padding:35px;
+border-radius:20px;
+
+padding:30px;
+
+margin-bottom:22px;
+
+border:1px solid #eee;
+
+box-shadow:0 8px 25px rgba(0,0,0,.05);
+
+}
+
+
+.card h2{
+
+margin-top:0;
+
+font-size:26px;
+
+}
+
+
+.card h3{
+
+margin-top:24px;
+
+font-size:20px;
+
+}
+
+
+/* Hero */
+
+
+.hero-card{
+
+text-align:center;
+
+padding:45px 30px;
+
+}
+
+
+.badge{
+
+display:inline-block;
+
+background:#111;
+
+color:white;
+
+padding:5px 12px;
 
 border-radius:20px;
 
-box-shadow:0 10px 30px rgba(0,0,0,.05);
+font-size:12px;
+
+margin-bottom:10px;
 
 }
 
 
-h1{
+.hero-card h1{
 
-font-size:38px;
+font-size:40px;
 
-color:#2563eb;
+margin:12px 0;
+
+font-weight:800;
 
 }
 
 
-h2{
+.hero-card p{
+
+color:#666;
+
+font-size:18px;
+
+max-width:700px;
+
+margin:15px auto 25px;
+
+}
+
+
+/* 按钮 */
+
+
+.button-row{
+
+display:flex;
+
+gap:14px;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+margin-top:22px;
+
+}
+
+
+.button{
+
+display:inline-block;
+
+text-decoration:none;
+
+padding:14px 24px;
+
+border-radius:12px;
+
+font-weight:600;
+
+transition:.2s;
+
+text-align:center;
+
+}
+
+
+.primary{
+
+background:#111;
+
+color:white;
+
+}
+
+
+.primary:hover{
+
+transform:translateY(-2px);
+
+}
+
+
+.secondary{
+
+background:#f1f1f1;
+
+color:#222;
+
+}
+
+
+.secondary:hover{
+
+background:#e8e8e8;
+
+}
+
+
+/* 列表 */
+
+
+.feature-list{
+
+padding-left:20px;
+
+}
+
+
+.feature-list li{
+
+margin:12px 0;
+
+}
+
+
+/* 步骤 */
+
+
+.steps{
+
+counter-reset:step;
+
+padding:0;
+
+}
+
+
+.step{
+
+position:relative;
+
+padding-left:55px;
+
+margin:24px 0;
+
+}
+
+
+.step::before{
+
+counter-increment:step;
+
+content:counter(step);
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:34px;
+
+height:34px;
+
+border-radius:50%;
+
+background:#111;
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:bold;
+
+}
+
+
+/* 技巧网格 */
+
+
+.tip-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+
+.tip{
+
+background:#f8f9fb;
+
+border-radius:14px;
+
+padding:18px;
+
+border:1px solid #eee;
+
+}
+
+
+.tip h3{
+
+margin:0 0 8px;
+
+font-size:17px;
+
+}
+
+
+.tip p{
+
+margin:0;
+
+color:#666;
+
+}
+
+
+/* FAQ */
+
+
+.faq{
+
+border-top:1px solid #eee;
+
+padding:18px 0;
+
+}
+
+
+.faq:last-child{
+
+border-bottom:1px solid #eee;
+
+}
+
+
+.faq h3{
+
+margin:0 0 8px;
+
+font-size:18px;
+
+}
+
+
+.faq p{
+
+margin:0;
+
+color:#666;
+
+}
+
+
+/* 导航链接 */
+
+
+.link-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:12px;
+
+margin-top:18px;
+
+}
+
+
+.tool-link{
+
+display:block;
+
+background:#f8f9fb;
+
+padding:15px 16px;
+
+border-radius:12px;
+
+text-decoration:none;
+
+color:#222;
+
+font-weight:600;
+
+border:1px solid #eee;
+
+transition:.2s;
+
+}
+
+
+.tool-link:hover{
+
+transform:translateY(-2px);
+
+background:#f1f3f5;
+
+}
+
+
+/* 返回首页 */
+
+
+.home-link{
+
+text-align:center;
 
 margin-top:30px;
 
 }
 
 
-.card{
-
-background:#f8fafc;
-
-padding:20px;
-
-border-radius:15px;
-
-margin:20px 0;
-
-}
+/* Footer */
 
 
-a{
+.footer{
 
-color:#2563eb;
+text-align:center;
 
-text-decoration:none;
+color:#777;
+
+padding:28px 0 10px;
+
+font-size:14px;
 
 }
 
 
-a:hover{
+/* 手机端 */
 
-text-decoration:underline;
+
+@media(max-width:768px){
+
+
+.container{
+
+padding:20px 15px 45px;
 
 }
 
 
-@media(max-width:700px){
+.language-switch{
 
-h1{
+position:relative;
+
+right:auto;
+
+top:auto;
+
+justify-content:center;
+
+margin-bottom:20px;
+
+}
+
+
+.hero-card h1{
 
 font-size:30px;
 
 }
 
-.box{
 
-padding:20px;
+.card{
+
+padding:22px;
 
 }
+
+
+.tip-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.link-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.button-row{
+
+flex-direction:column;
+
+}
+
+
+.button{
+
+width:100%;
+
+}
+
 
 }
 
 
 </style>
 
-
 </head>
-
 
 
 <body>
@@ -170,17 +714,28 @@ padding:20px;
 <div class="container">
 
 
+<!-- 顶部 -->
+
+
+<header class="header">
+
+
 <div class="language-switch">
 
 
-<button onclick="setLanguage('zh')">
+<button
+id="zhBtn"
+class="active"
+onclick="setLanguage('zh')">
 
 中文
 
 </button>
 
 
-<button onclick="setLanguage('en')">
+<button
+id="enBtn"
+onclick="setLanguage('en')">
 
 English
 
@@ -190,41 +745,165 @@ English
 </div>
 
 
+<a href="index.html">
+
+<img
+src="logo.png"
+class="logo"
+alt="AI Toolbox"
+>
+
+</a>
 
 
-<div class="box">
+<div
+class="site-name"
+id="siteTitle">
+
+🤖 AI工具箱
+
+</div>
 
 
-<h1 id="title">
+<p
+class="site-description"
+id="siteDescription">
 
-AI文本润色工具
+免费、简单、实用的 AI 效率工具
+
+</p>
+
+
+</header>
+
+
+
+<!-- Hero -->
+
+
+<section class="card hero-card">
+
+
+<span
+class="badge"
+id="guideBadge">
+
+使用指南
+
+</span>
+
+
+<h1 id="heroTitle">
+
+📱 AI小红书标题生成器使用指南
 
 </h1>
 
 
+<p id="heroDescription">
 
-<p id="intro">
-
-输入需要修改的文字，AI可以帮助优化表达，让内容更加自然、清晰和流畅。
+学习如何使用 AI 生成更有吸引力的小红书标题，并了解实用的标题写作技巧。
 
 </p>
 
 
+<div class="button-row">
 
 
-<div class="card">
+<a
+href="index.html#xiaohongshuTool"
+class="button primary"
+id="useToolBtn">
+
+🚀 立即使用标题生成器
+
+</a>
 
 
-<h2 id="userTitle">
+<a
+href="xiaohongshu-title-generator.html"
+class="button secondary"
+id="heroIntroBtn">
 
-适合用户
+📖 查看工具介绍
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 什么是教程 -->
+
+
+<section class="card">
+
+
+<h2 id="introTitle">
+
+📚 如何使用 AI小红书标题生成器？
 
 </h2>
 
 
-<p id="userText">
+<p id="introText1">
 
-学生、内容创作者、自媒体作者，以及需要优化文章表达的用户。
+AI小红书标题生成器可以根据你输入的主题、产品、内容方向或想法，帮助你快速生成多个不同风格的小红书标题。
+
+</p>
+
+
+<p id="introText2">
+
+你不需要自己反复思考标题，只需要告诉工具你想分享什么内容，AI 就会根据主题帮助你提供不同的标题表达方式。
+
+</p>
+
+
+<p id="introText3">
+
+生成后的标题可以作为灵感参考，你也可以根据自己的内容继续修改，让标题更加符合你的实际作品。
+
+</p>
+
+
+</section>
+
+
+
+<!-- 使用步骤 -->
+
+
+<section class="card">
+
+
+<h2 id="howTitle">
+
+📖 4步使用 AI小红书标题生成器
+
+</h2>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+
+<strong id="step1Title">
+
+输入你的主题
+
+</strong>
+
+
+<p id="step1Text">
+
+输入你准备发布的小红书内容主题，例如旅行、美食、学习、护肤、数码产品或生活分享。
 
 </p>
 
@@ -232,20 +911,19 @@ AI文本润色工具
 </div>
 
 
-
-<div class="card">
-
-
-<h2 id="featureTitle">
-
-可以做什么
-
-</h2>
+<div class="step">
 
 
-<p id="featureText">
+<strong id="step2Title">
 
-帮助改善文章表达、优化语句结构、减少重复内容，让文字阅读起来更加自然。
+描述内容方向
+
+</strong>
+
+
+<p id="step2Text">
+
+尽量告诉 AI 你的内容重点，例如你想分享经验、推荐产品、记录生活，还是提供实用攻略。
 
 </p>
 
@@ -253,175 +931,1078 @@ AI文本润色工具
 </div>
 
 
-
-<p>
-
-<a href="index.html#writingPolisherTool" id="useLink">
-
-立即使用润色工具
-
-</a>
-
-</p>
+<div class="step">
 
 
+<strong id="step3Title">
 
-<p>
+生成标题
 
-<a href="ai-writing-polisher-guide.html" id="guideLink">
+</strong>
 
-📚 AI文本润色技巧：如何让文章表达更自然
 
-</a>
+<p id="step3Text">
+
+点击生成按钮，让 AI 根据你的主题提供多个不同风格的小红书标题。
 
 </p>
 
 
-
-<hr>
-
+</div>
 
 
-<h3 id="moreTitle">
+<div class="step">
 
-🚀 更多 AI 工具
+
+<strong id="step4Title">
+
+选择并修改标题
+
+</strong>
+
+
+<p id="step4Text">
+
+从生成结果中选择喜欢的标题，也可以结合自己的内容进行修改，让标题更加符合文章。
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 标题技巧 -->
+
+
+<section class="card">
+
+
+<h2 id="tipsTitle">
+
+💡 小红书标题写作技巧
+
+</h2>
+
+
+<p id="tipsText">
+
+AI 可以帮助你快速获得标题灵感，但了解一些基本的标题技巧，也可以让你更好地选择和优化生成结果。
+
+</p>
+
+
+<div class="tip-grid">
+
+
+<div class="tip">
+
+
+<h3 id="tip1Title">
+
+🎯 突出核心主题
 
 </h3>
 
 
+<p id="tip1Text">
 
-<p>
-
-<a href="index.html" id="homeLink">
-
-AI工具箱首页
-
-</a>
+让读者能够快速知道你的内容大概在讲什么，不要让标题过于模糊。
 
 </p>
 
 
+</div>
 
-<p>
 
-<a href="ai-tools.html" id="allToolsLink">
+<div class="tip">
 
-免费AI工具大全
 
-</a>
+<h3 id="tip2Title">
+
+✨ 使用具体信息
+
+</h3>
+
+
+<p id="tip2Text">
+
+具体的内容通常比模糊的表达更容易让读者理解，例如明确说明主题、场景或内容重点。
 
 </p>
 
 
+</div>
 
-<p>
 
-<a href="ai-prompt-generator.html" id="promptLink">
+<div class="tip">
 
+
+<h3 id="tip3Title">
+
+🔥 制造阅读兴趣
+
+</h3>
+
+
+<p id="tip3Text">
+
+可以适当使用经验分享、发现、推荐、技巧等表达方式，让读者产生继续了解内容的兴趣。
+
+</p>
+
+
+</div>
+
+
+<div class="tip">
+
+
+<h3 id="tip4Title">
+
+📝 标题和内容保持一致
+
+</h3>
+
+
+<p id="tip4Text">
+
+标题应该准确反映内容，不要为了吸引点击而使用与实际内容无关的表达。
+
+</p>
+
+
+</div>
+
+
+<div class="tip">
+
+
+<h3 id="tip5Title">
+
+😊 保持自然
+
+</h3>
+
+
+<p id="tip5Text">
+
+不要堆积太多夸张的词语，自然、清晰的表达通常更容易让人理解。
+
+</p>
+
+
+</div>
+
+
+<div class="tip">
+
+
+<h3 id="tip6Title">
+
+🔄 多生成几个版本
+
+</h3>
+
+
+<p id="tip6Text">
+
+可以尝试不同的描述方式生成多个标题，然后比较哪个更符合你的内容和表达风格。
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 如何写出更好的提示 -->
+
+
+<section class="card">
+
+
+<h2 id="promptTitle">
+
+✍️ 如何让 AI 生成更好的标题？
+
+</h2>
+
+
+<p id="promptText1">
+
+输入的信息越清楚，AI 通常越容易理解你想要的内容方向。
+
+</p>
+
+
+<ul class="feature-list">
+
+
+<li id="prompt1">
+
+📌 明确主题：告诉 AI 你的小红书内容主要讲什么。
+
+</li>
+
+
+<li id="prompt2">
+
+🎯 提供重点：说明你最希望读者注意的内容。
+
+</li>
+
+
+<li id="prompt3">
+
+👥 说明目标读者：例如学生、上班族、旅行爱好者等。
+
+</li>
+
+
+<li id="prompt4">
+
+🎨 描述内容风格：例如轻松、实用、专业、生活化等。
+
+</li>
+
+
+<li id="prompt5">
+
+🔄 尝试不同表达：同一个主题可以换不同的描述方式生成更多灵感。
+
+</li>
+
+
+</ul>
+
+
+</section>
+
+
+
+<!-- 常见问题 -->
+
+
+<section class="card">
+
+
+<h2 id="faqTitle">
+
+❓ 常见问题
+
+</h2>
+
+
+<div class="faq">
+
+
+<h3 id="faq1Question">
+
+AI生成的标题可以直接使用吗？
+
+</h3>
+
+
+<p id="faq1Answer">
+
+可以作为标题灵感或直接使用，但建议结合你的实际内容进行检查和修改，确保标题能够准确表达文章内容。
+
+</p>
+
+
+</div>
+
+
+<div class="faq">
+
+
+<h3 id="faq2Question">
+
+为什么同一个主题可以生成不同标题？
+
+</h3>
+
+
+<p id="faq2Answer">
+
+同一个主题可以有很多不同的表达方式。你可以尝试不同的描述方式，从多个结果中选择更适合自己内容的标题。
+
+</p>
+
+
+</div>
+
+
+<div class="faq">
+
+
+<h3 id="faq3Question">
+
+如何让生成的标题更符合我的内容？
+
+</h3>
+
+
+<p id="faq3Answer">
+
+尽量提供清楚的主题和内容重点。输入的信息越具体，生成的标题通常越容易符合你的实际需求。
+
+</p>
+
+
+</div>
+
+
+<div class="faq">
+
+
+<h3 id="faq4Question">
+
+AI小红书标题生成器免费吗？
+
+</h3>
+
+
+<p id="faq4Answer">
+
+是的，你可以免费使用 AI工具箱提供的小红书标题生成工具。
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 再次使用工具 -->
+
+
+<section class="card">
+
+
+<h2 id="useTitle">
+
+🚀 现在开始生成标题
+
+</h2>
+
+
+<p id="useText">
+
+打开 AI工具箱，输入你的主题，立即获取更多小红书标题灵感。
+
+</p>
+
+
+<div class="button-row">
+
+
+<a
+href="index.html#xiaohongshuTool"
+class="button primary"
+id="useToolBtn2">
+
+📱 立即生成小红书标题
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 查看介绍 -->
+
+
+<section class="card">
+
+
+<h2 id="toolIntroTitle">
+
+📖 AI小红书标题生成器介绍
+
+</h2>
+
+
+<p id="toolIntroText">
+
+想了解这个工具的功能、适合哪些用户以及具体使用场景？可以查看完整的工具介绍页面。
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a
+href="xiaohongshu-title-generator.html"
+class="tool-link"
+id="ownIntroLink">
+
+📖 查看 AI小红书标题生成器介绍
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 所有 AI 工具 -->
+
+
+<section class="card">
+
+
+<h2 id="allToolsTitle">
+
+🛠️ 所有 AI 工具
+
+</h2>
+
+
+<p id="allToolsText">
+
+探索 AI工具箱中的免费 AI 效率工具：
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a href="index.html#promptTool" class="tool-link" id="toolPrompt">
 🔥 AI提示词生成器
-
 </a>
 
-</p>
 
-
-
-<p>
-
-<a href="ai-resume-helper.html" id="resumeLink">
-
+<a href="index.html#resumeTool" class="tool-link" id="toolResume">
 📝 AI简历助手
-
 </a>
 
-</p>
+
+<a href="index.html#titleTool" class="tool-link" id="toolTitle">
+💡 AI标题生成器
+</a>
 
 
+<a href="index.html#polisherTool" class="tool-link" id="toolPolisher">
+✨ AI文章润色工具
+</a>
 
-<p>
 
-<a href="xiaohongshu-title-generator.html" id="xhsLink">
+<a href="index.html#summaryTool" class="tool-link" id="toolSummary">
+📋 AI文章摘要工具
+</a>
 
+
+<a href="index.html#replyTool" class="tool-link" id="toolReply">
+💬 AI回复助手
+</a>
+
+
+<a href="index.html#xiaohongshuTool" class="tool-link" id="toolXhs">
 📱 AI小红书标题生成器
-
 </a>
 
-</p>
 
-
-
-<p>
-
-<a href="about-ai-tools.html" id="aboutLink">
-
-🌍 关于AI工具箱
-
+<a href="index.html#mailTool" class="tool-link" id="toolMail">
+📧 AI邮件助手
 </a>
-
-</p>
 
 
 </div>
 
 
+</section>
+
+
+
+<!-- 所有工具介绍 -->
+
+
+<section class="card">
+
+
+<h2 id="toolPagesTitle">
+
+📖 AI工具介绍
+
+</h2>
+
+
+<p id="toolPagesText">
+
+了解每个 AI 工具的功能、使用场景和详细介绍：
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a href="ai-prompt-generator.html" class="tool-link" id="pagePrompt">
+🔥 AI提示词生成器介绍
+</a>
+
+
+<a href="ai-resume-helper.html" class="tool-link" id="pageResume">
+📝 AI简历助手介绍
+</a>
+
+
+<a href="ai-title-generator.html" class="tool-link" id="pageTitleGenerator">
+💡 AI标题生成器介绍
+</a>
+
+
+<a href="ai-writing-polisher.html" class="tool-link" id="pagePolisher">
+✨ AI文章润色工具介绍
+</a>
+
+
+<a href="ai-article-summarizer.html" class="tool-link" id="pageSummary">
+📋 AI文章摘要工具介绍
+</a>
+
+
+<a href="ai-reply-assistant.html" class="tool-link" id="pageReply">
+💬 AI回复助手介绍
+</a>
+
+
+<a href="xiaohongshu-title-generator.html" class="tool-link" id="pageXhs">
+📱 AI小红书标题生成器介绍
+</a>
+
+
+<a href="ai-email-assistant.html" class="tool-link" id="pageMail">
+📧 AI邮件助手介绍
+</a>
+
+
 </div>
 
 
+</section>
+
+
+
+<!-- 所有教程 -->
+
+
+<section class="card">
+
+
+<h2 id="guidesTitle">
+
+📚 AI教程指南
+
+</h2>
+
+
+<p id="guidesText">
+
+学习如何更高效地使用 AI 工具，提高学习、工作和创作效率：
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a href="ai-prompt-guide.html" class="tool-link" id="guidePrompt">
+🔥 AI Prompt入门指南
+</a>
+
+
+<a href="ai-resume-guide.html" class="tool-link" id="guideResume">
+📝 AI简历优化指南
+</a>
+
+
+<a href="ai-title-generator-guide.html" class="tool-link" id="guideTitleGenerator">
+💡 AI标题生成指南
+</a>
+
+
+<a href="ai-writing-polisher-guide.html" class="tool-link" id="guidePolisher">
+✨ AI文章润色指南
+</a>
+
+
+<a href="ai-article-summarizer-guide.html" class="tool-link" id="guideSummary">
+📋 AI文章摘要指南
+</a>
+
+
+<a href="ai-reply-assistant-guide.html" class="tool-link" id="guideReply">
+💬 AI回复技巧指南
+</a>
+
+
+<a href="ai-xiaohongshu-guide.html" class="tool-link" id="guideXhs">
+📱 小红书标题技巧指南
+</a>
+
+
+<a href="ai-email-assistant-guide.html" class="tool-link" id="guideMail">
+📧 AI邮件写作指南
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 返回首页 -->
+
+
+<div class="home-link">
+
+
+<a
+href="index.html"
+class="button secondary"
+id="homeBtn">
+
+🏠 返回 AI工具箱首页
+
+</a>
+
+
+</div>
+
+
+
+<!-- Footer -->
+
+
+<footer class="footer">
+
+
+<div id="footerText">
+
+© 2026 AI工具箱 · Free AI Tools
+
+</div>
+
+
+</footer>
+
+
+</div>
 
 
 
 <script>
 
 
-const lang={
+const languageText = {
 
 
 zh:{
 
 
-title:"AI文本润色工具",
+pageTitle:
+"AI小红书标题生成器使用指南 - 免费AI标题写作教程 | AI工具箱",
 
 
-intro:"输入需要修改的文字，AI可以帮助优化表达，让内容更加自然、清晰和流畅。",
+metaDescription:
+"免费AI小红书标题生成器使用指南，学习如何使用AI生成更有吸引力的小红书标题，了解标题写作技巧和常见优化方法。",
 
 
-userTitle:"适合用户",
+ogTitle:
+"AI小红书标题生成器使用指南 | AI工具箱",
 
 
-userText:"学生、内容创作者、自媒体作者，以及需要优化文章表达的用户。",
+ogDescription:
+"学习如何使用AI生成更有吸引力的小红书标题，并了解实用的小红书标题写作技巧。",
 
 
-featureTitle:"可以做什么",
+twitterTitle:
+"AI小红书标题生成器使用指南",
 
 
-featureText:"帮助改善文章表达、优化语句结构、减少重复内容，让文字阅读起来更加自然。",
+twitterDescription:
+"学习如何使用AI生成更有吸引力的小红书标题。",
 
 
-useLink:"立即使用润色工具",
+siteTitle:
+"🤖 AI工具箱",
 
 
-guideLink:"📚 AI文本润色技巧：如何让文章表达更自然",
+siteDescription:
+"免费、简单、实用的 AI 效率工具",
 
 
-moreTitle:"🚀 更多 AI 工具",
+guideBadge:
+"使用指南",
 
 
-homeLink:"AI工具箱首页",
+heroTitle:
+"📱 AI小红书标题生成器使用指南",
 
 
-allToolsLink:"免费AI工具大全",
+heroDescription:
+"学习如何使用 AI 生成更有吸引力的小红书标题，并了解实用的标题写作技巧。",
 
 
-promptLink:"🔥 AI提示词生成器",
+useToolBtn:
+"🚀 立即使用标题生成器",
 
 
-resumeLink:"📝 AI简历助手",
+heroIntroBtn:
+"📖 查看工具介绍",
 
 
-xhsLink:"📱 AI小红书标题生成器",
+introTitle:
+"📚 如何使用 AI小红书标题生成器？",
 
 
-aboutLink:"🌍 关于AI工具箱"
+introText1:
+"AI小红书标题生成器可以根据你输入的主题、产品、内容方向或想法，帮助你快速生成多个不同风格的小红书标题。",
+
+
+introText2:
+"你不需要自己反复思考标题，只需要告诉工具你想分享什么内容，AI 就会根据主题帮助你提供不同的标题表达方式。",
+
+
+introText3:
+"生成后的标题可以作为灵感参考，你也可以根据自己的内容继续修改，让标题更加符合你的实际作品。",
+
+
+howTitle:
+"📖 4步使用 AI小红书标题生成器",
+
+
+step1Title:
+"输入你的主题",
+
+
+step1Text:
+"输入你准备发布的小红书内容主题，例如旅行、美食、学习、护肤、数码产品或生活分享。",
+
+
+step2Title:
+"描述内容方向",
+
+
+step2Text:
+"尽量告诉 AI 你的内容重点，例如你想分享经验、推荐产品、记录生活，还是提供实用攻略。",
+
+
+step3Title:
+"生成标题",
+
+
+step3Text:
+"点击生成按钮，让 AI 根据你的主题提供多个不同风格的小红书标题。",
+
+
+step4Title:
+"选择并修改标题",
+
+
+step4Text:
+"从生成结果中选择喜欢的标题，也可以结合自己的内容进行修改，让标题更加符合文章。",
+
+
+tipsTitle:
+"💡 小红书标题写作技巧",
+
+
+tipsText:
+"AI 可以帮助你快速获得标题灵感，但了解一些基本的标题技巧，也可以让你更好地选择和优化生成结果。",
+
+
+tip1Title:
+"🎯 突出核心主题",
+
+
+tip1Text:
+"让读者能够快速知道你的内容大概在讲什么，不要让标题过于模糊。",
+
+
+tip2Title:
+"✨ 使用具体信息",
+
+
+tip2Text:
+"具体的内容通常比模糊的表达更容易让读者理解，例如明确说明主题、场景或内容重点。",
+
+
+tip3Title:
+"🔥 制造阅读兴趣",
+
+
+tip3Text:
+"可以适当使用经验分享、发现、推荐、技巧等表达方式，让读者产生继续了解内容的兴趣。",
+
+
+tip4Title:
+"📝 标题和内容保持一致",
+
+
+tip4Text:
+"标题应该准确反映内容，不要为了吸引点击而使用与实际内容无关的表达。",
+
+
+tip5Title:
+"😊 保持自然",
+
+
+tip5Text:
+"不要堆积太多夸张的词语，自然、清晰的表达通常更容易让人理解。",
+
+
+tip6Title:
+"🔄 多生成几个版本",
+
+
+tip6Text:
+"可以尝试不同的描述方式生成多个标题，然后比较哪个更符合你的内容和表达风格。",
+
+
+promptTitle:
+"✍️ 如何让 AI 生成更好的标题？",
+
+
+promptText1:
+"输入的信息越清楚，AI 通常越容易理解你想要的内容方向。",
+
+
+prompt1:
+"📌 明确主题：告诉 AI 你的小红书内容主要讲什么。",
+
+
+prompt2:
+"🎯 提供重点：说明你最希望读者注意的内容。",
+
+
+prompt3:
+"👥 说明目标读者：例如学生、上班族、旅行爱好者等。",
+
+
+prompt4:
+"🎨 描述内容风格：例如轻松、实用、专业、生活化等。",
+
+
+prompt5:
+"🔄 尝试不同表达：同一个主题可以换不同的描述方式生成更多灵感。",
+
+
+faqTitle:
+"❓ 常见问题",
+
+
+faq1Question:
+"AI生成的标题可以直接使用吗？",
+
+
+faq1Answer:
+"可以作为标题灵感或直接使用，但建议结合你的实际内容进行检查和修改，确保标题能够准确表达文章内容。",
+
+
+faq2Question:
+"为什么同一个主题可以生成不同标题？",
+
+
+faq2Answer:
+"同一个主题可以有很多不同的表达方式。你可以尝试不同的描述方式，从多个结果中选择更适合自己内容的标题。",
+
+
+faq3Question:
+"如何让生成的标题更符合我的内容？",
+
+
+faq3Answer:
+"尽量提供清楚的主题和内容重点。输入的信息越具体，生成的标题通常越容易符合你的实际需求。",
+
+
+faq4Question:
+"AI小红书标题生成器免费吗？",
+
+
+faq4Answer:
+"是的，你可以免费使用 AI工具箱提供的小红书标题生成工具。",
+
+
+useTitle:
+"🚀 现在开始生成标题",
+
+
+useText:
+"打开 AI工具箱，输入你的主题，立即获取更多小红书标题灵感。",
+
+
+useToolBtn2:
+"📱 立即生成小红书标题",
+
+
+toolIntroTitle:
+"📖 AI小红书标题生成器介绍",
+
+
+toolIntroText:
+"想了解这个工具的功能、适合哪些用户以及具体使用场景？可以查看完整的工具介绍页面。",
+
+
+ownIntroLink:
+"📖 查看 AI小红书标题生成器介绍",
+
+
+allToolsTitle:
+"🛠️ 所有 AI 工具",
+
+
+allToolsText:
+"探索 AI工具箱中的免费 AI 效率工具：",
+
+
+toolPrompt:
+"🔥 AI提示词生成器",
+
+
+toolResume:
+"📝 AI简历助手",
+
+
+toolTitle:
+"💡 AI标题生成器",
+
+
+toolPolisher:
+"✨ AI文章润色工具",
+
+
+toolSummary:
+"📋 AI文章摘要工具",
+
+
+toolReply:
+"💬 AI回复助手",
+
+
+toolXhs:
+"📱 AI小红书标题生成器",
+
+
+toolMail:
+"📧 AI邮件助手",
+
+
+toolPagesTitle:
+"📖 AI工具介绍",
+
+
+toolPagesText:
+"了解每个 AI 工具的功能、使用场景和详细介绍：",
+
+
+pagePrompt:
+"🔥 AI提示词生成器介绍",
+
+
+pageResume:
+"📝 AI简历助手介绍",
+
+
+pageTitleGenerator:
+"💡 AI标题生成器介绍",
+
+
+pagePolisher:
+"✨ AI文章润色工具介绍",
+
+
+pageSummary:
+"📋 AI文章摘要工具介绍",
+
+
+pageReply:
+"💬 AI回复助手介绍",
+
+
+pageXhs:
+"📱 AI小红书标题生成器介绍",
+
+
+pageMail:
+"📧 AI邮件助手介绍",
+
+
+guidesTitle:
+"📚 AI教程指南",
+
+
+guidesText:
+"学习如何更高效地使用 AI 工具，提高学习、工作和创作效率：",
+
+
+guidePrompt:
+"🔥 AI Prompt入门指南",
+
+
+guideResume:
+"📝 AI简历优化指南",
+
+
+guideTitleGenerator:
+"💡 AI标题生成指南",
+
+
+guidePolisher:
+"✨ AI文章润色指南",
+
+
+guideSummary:
+"📋 AI文章摘要指南",
+
+
+guideReply:
+"💬 AI回复技巧指南",
+
+
+guideXhs:
+"📱 小红书标题技巧指南",
+
+
+guideMail:
+"📧 AI邮件写作指南",
+
+
+homeBtn:
+"🏠 返回 AI工具箱首页",
+
+
+footerText:
+"© 2026 AI工具箱 · Free AI Tools"
 
 
 },
@@ -431,49 +2012,380 @@ aboutLink:"🌍 关于AI工具箱"
 en:{
 
 
-title:"AI Writing Polisher",
+pageTitle:
+"AI Social Media Title Generator Guide - Free AI Title Writing Guide | AI Toolbox",
 
 
-intro:"Enter your text and use AI to improve the writing, making it clearer, more natural and easier to read.",
+metaDescription:
+"Learn how to use an AI social media title generator to create more engaging titles and discover practical title writing tips.",
 
 
-userTitle:"Suitable Users",
+ogTitle:
+"AI Social Media Title Generator Guide | AI Toolbox",
 
 
-userText:"Students, content creators, social media creators and anyone who wants to improve their writing.",
+ogDescription:
+"Learn how to create more engaging social media titles with AI and discover practical writing tips.",
 
 
-featureTitle:"What It Can Do",
+twitterTitle:
+"AI Social Media Title Generator Guide",
 
 
-featureText:"Improve writing style, optimize sentence structure and reduce repetitive expressions to make your text more natural.",
+twitterDescription:
+"Learn how to create more engaging social media titles with AI.",
 
 
-useLink:"Use Writing Polisher Now",
+siteTitle:
+"🤖 AI Toolbox",
 
 
-guideLink:"📚 AI Writing Tips: How to Make Your Writing More Natural",
+siteDescription:
+"Free, simple and useful AI productivity tools",
 
 
-moreTitle:"🚀 More AI Tools",
+guideBadge:
+"GUIDE",
 
 
-homeLink:"AI Toolbox Home",
+heroTitle:
+"📱 AI Social Media Title Generator Guide",
 
 
-allToolsLink:"Free AI Tools Collection",
+heroDescription:
+"Learn how to create more engaging social media titles with AI and discover practical title writing tips.",
 
 
-promptLink:"🔥 AI Prompt Generator",
+useToolBtn:
+"🚀 Use Title Generator",
 
 
-resumeLink:"📝 AI Resume Assistant",
+heroIntroBtn:
+"📖 View Tool Introduction",
 
 
-xhsLink:"📱 Xiaohongshu Title Generator",
+introTitle:
+"📚 How to Use the AI Social Media Title Generator",
 
 
-aboutLink:"🌍 About AI Toolbox"
+introText1:
+"The AI Social Media Title Generator can help you quickly create multiple title ideas based on your topic, product, content direction or idea.",
+
+
+introText2:
+"You do not need to spend a long time thinking about titles. Simply describe what you want to share, and AI can provide different ways to express your idea.",
+
+
+introText3:
+"The generated titles can be used as inspiration, and you can continue editing them to better match your actual content.",
+
+
+howTitle:
+"📖 Use the AI Title Generator in 4 Steps",
+
+
+step1Title:
+"Enter Your Topic",
+
+
+step1Text:
+"Enter the topic of your content, such as travel, food, study, beauty, technology or daily life.",
+
+
+step2Title:
+"Describe Your Content",
+
+
+step2Text:
+"Explain the main focus of your content, such as sharing experience, recommending something, documenting life or providing useful tips.",
+
+
+step3Title:
+"Generate Titles",
+
+
+step3Text:
+"Click the generate button and let AI create multiple title ideas based on your topic.",
+
+
+step4Title:
+"Choose and Edit",
+
+
+step4Text:
+"Choose a title you like and edit it if necessary to better match your content.",
+
+
+tipsTitle:
+"💡 Social Media Title Writing Tips",
+
+
+tipsText:
+"AI can help you quickly find title ideas, while understanding basic writing tips can help you choose and improve the results.",
+
+
+tip1Title:
+"🎯 Highlight the Main Topic",
+
+
+tip1Text:
+"Help readers quickly understand what your content is about instead of making the title too vague.",
+
+
+tip2Title:
+"✨ Use Specific Information",
+
+
+tip2Text:
+"Specific information is often easier to understand than vague wording. Clearly describe the topic, situation or key point.",
+
+
+tip3Title:
+"🔥 Create Interest",
+
+
+tip3Text:
+"Use suitable expressions related to experiences, discoveries, recommendations or useful tips to encourage readers to learn more.",
+
+
+tip4Title:
+"📝 Match the Content",
+
+
+tip4Text:
+"The title should accurately reflect the content and should not make promises unrelated to what the content actually provides.",
+
+
+tip5Title:
+"😊 Keep It Natural",
+
+
+tip5Text:
+"Avoid using too many exaggerated words. Clear and natural writing is usually easier to understand.",
+
+
+tip6Title:
+"🔄 Generate Multiple Versions",
+
+
+tip6Text:
+"Try different descriptions to generate multiple titles and compare which one best matches your content and writing style.",
+
+
+promptTitle:
+"✍️ How to Get Better Titles from AI",
+
+
+promptText1:
+"The clearer your input is, the easier it is for AI to understand the direction you want.",
+
+
+prompt1:
+"📌 Define the topic: Tell AI what your content is mainly about.",
+
+
+prompt2:
+"🎯 Provide key points: Explain what you want readers to notice.",
+
+
+prompt3:
+"👥 Describe your audience: For example, students, office workers or travel enthusiasts.",
+
+
+prompt4:
+"🎨 Describe the style: For example, casual, practical, professional or lifestyle-focused.",
+
+
+prompt5:
+"🔄 Try different wording: The same topic can be described in different ways to generate more ideas.",
+
+
+faqTitle:
+"❓ Frequently Asked Questions",
+
+
+faq1Question:
+"Can I use AI-generated titles directly?",
+
+
+faq1Answer:
+"You can use them as inspiration or directly, but it is recommended to review and edit them to make sure they accurately match your actual content.",
+
+
+faq2Question:
+"Why can the same topic generate different titles?",
+
+
+faq2Answer:
+"The same topic can be expressed in many different ways. You can try different descriptions and choose the result that best fits your content.",
+
+
+faq3Question:
+"How can I make generated titles fit my content better?",
+
+
+faq3Answer:
+"Provide a clear topic and key points. More specific information usually helps AI generate titles that better match your needs.",
+
+
+faq4Question:
+"Is the AI Social Media Title Generator free?",
+
+
+faq4Answer:
+"Yes. You can use the social media title generator provided by AI Toolbox for free.",
+
+
+useTitle:
+"🚀 Start Creating Titles Now",
+
+
+useText:
+"Open AI Toolbox, enter your topic and get more title ideas for your social media content.",
+
+
+useToolBtn2:
+"📱 Generate Social Media Titles",
+
+
+toolIntroTitle:
+"📖 AI Social Media Title Generator Introduction",
+
+
+toolIntroText:
+"Want to learn about the features, suitable users and use cases of this tool? Read the complete tool introduction.",
+
+
+ownIntroLink:
+"📖 View AI Social Media Title Generator Introduction",
+
+
+allToolsTitle:
+"🛠️ All AI Tools",
+
+
+allToolsText:
+"Explore free AI productivity tools from AI Toolbox:",
+
+
+toolPrompt:
+"🔥 AI Prompt Generator",
+
+
+toolResume:
+"📝 AI Resume Assistant",
+
+
+toolTitle:
+"💡 AI Title Generator",
+
+
+toolPolisher:
+"✨ AI Writing Polisher",
+
+
+toolSummary:
+"📋 AI Article Summarizer",
+
+
+toolReply:
+"💬 AI Reply Assistant",
+
+
+toolXhs:
+"📱 AI Social Media Title Generator",
+
+
+toolMail:
+"📧 AI Email Assistant",
+
+
+toolPagesTitle:
+"📖 AI Tool Pages",
+
+
+toolPagesText:
+"Learn about the features, use cases and details of each AI tool:",
+
+
+pagePrompt:
+"🔥 AI Prompt Generator",
+
+
+pageResume:
+"📝 AI Resume Assistant",
+
+
+pageTitleGenerator:
+"💡 AI Title Generator",
+
+
+pagePolisher:
+"✨ AI Writing Polisher",
+
+
+pageSummary:
+"📋 AI Article Summarizer",
+
+
+pageReply:
+"💬 AI Reply Assistant",
+
+
+pageXhs:
+"📱 AI Social Media Title Generator",
+
+
+pageMail:
+"📧 AI Email Assistant",
+
+
+guidesTitle:
+"📚 AI Guides",
+
+
+guidesText:
+"Learn how to use AI tools more effectively for studying, work and content creation:",
+
+
+guidePrompt:
+"🔥 AI Prompt Beginner Guide",
+
+
+guideResume:
+"📝 AI Resume Optimization Guide",
+
+
+guideTitleGenerator:
+"💡 AI Title Generator Guide",
+
+
+guidePolisher:
+"✨ AI Writing Polisher Guide",
+
+
+guideSummary:
+"📋 AI Article Summarizer Guide",
+
+
+guideReply:
+"💬 AI Reply Guide",
+
+
+guideXhs:
+"📱 Social Media Title Guide",
+
+
+guideMail:
+"📧 AI Email Writing Guide",
+
+
+homeBtn:
+"🏠 Back to AI Toolbox",
+
+
+footerText:
+"© 2026 AI Toolbox · Free AI Tools"
 
 
 }
@@ -483,57 +2395,119 @@ aboutLink:"🌍 About AI Toolbox"
 
 
 
+function setLanguage(lang){
 
 
-function setLanguage(type){
+const t = languageText[lang];
 
 
-let t=lang[type];
+
+Object.keys(t).forEach(id=>{
 
 
-document.getElementById("title").innerText=t.title;
+const el = document.getElementById(id);
 
 
-document.getElementById("intro").innerText=t.intro;
+
+if(id === "pageTitle"){
+
+document.title = t[id];
+
+return;
+
+}
 
 
-document.getElementById("userTitle").innerText=t.userTitle;
+
+if(id === "metaDescription"){
+
+document
+.getElementById("metaDescription")
+.setAttribute("content",t[id]);
+
+return;
+
+}
 
 
-document.getElementById("userText").innerText=t.userText;
+
+if(id === "ogTitle"){
+
+document
+.getElementById("ogTitle")
+.setAttribute("content",t[id]);
+
+return;
+
+}
 
 
-document.getElementById("featureTitle").innerText=t.featureTitle;
+
+if(id === "ogDescription"){
+
+document
+.getElementById("ogDescription")
+.setAttribute("content",t[id]);
+
+return;
+
+}
 
 
-document.getElementById("featureText").innerText=t.featureText;
+
+if(id === "twitterTitle"){
+
+document
+.getElementById("twitterTitle")
+.setAttribute("content",t[id]);
+
+return;
+
+}
 
 
-document.getElementById("useLink").innerText=t.useLink;
+
+if(id === "twitterDescription"){
+
+document
+.getElementById("twitterDescription")
+.setAttribute("content",t[id]);
+
+return;
+
+}
 
 
-document.getElementById("guideLink").innerText=t.guideLink;
+
+if(el){
+
+el.innerText = t[id];
+
+}
 
 
-document.getElementById("moreTitle").innerText=t.moreTitle;
+});
 
 
-document.getElementById("homeLink").innerText=t.homeLink;
+
+document
+.getElementById("zhBtn")
+.classList.toggle("active",lang==="zh");
 
 
-document.getElementById("allToolsLink").innerText=t.allToolsLink;
+
+document
+.getElementById("enBtn")
+.classList.toggle("active",lang==="en");
 
 
-document.getElementById("promptLink").innerText=t.promptLink;
 
-
-document.getElementById("resumeLink").innerText=t.resumeLink;
-
-
-document.getElementById("xhsLink").innerText=t.xhsLink;
-
-
-document.getElementById("aboutLink").innerText=t.aboutLink;
+document.documentElement.lang =
+lang==="zh"
+?
+"zh-CN"
+:
+"en";
 
 
 }
