@@ -1,6 +1,12 @@
-# AI工具箱
+# AI Toolbox
 
-免费AI效率工具网站
+Free AI productivity tools.
 
-网站地址：
+Features:
+- AI Resume Assistant
+- AI Article Summarizer
+- AI Title Generator
+- AI Prompt Generator
+
+Website:
 https://wertsdfgwerg.github.io/toolbox/
