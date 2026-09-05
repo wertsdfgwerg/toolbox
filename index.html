@@ -1039,7 +1039,7 @@ FREE
 
 <p id="resumeDescription">
 
-输入你的教育经历、技能和项目经验，生成专业简历优化建议。
+输入你的真实经历、技能和项目经验，AI会帮你优化简历表达，不虚构内容。
 
 </p>
 
@@ -1061,7 +1061,7 @@ id="generateResumeBtn"
 class="primary"
 onclick="generateResume()">
 
-生成简历提示词
+优化简历内容
 
 </button>
 
@@ -2845,7 +2845,7 @@ resumeTitle:
 
 
 resumeDescription:
-"输入你的教育经历、技能和项目经验，生成专业简历优化建议。",
+"输入你的真实经历、技能和项目经验，AI会帮你优化简历表达，不虚构内容。",
 
 
 
@@ -2911,7 +2911,7 @@ copyPromptBtn:
 "📋 一键复制",
 
 generateResumeBtn:
-"生成简历提示词",
+"优化简历内容",
 
 copyResumeBtn:
 "📋 一键复制",
@@ -3334,7 +3334,7 @@ copyPromptBtn:
 "📋 Copy",
 
 generateResumeBtn:
-"Generate Resume Suggestions",
+"Optimize Resume",
 
 copyResumeBtn:
 "📋 Copy",
@@ -4379,32 +4379,34 @@ currentLanguage==="zh"
 
 `你是一名专业简历优化专家。
 
-请根据用户提供的经历内容，直接生成优化后的简历内容。
+请根据用户提供的信息优化简历。
 
-要求：
-1. 中文输出。
-2. 保留用户真实经历，不虚构不存在的经验，不要夸大用户经历，不要添加用户没有提供的职责，只优化表达方式。
-3. 将普通描述改写为专业简历表达。
-4. 使用“行动 + 技能 + 结果”的方式优化内容。
-5. 突出用户的技能、项目经验和实际贡献。
-6. 输出可以直接复制到简历中的内容。
-7. 不要解释修改过程，不要输出优化建议，只输出优化后的简历内容。`
+重要规则：
 
+1. 只优化用户已经提供的信息。
+2. 严格禁止编造用户没有提到的技能、项目、工作经历或技术。
+3. 不允许自动添加任何技术栈。
+4. 如果用户只输入简单信息，例如“会Python”，只能优化为基础能力描述。
+5. 不得添加 Django、Flask、FastAPI、Redis、Docker 等用户没有明确提供的技术。
+6. 可以改善表达方式，但不能扩大用户实际能力。
+7. 输出可以直接放入简历中的内容。
+8. 不解释修改过程，只输出优化后的简历内容。`
 :
 
 `You are a professional resume optimization expert.
 
-Generate an improved resume version based on the user's experience.
+Improve the resume based only on the information provided by the user.
 
-Requirements:
-1. English only.
-2. Keep the user's real experience and do not invent information.
-3. Rewrite descriptions into professional resume language.
-4. Use an Action + Skill + Result structure.
-5. Highlight skills, projects and achievements.
-6. Output content that can be directly used in a resume.
-7. Do not explain the process or provide suggestions. Only output the improved resume content.`;
+Important rules:
 
+1. Only optimize information that the user actually provided.
+2. Never invent skills, projects, work experience, achievements, or technologies.
+3. Do not add any technology stack that the user did not mention.
+4. For example, if the user only says "know Python", only improve the wording related to Python basics.
+5. Do not add Django, Flask, FastAPI, Redis, Docker, or other technologies unless the user explicitly provides them.
+6. Improve expression quality without exaggerating the user's ability.
+7. Output content that can be directly used in a resume.
+8. Do not explain the changes. Only output the improved resume content.`;
 
 
 
