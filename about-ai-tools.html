@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 
 <head>
@@ -8,19 +9,102 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<title>关于AI工具箱 - 免费AI效率工具</title>
+<!-- 网站图标 -->
+
+<link rel="icon" type="image/png" href="/toolbox/logo.png">
+
+<link rel="shortcut icon" type="image/png" href="/toolbox/logo.png">
+
+<link rel="apple-touch-icon" href="/toolbox/logo.png">
 
 
-<meta name="description" content="了解AI工具箱，提供免费的AI提示词生成器、AI简历助手、AI标题生成器等在线AI工具，提高学习和工作效率。">
+<!-- SEO -->
+
+<title id="pageTitle">
+关于 AI工具箱 - 免费实用的在线 AI 工具 | AI工具箱
+</title>
 
 
-<link rel="icon" href="logo.png">
+<meta
+id="metaDescription"
+name="description"
+content="了解 AI工具箱以及免费 AI 工具的用途。AI工具箱提供提示词生成、简历优化、标题生成、文章润色、文章摘要、AI回复、邮件写作等实用工具。"
+>
+
+
+<meta name="robots" content="index,follow">
+
+
+<link
+rel="canonical"
+href="https://wertsdfgwerg.github.io/toolbox/about-ai-tools.html"
+>
+
+
+<!-- Open Graph -->
+
+<meta
+id="ogTitle"
+property="og:title"
+content="关于 AI工具箱 - 免费实用的在线 AI 工具"
+>
+
+
+<meta
+id="ogDescription"
+property="og:description"
+content="了解 AI工具箱以及各种免费、简单、实用的 AI 效率工具。"
+>
+
+
+<meta property="og:type" content="website">
+
+
+<meta
+property="og:url"
+content="https://wertsdfgwerg.github.io/toolbox/about-ai-tools.html"
+>
+
+
+<!-- Twitter -->
+
+<meta name="twitter:card" content="summary">
+
+
+<meta
+id="twitterTitle"
+name="twitter:title"
+content="关于 AI工具箱 - Free AI Tools"
+>
+
+
+<meta
+id="twitterDescription"
+name="twitter:description"
+content="了解 AI工具箱以及免费在线 AI 效率工具。"
+>
+
+
+<!-- Cloudflare Web Analytics -->
+
+<script
+type="module"
+src="https://static.cloudflareinsights.com/beacon.min.js"
+data-cf-beacon='{"token":"4eb5597f43294acfbf1573e4628dcf28"}'>
+</script>
+
 
 
 <style>
 
+
 *{
 box-sizing:border-box;
+}
+
+
+html{
+scroll-behavior:smooth;
 }
 
 
@@ -40,12 +124,14 @@ background:#f7f9fc;
 
 color:#222;
 
+line-height:1.8;
+
 }
 
 
 .container{
 
-max-width:900px;
+max-width:1000px;
 
 margin:auto;
 
@@ -54,104 +140,572 @@ padding:30px 20px 60px;
 }
 
 
+/* 顶部 */
+
+
+.header{
+
+position:relative;
+
+text-align:center;
+
+padding:30px 0 40px;
+
+}
+
+
+.logo{
+
+width:60px;
+
+height:60px;
+
+object-fit:contain;
+
+}
+
+
+.site-name{
+
+font-size:28px;
+
+font-weight:800;
+
+margin:18px 0 5px;
+
+}
+
+
+.site-description{
+
+font-size:16px;
+
+color:#666;
+
+margin:0;
+
+}
+
+
+/* 语言切换 */
+
+
 .language-switch{
 
-text-align:right;
+position:absolute;
 
-margin-bottom:20px;
+right:0;
+
+top:10px;
+
+display:flex;
+
+background:white;
+
+border:1px solid #eee;
+
+border-radius:30px;
+
+padding:4px;
 
 }
 
 
 .language-switch button{
 
-padding:8px 18px;
+border:none;
 
-border-radius:20px;
+background:none;
 
-border:1px solid #ddd;
+padding:9px 18px;
 
-background:white;
+border-radius:25px;
 
 cursor:pointer;
 
-margin-left:8px;
+font-size:14px;
 
 }
 
 
+.language-switch button.active{
 
-.box{
+background:#111;
+
+color:white;
+
+}
+
+
+/* 卡片 */
+
+
+.card{
 
 background:white;
 
-padding:35px;
+border-radius:20px;
+
+padding:30px;
+
+margin-bottom:22px;
+
+border:1px solid #eee;
+
+box-shadow:0 8px 25px rgba(0,0,0,.05);
+
+}
+
+
+.card h2{
+
+margin-top:0;
+
+font-size:26px;
+
+}
+
+
+.card h3{
+
+margin-top:24px;
+
+font-size:20px;
+
+}
+
+
+/* Hero */
+
+
+.hero-card{
+
+text-align:center;
+
+padding:45px 30px;
+
+}
+
+
+.badge{
+
+display:inline-block;
+
+background:#111;
+
+color:white;
+
+padding:5px 12px;
 
 border-radius:20px;
 
-box-shadow:0 10px 30px rgba(0,0,0,.05);
+font-size:12px;
+
+margin-bottom:10px;
 
 }
 
 
-h1{
+.hero-card h1{
 
-font-size:38px;
+font-size:40px;
 
-color:#2563eb;
+margin:12px 0;
+
+font-weight:800;
 
 }
 
 
-h2{
+.hero-card p{
+
+color:#666;
+
+font-size:18px;
+
+max-width:700px;
+
+margin:15px auto 25px;
+
+}
+
+
+/* 按钮 */
+
+
+.button-row{
+
+display:flex;
+
+gap:14px;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+margin-top:22px;
+
+}
+
+
+.button{
+
+display:inline-block;
+
+text-decoration:none;
+
+padding:14px 24px;
+
+border-radius:12px;
+
+font-weight:600;
+
+transition:.2s;
+
+text-align:center;
+
+}
+
+
+.primary{
+
+background:#111;
+
+color:white;
+
+}
+
+
+.primary:hover{
+
+transform:translateY(-2px);
+
+}
+
+
+.secondary{
+
+background:#f1f1f1;
+
+color:#222;
+
+}
+
+
+.secondary:hover{
+
+background:#e8e8e8;
+
+}
+
+
+/* 列表 */
+
+
+.feature-list{
+
+padding-left:20px;
+
+}
+
+
+.feature-list li{
+
+margin:12px 0;
+
+}
+
+
+/* 功能网格 */
+
+
+.mode-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+
+.mode{
+
+background:#f8f9fb;
+
+border-radius:14px;
+
+padding:18px;
+
+border:1px solid #eee;
+
+}
+
+
+.mode h3{
+
+margin:0 0 8px;
+
+font-size:17px;
+
+}
+
+
+.mode p{
+
+margin:0;
+
+color:#666;
+
+}
+
+
+/* 步骤 */
+
+
+.steps{
+
+counter-reset:step;
+
+padding:0;
+
+}
+
+
+.step{
+
+position:relative;
+
+padding-left:55px;
+
+margin:24px 0;
+
+}
+
+
+.step::before{
+
+counter-increment:step;
+
+content:counter(step);
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:34px;
+
+height:34px;
+
+border-radius:50%;
+
+background:#111;
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:bold;
+
+}
+
+
+/* FAQ */
+
+
+.faq{
+
+border-top:1px solid #eee;
+
+padding:18px 0;
+
+}
+
+
+.faq:last-child{
+
+border-bottom:1px solid #eee;
+
+}
+
+
+.faq h3{
+
+margin:0 0 8px;
+
+font-size:18px;
+
+}
+
+
+.faq p{
+
+margin:0;
+
+color:#666;
+
+}
+
+
+/* 链接导航 */
+
+
+.link-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:12px;
+
+margin-top:18px;
+
+}
+
+
+.tool-link{
+
+display:block;
+
+background:#f8f9fb;
+
+padding:15px 16px;
+
+border-radius:12px;
+
+text-decoration:none;
+
+color:#222;
+
+font-weight:600;
+
+border:1px solid #eee;
+
+transition:.2s;
+
+}
+
+
+.tool-link:hover{
+
+transform:translateY(-2px);
+
+background:#f1f3f5;
+
+}
+
+
+/* 返回首页 */
+
+
+.home-link{
+
+text-align:center;
 
 margin-top:30px;
 
 }
 
 
-.card{
-
-background:#f8fafc;
-
-padding:20px;
-
-border-radius:15px;
-
-margin:20px 0;
-
-}
+/* Footer */
 
 
-a{
+.footer{
 
-color:#2563eb;
+text-align:center;
 
-text-decoration:none;
+color:#777;
+
+padding:28px 0 10px;
+
+font-size:14px;
 
 }
 
 
+/* 手机端 */
 
-@media(max-width:700px){
 
-h1{
+@media(max-width:768px){
+
+
+.container{
+
+padding:20px 15px 45px;
+
+}
+
+
+.language-switch{
+
+position:relative;
+
+right:auto;
+
+top:auto;
+
+justify-content:center;
+
+margin-bottom:20px;
+
+}
+
+
+.hero-card h1{
 
 font-size:30px;
 
 }
 
-.box{
 
-padding:20px;
+.card{
+
+padding:22px;
 
 }
+
+
+.mode-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.link-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.button-row{
+
+flex-direction:column;
+
+}
+
+
+.button{
+
+width:100%;
+
+}
+
 
 }
 
 
 </style>
-
 
 </head>
 
@@ -163,148 +717,507 @@ padding:20px;
 <div class="container">
 
 
+<!-- 顶部 -->
+
+
+<header class="header">
+
+
 <div class="language-switch">
 
 
-<button onclick="setLanguage('zh')">
+<button
+id="zhBtn"
+class="active"
+onclick="setLanguage('zh')">
+
 中文
+
 </button>
 
 
-<button onclick="setLanguage('en')">
+<button
+id="enBtn"
+onclick="setLanguage('en')">
+
 English
+
 </button>
 
 
 </div>
 
 
+<a href="index.html">
 
-<div class="box">
+<img
+src="logo.png"
+class="logo"
+alt="AI Toolbox"
+>
+
+</a>
+
+
+<div
+class="site-name"
+id="siteTitle">
+
+🤖 AI工具箱
+
+</div>
+
+
+<p
+class="site-description"
+id="siteDescription">
+
+免费、简单、实用的 AI 效率工具
+
+</p>
+
+
+</header>
 
 
 
-<h1 id="title">
+<!-- Hero -->
 
-🌍 关于 AI小工具箱
+
+<section class="card hero-card">
+
+
+<span
+class="badge"
+id="freeBadge">
+
+免费使用
+
+</span>
+
+
+<h1 id="heroTitle">
+
+🤖 关于 AI工具箱
 
 </h1>
 
 
+<p id="heroDescription">
 
-<p id="intro">
-
-AI小工具箱致力于提供简单、免费、实用的AI效率工具。
+AI工具箱提供免费、简单、实用的在线 AI 工具，帮助你更高效地学习、工作和创作。
 
 </p>
 
 
+<div class="button-row">
 
-<div class="card">
+
+<a
+href="index.html"
+class="button primary"
+id="useToolsBtn">
+
+🚀 查看所有 AI 工具
+
+</a>
 
 
-<h2 id="aboutTitle">
+<a
+href="#allTools"
+class="button secondary"
+id="learnMoreBtn">
 
-AI工具是什么？
+📖 了解 AI 工具
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 什么是 AI工具箱 -->
+
+
+<section class="card">
+
+
+<h2 id="introTitle">
+
+🤖 什么是 AI工具箱？
 
 </h2>
 
 
-<p id="aboutText">
+<p id="introText1">
 
-AI工具可以帮助用户提高学习、工作和创作效率。
+AI工具箱是一个提供免费在线 AI 效率工具的网站，帮助用户更方便地完成写作、学习、工作和内容创作等任务。
 
 </p>
 
 
-</div>
+<p id="introText2">
+
+我们希望让 AI 工具变得更加简单易用，不需要复杂的操作，也不需要学习专业知识，就可以快速使用各种实用功能。
+
+</p>
+
+
+<p id="introText3">
+
+你可以根据自己的需求选择不同的工具，例如生成提示词、优化简历、润色文章、生成标题、总结文章、撰写邮件或生成回复内容。
+
+</p>
+
+
+</section>
 
 
 
-<div class="card">
+<!-- 什么是 AI 工具 -->
 
 
-<h2 id="goalTitle">
+<section class="card">
 
-AI工具应用
+
+<h2 id="aiTitle">
+
+✨ 什么是 AI 工具？
 
 </h2>
 
 
-<p id="goalText">
+<p id="aiText1">
 
-学生可以使用AI辅助学习，创作者可以使用AI生成内容，职场用户可以使用AI处理重复工作。
+AI 工具通常利用人工智能技术帮助用户完成各种任务，例如理解文字、生成内容、优化表达、整理信息和提供写作建议。
 
 </p>
 
 
-</div>
+<p id="aiText2">
+
+不同的 AI 工具有不同的用途。有些适合写作，有些适合学习，有些可以帮助提高工作效率。
+
+</p>
+
+
+<p id="aiText3">
+
+AI工具箱希望将这些常见的使用场景整理成简单易用的工具，让用户可以更方便地找到适合自己的功能。
+
+</p>
+
+
+</section>
 
 
 
+<!-- AI 可以帮助做什么 -->
 
-<div class="card">
+
+<section
+class="card"
+id="allTools">
 
 
-<h2 id="toolsTitle">
+<h2 id="helpTitle">
 
-AI工具
+🚀 AI 工具可以帮助做什么？
 
 </h2>
 
 
-
-<p>
-
-🔥
-
-<a href="ai-prompt-generator.html" id="prompt">
-
-AI提示词生成器
-
-</a>
-
-</p>
+<div class="mode-grid">
 
 
+<div class="mode">
 
-<p>
+<h3 id="help1Title">
 
-📝
+✍️ 辅助写作
 
-<a href="ai-resume-helper.html" id="resume">
+</h3>
 
-AI简历助手
+<p id="help1Text">
 
-</a>
+帮助优化文章、生成标题、撰写邮件和改善文字表达。
 
 </p>
 
+</div>
 
 
-<p>
+<div class="mode">
 
-💡
+<h3 id="help2Title">
 
-<a href="xiaohongshu-title-generator.html" id="xiaohongshu">
+🎓 学习效率
 
-AI小红书标题生成器
+</h3>
 
-</a>
+<p id="help2Text">
+
+帮助整理文章内容、生成提示词和提高学习效率。
 
 </p>
 
+</div>
 
 
-<p>
+<div class="mode">
 
-🚀
+<h3 id="help3Title">
 
-<a href="ai-tools.html" id="allTools">
+💼 工作效率
 
-免费AI工具大全
+</h3>
 
-</a>
+<p id="help3Text">
+
+帮助优化简历、整理工作内容和生成商务文字。
+
+</p>
+
+</div>
+
+
+<div class="mode">
+
+<h3 id="help4Title">
+
+💡 内容创作
+
+</h3>
+
+<p id="help4Text">
+
+帮助生成标题、优化文案和获得更多创作灵感。
+
+</p>
+
+</div>
+
+
+<div class="mode">
+
+<h3 id="help5Title">
+
+📋 信息整理
+
+</h3>
+
+<p id="help5Text">
+
+帮助快速总结文章内容，提取重要信息。
+
+</p>
+
+</div>
+
+
+<div class="mode">
+
+<h3 id="help6Title">
+
+💬 日常沟通
+
+</h3>
+
+<p id="help6Text">
+
+帮助生成回复内容，让沟通表达更加清晰自然。
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 如何使用 -->
+
+
+<section class="card">
+
+
+<h2 id="howTitle">
+
+📖 如何使用 AI工具箱？
+
+</h2>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<strong id="step1Title">
+
+选择需要的工具
+
+</strong>
+
+<p id="step1Text">
+
+根据你的需求选择合适的 AI 工具。
+
+</p>
+
+</div>
+
+
+<div class="step">
+
+<strong id="step2Title">
+
+输入你的内容
+
+</strong>
+
+<p id="step2Text">
+
+输入主题、文字或其他需要处理的内容。
+
+</p>
+
+</div>
+
+
+<div class="step">
+
+<strong id="step3Title">
+
+选择适合的选项
+
+</strong>
+
+<p id="step3Text">
+
+根据不同工具的功能选择适合自己的生成方式。
+
+</p>
+
+</div>
+
+
+<div class="step">
+
+<strong id="step4Title">
+
+获取并使用结果
+
+</strong>
+
+<p id="step4Text">
+
+查看生成结果，根据自己的需求进行修改或直接使用。
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 适合谁 -->
+
+
+<section class="card">
+
+
+<h2 id="whoTitle">
+
+👥 AI工具箱适合谁？
+
+</h2>
+
+
+<ul class="feature-list">
+
+
+<li id="who1">
+
+🎓 学生：用于学习、写作和整理文章内容。
+
+</li>
+
+
+<li id="who2">
+
+✍️ 内容创作者：用于生成标题、优化文案和寻找创作灵感。
+
+</li>
+
+
+<li id="who3">
+
+💼 办公用户：用于优化简历、邮件和工作内容。
+
+</li>
+
+
+<li id="who4">
+
+📝 写作爱好者：用于润色文章和改善文字表达。
+
+</li>
+
+
+<li id="who5">
+
+🚀 普通用户：任何希望通过 AI 提高效率的人都可以使用。
+
+</li>
+
+
+</ul>
+
+
+</section>
+
+
+
+<!-- FAQ -->
+
+
+<section class="card">
+
+
+<h2 id="faqTitle">
+
+❓ 常见问题
+
+</h2>
+
+
+<div class="faq">
+
+
+<h3 id="faq1Question">
+
+AI工具箱是免费的吗？
+
+</h3>
+
+
+<p id="faq1Answer">
+
+AI工具箱提供免费的在线 AI 工具，用户可以直接打开网站使用。
 
 </p>
 
@@ -312,63 +1225,739 @@ AI小红书标题生成器
 </div>
 
 
-
-<hr>
-
+<div class="faq">
 
 
-<p>
+<h3 id="faq2Question">
 
-<a href="index.html" id="home">
+需要注册账号吗？
 
-返回 AI工具箱首页
+</h3>
 
-</a>
+
+<p id="faq2Answer">
+
+目前网站中的工具无需注册账号即可使用。
 
 </p>
 
 
+</div>
+
+
+<div class="faq">
+
+
+<h3 id="faq3Question">
+
+AI 工具生成的内容可以直接使用吗？
+
+</h3>
+
+
+<p id="faq3Answer">
+
+AI 生成的内容可以作为参考或初稿使用，你也可以根据自己的实际需求进行修改和调整。
+
+</p>
+
 
 </div>
 
 
+<div class="faq">
+
+
+<h3 id="faq4Question">
+
+AI工具箱以后会增加更多工具吗？
+
+</h3>
+
+
+<p id="faq4Answer">
+
+我们会不断完善现有工具，并根据实际需求逐步增加更多实用的 AI 功能。
+
+</p>
+
+
 </div>
 
+
+</section>
+
+
+
+<!-- 立即使用 -->
+
+
+<section class="card">
+
+
+<h2 id="useTitle">
+
+🚀 开始使用 AI 工具
+
+</h2>
+
+
+<p id="useText">
+
+探索 AI工具箱中的各种免费 AI 效率工具，找到适合你的功能。
+
+</p>
+
+
+<div class="button-row">
+
+
+<a
+href="index.html"
+class="button primary"
+id="useToolsBtn2">
+
+✨ 立即进入 AI工具箱
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 所有 AI 工具 -->
+
+
+<section class="card">
+
+
+<h2 id="allToolsTitle">
+
+🛠️ 所有 AI 工具
+
+</h2>
+
+
+<p id="allToolsText">
+
+探索 AI工具箱中的免费 AI 效率工具：
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a href="index.html#promptTool" class="tool-link" id="toolPrompt">
+🔥 AI提示词生成器
+</a>
+
+
+<a href="index.html#resumeTool" class="tool-link" id="toolResume">
+📝 AI简历助手
+</a>
+
+
+<a href="index.html#titleTool" class="tool-link" id="toolTitle">
+💡 AI标题生成器
+</a>
+
+
+<a href="index.html#polisherTool" class="tool-link" id="toolPolisher">
+✨ AI文章润色工具
+</a>
+
+
+<a href="index.html#summaryTool" class="tool-link" id="toolSummary">
+📋 AI文章摘要工具
+</a>
+
+
+<a href="index.html#replyTool" class="tool-link" id="toolReply">
+💬 AI回复助手
+</a>
+
+
+<a href="index.html#xiaohongshuTool" class="tool-link" id="toolXhs">
+📱 AI小红书标题生成器
+</a>
+
+
+<a href="index.html#mailTool" class="tool-link" id="toolMail">
+📧 AI邮件助手
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 所有工具介绍 -->
+
+
+<section class="card">
+
+
+<h2 id="toolPagesTitle">
+
+📖 AI工具介绍
+
+</h2>
+
+
+<p id="toolPagesText">
+
+了解每个 AI 工具的功能、使用场景和详细介绍：
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a href="ai-prompt-generator.html" class="tool-link" id="pagePrompt">
+🔥 AI提示词生成器介绍
+</a>
+
+
+<a href="ai-resume-helper.html" class="tool-link" id="pageResume">
+📝 AI简历助手介绍
+</a>
+
+
+<a href="ai-title-generator.html" class="tool-link" id="pageTitleGenerator">
+💡 AI标题生成器介绍
+</a>
+
+
+<a href="ai-writing-polisher.html" class="tool-link" id="pagePolisher">
+✨ AI文章润色工具介绍
+</a>
+
+
+<a href="ai-article-summarizer.html" class="tool-link" id="pageSummary">
+📋 AI文章摘要工具介绍
+</a>
+
+
+<a href="ai-reply-assistant.html" class="tool-link" id="pageReply">
+💬 AI回复助手介绍
+</a>
+
+
+<a href="xiaohongshu-title-generator.html" class="tool-link" id="pageXhs">
+📱 AI小红书标题生成器介绍
+</a>
+
+
+<a href="ai-email-assistant.html" class="tool-link" id="pageMail">
+📧 AI邮件助手介绍
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 所有教程 -->
+
+
+<section class="card">
+
+
+<h2 id="guidesTitle">
+
+📚 AI教程指南
+
+</h2>
+
+
+<p id="guidesText">
+
+学习如何更高效地使用 AI 工具，提高学习、工作和创作效率：
+
+</p>
+
+
+<div class="link-grid">
+
+
+<a href="ai-prompt-guide.html" class="tool-link" id="guidePrompt">
+🔥 AI Prompt入门指南
+</a>
+
+
+<a href="ai-resume-guide.html" class="tool-link" id="guideResume">
+📝 AI简历优化指南
+</a>
+
+
+<a href="ai-title-generator-guide.html" class="tool-link" id="guideTitleGenerator">
+💡 AI标题生成指南
+</a>
+
+
+<a href="ai-writing-polisher-guide.html" class="tool-link" id="guidePolisher">
+✨ AI文章润色指南
+</a>
+
+
+<a href="ai-article-summarizer-guide.html" class="tool-link" id="guideSummary">
+📋 AI文章摘要指南
+</a>
+
+
+<a href="ai-reply-assistant-guide.html" class="tool-link" id="guideReply">
+💬 AI回复技巧指南
+</a>
+
+
+<a href="ai-xiaohongshu-guide.html" class="tool-link" id="guideXhs">
+📱 小红书标题技巧指南
+</a>
+
+
+<a href="ai-email-assistant-guide.html" class="tool-link" id="guideMail">
+📧 AI邮件写作指南
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- 返回首页 -->
+
+
+<div class="home-link">
+
+
+<a
+href="index.html"
+class="button secondary"
+id="homeBtn">
+
+🏠 返回 AI工具箱首页
+
+</a>
+
+
+</div>
+
+
+
+<!-- Footer -->
+
+
+<footer class="footer">
+
+
+<div id="footerText">
+
+© 2026 AI工具箱 · Free AI Tools
+
+</div>
+
+
+</footer>
+
+
+</div>
 
 
 
 <script>
 
 
-const lang={
+const languageText = {
 
 
 zh:{
 
 
-title:"🌍 关于 AI小工具箱",
+pageTitle:
+"关于 AI工具箱 - 免费实用的在线 AI 工具 | AI工具箱",
 
-intro:"AI小工具箱致力于提供简单、免费、实用的AI效率工具。",
 
-aboutTitle:"AI工具是什么？",
+metaDescription:
+"了解 AI工具箱以及免费 AI 工具的用途。AI工具箱提供提示词生成、简历优化、标题生成、文章润色、文章摘要、AI回复、邮件写作等实用工具。",
 
-aboutText:"AI工具可以帮助用户提高学习、工作和创作效率。",
 
-goalTitle:"AI工具应用",
+ogTitle:
+"关于 AI工具箱 - 免费实用的在线 AI 工具",
 
-goalText:"学生可以使用AI辅助学习，创作者可以使用AI生成内容，职场用户可以使用AI处理重复工作。",
 
-toolsTitle:"AI工具",
+ogDescription:
+"了解 AI工具箱以及各种免费、简单、实用的 AI 效率工具。",
 
-prompt:"AI提示词生成器",
 
-resume:"AI简历助手",
+twitterTitle:
+"关于 AI工具箱 - 免费 AI 工具",
 
-xiaohongshu:"AI小红书标题生成器",
 
-allTools:"免费AI工具大全",
+twitterDescription:
+"了解 AI工具箱以及免费在线 AI 效率工具。",
 
-home:"返回 AI工具箱首页"
+
+siteTitle:
+"🤖 AI工具箱",
+
+
+siteDescription:
+"免费、简单、实用的 AI 效率工具",
+
+
+freeBadge:
+"免费使用",
+
+
+heroTitle:
+"🤖 关于 AI工具箱",
+
+
+heroDescription:
+"AI工具箱提供免费、简单、实用的在线 AI 工具，帮助你更高效地学习、工作和创作。",
+
+
+useToolsBtn:
+"🚀 查看所有 AI 工具",
+
+
+learnMoreBtn:
+"📖 了解 AI 工具",
+
+
+introTitle:
+"🤖 什么是 AI工具箱？",
+
+
+introText1:
+"AI工具箱是一个提供免费在线 AI 效率工具的网站，帮助用户更方便地完成写作、学习、工作和内容创作等任务。",
+
+
+introText2:
+"我们希望让 AI 工具变得更加简单易用，不需要复杂的操作，也不需要学习专业知识，就可以快速使用各种实用功能。",
+
+
+introText3:
+"你可以根据自己的需求选择不同的工具，例如生成提示词、优化简历、润色文章、生成标题、总结文章、撰写邮件或生成回复内容。",
+
+
+aiTitle:
+"✨ 什么是 AI 工具？",
+
+
+aiText1:
+"AI 工具通常利用人工智能技术帮助用户完成各种任务，例如理解文字、生成内容、优化表达、整理信息和提供写作建议。",
+
+
+aiText2:
+"不同的 AI 工具有不同的用途。有些适合写作，有些适合学习，有些可以帮助提高工作效率。",
+
+
+aiText3:
+"AI工具箱希望将这些常见的使用场景整理成简单易用的工具，让用户可以更方便地找到适合自己的功能。",
+
+
+helpTitle:
+"🚀 AI 工具可以帮助做什么？",
+
+
+help1Title:
+"✍️ 辅助写作",
+
+
+help1Text:
+"帮助优化文章、生成标题、撰写邮件和改善文字表达。",
+
+
+help2Title:
+"🎓 学习效率",
+
+
+help2Text:
+"帮助整理文章内容、生成提示词和提高学习效率。",
+
+
+help3Title:
+"💼 工作效率",
+
+
+help3Text:
+"帮助优化简历、整理工作内容和生成商务文字。",
+
+
+help4Title:
+"💡 内容创作",
+
+
+help4Text:
+"帮助生成标题、优化文案和获得更多创作灵感。",
+
+
+help5Title:
+"📋 信息整理",
+
+
+help5Text:
+"帮助快速总结文章内容，提取重要信息。",
+
+
+help6Title:
+"💬 日常沟通",
+
+
+help6Text:
+"帮助生成回复内容，让沟通表达更加清晰自然。",
+
+
+howTitle:
+"📖 如何使用 AI工具箱？",
+
+
+step1Title:
+"选择需要的工具",
+
+
+step1Text:
+"根据你的需求选择合适的 AI 工具。",
+
+
+step2Title:
+"输入你的内容",
+
+
+step2Text:
+"输入主题、文字或其他需要处理的内容。",
+
+
+step3Title:
+"选择适合的选项",
+
+
+step3Text:
+"根据不同工具的功能选择适合自己的生成方式。",
+
+
+step4Title:
+"获取并使用结果",
+
+
+step4Text:
+"查看生成结果，根据自己的需求进行修改或直接使用。",
+
+
+whoTitle:
+"👥 AI工具箱适合谁？",
+
+
+who1:
+"🎓 学生：用于学习、写作和整理文章内容。",
+
+
+who2:
+"✍️ 内容创作者：用于生成标题、优化文案和寻找创作灵感。",
+
+
+who3:
+"💼 办公用户：用于优化简历、邮件和工作内容。",
+
+
+who4:
+"📝 写作爱好者：用于润色文章和改善文字表达。",
+
+
+who5:
+"🚀 普通用户：任何希望通过 AI 提高效率的人都可以使用。",
+
+
+faqTitle:
+"❓ 常见问题",
+
+
+faq1Question:
+"AI工具箱是免费的吗？",
+
+
+faq1Answer:
+"AI工具箱提供免费的在线 AI 工具，用户可以直接打开网站使用。",
+
+
+faq2Question:
+"需要注册账号吗？",
+
+
+faq2Answer:
+"目前网站中的工具无需注册账号即可使用。",
+
+
+faq3Question:
+"AI 工具生成的内容可以直接使用吗？",
+
+
+faq3Answer:
+"AI 生成的内容可以作为参考或初稿使用，你也可以根据自己的实际需求进行修改和调整。",
+
+
+faq4Question:
+"AI工具箱以后会增加更多工具吗？",
+
+
+faq4Answer:
+"我们会不断完善现有工具，并根据实际需求逐步增加更多实用的 AI 功能。",
+
+
+useTitle:
+"🚀 开始使用 AI 工具",
+
+
+useText:
+"探索 AI工具箱中的各种免费 AI 效率工具，找到适合你的功能。",
+
+
+useToolsBtn2:
+"✨ 立即进入 AI工具箱",
+
+
+allToolsTitle:
+"🛠️ 所有 AI 工具",
+
+
+allToolsText:
+"探索 AI工具箱中的免费 AI 效率工具：",
+
+
+toolPrompt:
+"🔥 AI提示词生成器",
+
+
+toolResume:
+"📝 AI简历助手",
+
+
+toolTitle:
+"💡 AI标题生成器",
+
+
+toolPolisher:
+"✨ AI文章润色工具",
+
+
+toolSummary:
+"📋 AI文章摘要工具",
+
+
+toolReply:
+"💬 AI回复助手",
+
+
+toolXhs:
+"📱 AI小红书标题生成器",
+
+
+toolMail:
+"📧 AI邮件助手",
+
+
+toolPagesTitle:
+"📖 AI工具介绍",
+
+
+toolPagesText:
+"了解每个 AI 工具的功能、使用场景和详细介绍：",
+
+
+pagePrompt:
+"🔥 AI提示词生成器介绍",
+
+
+pageResume:
+"📝 AI简历助手介绍",
+
+
+pageTitleGenerator:
+"💡 AI标题生成器介绍",
+
+
+pagePolisher:
+"✨ AI文章润色工具介绍",
+
+
+pageSummary:
+"📋 AI文章摘要工具介绍",
+
+
+pageReply:
+"💬 AI回复助手介绍",
+
+
+pageXhs:
+"📱 AI小红书标题生成器介绍",
+
+
+pageMail:
+"📧 AI邮件助手介绍",
+
+
+guidesTitle:
+"📚 AI教程指南",
+
+
+guidesText:
+"学习如何更高效地使用 AI 工具，提高学习、工作和创作效率：",
+
+
+guidePrompt:
+"🔥 AI Prompt入门指南",
+
+
+guideResume:
+"📝 AI简历优化指南",
+
+
+guideTitleGenerator:
+"💡 AI标题生成指南",
+
+
+guidePolisher:
+"✨ AI文章润色指南",
+
+
+guideSummary:
+"📋 AI文章摘要指南",
+
+
+guideReply:
+"💬 AI回复技巧指南",
+
+
+guideXhs:
+"📱 小红书标题技巧指南",
+
+
+guideMail:
+"📧 AI邮件写作指南",
+
+
+homeBtn:
+"🏠 返回 AI工具箱首页",
+
+
+footerText:
+"© 2026 AI工具箱 · Free AI Tools"
 
 
 },
@@ -378,29 +1967,376 @@ home:"返回 AI工具箱首页"
 en:{
 
 
-title:"🌍 About AI Toolbox",
+pageTitle:
+"About AI Toolbox - Free and Useful Online AI Tools | AI Toolbox",
 
-intro:"AI Toolbox provides simple, free and practical AI productivity tools.",
 
-aboutTitle:"What are AI Tools?",
+metaDescription:
+"Learn about AI Toolbox and free online AI tools for prompts, resumes, titles, writing improvement, article summaries, replies and email writing.",
 
-aboutText:"AI tools can help users improve learning, work and creative efficiency.",
 
-goalTitle:"AI Tool Applications",
+ogTitle:
+"About AI Toolbox - Free and Useful Online AI Tools",
 
-goalText:"Students can use AI for learning, creators can generate content with AI, and professionals can automate repetitive tasks.",
 
-toolsTitle:"AI Tools",
+ogDescription:
+"Learn about AI Toolbox and discover free, simple and useful AI productivity tools.",
 
-prompt:"AI Prompt Generator",
 
-resume:"AI Resume Assistant",
+twitterTitle:
+"About AI Toolbox - Free AI Tools",
 
-xiaohongshu:"Xiaohongshu Title Generator",
 
-allTools:"Free AI Tools Collection",
+twitterDescription:
+"Learn about AI Toolbox and free online AI productivity tools.",
 
-home:"Back to AI Toolbox Home"
+
+siteTitle:
+"🤖 AI Toolbox",
+
+
+siteDescription:
+"Free, simple and useful AI productivity tools",
+
+
+freeBadge:
+"FREE",
+
+
+heroTitle:
+"🤖 About AI Toolbox",
+
+
+heroDescription:
+"AI Toolbox provides free, simple and useful online AI tools to help you study, work and create more efficiently.",
+
+
+useToolsBtn:
+"🚀 Explore AI Tools",
+
+
+learnMoreBtn:
+"📖 Learn About AI Tools",
+
+
+introTitle:
+"🤖 What Is AI Toolbox?",
+
+
+introText1:
+"AI Toolbox is a website that provides free online AI productivity tools to help users with writing, studying, work and content creation.",
+
+
+introText2:
+"Our goal is to make AI tools simple and easy to use, without complicated steps or the need for professional knowledge.",
+
+
+introText3:
+"You can choose different tools based on your needs, such as prompt generation, resume improvement, writing polishing, title generation, article summarization, email writing and reply generation.",
+
+
+aiTitle:
+"✨ What Are AI Tools?",
+
+
+aiText1:
+"AI tools use artificial intelligence to help users complete different tasks, such as understanding text, generating content, improving writing and organizing information.",
+
+
+aiText2:
+"Different AI tools are designed for different purposes. Some are useful for writing, some for studying and others for improving productivity.",
+
+
+aiText3:
+"AI Toolbox organizes common AI use cases into simple tools that help users quickly find useful functions.",
+
+
+helpTitle:
+"🚀 What Can AI Tools Help With?",
+
+
+help1Title:
+"✍️ Writing Assistance",
+
+
+help1Text:
+"Improve writing, generate titles, write emails and make text clearer.",
+
+
+help2Title:
+"🎓 Study Productivity",
+
+
+help2Text:
+"Organize article content, generate prompts and improve learning efficiency.",
+
+
+help3Title:
+"💼 Work Productivity",
+
+
+help3Text:
+"Improve resumes, organize work content and create professional writing.",
+
+
+help4Title:
+"💡 Content Creation",
+
+
+help4Text:
+"Generate titles, improve copywriting and discover creative ideas.",
+
+
+help5Title:
+"📋 Information Organization",
+
+
+help5Text:
+"Quickly summarize articles and extract important information.",
+
+
+help6Title:
+"💬 Daily Communication",
+
+
+help6Text:
+"Generate replies and make communication clearer and more natural.",
+
+
+howTitle:
+"📖 How to Use AI Toolbox",
+
+
+step1Title:
+"Choose a Tool",
+
+
+step1Text:
+"Choose the AI tool that best matches your needs.",
+
+
+step2Title:
+"Enter Your Content",
+
+
+step2Text:
+"Enter a topic, text or other content you want to work with.",
+
+
+step3Title:
+"Choose Your Options",
+
+
+step3Text:
+"Select the options that best fit your needs.",
+
+
+step4Title:
+"Get and Use the Result",
+
+
+step4Text:
+"Review the result and edit or use it based on your needs.",
+
+
+whoTitle:
+"👥 Who Is AI Toolbox For?",
+
+
+who1:
+"🎓 Students: For studying, writing and organizing information.",
+
+
+who2:
+"✍️ Content Creators: For generating titles, improving content and finding ideas.",
+
+
+who3:
+"💼 Office Users: For resumes, emails and work-related writing.",
+
+
+who4:
+"📝 Writers: For polishing writing and improving expression.",
+
+
+who5:
+"🚀 Everyday Users: Anyone who wants to improve productivity with AI.",
+
+
+faqTitle:
+"❓ Frequently Asked Questions",
+
+
+faq1Question:
+"Is AI Toolbox free?",
+
+
+faq1Answer:
+"AI Toolbox provides free online AI tools that users can access directly.",
+
+
+faq2Question:
+"Do I need to register?",
+
+
+faq2Answer:
+"The current tools can be used without creating an account.",
+
+
+faq3Question:
+"Can I use AI-generated content directly?",
+
+
+faq3Answer:
+"AI-generated content can be used as a reference or draft. You can also edit it based on your actual needs.",
+
+
+faq4Question:
+"Will AI Toolbox add more tools?",
+
+
+faq4Answer:
+"We will continue improving existing tools and may add more useful AI features over time.",
+
+
+useTitle:
+"🚀 Start Using AI Tools",
+
+
+useText:
+"Explore free AI productivity tools from AI Toolbox and find the tools that work best for you.",
+
+
+useToolsBtn2:
+"✨ Enter AI Toolbox",
+
+
+allToolsTitle:
+"🛠️ All AI Tools",
+
+
+allToolsText:
+"Explore free AI productivity tools from AI Toolbox:",
+
+
+toolPrompt:
+"🔥 AI Prompt Generator",
+
+
+toolResume:
+"📝 AI Resume Assistant",
+
+
+toolTitle:
+"💡 AI Title Generator",
+
+
+toolPolisher:
+"✨ AI Writing Polisher",
+
+
+toolSummary:
+"📋 AI Article Summarizer",
+
+
+toolReply:
+"💬 AI Reply Assistant",
+
+
+toolXhs:
+"📱 AI Social Media Title Generator",
+
+
+toolMail:
+"📧 AI Email Assistant",
+
+
+toolPagesTitle:
+"📖 AI Tool Pages",
+
+
+toolPagesText:
+"Learn about the features, use cases and details of each AI tool:",
+
+
+pagePrompt:
+"🔥 AI Prompt Generator",
+
+
+pageResume:
+"📝 AI Resume Assistant",
+
+
+pageTitleGenerator:
+"💡 AI Title Generator",
+
+
+pagePolisher:
+"✨ AI Writing Polisher",
+
+
+pageSummary:
+"📋 AI Article Summarizer",
+
+
+pageReply:
+"💬 AI Reply Assistant",
+
+
+pageXhs:
+"📱 AI Social Media Title Generator",
+
+
+pageMail:
+"📧 AI Email Assistant",
+
+
+guidesTitle:
+"📚 AI Guides",
+
+
+guidesText:
+"Learn how to use AI tools more effectively for studying, work and content creation:",
+
+
+guidePrompt:
+"🔥 AI Prompt Beginner Guide",
+
+
+guideResume:
+"📝 AI Resume Optimization Guide",
+
+
+guideTitleGenerator:
+"💡 AI Title Generator Guide",
+
+
+guidePolisher:
+"✨ AI Writing Polisher Guide",
+
+
+guideSummary:
+"📋 AI Article Summarizer Guide",
+
+
+guideReply:
+"💬 AI Reply Guide",
+
+
+guideXhs:
+"📱 Social Media Title Guide",
+
+
+guideMail:
+"📧 AI Email Writing Guide",
+
+
+homeBtn:
+"🏠 Back to AI Toolbox",
+
+
+footerText:
+"© 2026 AI Toolbox · Free AI Tools"
 
 
 }
@@ -410,35 +2346,108 @@ home:"Back to AI Toolbox Home"
 
 
 
-function setLanguage(type){
+function setLanguage(lang){
 
 
-let t=lang[type];
+const t = languageText[lang];
 
 
-document.getElementById("title").innerText=t.title;
+Object.keys(t).forEach(id=>{
 
-document.getElementById("intro").innerText=t.intro;
 
-document.getElementById("aboutTitle").innerText=t.aboutTitle;
+const el = document.getElementById(id);
 
-document.getElementById("aboutText").innerText=t.aboutText;
 
-document.getElementById("goalTitle").innerText=t.goalTitle;
+if(id === "pageTitle"){
 
-document.getElementById("goalText").innerText=t.goalText;
+document.title = t[id];
 
-document.getElementById("toolsTitle").innerText=t.toolsTitle;
+return;
 
-document.getElementById("prompt").innerText=t.prompt;
+}
 
-document.getElementById("resume").innerText=t.resume;
 
-document.getElementById("xiaohongshu").innerText=t.xiaohongshu;
+if(id === "metaDescription"){
 
-document.getElementById("allTools").innerText=t.allTools;
+document
+.getElementById("metaDescription")
+.setAttribute("content",t[id]);
 
-document.getElementById("home").innerText=t.home;
+return;
+
+}
+
+
+if(id === "ogTitle"){
+
+document
+.getElementById("ogTitle")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+if(id === "ogDescription"){
+
+document
+.getElementById("ogDescription")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+if(id === "twitterTitle"){
+
+document
+.getElementById("twitterTitle")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+if(id === "twitterDescription"){
+
+document
+.getElementById("twitterDescription")
+.setAttribute("content",t[id]);
+
+return;
+
+}
+
+
+if(el){
+
+el.innerText = t[id];
+
+}
+
+
+});
+
+
+document
+.getElementById("zhBtn")
+.classList.toggle("active",lang==="zh");
+
+
+document
+.getElementById("enBtn")
+.classList.toggle("active",lang==="en");
+
+
+document.documentElement.lang =
+lang==="zh"
+?
+"zh-CN"
+:
+"en";
 
 
 }
@@ -447,8 +2456,6 @@ document.getElementById("home").innerText=t.home;
 </script>
 
 
-
 </body>
-
 
 </html>
