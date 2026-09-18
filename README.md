@@ -42,6 +42,11 @@ AI Toolbox is a collection of free online AI tools for writing, studying, job ap
 * Cloudflare Workers
 * GitHub Pages
 
+## 📸 Preview
+
+![AI Toolbox Preview](ai-toolbox-preview.png)
+
+
 ## 📚 Guides
 
 Each tool also has a corresponding guide explaining how to use it.
