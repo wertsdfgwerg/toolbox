@@ -17,7 +17,7 @@ AI Toolbox is a collection of free online AI tools for writing, studying, job ap
 * **AI Reply Assistant** — Generate natural replies for different situations.
 
 ### 📱 Content Creation
-
+- **AI Moments Post Generator** — Generate content ideas and posts for social media.
 * **AI Title Generator** — Generate titles for different types of content.
 * **Xiaohongshu Title Generator** — Generate titles for Xiaohongshu posts.
 
